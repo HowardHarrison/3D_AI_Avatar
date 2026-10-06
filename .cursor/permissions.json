@@ -1,0 +1,23 @@
+﻿{
+  "terminalAllowlist": [
+    "git",
+    "npm",
+    "npx",
+    "node",
+    "docker",
+    "docker compose",
+    "tsc",
+    "vitest",
+    "eslint"
+  ],
+  "autoRun": {
+    "allow_instructions": [
+      "Allow read-only git status/diff/log and TypeScript/Vite build or test commands in this React project.",
+      "Allow npm/npx scripts used for lint, unit tests, and production builds."
+    ],
+    "block_instructions": [
+      "Do not auto-run force pushes, hard resets, or deleting production .env or secrets.",
+      "Prompt before docker compose down --volumes or any command that deletes deployment data."
+    ]
+  }
+}
