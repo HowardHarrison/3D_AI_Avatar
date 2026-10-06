@@ -4,7 +4,6 @@
 
 import { useEffect, useState } from "react";
 import type { AvatarRuntimeStatus } from "@avatar/shared";
-import { AvatarRuntime } from "../avatar/AvatarRuntime";
 import type { AvatarHandle } from "../avatar/avatarTypes";
 import { useAudio } from "../hooks/useAudio";
 import { AnimationControls } from "./AnimationControls";
@@ -24,6 +23,7 @@ const EMPTY_STATUS: AvatarRuntimeStatus = {
   audioDuration: 0,
   fps: 0,
   warnings: [],
+  audioError: null,
 };
 
 export function DebugPanel(props: DebugPanelProps): JSX.Element {
@@ -34,18 +34,9 @@ export function DebugPanel(props: DebugPanelProps): JSX.Element {
 
   useEffect(() => {
     const id = window.setInterval(() => {
-      if (controller instanceof AvatarRuntime) {
+      if (controller !== null) {
         const snapshot = controller.getStatus();
-        setStatus({
-          loaded: snapshot.loaded,
-          state: snapshot.state,
-          activeAnimation: snapshot.activeAnimation,
-          currentExpression: snapshot.currentExpression,
-          audioTime: snapshot.audioTime,
-          audioDuration: snapshot.audioDuration,
-          fps: snapshot.fps,
-          warnings: snapshot.warnings,
-        });
+        setStatus(snapshot);
         if (snapshot.audioError) {
           setAudioMessage(snapshot.audioError);
         }

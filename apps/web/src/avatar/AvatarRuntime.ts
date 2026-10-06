@@ -5,8 +5,8 @@
 
 import { Bone, Object3D, AnimationClip } from "three";
 import type {
-  AnimationStateName,
   AvatarController,
+  AvatarRuntimeStatus,
   ExpressionName,
   GazeTarget,
   GestureName,
@@ -28,11 +28,11 @@ import { IdleController } from "./animation/IdleController";
 import { FacialController } from "./facial/FacialController";
 
 export class AvatarRuntime implements AvatarController {
-  readonly animation: AnimationController;
-  readonly facial: FacialController;
-  readonly idle: IdleController;
-  readonly audio: AudioController;
-  readonly state: AnimationStateMachine;
+  private readonly animation: AnimationController;
+  private readonly facial: FacialController;
+  private readonly idle: IdleController;
+  private readonly audio: AudioController;
+  private readonly state: AnimationStateMachine;
   private readonly warnings: string[] = [];
   private gestureClip: string | null = null;
   private fps = 0;
@@ -134,6 +134,29 @@ export class AvatarRuntime implements AvatarController {
     this.idle.start();
   }
 
+  /**
+   * Load a same-origin audio URL via AudioController.
+   * @param url - Audio file URL relative to the web app origin.
+   */
+  async loadAudio(url: string): Promise<void> {
+    await this.audio.load(url);
+  }
+
+  /** Start playback of the currently loaded clip. */
+  playAudio(): void {
+    this.audio.play();
+  }
+
+  /** Pause playback without resetting current time. */
+  pauseAudio(): void {
+    this.audio.pause();
+  }
+
+  /** Stop playback and rewind to the start of the clip. */
+  stopAudio(): void {
+    this.audio.stop();
+  }
+
   update(delta: number): void {
     this.animation.update(delta);
     this.idle.update(delta, this.state.getState() === "GESTURE");
@@ -146,17 +169,7 @@ export class AvatarRuntime implements AvatarController {
     }
   }
 
-  getStatus(): {
-    loaded: boolean;
-    state: AnimationStateName;
-    activeAnimation: string;
-    currentExpression: string;
-    audioTime: number;
-    audioDuration: number;
-    fps: number;
-    warnings: string[];
-    audioError: string | null;
-  } {
+  getStatus(): AvatarRuntimeStatus {
     return {
       loaded: true,
       state: this.state.getState(),

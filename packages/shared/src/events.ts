@@ -20,4 +20,6 @@ export interface AvatarRuntimeStatus {
   audioDuration: number;
   fps: number;
   warnings: string[];
+  /** Last local-audio failure, or null when none. */
+  audioError: string | null;
 }

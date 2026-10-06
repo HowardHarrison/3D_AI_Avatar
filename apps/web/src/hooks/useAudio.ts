@@ -3,12 +3,7 @@
  */
 
 import { avatarConfig } from "../avatar/avatarConfig";
-import { AvatarRuntime } from "../avatar/AvatarRuntime";
 import type { AvatarHandle } from "../avatar/avatarTypes";
-
-function asRuntime(controller: AvatarHandle | null): AvatarRuntime | null {
-  return controller instanceof AvatarRuntime ? controller : null;
-}
 
 export function useAudio(controller: AvatarHandle | null): {
   loadTestAudio: () => Promise<void>;
@@ -16,19 +11,18 @@ export function useAudio(controller: AvatarHandle | null): {
   pause: () => void;
   stop: () => void;
 } {
-  const runtime = asRuntime(controller);
   return {
     loadTestAudio: async (): Promise<void> => {
-      await runtime?.audio.load(avatarConfig.audioUrl);
+      await controller?.loadAudio(avatarConfig.audioUrl);
     },
     play: (): void => {
-      runtime?.audio.play();
+      controller?.playAudio();
     },
     pause: (): void => {
-      runtime?.audio.pause();
+      controller?.pauseAudio();
     },
     stop: (): void => {
-      runtime?.audio.stop();
+      controller?.stopAudio();
     },
   };
 }
