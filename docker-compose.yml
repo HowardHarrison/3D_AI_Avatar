@@ -1,0 +1,20 @@
+services:
+  web-dev:
+    image: node:20-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_APP_NAME=Avatar News Presenter
+      - VITE_AVATAR_MODEL_URL=/avatars/presenter.glb
+      - VITE_ENABLE_DEBUG_PANEL=true
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "8080:80"

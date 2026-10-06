@@ -1,0 +1,117 @@
+:root {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #e8eef8;
+  background: #0e141d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.scene {
+  flex: 1;
+  min-width: 0;
+}
+
+.debug-panel {
+  width: 320px;
+  max-width: 42vw;
+  overflow: auto;
+  padding: 16px;
+  background: rgba(10, 16, 28, 0.92);
+  border-left: 1px solid #2c3a52;
+}
+
+.debug-panel h2,
+.debug-panel h3 {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.debug-section {
+  margin-bottom: 16px;
+}
+
+.debug-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.debug-row button {
+  background: #2a3d5c;
+  color: #e8eef8;
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.debug-row button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status-list {
+  margin: 0;
+}
+
+.status-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.status-list dt {
+  color: #9aadc8;
+}
+
+.status-list dd {
+  margin: 0;
+}
+
+.status-error {
+  color: #ff8d8d;
+}
+
+.status-warning {
+  color: #ffd37a;
+  font-size: 12px;
+}
+
+.overlay-error {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+}
+
+@media (max-width: 800px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .scene {
+    min-height: 55vh;
+  }
+
+  .debug-panel {
+    width: 100%;
+    max-width: none;
+    border-left: 0;
+    border-top: 1px solid #2c3a52;
+  }
+}

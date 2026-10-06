@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+*.md
+.cursor
+.env
+.env.*
+!.env.example
+blender/source/*.blend
+blender/source/*.blend1

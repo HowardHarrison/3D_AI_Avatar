@@ -1,0 +1,23 @@
+{
+  "name": "ai-3d-avatar",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Phase 1 MVP: browser 3D avatar news presenter",
+  "workspaces": [
+    "apps/web",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w web",
+    "build": "npm run build -w web",
+    "preview": "npm run preview -w web",
+    "test": "npm run test -w web",
+    "lint": "npm run lint -w web",
+    "format": "npm run format -w web",
+    "generate:avatar": "python blender/scripts/generate_placeholder_glb.py",
+    "generate:audio": "python blender/scripts/generate_test_audio.py"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
