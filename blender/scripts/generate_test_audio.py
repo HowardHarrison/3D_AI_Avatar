@@ -33,7 +33,7 @@ def _write_wav(path: Path, duration_sec: float = 4.0, sample_rate: int = 22050) 
 def main() -> None:
     """Create public/audio/test-presenter.mp3 when ffmpeg is available, else WAV."""
     repo = Path(__file__).resolve().parents[2]
-    audio_dir = repo / "apps" / "web" / "public" / "audio"
+    audio_dir = repo / "frontend" / "public" / "audio"
     wav_path = audio_dir / "test-presenter.wav"
     mp3_path = audio_dir / "test-presenter.mp3"
     _write_wav(wav_path)

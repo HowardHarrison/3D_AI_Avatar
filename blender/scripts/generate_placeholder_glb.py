@@ -620,7 +620,7 @@ def main() -> None:
     blender_output.parent.mkdir(parents=True, exist_ok=True)
     payload = build_presenter()
     blender_output.write_bytes(payload)
-    web_output = Path(__file__).resolve().parents[2] / "apps" / "web" / "public" / "avatars" / "presenter.glb"
+    web_output = Path(__file__).resolve().parents[2] / "frontend" / "public" / "avatars" / "presenter.glb"
     web_output.parent.mkdir(parents=True, exist_ok=True)
     web_output.write_bytes(payload)
     print(f"PASS: Wrote {blender_output} ({blender_output.stat().st_size} bytes)")

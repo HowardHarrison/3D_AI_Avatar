@@ -2,6 +2,8 @@
 
 Phase 1 MVP: a browser 3D news presenter loaded from a GLB, driven by a semantic TypeScript runtime. There is no LLM, TTS, or backend in this phase.
 
+The npm project is **`frontend/`** (one Vite app, one `node_modules`). There is no `apps/` workspace and no `packages/shared`.
+
 ## Prerequisites
 
 - Node.js 20 or newer
@@ -14,7 +16,7 @@ Phase 1 MVP: a browser 3D news presenter loaded from a GLB, driven by a semantic
 
 ```bash
 git clone <repository>
-cd AI_3D_Avatar
+cd AI_3D_Avatar/frontend
 copy .env.example .env
 npm install
 npm run dev
@@ -26,6 +28,8 @@ You should see a waist-up presenter (placeholder humanoid until you export your 
 
 ## Scripts
 
+Run these from `frontend/`:
+
 | Command | Purpose |
 | --- | --- |
 | `npm run dev` | Vite development server |
@@ -33,13 +37,15 @@ You should see a waist-up presenter (placeholder humanoid until you export your 
 | `npm test` | Vitest unit tests |
 | `npm run lint` | ESLint |
 | `npm run generate:avatar` | Write `blender/exports/presenter.glb` placeholder |
-| `npm run generate:audio` | Write `apps/web/public/audio/test-presenter.mp3` |
+| `npm run generate:audio` | Write `frontend/public/audio/test-presenter.mp3` |
 
 After generating a new GLB, copy it:
 
-`blender/exports/presenter.glb` → `apps/web/public/avatars/presenter.glb`
+`blender/exports/presenter.glb` → `frontend/public/avatars/presenter.glb`
 
 ## Docker
+
+From the repo root:
 
 ```bash
 docker compose up web-dev

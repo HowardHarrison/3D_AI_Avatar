@@ -2,7 +2,7 @@
 
 ## Asset
 
-- File: `apps/web/public/avatars/presenter.glb`
+- File: `frontend/public/avatars/presenter.glb`
 - Humanoid armature with hips, spine, chest, neck, head, and arm chains
 - Facial morph targets listed in [blender/README.md](../blender/README.md)
 - Default framing: waist-up (camera at `[0, 1.65, 3.2]`, look at `[0, 1.4, 0]`, FOV 35)

@@ -22,6 +22,6 @@ Placeholder GLB (no Blender):
 python blender/scripts/generate_placeholder_glb.py
 ```
 
-Copy `blender/exports/presenter.glb` to `apps/web/public/avatars/presenter.glb`.
+Copy `blender/exports/presenter.glb` to `frontend/public/avatars/presenter.glb`.
 
 The web application never loads `.blend` files.

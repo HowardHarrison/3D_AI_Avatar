@@ -1,6 +1,6 @@
 # Animation system
 
-Semantic names live in `apps/web/src/avatar/animation/AnimationRegistry.ts` and `@avatar/shared`.
+Semantic names live in `frontend/src/services/avatar/animation/AnimationRegistry.ts` and `frontend/src/types`.
 
 ## Layers (priorities)
 

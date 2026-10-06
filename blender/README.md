@@ -56,7 +56,7 @@ blender --background blender/source/presenter.blend --python blender/scripts/val
 blender --background blender/source/presenter.blend --python blender/scripts/export_glb.py
 ```
 
-4. Copy `blender/exports/presenter.glb` to `apps/web/public/avatars/presenter.glb`.
+4. Copy `blender/exports/presenter.glb` to `frontend/public/avatars/presenter.glb`.
 
 Until your character is ready, generate the placeholder:
 
@@ -64,7 +64,7 @@ Until your character is ready, generate the placeholder:
 python blender/scripts/generate_placeholder_glb.py
 ```
 
-Then copy the export into `apps/web/public/avatars/presenter.glb`.
+Then copy the export into `frontend/public/avatars/presenter.glb`.
 
 ## Export settings (manual)
 
