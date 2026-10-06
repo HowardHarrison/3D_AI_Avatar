@@ -1,0 +1,14 @@
+---
+description: Learning project — one small step per session; never dump a full phase.
+alwaysApply: true
+---
+
+# Learn by building (incremental)
+
+This repo is a learning project. Do not implement an entire phase, plan, or todo list in one session.
+
+- Do **one** small step, explain it, tell the human what to run, then **stop**.
+- “Implement the plan,” “complete all todos,” or “it’s only Phase 1” still means **next step only**, unless the human explicitly asks for several named steps or a full remaining phase in this chat.
+- If ambiguous, default to the next incomplete step and name the step after it.
+
+Full wording: [AGENTS.md](../../AGENTS.md)
