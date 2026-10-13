@@ -28,6 +28,9 @@ Thumbs.db
 # Blender
 blender/source/*.blend1
 blender/source/*.blend2
+# Local recoverable backups from save_versioned_blend (keep folder via .gitkeep)
+blender/source/versions/*
+!blender/source/versions/.gitkeep
 
 # Test / coverage
 coverage/

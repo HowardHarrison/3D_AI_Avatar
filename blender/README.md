@@ -19,7 +19,7 @@ Target hardware is modest (integrated GPU / 2 GB discrete). Prefer:
 
 ## Prerequisites
 
-- Blender **3.6 LTS or 4.x**
+- Blender **3.6 LTS, 4.x, or 5.x**
 - `blender` on your **PATH** (see [docs/blender-pipeline.md](../docs/blender-pipeline.md)
   for Windows full-path examples)
 
@@ -37,11 +37,14 @@ Automation lives in **`scripts/`** (not `automation/`). MVP docs that say
 | Path | Purpose |
 | --- | --- |
 | `source/presenter.blend` | Authoring file (you create this) |
+| `source/versions/` | Timestamped `.blend` backups (`save_versioned_blend`; gitignored) |
 | `animations/` | Optional clip library notes or linked actions |
 | `exports/presenter.glb` | Headless export output (candidate until promoted) |
+| `scripts/common.py` | Paths, logging, backup, safe-export guards |
 | `scripts/contracts.py` | Shared bone / shape-key / clip names |
+| `scripts/inspect_scene.py` | Inventory objects, bones, keys, clips (no contract scoring) |
 | `scripts/validate_rig.py` | PASS / WARNING / ERROR checks |
-| `scripts/export_glb.py` | Headless glTF Binary export |
+| `scripts/export_glb.py` | Headless glTF Binary export (never writes runtime GLB) |
 | `scripts/generate_placeholder_glb.py` | Temporary contract-compliant GLB for web development |
 
 ## Naming contract
@@ -64,23 +67,28 @@ Required bones (humanoid): `Hips`, `Spine`, `Chest`, `Neck`, `Head`, plus should
 
 For structural changes, follow the **safe sequence** in
 [docs/blender-pipeline.md](../docs/blender-pipeline.md) (inspect → modify →
-backup → validate → export → promote). Today, inspection and promote scripts
-are not added yet; use validate + export + a careful manual copy.
+backup → validate → export → promote). Promote-to-runtime is still manual.
 
 1. Author `source/presenter.blend` (applied transforms, Y-up or Blender default then correct on export).
-2. Validate (from repo root):
+2. Inspect (from repo root) — always before modifying:
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/inspect_scene.py
+```
+
+3. Validate:
 
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/validate_rig.py
 ```
 
-3. Export:
+4. Export:
 
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/export_glb.py
 ```
 
-4. After you are satisfied, promote manually:
+5. After you are satisfied, promote manually:
 
 `blender/exports/presenter.glb` → `frontend/public/avatars/presenter.glb`
 

@@ -19,17 +19,17 @@ When the MVP mentions `blender/automation/*.py`, use `blender/scripts/*.py`.
 | MVP name | Actual path |
 | --- | --- |
 | `blender/automation/` | `blender/scripts/` |
-| `inspect_scene.py` | planned (not yet) |
+| `inspect_scene.py` | `blender/scripts/inspect_scene.py` |
 | `validate_rig.py` | `blender/scripts/validate_rig.py` |
 | `export_glb.py` | `blender/scripts/export_glb.py` |
 | `validate_export.py` / promote | planned (not yet) |
 
 ## Prerequisites
 
-- **Blender 3.6 LTS or 4.x** installed locally
+- **Blender 3.6 LTS, 4.x, or 5.x** installed locally
 - The `blender` executable available on your **PATH** so headless commands work
   from the repository root
-- A source file at `blender/source/presenter.blend` for validate/export
+- A source file at `blender/source/presenter.blend` for a full presenter inventory
   (optional until you adopt a real character; use the placeholder GLB for web
   work without Blender)
 
@@ -41,10 +41,10 @@ From the repository root:
 blender --version
 ```
 
-You should see a version line (3.6.x or 4.x). If the command is not found:
+You should see a version line (3.6.x, 4.x, or 5.x). If the command is not found:
 
 - **Windows:** add Blender’s install folder to PATH, or call the full path, e.g.
-  `"C:\Program Files\Blender Foundation\Blender 4.2\blender.exe"`
+  `"C:\Program Files\Blender Foundation\Blender 5.2\blender.exe"`
 - **macOS / Linux:** ensure the Blender binary is on PATH (or use the full path
   to the app bundle executable)
 
@@ -98,14 +98,14 @@ Promote validated export to runtime assets
 Rules:
 
 1. **Inspect before modify** — never assume object, bone, or material names.
-2. **Backup before risky edits** — do not overwrite `presenter.blend` until the
-   change is known-good; prefer a versioned copy under something like
-   `blender/source/versions/` (folder to be added with the first modify script).
+2. **Backup before risky edits** — call `save_versioned_blend()` from
+   `blender/scripts/common.py` (writes timestamped copies under
+   `blender/source/versions/`). Do not start structural edits on an unsaved file.
 3. **Validate the scene** before export (`validate_rig.py`).
-4. **Export to a temp path first** — never replace
-   `frontend/public/avatars/presenter.glb` until export validation passes
-   (temp export + promote scripts are planned; today export writes
-   `blender/exports/presenter.glb` and you copy manually after checks).
+4. **Export to a candidate path** — `export_glb.py` writes
+   `blender/exports/presenter.glb` only. It **refuses** to write directly to
+   `frontend/public/avatars/presenter.glb`. Temp-dir export + automated promote
+   are still planned; today you copy manually after checks.
 5. **Failed export must not replace** a previously working runtime asset.
 
 ## What exists today vs next steps
@@ -116,17 +116,53 @@ Rules:
 | Rig / shape-key / clip validation | Done (`validate_rig.py`) |
 | Headless GLB export | Done (`export_glb.py` → `exports/`) |
 | Placeholder GLB (no Blender) | Done (`generate_placeholder_glb.py`) |
-| Scene inspection script | Next learning step |
-| Versioned `.blend` backups | Planned |
+| Scene inspection script | Done (`inspect_scene.py`) |
+| Shared paths / logging / backup helpers | Done (`common.py`) |
+| Versioned `.blend` backups | Done (`save_versioned_blend` → `source/versions/`) |
 | Temp export + export validation + promote | Planned |
 | Targeted modify scripts (materials, etc.) | Planned |
 
+### Shared helpers (`common.py`)
+
+Future modify scripts should import these (via the same `_load_common()` pattern
+as `inspect_scene.py` / `validate_rig.py` / `export_glb.py`):
+
+| Helper | Purpose |
+| --- | --- |
+| `emit` / `report` | Prefixed log lines (`PASS:`, `ERROR:`, …) |
+| `require_bpy` | Fail clearly when not running inside Blender |
+| `load_scripts_module` | Load `contracts` (or other sibling modules) |
+| `save_versioned_blend(label=...)` | Save + copy to `source/versions/` |
+| `assert_export_path_allowed` | Block writes to the frontend runtime GLB |
+| Path helpers | `presenter_blend_path`, `candidate_presenter_glb`, `runtime_presenter_glb`, … |
+
+Backup files under `versions/` are gitignored (local recovery only).
+
 ## Commands available now
 
-Run from the **repository root**. Requires Blender and `presenter.blend` unless
-noted.
+Run from the **repository root**. Requires Blender on PATH. Full presenter
+commands also need `blender/source/presenter.blend`.
 
-Validate:
+### Inspect scene (always run before modifying)
+
+With a presenter file:
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/inspect_scene.py
+```
+
+Smoke-test without `presenter.blend` (uses Blender’s default startup; expect
+`ERROR: No armature found` and exit code 1):
+
+```bash
+blender --background --python blender/scripts/inspect_scene.py
+```
+
+Output uses stable prefixes (`FILE:`, `OBJECT:`, `BONE:`, `SHAPE_KEY:`,
+`ACTION:`, `RESULT:`, …) so an agent can parse the inventory. This script does
+**not** score the naming contract — use `validate_rig.py` for that.
+
+### Validate
 
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/validate_rig.py
