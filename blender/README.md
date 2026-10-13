@@ -3,6 +3,9 @@
 Blender authors the 3D news presenter. The browser never opens `.blend` files.
 The only runtime asset is `presenter.glb`.
 
+Safe inspect → modify → validate → export → promote flow, CLI prerequisites,
+and MVP path mapping: [docs/blender-pipeline.md](../docs/blender-pipeline.md).
+
 ## Goal
 
 A lightweight professional humanoid, framed **waist-up**, suitable for news,
@@ -14,13 +17,29 @@ Target hardware is modest (integrated GPU / 2 GB discrete). Prefer:
 - 1K textures or smaller
 - no ray tracing, 4K maps, or dense hair cards
 
+## Prerequisites
+
+- Blender **3.6 LTS or 4.x**
+- `blender` on your **PATH** (see [docs/blender-pipeline.md](../docs/blender-pipeline.md)
+  for Windows full-path examples)
+
+Check:
+
+```bash
+blender --version
+```
+
 ## Folder layout
+
+Automation lives in **`scripts/`** (not `automation/`). MVP docs that say
+`blender/automation/` mean this folder.
 
 | Path | Purpose |
 | --- | --- |
 | `source/presenter.blend` | Authoring file (you create this) |
 | `animations/` | Optional clip library notes or linked actions |
-| `exports/presenter.glb` | Headless export output |
+| `exports/presenter.glb` | Headless export output (candidate until promoted) |
+| `scripts/contracts.py` | Shared bone / shape-key / clip names |
 | `scripts/validate_rig.py` | PASS / WARNING / ERROR checks |
 | `scripts/export_glb.py` | Headless glTF Binary export |
 | `scripts/generate_placeholder_glb.py` | Temporary contract-compliant GLB for web development |
@@ -43,8 +62,13 @@ Required bones (humanoid): `Hips`, `Spine`, `Chest`, `Neck`, `Head`, plus should
 
 ## Local workflow
 
+For structural changes, follow the **safe sequence** in
+[docs/blender-pipeline.md](../docs/blender-pipeline.md) (inspect → modify →
+backup → validate → export → promote). Today, inspection and promote scripts
+are not added yet; use validate + export + a careful manual copy.
+
 1. Author `source/presenter.blend` (applied transforms, Y-up or Blender default then correct on export).
-2. Validate:
+2. Validate (from repo root):
 
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/validate_rig.py
@@ -56,7 +80,9 @@ blender --background blender/source/presenter.blend --python blender/scripts/val
 blender --background blender/source/presenter.blend --python blender/scripts/export_glb.py
 ```
 
-4. Copy `blender/exports/presenter.glb` to `frontend/public/avatars/presenter.glb`.
+4. After you are satisfied, promote manually:
+
+`blender/exports/presenter.glb` → `frontend/public/avatars/presenter.glb`
 
 Until your character is ready, generate the placeholder:
 

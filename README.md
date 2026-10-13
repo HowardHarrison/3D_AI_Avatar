@@ -8,9 +8,12 @@ The npm project is **`frontend/`** (one Vite app, one `node_modules`). There is 
 
 - Node.js 20 or newer
 - npm 10 or newer
-- Optional: Blender 4.x (to author `presenter.blend`)
+- Optional: Blender 3.6 LTS or 4.x on PATH (author `presenter.blend`, headless validate/export)
 - Optional: Docker Desktop (Vite dev container or nginx preview)
 - Optional: Python 3 (placeholder GLB / test audio generators)
+
+Blender automation layout and safe export rules:
+[docs/blender-pipeline.md](docs/blender-pipeline.md).
 
 ## Setup
 
