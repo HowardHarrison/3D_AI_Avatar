@@ -6,6 +6,10 @@ The only runtime asset is `presenter.glb`.
 Safe inspect → modify → validate → export → promote flow, CLI prerequisites,
 and MVP path mapping: [docs/blender-pipeline.md](../docs/blender-pipeline.md).
 
+From `frontend/` you can also run `npm run avatar:inspect`, `avatar:validate-rig`,
+`avatar:export`, `avatar:validate-export`, `avatar:promote`, `avatar:release`,
+and `avatar:scaffold` (Blender must be on PATH for the Blender-backed commands).
+
 ## Goal
 
 A lightweight professional humanoid, framed **waist-up**, suitable for news,

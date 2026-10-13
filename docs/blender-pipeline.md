@@ -133,6 +133,7 @@ Rules:
 | Stub animation create | Done (`create_animation.py`) |
 | Learning `.blend` scaffold | Done (`scaffold_presenter_blend.py`) |
 | Bone rename map for licensed imports | Done (`apply_rename_map.py` + example JSON) |
+| npm script glue + suit-color example | Done (`frontend/package.json` `avatar:*` scripts) |
 
 ### Shared helpers (`common.py`)
 
@@ -313,6 +314,61 @@ Bootstrap shortcut — writes candidate + runtime directly (skips temp/promote):
 ```bash
 python blender/scripts/generate_placeholder_glb.py
 ```
+
+### npm script glue (from `frontend/`)
+
+Requires Blender on PATH for inspect / validate-rig / export / scaffold.
+Python-only scripts work without Blender.
+
+| npm script | What it runs |
+| --- | --- |
+| `npm run avatar:inspect` | `inspect_scene.py` on `presenter.blend` |
+| `npm run avatar:validate-rig` | `validate_rig.py` |
+| `npm run avatar:export` | `export_glb.py` → `exports/tmp/` |
+| `npm run avatar:validate-export` | `validate_export.py` |
+| `npm run avatar:promote` | `promote_export.py` |
+| `npm run avatar:release` | export → validate-export → promote |
+| `npm run avatar:scaffold` | regenerate learning `presenter.blend` |
+| `npm run generate:avatar` | placeholder GLB (no Blender) |
+
+### Example: change suit color
+
+Bake a new suit color into the asset (scaffold material is named `Suit`). Prefer a
+frontend material override when you do not need the color in the GLB.
+
+From the **repository root** (Blender flags go after `--`):
+
+```bash
+# 1) Inspect material names
+blender --background blender/source/presenter.blend --python blender/scripts/modify_materials.py -- --list
+
+# 2) Change Suit base color (backs up, validates rig, exports temp GLB)
+blender --background blender/source/presenter.blend --python blender/scripts/modify_materials.py -- --material Suit --color 0.02,0.08,0.25
+```
+
+From **`frontend/`** (promote the temp export into the web app):
+
+```bash
+npm run avatar:validate-export
+npm run avatar:promote
+npm run dev
+```
+
+Or in one shot after the material script already exported to tmp:
+
+```bash
+npm run avatar:validate-export && npm run avatar:promote && npm run dev
+```
+
+If you only changed the `.blend` and still need export:
+
+```bash
+npm run avatar:release
+npm run dev
+```
+
+Confirm in the browser that the presenter suit looks darker blue. Restore from
+`blender/source/versions/` if you need to undo the `.blend` edit.
 
 ## Agent decision rule
 

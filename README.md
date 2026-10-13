@@ -41,9 +41,22 @@ Run these from `frontend/`:
 | `npm run lint` | ESLint |
 | `npm run generate:avatar` | Write placeholder GLB (exports + frontend public) |
 | `npm run generate:audio` | Write `frontend/public/audio/test-presenter.mp3` |
+| `npm run avatar:inspect` | Inventory the open `presenter.blend` (needs Blender on PATH) |
+| `npm run avatar:validate-rig` | Validate bones / shape keys / clips on the `.blend` |
+| `npm run avatar:export` | Export to `blender/exports/tmp/presenter.glb` |
+| `npm run avatar:validate-export` | Validate the temp GLB (Python only) |
+| `npm run avatar:promote` | Copy validated temp GLB → exports + `frontend/public` |
+| `npm run avatar:release` | export → validate-export → promote |
+| `npm run avatar:scaffold` | Regenerate learning `presenter.blend` (not production) |
 
-Blender export path (after you have `presenter.blend`): export → validate → promote.
-See [docs/blender-pipeline.md](docs/blender-pipeline.md).
+Typical Blender release (from `frontend/`, after `presenter.blend` exists):
+
+```bash
+npm run avatar:release
+npm run dev
+```
+
+End-to-end example (change suit color): [docs/blender-pipeline.md](docs/blender-pipeline.md#example-change-suit-color).
 
 ## Docker
 

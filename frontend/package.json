@@ -12,7 +12,14 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "generate:avatar": "python ../blender/scripts/generate_placeholder_glb.py",
-    "generate:audio": "python ../blender/scripts/generate_test_audio.py"
+    "generate:audio": "python ../blender/scripts/generate_test_audio.py",
+    "avatar:inspect": "blender --background ../blender/source/presenter.blend --python ../blender/scripts/inspect_scene.py",
+    "avatar:validate-rig": "blender --background ../blender/source/presenter.blend --python ../blender/scripts/validate_rig.py",
+    "avatar:export": "blender --background ../blender/source/presenter.blend --python ../blender/scripts/export_glb.py",
+    "avatar:validate-export": "python ../blender/scripts/validate_export.py",
+    "avatar:promote": "python ../blender/scripts/promote_export.py",
+    "avatar:release": "npm run avatar:export && npm run avatar:validate-export && npm run avatar:promote",
+    "avatar:scaffold": "blender --background --python ../blender/scripts/scaffold_presenter_blend.py -- --force"
   },
   "dependencies": {
     "@react-three/drei": "^9.117.3",
