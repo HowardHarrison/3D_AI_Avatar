@@ -24,6 +24,7 @@ When the MVP mentions `blender/automation/*.py`, use `blender/scripts/*.py`.
 | `export_glb.py` | `blender/scripts/export_glb.py` |
 | `validate_export.py` | `blender/scripts/validate_export.py` |
 | `promote_export.py` | `blender/scripts/promote_export.py` |
+| `modify_materials.py` | `blender/scripts/modify_materials.py` |
 
 ## Prerequisites
 
@@ -123,7 +124,8 @@ Rules:
 | Shared paths / logging / backup helpers | Done (`common.py`) |
 | Versioned `.blend` backups | Done (`save_versioned_blend` → `source/versions/`) |
 | Temp export + export validation + promote | Done (`validate_export.py`, `promote_export.py`) |
-| Targeted modify scripts (materials, etc.) | Planned |
+| Targeted material modify | Done (`modify_materials.py`) |
+| Character / animation modify scripts | Planned |
 
 ### Shared helpers (`common.py`)
 
@@ -196,6 +198,32 @@ You can also validate any GLB path:
 
 ```bash
 python blender/scripts/validate_export.py frontend/public/avatars/presenter.glb
+```
+
+### Modify a material (first edit script)
+
+List materials in the open `.blend`:
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/modify_materials.py -- --list
+```
+
+Change one material base color (RGB floats 0–1). This backs up under
+`source/versions/`, saves the blend, runs `validate_rig`, and exports to
+`exports/tmp/`:
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/modify_materials.py -- --material Suit --color 0.05,0.15,0.45
+```
+
+Then validate and promote the temp GLB as usual. Prefer a runtime material
+override in the frontend when you do not need the color baked into the asset.
+
+Smoke-test without a saved `.blend` (default Cube scene):
+
+```bash
+blender --background --python blender/scripts/modify_materials.py -- --list
+blender --background --python blender/scripts/modify_materials.py -- --material Material --color 1,0,0 --no-backup --skip-validate --skip-export
 ```
 
 ### Placeholder (Python only, no Blender)
