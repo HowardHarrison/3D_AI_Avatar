@@ -25,6 +25,7 @@ When the MVP mentions `blender/automation/*.py`, use `blender/scripts/*.py`.
 | `validate_export.py` | `blender/scripts/validate_export.py` |
 | `promote_export.py` | `blender/scripts/promote_export.py` |
 | `modify_materials.py` | `blender/scripts/modify_materials.py` |
+| `modify_character.py` | `blender/scripts/modify_character.py` |
 
 ## Prerequisites
 
@@ -125,7 +126,8 @@ Rules:
 | Versioned `.blend` backups | Done (`save_versioned_blend` → `source/versions/`) |
 | Temp export + export validation + promote | Done (`validate_export.py`, `promote_export.py`) |
 | Targeted material modify | Done (`modify_materials.py`) |
-| Character / animation modify scripts | Planned |
+| Targeted character modify (safe ops) | Done (`modify_character.py`) |
+| Animation create script | Planned |
 
 ### Shared helpers (`common.py`)
 
@@ -224,6 +226,32 @@ Smoke-test without a saved `.blend` (default Cube scene):
 ```bash
 blender --background --python blender/scripts/modify_materials.py -- --list
 blender --background --python blender/scripts/modify_materials.py -- --material Material --color 1,0,0 --no-backup --skip-validate --skip-export
+```
+
+### Modify character (safe transforms only)
+
+Does **not** remesh, re-weight, or sculpt. One operation per run.
+
+List mesh/armature objects (and bones):
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/modify_character.py -- --list
+```
+
+Examples:
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/modify_character.py -- --object Armature --apply-transforms
+blender --background blender/source/presenter.blend --python blender/scripts/modify_character.py -- --object Armature --scale 1,1,1
+blender --background blender/source/presenter.blend --python blender/scripts/modify_character.py -- --object OldBody --rename PresenterBody
+blender --background blender/source/presenter.blend --python blender/scripts/modify_character.py -- --armature Armature --rename-bone mixamorig:Hips=Hips
+```
+
+Smoke-test:
+
+```bash
+blender --background --python blender/scripts/modify_character.py -- --list
+blender --background --python blender/scripts/modify_character.py -- --object Cube --scale 1.1,1.1,1.1 --no-backup --skip-validate --skip-export
 ```
 
 ### Placeholder (Python only, no Blender)

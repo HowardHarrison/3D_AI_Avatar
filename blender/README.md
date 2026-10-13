@@ -49,6 +49,7 @@ Automation lives in **`scripts/`** (not `automation/`). MVP docs that say
 | `scripts/validate_export.py` | Validate temp GLB (plain Python) |
 | `scripts/promote_export.py` | Copy temp → candidate + frontend runtime |
 | `scripts/modify_materials.py` | List / change one material base color (backup + validate + temp export) |
+| `scripts/modify_character.py` | Safe character ops: scale, apply transforms, rename object/bone |
 | `scripts/generate_placeholder_glb.py` | Bootstrap GLB (writes runtime directly) |
 
 ## Naming contract
@@ -104,6 +105,13 @@ Optional — change a baked material color (inspect names first with `--list`):
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/modify_materials.py -- --list
 blender --background blender/source/presenter.blend --python blender/scripts/modify_materials.py -- --material Suit --color 0.05,0.15,0.45
+```
+
+Optional — safe character transforms / renames (not remesh):
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/modify_character.py -- --list
+blender --background blender/source/presenter.blend --python blender/scripts/modify_character.py -- --object Armature --apply-transforms
 ```
 
 Until your character is ready, generate the placeholder:
