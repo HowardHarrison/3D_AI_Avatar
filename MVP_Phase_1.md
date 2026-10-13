@@ -1,2356 +1,428 @@
-# 3D Avatar News Presenter — Phase 1 MVP Implementation Specification
+# 3D Avatar News Presenter — Phase 1 MVP Architecture and Implementation Specification
 
 ## 1. Project Overview
 
-Build a scalable and maintainable **Phase 1 MVP** for a browser-based 3D Avatar News Presenter.
+The objective of Phase 1 is to build a scalable, maintainable, and AI-agent-friendly foundation for a browser-based 3D Avatar News Presenter. The application will display a professional humanoid presenter in a browser, support basic idle behavior, facial expressions, head movements, hand gestures, and local audio playback, and establish an architecture that can later support lip synchronization, multilingual speech, subtitles, LLM-driven behavior, and real-time interaction.
 
-The system should use:
+The most important architectural change from the original specification is that **Blender will no longer be treated as the place where every animation or visual change must be manually authored**. Blender will be used primarily for operations that benefit from a dedicated 3D authoring environment, including character modeling, rigging, mesh editing, skin weighting, facial topology, and exporting 3D assets. Blender's Python API will allow AI coding agents to inspect and modify scenes programmatically. Three.js will be responsible for browser rendering and runtime animation, while TypeScript and JSON definitions will represent the editable behavior of the avatar wherever practical.
 
-- **Blender** for creating and authoring the 3D avatar and animations.
-- **GLB/GLTF** as the asset boundary between Blender and the web application.
-- **React + TypeScript** for the frontend application.
-- **Three.js / React Three Fiber** for rendering the 3D avatar in the browser.
-- A modular avatar runtime that can later support:
-  - lip synchronization
-  - TTS
-  - subtitles
-  - multilingual speech
-  - LLM-generated animation plans
-  - WebSocket-based real-time interaction
-  - FastAPI backend
-  - video generation
-  - iframe embedding
+This architecture is intended for a software developer who does not use Blender professionally every day. The developer should be able to request changes in natural language, have an AI coding agent modify configuration files or TypeScript animation definitions, and use generated Blender Python scripts when actual 3D asset changes are necessary. The workflow should favor readable source files, deterministic automation, validation, and visual previews over manually editing complex binary assets.
 
-The Phase 1 implementation must focus on building a strong foundation rather than implementing AI functionality.
+Phase 1 must remain a focused MVP. It must not attempt to implement the entire future AI news production platform. Instead, it should deliver a reliable local browser application and the reusable foundations needed to add future functionality without rewriting the core runtime.
 
----
+## 2. Core Architectural Principles
 
-# 2. Phase 1 Goal
+The system will follow six principles.
 
-The Phase 1 MVP should produce a web application where:
+**First, the AI agent should modify source definitions rather than directly editing compiled assets.** JSON, TypeScript, Python scripts, and documented naming contracts should be the primary editable representations. GLB files are generated or exported assets, not the main source of application logic. If a character's suit color can be changed through a material definition or a Three.js material override, the AI agent should not need to rebuild the character in Blender. If a character's proportions, facial topology, rig, or skin weights need to change, the agent should generate and run a controlled Blender automation script.
 
-1. A professional humanoid 3D presenter is loaded from a `.glb` file.
-2. The avatar is displayed using Three.js / React Three Fiber.
-3. The avatar has a proper humanoid skeleton.
-4. The avatar has facial shape keys / blend shapes.
-5. The avatar can:
-   - stand naturally
-   - breathe
-   - blink
-   - move its eyes
-   - perform subtle head movements
-   - change facial expressions
-   - perform hand gestures
-6. Animations can be controlled through a clean TypeScript API.
-7. Animations blend smoothly.
-8. Audio can be loaded and played locally.
-9. A development/debug panel can trigger animations manually.
-10. The architecture is ready for future AI integration.
+**Second, Blender is the 3D authoring and asset automation environment, while Three.js is the browser runtime.** Blender should not be launched for every interactive browser request. The browser should load the prepared GLB asset and execute runtime behavior locally through Three.js and React Three Fiber.
 
-The system should be designed so that future backend/AI functionality can be added without rewriting the avatar runtime.
+**Third, avatar behavior must be represented through semantic commands.** Application code and future AI systems should use commands such as `playGesture("emphasize")`, `setExpression("serious")`, and `setGaze("camera")`. They must not depend on bone indexes, animation clip array positions, mesh internals, or raw morph target indexes. This protects the project from changes to the underlying character or rig.
 
----
+**Fourth, separate the visual asset from its behavior.** The avatar model, material overrides, gestures, expressions, idle behavior, camera settings, and studio configuration should be independently maintainable wherever practical. Not every animation needs to be a separate Blender animation clip. Simple procedural motions such as subtle head movement, eye movement, breathing offsets, and some hand gestures may be implemented in TypeScript when they can be performed reliably by the available rig.
 
-# 3. Phase 1 Scope
+**Fifth, all asset modifications must be inspectable and reversible.** Blender automation scripts must validate the existing scene before modifying it, avoid silently destroying user work, save recoverable project versions, and export only after validation. Generated assets must be reproducible from documented source files and scripts as far as practical.
 
-## 3.1 Included
+**Sixth, Phase 1 must not be over-engineered for hypothetical future requirements.** The code should have clean boundaries for future AI services, but it should not implement FastAPI, databases, Redis, Celery, LLMs, TTS, ASR, translation, subtitles, WebSockets, or video generation yet.
 
-Phase 1 must include:
+## 3. High-Level Architecture
 
-- React
-- TypeScript
-- Vite
-- Three.js
-- React Three Fiber
-- Drei
-- Blender
-- GLB/GLTF
-- Humanoid avatar
-- Facial shape keys
-- Idle animation
-- Breathing animation
-- Blinking
-- Eye movement
-- Head movement
-- Facial expressions
-- At least 5 hand/body gestures
-- Animation state management
-- Animation blending
-- Camera system
-- Lighting
-- Studio background
-- Local audio playback
-- Debug controls
-- Error handling
-- Basic performance optimization
-- Unit tests
-- Documentation
-- Clean project structure
+The system consists of four primary layers: the asset authoring layer, the editable definition layer, the avatar runtime layer, and the web application layer.
 
----
+The asset authoring layer uses Blender to create or modify the humanoid presenter. The original Blender project and its Python automation scripts are the maintainable source for structural 3D changes. Blender exports the resulting model to GLB, which acts as the distribution boundary between the authoring environment and the browser.
 
-# 4. Phase 1 Out of Scope
+The editable definition layer contains JSON and TypeScript definitions for supported gestures, expressions, idle behavior, material overrides, camera configuration, and runtime settings. The AI agent should modify these definitions for behavior changes whenever possible. For example, adjusting the intensity of an emphasis gesture should generally involve changing a gesture parameter rather than modifying the character mesh or manually editing Blender.
 
-Do NOT implement these yet:
+The avatar runtime layer uses Three.js to load and render the GLB model. It exposes a stable semantic API and coordinates animation, facial controls, gaze, idle behavior, and audio playback. The runtime translates high-level commands into the concrete actions required by the loaded model. It must validate that requested bones, morph targets, and animation clips exist before using them.
 
-- LLM integration
-- Gemini integration
-- TTS
-- ASR
-- Production lip synchronization
-- Translation
-- Subtitles
-- WebSocket
-- FastAPI
-- Database
-- Redis
-- Celery
-- Authentication
-- Cloud storage
-- CDN
-- Production deployment
-- Blender server rendering
-- Automated video generation
-- Motion capture
-- AI facial animation
-- Complex physics
-- Real-time conversational AI
-- Production-level streaming
+The web application layer uses React, TypeScript, Vite, React Three Fiber, and Drei. React manages the page, UI controls, configuration, and lifecycle. React Three Fiber integrates the Three.js scene into React. The runtime handles animation updates without causing unnecessary React re-renders. A development panel allows a developer or AI agent to test the avatar interactively.
 
-However, the architecture must allow these features to be added later without major refactoring.
-
----
-
-# 5. Core Architecture
-
-The most important architectural decision is:
-
-> Blender is an asset creation and animation authoring tool, NOT the browser runtime renderer.
-
-The browser should render the exported GLB file using Three.js.
-
-Architecture:
+The intended architecture is:
 
 ```text
-                    BLENDER
-                       │
-                       │
-                       ▼
-                presenter.blend
-                       │
-                       │ Export
-                       ▼
-                 presenter.glb
-                       │
-                       │
-                       ▼
-                React Application
-                       │
-                       ▼
-             React Three Fiber
-                       │
-                       ▼
-                Avatar Runtime
-                       │
-        ┌──────────────┼──────────────┐
-        │              │              │
-        ▼              ▼              ▼
-   Animation       Facial         Audio
-   Controller      Controller     Controller
-        │              │              │
-        └──────────────┼──────────────┘
-                       │
-                       ▼
-                  Three.js
-                       │
-                       ▼
-                Browser GPU
-                       │
-                       ▼
-               3D News Presenter
+Developer describes a requested change
+                 |
+                 v
+            AI Coding Agent
+                 |
+        Inspect current source and assets
+                 |
+                 v
+       Choose the appropriate change path
+                 |
+        +--------+---------+
+        |                  |
+        v                  v
+ JSON / TypeScript     Blender Python
+ behavior changes      structural 3D changes
+        |                  |
+        v                  v
+ Avatar Definitions    Blender Source Project
+        |                  |
+        |                  v
+        |               Validate
+        |                  |
+        |                  v
+        |              Export GLB
+        |                  |
+        +--------+---------+
+                 |
+                 v
+           Avatar Runtime
+                 |
+                 v
+       Three.js / React Three Fiber
+                 |
+                 v
+       Browser-rendered 3D Presenter
 ```
 
----
+The AI agent should decide which path to use based on the nature of the requested change. A material color, gesture intensity, camera position, or idle timing change should normally be handled in source configuration. A change to facial topology, body proportions, skin weights, or the skeleton requires Blender automation or another suitable 3D asset workflow.
 
-# 6. Technology Stack
+## 4. Technology Stack
 
-## Frontend
+The frontend will use React, TypeScript, Vite, Three.js, React Three Fiber, and Drei. Blender will provide the 3D authoring environment and its Python API will support scripted scene inspection, modifications, validation, and GLB export. JSON will be used for editable declarative definitions when the information is naturally data-oriented, while TypeScript will be used for runtime behavior and validation. Vitest will provide unit testing, and ESLint and Prettier will enforce consistent code quality. npm will be the default package manager.
 
-- React
-- TypeScript
-- Vite
-- Three.js
-- React Three Fiber
-- Drei
+The application should initially run locally without requiring a backend. It should load the presenter asset from the frontend's public assets and play a local audio sample. This reduces setup complexity and makes it easier to validate the avatar runtime before introducing network services.
 
-## 3D
+## 5. Repository Structure
 
-- Blender
-- GLB
-- GLTF
-- Humanoid armature
-- Shape keys / morph targets
-
-## Testing
-
-- Vitest
-
-## Code Quality
-
-- ESLint
-- Prettier
-
-## Package Manager
-
-Use npm unless there is a strong reason to use another package manager.
-
----
-
-# 7. Repository Structure
-
-Use the following structure:
+Use a repository structure that separates the web application, avatar definitions, runtime, Blender automation, and documentation. Keep the project simple enough for a single developer and AI coding agent to understand.
 
 ```text
 avatar-news-presenter/
-│
 ├── apps/
 │   └── web/
 │       ├── public/
 │       │   ├── avatars/
 │       │   │   └── presenter.glb
-│       │   │
 │       │   └── audio/
 │       │       └── test-presenter.mp3
-│       │
 │       └── src/
-│           │
 │           ├── app/
 │           │   ├── App.tsx
 │           │   └── routes.tsx
-│           │
 │           ├── avatar/
-│           │   │
 │           │   ├── components/
 │           │   │   ├── Avatar.tsx
 │           │   │   ├── AvatarScene.tsx
 │           │   │   ├── AvatarCamera.tsx
-│           │   │   └── AvatarLighting.tsx
-│           │   │
+│           │   │   ├── AvatarLighting.tsx
+│           │   │   └── AvatarStatus.tsx
+│           │   ├── runtime/
+│           │   │   ├── AvatarRuntime.ts
+│           │   │   ├── AnimationRuntime.ts
+│           │   │   ├── GestureRuntime.ts
+│           │   │   ├── FacialRuntime.ts
+│           │   │   ├── GazeRuntime.ts
+│           │   │   ├── IdleRuntime.ts
+│           │   │   ├── RigAdapter.ts
+│           │   │   └── runtimeTypes.ts
+│           │   ├── definitions/
+│           │   │   ├── avatar.schema.json
+│           │   │   ├── avatar.json
+│           │   │   ├── materials.json
+│           │   │   ├── gestures/
+│           │   │   │   ├── emphasize.json
+│           │   │   │   ├── open-hand.json
+│           │   │   │   ├── point-left.json
+│           │   │   │   ├── point-right.json
+│           │   │   │   └── hands-together.json
+│           │   │   ├── expressions.json
+│           │   │   └── idle.json
 │           │   ├── animation/
-│           │   │   ├── AnimationController.ts
-│           │   │   ├── AnimationStateMachine.ts
 │           │   │   ├── AnimationRegistry.ts
-│           │   │   ├── IdleController.ts
+│           │   │   ├── AnimationStateMachine.ts
 │           │   │   └── animationTypes.ts
-│           │   │
 │           │   ├── facial/
-│           │   │   ├── FacialController.ts
 │           │   │   └── facialTypes.ts
-│           │   │
-│           │   ├── avatarTypes.ts
-│           │   └── avatarConfig.ts
-│           │
+│           │   ├── avatarConfig.ts
+│           │   └── avatarTypes.ts
 │           ├── audio/
 │           │   ├── AudioController.ts
 │           │   └── audioTypes.ts
-│           │
 │           ├── studio/
 │           │   ├── Studio.tsx
 │           │   └── studioConfig.ts
-│           │
 │           ├── ui/
 │           │   ├── DebugPanel.tsx
 │           │   ├── AnimationControls.tsx
+│           │   ├── ExpressionControls.tsx
 │           │   └── StatusPanel.tsx
-│           │
 │           ├── hooks/
 │           │   ├── useAvatar.ts
-│           │   ├── useAnimation.ts
 │           │   └── useAudio.ts
-│           │
 │           ├── config/
 │           │   └── environment.ts
-│           │
-│           ├── types/
-│           │   └── index.ts
-│           │
 │           ├── main.tsx
 │           └── App.css
-│
-├── packages/
-│   └── shared/
-│       └── src/
-│           ├── animation.ts
-│           ├── avatar.ts
-│           ├── events.ts
-│           └── index.ts
-│
 ├── blender/
 │   ├── source/
 │   │   └── presenter.blend
-│   │
-│   ├── scripts/
-│   │   ├── export_glb.py
-│   │   └── validate_rig.py
-│   │
-│   ├── animations/
-│   │   ├── idle/
-│   │   ├── gestures/
-│   │   └── expressions/
-│   │
+│   ├── automation/
+│   │   ├── inspect_scene.py
+│   │   ├── modify_materials.py
+│   │   ├── modify_character.py
+│   │   ├── create_animation.py
+│   │   ├── validate_rig.py
+│   │   ├── validate_export.py
+│   │   └── export_glb.py
+│   ├── definitions/
+│   │   ├── avatar.json
+│   │   ├── materials.json
+│   │   └── animations.json
 │   ├── exports/
 │   │   └── presenter.glb
-│   │
 │   └── README.md
-│
+├── tests/
+│   ├── definitions/
+│   ├── runtime/
+│   └── fixtures/
 ├── docs/
 │   ├── architecture.md
 │   ├── avatar-spec.md
 │   ├── animation-system.md
-│   └── blender-pipeline.md
-│
+│   ├── blender-automation.md
+│   └── asset-pipeline.md
 ├── package.json
 ├── README.md
 ├── .env.example
 └── .gitignore
 ```
 
-Do not put all avatar logic into one React component.
+This structure is a starting point rather than a requirement to create empty files for every possible future feature. The coding agent should add modules when their functionality is implemented, and it should avoid creating unnecessary abstractions that have no current use.
 
----
+## 6. The Avatar Asset and Blender Automation Strategy
 
-# 8. Blender Asset Specification
+The avatar must have a maintainable source project. The `.blend` file is the authoritative source for geometry, rigging, facial topology, skin weights, and any animation authored directly in Blender. The exported `presenter.glb` is the runtime asset used by the browser. Changes to the GLB must not be treated as the primary source-editing workflow.
 
-The Blender character should be a lightweight professional humanoid news presenter.
+The character should be a lightweight, professional humanoid news presenter suitable for waist-up framing. It should have a head, neck, torso, shoulders, arms, hands, and fingers where practical. It should use a humanoid armature that supports head rotation, neck movement, shoulder and arm movement, hand gestures, and natural posture. Facial controls should be included where the base character supports them, with semantic morph target names such as `mouth_open`, `mouth_wide`, `mouth_round`, `mouth_smile`, `mouth_frown`, `jaw_open`, `brow_up`, `brow_down`, `eye_blink_left`, `eye_blink_right`, `eye_wide`, and `eye_squint`.
 
-The initial camera framing should be approximately waist-up.
+The project should not depend on the AI agent creating a realistic human character from primitive meshes. Creating convincing human anatomy, topology, hair, hands, facial deformation, and skin weighting entirely from code would add unnecessary complexity and produce inconsistent results. Instead, begin with a suitable base humanoid model that has appropriate licensing and can legally be used and modified for the intended project. Verify that the character's rig and facial controls can support the required browser behaviors before adopting it as the project standard.
 
-The character should be suitable for:
+The Blender automation layer should provide scripts that inspect the current scene, list objects and collections, inspect materials, list bones and shape keys, list animation clips, apply supported modifications, validate requirements, and export the model. Each script should be runnable independently and should provide useful output that an AI coding agent can inspect. Scripts should not assume that objects have particular names without checking the scene first. If required objects are missing, the script should report a clear error instead of silently creating duplicate or incorrect objects.
 
-- news presentation
-- educational presentation
-- AI assistant
-- future conversational avatar
+For example, when asked to change the presenter's suit color, the AI agent should first inspect the existing materials and identify the correct material slot. It should then update the relevant material definition or execute a controlled Blender material modification script, depending on where the material is managed. When asked to change the emphasis gesture, the agent should prefer editing a gesture definition or runtime animation rather than modifying the Blender model. When asked to change the shape of the face or the body proportions, the agent should inspect the available source geometry and rig before deciding whether a scripted Blender change is feasible.
 
-Avoid unnecessarily high-poly geometry.
-
----
-
-# 9. Character Requirements
-
-The avatar should contain:
-
-## Body
-
-- Head
-- Neck
-- Shoulders
-- Upper body
-- Arms
-- Hands
-- Fingers where practical
-
-## Rig
-
-Use a proper humanoid armature.
-
-The rig should support:
-
-- head rotation
-- neck movement
-- shoulder movement
-- arm movement
-- hand movement
-- body posture
-
----
-
-# 10. Facial Shape Keys
-
-The avatar should expose facial shape keys / morph targets.
-
-At minimum:
+The Blender automation workflow should follow this sequence:
 
 ```text
-mouth_open
-mouth_close
-mouth_wide
-mouth_round
-mouth_smile
-mouth_frown
-jaw_open
-brow_up
-brow_down
-eye_blink_left
-eye_blink_right
-eye_wide
-eye_squint
+Inspect source project
+        |
+        v
+Check required objects and materials
+        |
+        v
+Apply a targeted modification
+        |
+        v
+Save a recoverable project version
+        |
+        v
+Validate scene and rig
+        |
+        v
+Export GLB to a temporary location
+        |
+        v
+Validate exported asset
+        |
+        v
+Promote validated export to runtime assets
 ```
 
-The exact implementation may vary depending on the Blender rig.
+The original source file should not be overwritten before a modification has passed validation. For destructive or structural operations, create a backup or save to a new version first. A failed export must not replace a previously working runtime asset.
 
-The important requirement is that the browser can access the facial controls through GLB morph targets.
+## 7. Data-Driven Avatar Definitions
 
----
+Avatar definitions are the preferred interface for AI-agent edits that do not require changes to the 3D mesh or skeleton. These definitions should be readable, version-controlled, schema-validated, and independent of low-level Three.js implementation details.
 
-# 11. Animation Naming Contract
+The avatar definition should identify the asset, supported semantic capabilities, optional material overrides, and configuration. For example:
 
-Use semantic and stable animation names.
-
-Do NOT rely on Blender animation array indexes.
-
-Recommended animation names:
-
-```text
-Idle_Neutral
-Idle_Breathing
-Idle_ShiftWeight
-
-Head_Nod_Small
-Head_Turn_Left
-Head_Turn_Right
-Head_Tilt_Left
-Head_Tilt_Right
-
-Gesture_OpenHand
-Gesture_Emphasize
-Gesture_PointLeft
-Gesture_PointRight
-Gesture_HandsTogether
-Gesture_Nod
-
-Emotion_Neutral
-Emotion_Serious
-Emotion_Positive
-Emotion_Concerned
-
-Blink
-```
-
-At least five gesture animations must exist.
-
----
-
-# 12. GLB Export Requirements
-
-The exported GLB should contain:
-
-- meshes
-- materials
-- textures
-- armature
-- bones
-- facial morph targets
-- animation clips
-
-The browser must NOT need the `.blend` file.
-
-The browser should only load:
-
-```text
-presenter.glb
-```
-
----
-
-# 13. Blender Validation
-
-Create a Blender validation script:
-
-```text
-blender/scripts/validate_rig.py
-```
-
-The validation script should check:
-
-- avatar exists
-- armature exists
-- required bones exist
-- required animations exist
-- required shape keys exist
-- scale is reasonable
-- orientation is correct
-- transforms are applied where appropriate
-- materials exist
-- textures are available
-- animation clips are present
-
-The script should report:
-
-```text
-PASS
-WARNING
-ERROR
-```
-
-Missing optional animations should generate warnings rather than immediately crashing the pipeline.
-
----
-
-# 14. Avatar Runtime API
-
-The rest of the application should communicate with the avatar through a clean runtime API.
-
-Example:
-
-```ts
-interface AvatarController {
-  playGesture(name: GestureName): void;
-
-  setExpression(name: ExpressionName): void;
-
-  setHeadMotion(name: HeadMotionName): void;
-
-  setGaze(target: GazeTarget): void;
-
-  startSpeaking(): void;
-
-  stopSpeaking(): void;
-
-  reset(): void;
+```json
+{
+  "schemaVersion": 1,
+  "avatarId": "news-presenter",
+  "modelUrl": "/avatars/presenter.glb",
+  "capabilities": {
+    "idle": true,
+    "gestures": true,
+    "expressions": true,
+    "gaze": true,
+    "audioPlayback": true,
+    "productionLipSync": false
+  },
+  "defaults": {
+    "expression": "neutral",
+    "gaze": "camera",
+    "idleBehavior": "professional"
+  }
 }
 ```
 
-External UI code should NOT directly manipulate:
+Gesture definitions should describe semantic intent and configurable behavior. The runtime should translate these definitions into supported bone transforms, animation clips, or procedural motion. A gesture should not expose internal bone names as its public interface. For example:
 
-- AnimationMixer
-- AnimationAction
-- Three.js scene objects
-- bones
-- morphTargetInfluences
-
-Those implementation details must remain inside the avatar runtime.
-
----
-
-# 15. Animation Controller
-
-Create:
-
-```text
-AnimationController.ts
-```
-
-Responsibilities:
-
-- load animation clips
-- register animations
-- play animations
-- stop animations
-- loop animations
-- play one-shot animations
-- crossfade animations
-- manage priorities
-- return to idle
-- handle invalid animation names
-- update animations every frame
-- dispose resources
-
-Example API:
-
-```ts
-class AnimationController {
-  play(name: string, options?: PlayAnimationOptions): void;
-
-  stop(name?: string): void;
-
-  stopAll(): void;
-
-  update(delta: number): void;
-
-  dispose(): void;
+```json
+{
+  "schemaVersion": 1,
+  "name": "emphasize",
+  "duration": 1.2,
+  "hand": "right",
+  "intensity": 0.65,
+  "headMotion": {
+    "type": "nod",
+    "intensity": 0.25
+  },
+  "returnToIdle": true
 }
 ```
 
----
+This definition describes the intended behavior, but it does not guarantee that any arbitrary model can perform the gesture. The runtime must check the loaded model's capabilities and rig mapping. If the rig cannot perform a requested gesture correctly, the application should display a useful warning and fall back to an available behavior rather than corrupting the character pose.
 
-# 16. Animation Layers
+A JSON schema or equivalent runtime validation must check required fields, supported gesture names, numeric ranges, duration, and schema version. Invalid definitions should be rejected with readable errors. Definitions should include versioning so future changes to the data format can be migrated without silently breaking existing assets.
 
-Use conceptual animation layers.
+## 8. Avatar Runtime Architecture
 
-Recommended priorities:
+The avatar runtime is the boundary between semantic commands and the actual 3D implementation. It should expose a stable TypeScript API and hide Three.js objects, animation mixers, bone mappings, morph target indexes, and loaded scene internals from application UI code.
 
-```text
-Idle              0
-Head Motion      10
-Gesture          20
-Expression       30
-Speech/LipSync   40
-Override        100
-```
-
-Phase 1 does not need full production-grade layered animation blending, but the architecture should support it later.
-
----
-
-# 17. Animation State Machine
-
-Create:
-
-```text
-AnimationStateMachine.ts
-```
-
-Initial states:
-
-```text
-IDLE
-SPEAKING
-GESTURE
-TRANSITION
-```
-
-Example:
-
-```text
-IDLE
- │
- │ play gesture
- ▼
-GESTURE
- │
- │ gesture finished
- ▼
-IDLE
-```
-
-Future:
-
-```text
-IDLE
-  ↓
-SPEAKING
-  ↓
-SPEAKING + GESTURE
-  ↓
-SPEAKING
-  ↓
-IDLE
-```
-
----
-
-# 18. Animation Registry
-
-Create a semantic registry.
-
-Example:
+A conceptual API is:
 
 ```ts
-const animationRegistry = {
-  idle: {
-    neutral: "Idle_Neutral",
-    breathing: "Idle_Breathing",
-  },
+type GestureName =
+  | "openHand"
+  | "emphasize"
+  | "pointLeft"
+  | "pointRight"
+  | "handsTogether";
 
-  gestures: {
-    openHand: "Gesture_OpenHand",
-    emphasize: "Gesture_Emphasize",
-    pointLeft: "Gesture_PointLeft",
-    pointRight: "Gesture_PointRight",
-    handsTogether: "Gesture_HandsTogether",
-  },
-
-  expressions: {
-    neutral: "Emotion_Neutral",
-    serious: "Emotion_Serious",
-    positive: "Emotion_Positive",
-    concerned: "Emotion_Concerned",
-  },
-
-  head: {
-    nod: "Head_Nod_Small",
-    left: "Head_Turn_Left",
-    right: "Head_Turn_Right",
-  },
-
-  blink: "Blink",
-};
-```
-
-The rest of the application should use:
-
-```ts
-playGesture("emphasize");
-```
-
-instead of:
-
-```ts
-playAnimation(7);
-```
-
-Never expose numeric animation indexes.
-
----
-
-# 19. Idle Controller
-
-Create:
-
-```text
-IdleController.ts
-```
-
-The idle system should make the presenter feel alive.
-
-It should support:
-
-- subtle breathing
-- random blinking
-- eye movement
-- occasional small head movement
-- optional posture shifting
-
-The movements should be subtle.
-
-Avoid:
-
-```text
-constant head movement
-constant blinking
-exaggerated breathing
-random large movements
-```
-
-The goal is:
-
-> Professional human presenter waiting or listening.
-
----
-
-# 20. Blink System
-
-Blinking should be controlled independently.
-
-Example behavior:
-
-```text
-wait 3–6 seconds
-      ↓
-close eyes
-      ↓
-short delay
-      ↓
-open eyes
-      ↓
-reset timer
-```
-
-The exact timing should include small random variation.
-
-Do not blink on a perfectly predictable timer.
-
----
-
-# 21. Facial Controller
-
-Create:
-
-```text
-FacialController.ts
-```
-
-Example API:
-
-```ts
-interface FacialController {
-  setExpression(name: ExpressionName): void;
-
-  setBlendShape(name: string, value: number): void;
-
-  reset(): void;
-}
-```
-
-Expression type:
-
-```ts
 type ExpressionName =
   | "neutral"
   | "serious"
   | "positive"
   | "concerned";
-```
 
-The facial controller should hide the actual Three.js morph target implementation.
-
----
-
-# 22. Gesture Controller
-
-Gestures should be semantic.
-
-Example:
-
-```ts
-playGesture("openHand");
-playGesture("emphasize");
-playGesture("pointLeft");
-playGesture("pointRight");
-playGesture("handsTogether");
-```
-
-Gesture behavior:
-
-```text
-Idle
- ↓
-Crossfade into gesture
- ↓
-Play gesture
- ↓
-Crossfade back to idle
-```
-
-Gestures should not permanently leave the avatar in an invalid pose.
-
----
-
-# 23. Head Motion
-
-Support:
-
-```text
-nod
-turnLeft
-turnRight
-tiltLeft
-tiltRight
-```
-
-Head motion should be subtle and should blend with idle animation.
-
----
-
-# 24. Camera
-
-The default camera should be suitable for a news presenter.
-
-Example configuration:
-
-```ts
-const cameraConfig = {
-  position: [0, 1.65, 3.2],
-  target: [0, 1.4, 0],
-  fov: 35,
-};
-```
-
-The avatar should appear approximately waist-up.
-
-The camera should be configurable rather than hard-coded inside the component.
-
----
-
-# 25. Lighting
-
-Use a lightweight studio lighting setup.
-
-Conceptually:
-
-```text
-             Rim Light
-                 \
-                  \
-        Presenter
-          /     \
-         /       \
-     Key Light   Fill Light
-```
-
-Use:
-
-- key light
-- fill light
-- rim light
-- optional environment light
-
-Avoid expensive lighting techniques during Phase 1.
-
----
-
-# 26. Studio
-
-Create:
-
-```text
-Studio.tsx
-```
-
-The studio can contain:
-
-- background
-- floor
-- lights
-- optional desk
-- optional news props
-
-Keep geometry simple.
-
-Avoid:
-
-- high-resolution textures
-- heavy post-processing
-- expensive simulations
-- unnecessary geometry
-
----
-
-# 27. React Component Architecture
-
-Recommended structure:
-
-```tsx
-<App>
-  <AvatarPage>
-    <AvatarScene>
-      <Studio />
-      <Avatar />
-      <AvatarCamera />
-      <AvatarLighting />
-    </AvatarScene>
-
-    <DebugPanel />
-  </AvatarPage>
-</App>
-```
-
-Responsibilities:
-
-### React
-
-React manages:
-
-- UI
-- lifecycle
-- user interaction
-- configuration
-- page state
-
-### Three.js / R3F
-
-Three.js manages:
-
-- 3D scene
-- models
-- camera
-- lighting
-- rendering
-
-### Avatar Runtime
-
-Runtime manages:
-
-- animations
-- facial controls
-- gestures
-- idle behavior
-- state machine
-- audio synchronization
-
-Do not mix these responsibilities unnecessarily.
-
----
-
-# 28. State Management
-
-Do not introduce a large global state library unless it becomes necessary.
-
-Use:
-
-- React state for UI state
-- runtime classes for animation state
-- refs for Three.js objects
-
-Avoid putting per-frame state into React.
-
-Do NOT do:
-
-```ts
-setState(...)
-```
-
-every animation frame.
-
-The render loop should directly update the avatar runtime.
-
-Conceptually:
-
-```text
-requestAnimationFrame
-        ↓
-delta
-        ↓
-AvatarRuntime.update(delta)
-        ↓
-AnimationController
-FacialController
-IdleController
-AudioController
-```
-
----
-
-# 29. Audio Controller
-
-Create:
-
-```text
-AudioController.ts
-```
-
-Phase 1 only requires local audio playback.
-
-Example API:
-
-```ts
-interface AudioController {
-  load(url: string): Promise<void>;
-
-  play(): void;
-
-  pause(): void;
-
-  stop(): void;
-
-  getCurrentTime(): number;
-
-  getDuration(): number;
-
+type GazeTarget = "camera" | "left" | "right" | "neutral";
+
+interface AvatarController {
+  playGesture(name: GestureName): void;
+  setExpression(name: ExpressionName): void;
+  setGaze(target: GazeTarget): void;
+  setHeadMotion(name: string): void;
+  startSpeaking(): void;
+  stopSpeaking(): void;
+  reset(): void;
   dispose(): void;
 }
 ```
 
-Use:
+This interface is illustrative; the coding agent should refine it into fully typed contracts and avoid unnecessary methods. Production lip synchronization is out of scope for Phase 1, so `startSpeaking` and `stopSpeaking` may remain simple placeholders or be omitted from the initial public API if they are not needed. The important requirement is that future speech behavior can be introduced without exposing renderer internals.
 
-```text
-public/audio/test-presenter.mp3
-```
+The runtime should contain dedicated modules for animation, gestures, facial expressions, gaze, idle behavior, rig adaptation, and audio playback. These modules should be small and composable. The `RigAdapter` should inspect the loaded model and map semantic capabilities to available bones, morph targets, and animation clips. It should be the only module that knows the model-specific mapping details.
 
-for testing.
+The runtime must not assume that all assets share identical rig structures. It should validate the capabilities available in the loaded GLB and report missing features. The runtime API should remain stable even if a later avatar asset uses a different skeleton or facial rig.
 
----
+## 9. Animation Strategy
 
-# 30. Future Lip Sync Architecture
+Phase 1 should use a hybrid animation approach rather than requiring every motion to be authored in Blender. Existing GLB animation clips should be used when they are available and suitable. Procedural animation should be used for simple motions that can be implemented safely and naturally in the runtime. More complex or highly art-directed animation can be authored in Blender and exported as a clip.
 
-Do not implement production lip sync in Phase 1.
+Use stable semantic names for any imported clips, such as `Idle_Neutral`, `Idle_Breathing`, `Head_Nod_Small`, `Gesture_OpenHand`, `Gesture_Emphasize`, `Gesture_PointLeft`, `Gesture_PointRight`, `Gesture_HandsTogether`, `Emotion_Neutral`, `Emotion_Serious`, `Emotion_Positive`, `Emotion_Concerned`, and `Blink`. These names are a naming contract, not a requirement to fabricate clips that the character cannot support. If a required gesture is not available, the team must either implement it procedurally, create it through Blender automation, or clearly report that the capability remains incomplete.
 
-However, the architecture should allow:
+The runtime should support idle animation, one-shot gestures, looping motions, smooth transitions, and return-to-idle behavior. It should prevent conflicting commands from leaving the avatar in invalid poses. Animation priorities may be used to coordinate idle, head motion, gestures, facial expressions, and future speech. Phase 1 does not need a sophisticated universal animation blending framework, but its implementation should be structured so more advanced layers can be added later.
 
-```text
-Audio
-  ↓
-LipSyncController
-  ↓
-Viseme Events
-  ↓
-FacialController
-  ↓
-Morph Targets
-```
+At minimum, the demonstrator should support five gestures: open hand, emphasize, point left, point right, and hands together. It should support neutral, serious, positive, and concerned expressions. Head motions should include nod, turn left, turn right, tilt left, and tilt right where the available rig permits them.
 
-Future event:
+## 10. Idle Behavior, Gaze, and Facial Controls
 
-```ts
-interface VisemeEvent {
-  time: number;
-  duration: number;
-  viseme: string;
-}
-```
-
-Example:
-
-```json
-{
-  "time": 1.42,
-  "duration": 0.12,
-  "viseme": "AA"
-}
-```
-
----
-
-# 31. Future Animation Plan
-
-The runtime should eventually support semantic animation plans.
-
-Example:
-
-```ts
-interface AnimationSegment {
-  start: number;
-  end: number;
-
-  emotion?: ExpressionName;
-
-  gesture?: GestureName;
+The idle system should make the presenter appear attentive and professional while waiting or listening. It should support subtle breathing, randomized blinking, small eye movements, occasional gentle head movements, and optional posture adjustments. The movements must not be exaggerated or continuous enough to distract from a news presentation.
 
-  headMotion?: HeadMotionName;
+Blinking should use small randomized intervals rather than a perfectly predictable timer. The implementation should avoid modifying the same facial controls from multiple controllers without coordination. For example, a blink controller and an expression controller must not overwrite each other's values unexpectedly. Facial controls should use a centralized controller that manages the final blend shape values or coordinates the supported animation layers.
 
-  gaze?: GazeTarget;
-}
-```
+Expressions should be semantic. The UI should call `setExpression("serious")` rather than manipulating morph target indexes. The runtime should map each expression to the controls supported by the loaded asset, blend changes smoothly where practical, and restore neutral values when requested.
 
-Example:
+Gaze should initially support camera-facing behavior and simple directional changes. Eye tracking should remain subtle. If the model has no independent eye bones or usable eye controls, the runtime should report the limitation and use a safe fallback.
 
-```json
-{
-  "segments": [
-    {
-      "start": 0,
-      "end": 4.2,
-      "emotion": "positive",
-      "gesture": "openHand",
-      "headMotion": "nod",
-      "gaze": "camera"
-    },
-    {
-      "start": 4.2,
-      "end": 9.8,
-      "emotion": "serious",
-      "gesture": "emphasize",
-      "gaze": "camera"
-    }
-  ]
-}
-```
+## 11. Three.js Scene and Studio
 
-Phase 1 may use hard-coded animation plans.
+The browser scene should be implemented with React Three Fiber and Drei. It should include a configurable camera, lightweight studio background, floor or backdrop, and simple key, fill, and rim lighting where useful. The presenter should be framed approximately waist-up for a news presentation. Camera position, target, field of view, lighting intensity, background color, and pixel ratio should be centrally configurable rather than scattered throughout components.
 
-The important requirement is:
-
-> The runtime must not care where the animation plan came from.
-
-Later it may come from:
-
-- LLM
-- Python backend
-- WebSocket
-- database
-- predefined script
-
----
-
-# 32. AI Semantic Boundary
+Three.js may create simple studio geometry and presentation props directly in code. This is a good use of procedural geometry because desks, panels, screens, and simple set elements are easier to describe as parameters than as complex sculpted assets. The frontend should not attempt to procedurally construct a realistic human character from primitive geometry.
 
-Future AI systems must NOT directly control:
+The studio should remain lightweight. Avoid unnecessary geometry, expensive post-processing, excessive shadow maps, complex physics, and large textures. The goal is a clean, professional prototype that runs comfortably on modest development hardware.
 
-- Blender bones
-- Three.js objects
-- AnimationMixer
-- morph target indexes
-- mesh names
-- skeleton implementation
-
-Instead:
-
-```text
-AI / Backend
-      ↓
-Semantic Animation Commands
-      ↓
-Avatar Runtime
-      ↓
-Animation Controller
-      ↓
-Three.js
-      ↓
-GLB
-```
+## 12. Audio Controller
 
-For example:
+Phase 1 must support local audio loading and playback. The audio controller should provide load, play, pause, stop, current time, duration, and cleanup operations. A sample file should be included at `/audio/test-presenter.mp3`, or the application should provide a clear setup instruction if a licensed sample is not supplied.
 
-```json
-{
-  "emotion": "serious",
-  "gesture": "emphasize",
-  "headMotion": "nod",
-  "gaze": "camera"
-}
-```
+Audio playback must not depend on a backend. The debug panel should allow the developer to play and pause the sample and inspect its current time and duration. Production lip synchronization is explicitly out of scope, but the audio controller should be designed so future audio-time events can drive a lip-sync controller without requiring the audio implementation to be rewritten.
 
-The AI should never output:
+## 13. Debug Panel and Development Experience
 
-```json
-{
-  "bone_rotation_x": 0.238,
-  "bone_rotation_y": -0.71
-}
-```
+The MVP should include a development-only debug panel for testing avatar capabilities. It should provide controls for idle behavior, the five required gestures, four facial expressions, available head motions, and audio playback. It should also display whether the model has loaded, which semantic capabilities are available, the current animation or state, the current expression, audio time, and any asset validation warnings.
 
-This separation is critical for maintainability.
+The debug panel should call the public avatar API rather than directly manipulating Three.js meshes or bones. This ensures the UI tests the same interface that future AI commands will use. The panel should be easy to disable through configuration, and it must not become a production dependency of the runtime.
 
----
+The developer experience should be designed around short feedback loops. An AI agent should be able to modify a gesture JSON file or TypeScript module, run the test suite, start the frontend, and inspect the result. For Blender changes, the agent should run an inspection script first, execute a targeted modification script, validate the result, export the GLB, and then launch the web preview.
 
-# 33. Debug Panel
+## 14. Performance and Compatibility
 
-Create a development-only debug panel.
+The application should target 1080p presentation and aim for approximately 30–60 FPS where practical on modest hardware. It should avoid ray tracing, excessively dense meshes, 4K textures, unnecessary real-time shadows, expensive post-processing, and complex simulations. Use efficient GLB assets and sensible material counts. Compression techniques such as Draco, Meshopt, or KTX2 may be introduced later if asset size or load performance justifies them.
 
-It should provide:
+The application must handle window resizing, asset loading errors, missing animation clips, missing shape keys, invalid definitions, audio failures, and unsupported rendering environments gracefully. An optional feature being unavailable must not crash the entire application. Warnings should identify the missing capability and, where possible, provide an actionable resolution.
 
-## Animation Controls
+The project should not rely on a specific GPU or a dedicated backend. All Phase 1 functionality should be demonstrable locally with the chosen development environment.
 
-Buttons:
+## 15. Testing and Validation
 
-```text
-Idle
-Open Hand
-Emphasize
-Point Left
-Point Right
-Hands Together
-Nod
-```
+Use Vitest for unit tests covering semantic definition validation, gesture mapping, expression mapping, animation state transitions, configuration validation, and error handling. Runtime tests should verify that invalid semantic commands are rejected safely and that unsupported model capabilities do not produce unhandled errors.
 
-## Expression Controls
+Blender automation should be tested independently where practical. The scene inspection script must report object names, collection names, materials, armatures, bones, shape keys, and animation clips. The rig validation script must check required bones and facial controls against the expected avatar specification. The export validation script must verify that the exported GLB exists and contains the expected model features and clips to the extent that can be checked automatically.
 
-```text
-Neutral
-Serious
-Positive
-Concerned
-```
+Manual browser validation must verify that the presenter loads correctly, appears at the intended scale and orientation, breathes, blinks, moves its eyes where supported, changes expressions, performs at least five gestures, returns to idle after one-shot gestures, and plays the test audio. It must also verify that the debug panel works, resizing is handled, errors are displayed clearly, and the application remains responsive.
 
-## Head Controls
+## 16. Implementation Workflow for AI Coding Agents
 
-```text
-Nod
-Turn Left
-Turn Right
-Tilt Left
-Tilt Right
-```
+The AI coding agent must not try to implement the whole project in a single unverified pass. It should inspect the repository and implement the MVP in small, testable stages. Each stage must preserve working functionality and include the necessary documentation.
 
-## Audio Controls
+The first stage is project setup: create React, TypeScript, Vite, linting, formatting, and Vitest. The second stage is the Three.js scene, including camera, lighting, background, and studio. The third stage is GLB loading and model inspection. The fourth stage establishes the avatar runtime API and rig adapter. The fifth stage implements semantic definitions and validation. The sixth stage implements animation playback and state transitions. The seventh stage adds idle behavior, facial expressions, gaze, and gesture playback. The eighth stage adds local audio. The ninth stage creates the debug panel. The tenth stage adds tests, performance checks, and documentation.
 
-```text
-Load Audio
-Play
-Pause
-Stop
-```
+If a suitable rigged avatar is not available at the beginning, the coding agent must not pretend that a production-quality presenter exists. It should establish the asset interface, use a clearly identified placeholder if needed, and document the required model capabilities. The project should then replace the placeholder with a properly licensed and validated avatar before claiming that the final character requirements are complete.
 
-## Runtime Information
+The agent should create or modify Blender assets only when required. Before each structural Blender modification, it must inspect the current project and identify the objects, materials, armature, and shape keys involved. It must use a targeted Python script, preserve recoverable versions, validate the result, and export only when checks pass. If a requested visual change cannot be reliably achieved through Blender scripting, the agent must explain the limitation and offer the smallest practical manual step rather than making an unverified destructive change.
 
-Display:
+## 17. Engineering Rules
 
-```text
-FPS
-Avatar Loaded
-Current State
-Active Animation
-Current Expression
-Audio Time
-Audio Duration
-```
+Do not put all avatar logic into one React component. Do not directly manipulate Three.js animation objects from UI components. Do not rely on numeric animation indexes. Do not scatter model-specific bone or morph target names throughout the application. Do not update React state on every animation frame. Do not replace a working GLB with an unvalidated export. Do not overwrite the original Blender source before a risky structural operation. Do not introduce backend infrastructure before the local browser runtime is working.
 
-The debug panel should be easy to disable through configuration.
+All application-level animation requests must use semantic identifiers. All avatar definitions must be validated. All Blender scripts must inspect the current scene before modifying it. All runtime controllers must handle missing capabilities safely. All important configuration should be centralized. The renderer and rig details must remain hidden behind the runtime API.
 
----
+## 18. Future Compatibility
 
-# 34. Avatar Configuration
+The Phase 1 architecture must allow later phases to introduce TTS, lip synchronization, subtitles, multilingual audio, translation, a FastAPI backend, LLM-generated animation plans, WebSocket events, iframe embedding, and automated video generation. These features must not be implemented during Phase 1.
 
-Create:
+Future AI systems should produce semantic animation plans rather than raw bone rotations or renderer-specific instructions. A future animation plan may include a time range, emotion, gesture, head motion, and gaze target. The runtime will interpret these semantic commands and map them to the capabilities of the active avatar asset.
 
-```text
-avatarConfig.ts
-```
+The same avatar should eventually support multiple languages by changing the audio, subtitle content, and lip-sync timing rather than requiring a separate character for each language. The web application should remain suitable for future iframe embedding, but production embedding and deployment infrastructure are out of scope for Phase 1.
 
-Example:
+## 19. Definition of Done
 
-```ts
-export const avatarConfig = {
-  modelUrl: "/avatars/presenter.glb",
+Phase 1 is complete when a developer can clone the repository, install dependencies, start the web application locally, and see the presenter in a browser without needing a backend. The presenter must have a working asset pipeline, a semantic runtime API, idle behavior, blinking, subtle eye and head movement where supported, facial expressions, at least five gestures, and local audio playback. The debug panel must trigger these behaviors through the public API, and the project must include tests, setup instructions, architecture documentation, Blender automation documentation, and clear validation output.
 
-  camera: {
-    position: [0, 1.65, 3.2],
-    target: [0, 1.4, 0],
-    fov: 35,
-  },
+The system must also demonstrate that the AI agent can modify an ordinary behavior through JSON or TypeScript, run the tests, and verify the result without editing the GLB directly. For a structural 3D change, the project must provide a documented Blender Python automation workflow that inspects the scene, makes a targeted change, validates the result, and exports a new GLB safely.
 
-  performance: {
-    pixelRatioMax: 1.5,
-  },
-};
-```
+## 20. Final Architectural Principle
 
-Do not scatter these values throughout the codebase.
+The long-term design is based on the following division of responsibilities:
 
----
-
-# 35. Environment Configuration
-
-Create:
-
-```text
-.env.example
-```
-
-Example:
-
-```env
-VITE_APP_NAME=Avatar News Presenter
-
-VITE_AVATAR_MODEL_URL=/avatars/presenter.glb
-
-VITE_ENABLE_DEBUG_PANEL=true
-```
-
-Never put secrets into frontend environment variables.
-
----
-
-# 36. Performance Requirements
-
-The development machine may have approximately:
-
-```text
-CPU:
-Intel Core i7-1255U
-
-RAM:
-16 GB
-
-GPU:
-Intel Iris Xe
-NVIDIA GeForce MX550 2 GB
-```
-
-Therefore, optimize the MVP for modest hardware.
-
-Target:
-
-```text
-1080p
-30–60 FPS where practical
-```
-
-Avoid:
-
-- ray tracing
-- extremely high polygon counts
-- 4K textures
-- unnecessary shadow maps
-- expensive post-processing
-- complex physics
-- heavy particle systems
-- unnecessary simulations
-
-Use efficient GLB assets.
-
-Future optimization options may include:
-
-- Draco compression
-- Meshopt
-- KTX2 textures
-
-Do not add these unless they provide a measurable benefit or are necessary.
-
----
-
-# 37. Loading and Error Handling
-
-The application must handle:
-
-## GLB Loading Failure
-
-Display:
-
-```text
-Failed to load avatar.
-```
-
-Do not crash the entire application.
-
-## Missing Animation
-
-Display a warning:
-
-```text
-Animation "Gesture_PointLeft" not found.
-```
-
-The application should continue running.
-
-## Missing Facial Shape Key
-
-Display a warning.
-
-Do not crash.
-
-## Audio Failure
-
-Display an appropriate error.
-
-## Invalid Configuration
-
-Validate configuration during initialization.
-
-## Unsupported Rendering
-
-Provide a useful fallback/error message.
-
----
-
-# 38. Logging
-
-Create a lightweight logging abstraction.
-
-Example:
-
-```ts
-logger.debug(...)
-logger.info(...)
-logger.warn(...)
-logger.error(...)
-```
-
-Avoid scattered:
-
-```ts
-console.log(...)
-```
-
-throughout the application.
-
-This makes it easier to change logging behavior later.
-
----
-
-# 39. Testing
-
-Use Vitest.
-
-Unit tests should cover:
-
-## Animation Registry
-
-Verify:
-
-- semantic names map correctly
-- invalid names are handled
-
-## Animation State Machine
-
-Test:
-
-```text
-IDLE → GESTURE
-GESTURE → IDLE
-IDLE → SPEAKING
-```
-
-## Gesture Mapping
-
-Test:
-
-```text
-openHand
-emphasize
-pointLeft
-pointRight
-handsTogether
-```
-
-## Expression Mapping
-
-Test:
-
-```text
-neutral
-serious
-positive
-concerned
-```
-
-## Animation Plan Parsing
-
-Validate:
-
-```text
-start
-end
-emotion
-gesture
-headMotion
-gaze
-```
-
-## Configuration
-
-Validate avatar configuration.
-
----
-
-# 40. Manual Testing
-
-The implementation must be manually tested in a browser.
-
-Verify:
-
-- GLB loads
-- avatar is visible
-- camera framing is correct
-- lighting works
-- idle animation works
-- breathing works
-- blinking works
-- eye movement works
-- expressions work
-- gestures work
-- gestures return to idle
-- animations crossfade correctly
-- audio loads
-- audio plays
-- debug panel works
-- browser resizing works
-- loading errors are handled
-
----
-
-# 41. Acceptance Criteria
-
-## Avatar
-
-- [ ] Presenter loads from GLB.
-- [ ] Presenter is humanoid.
-- [ ] Presenter has facial morph targets.
-- [ ] Presenter has a working armature.
-- [ ] Presenter looks professional.
-- [ ] Presenter is framed waist-up.
-
-## Animation
-
-- [ ] Idle animation works.
-- [ ] Breathing works.
-- [ ] Blinking works.
-- [ ] Eye movement works.
-- [ ] Head movement works.
-- [ ] At least five gestures work.
-- [ ] Facial expressions work.
-- [ ] Gestures return to idle.
-- [ ] Animation transitions are smooth.
-
-## Audio
-
-- [ ] Local audio can be loaded.
-- [ ] Audio can play.
-- [ ] Audio can pause.
-- [ ] Audio can stop.
-- [ ] Current audio time is available.
-
-## UI
-
-- [ ] Debug panel works.
-- [ ] Animation buttons work.
-- [ ] Expression buttons work.
-- [ ] Head controls work.
-- [ ] Audio controls work.
-- [ ] Runtime status is displayed.
-
-## Engineering
-
-- [ ] TypeScript is used.
-- [ ] No large monolithic components.
-- [ ] Animation indexes are not exposed.
-- [ ] Runtime logic is separated from UI.
-- [ ] Configuration is centralized.
-- [ ] Errors are handled.
-- [ ] Tests exist.
-- [ ] Documentation exists.
-- [ ] Project can be started from a clean checkout.
-
----
-
-# 42. Definition of Done
-
-A developer should be able to:
-
-```bash
-git clone <repository>
-cd avatar-news-presenter
-npm install
-npm run dev
-```
-
-Then open the application in a browser.
-
-The application should display the presenter.
-
-The developer should be able to:
-
-1. See the presenter.
-2. See the presenter breathing.
-3. See the presenter blinking.
-4. See subtle eye movement.
-5. Trigger a gesture.
-6. Trigger an expression.
-7. Trigger head movement.
-8. Play test audio.
-9. See debug information.
-
-No source-code modification should be required to demonstrate the Phase 1 functionality.
-
----
-
-# 43. Implementation Order
-
-Implement in this exact general order.
-
-## Step 1 — Project Setup
-
-Create:
-
-- React
-- TypeScript
-- Vite
-- ESLint
-- Prettier
-- Vitest
-
-Verify:
-
-```bash
-npm run dev
-```
-
-works.
-
----
-
-## Step 2 — Basic Three.js Scene
-
-Create:
-
-- Canvas
-- Camera
-- Lights
-- Studio
-- basic environment
-
-Verify the scene renders.
-
----
-
-## Step 3 — GLB Loader
-
-Add:
-
-```text
-presenter.glb
-```
-
-Load it using React Three Fiber / Drei.
-
-Verify:
-
-- model loads
-- model appears correctly
-- scale is correct
-- orientation is correct
-
----
-
-## Step 4 — Avatar Component
-
-Create:
-
-```text
-Avatar.tsx
-```
-
-Responsibilities:
-
-- load model
-- initialize runtime
-- expose avatar controller
-- handle cleanup
-
----
-
-## Step 5 — Animation Registry
-
-Create semantic animation mappings.
-
-Do not use animation indexes.
-
----
-
-## Step 6 — Animation Controller
-
-Implement:
-
-- play
-- stop
-- loop
-- one-shot
-- crossfade
-- update
-- cleanup
-
----
-
-## Step 7 — Idle System
-
-Implement:
-
-- breathing
-- blinking
-- eye movement
-- subtle head movement
-
----
-
-## Step 8 — Facial Controller
-
-Implement:
-
-- expressions
-- shape key control
-- reset
-
----
-
-## Step 9 — Gesture Controller
-
-Implement:
-
-- gesture playback
-- blending
-- return to idle
-
----
-
-## Step 10 — Audio Controller
-
-Implement:
-
-- loading
-- play
-- pause
-- stop
-- current time
-- duration
-
----
-
-## Step 11 — Debug Panel
-
-Add:
-
-- animation buttons
-- expression buttons
-- head controls
-- audio controls
-- runtime information
-
----
-
-## Step 12 — Performance Pass
-
-Check:
-
-- FPS
-- memory
-- texture sizes
-- polygon count
-- draw calls
-- shadow performance
-
-Optimize only where necessary.
-
----
-
-## Step 13 — Tests
-
-Implement unit tests for:
-
-- registry
-- controllers
-- state machine
-- animation plans
-- configuration
-
----
-
-## Step 14 — Documentation
-
-Create:
-
-```text
-README.md
-docs/architecture.md
-docs/avatar-spec.md
-docs/animation-system.md
-docs/blender-pipeline.md
-```
-
-Document:
-
-- setup
-- architecture
-- Blender workflow
-- GLB export
-- animation naming
-- runtime API
-- testing
-
----
-
-# 44. Critical Engineering Rules
-
-Follow these rules throughout the implementation.
-
-## Rule 1
-
-Do NOT create one giant React component.
-
-Bad:
-
-```text
-Avatar.tsx
- ├── loading
- ├── animation
- ├── facial
- ├── audio
- ├── gestures
- ├── state
- ├── debug
- └── rendering
-```
-
-Instead use separate controllers/services.
-
----
-
-## Rule 2
-
-Treat GLB as the asset boundary.
-
-```text
-Blender
-   ↓
-GLB
-   ↓
-Web Application
-```
-
-The web application should not depend on `.blend` files.
-
----
-
-## Rule 3
-
-Never depend on numeric animation indexes.
-
-Bad:
-
-```ts
-animations[7]
-```
-
-Good:
-
-```ts
-animationRegistry.gestures.emphasize
-```
-
----
-
-## Rule 4
-
-Do not directly manipulate facial morph targets from UI components.
-
-Bad:
-
-```tsx
-mesh.morphTargetInfluences[4] = 1;
-```
-
-Good:
-
-```ts
-facialController.setExpression("serious");
-```
-
----
-
-## Rule 5
-
-Do not put per-frame state into React.
-
-Animation updates belong in the runtime/render loop.
-
----
-
-## Rule 6
-
-Do not build the backend before the local avatar runtime works.
-
-First:
-
-```text
-Browser
- ↓
-GLB
- ↓
-Avatar Runtime
- ↓
-Animations
-```
-
-Then:
-
-```text
-Backend
- ↓
-AI
- ↓
-Animation Plan
- ↓
-Avatar Runtime
-```
-
----
-
-## Rule 7
-
-Do not implement LLM/TTS/ASR in Phase 1.
-
-Build a stable avatar foundation first.
-
----
-
-## Rule 8
-
-The future LLM should output semantic behavior.
-
-Example:
-
-```json
-{
-  "emotion": "serious",
-  "gesture": "emphasize",
-  "headMotion": "nod"
-}
-```
-
-Not:
-
-```json
-{
-  "leftArmBoneRotation": 0.45,
-  "rightArmBoneRotation": 0.32
-}
-```
-
----
-
-## Rule 9
-
-Use stable semantic identifiers.
-
-Examples:
-
-```text
-openHand
-emphasize
-pointLeft
-serious
-positive
-nod
-camera
-```
-
-These should remain stable even if the underlying Blender implementation changes.
-
----
-
-## Rule 10
-
-Keep renderer implementation details inside the runtime.
-
-Future code should be able to say:
-
-```ts
-avatar.playGesture("emphasize");
-```
-
-without knowing whether the avatar is implemented using:
-
-- Three.js
-- another renderer
-- different animation clips
-- different rigging
-- different GLB structure
-
----
-
-# 45. Runtime Flow
-
-The initial runtime flow should look like this:
-
-```text
-Application starts
-        ↓
-React initializes
-        ↓
-AvatarScene initializes
-        ↓
-GLB loads
-        ↓
-Avatar Runtime initializes
-        ↓
-AnimationController initializes
-        ↓
-FacialController initializes
-        ↓
-IdleController initializes
-        ↓
-AudioController initializes
-        ↓
-Idle animation starts
-        ↓
-User clicks "Emphasize"
-        ↓
-AvatarController.playGesture("emphasize")
-        ↓
-AnimationController
-        ↓
-Crossfade to gesture
-        ↓
-Gesture plays
-        ↓
-Return to idle
-```
-
----
-
-# 46. Future Architecture Compatibility
-
-The Phase 1 architecture should support these future phases.
-
-## Phase 2 — Speech
-
-```text
-Script
- ↓
-TTS
- ↓
-Audio
- ↓
-Lip Sync
- ↓
-Avatar
-```
-
----
-
-## Phase 3 — Subtitles
-
-```text
-Speech
- ↓
-Subtitle Timing
- ↓
-Subtitle Renderer
- ↓
-Browser
-```
-
----
-
-## Phase 4 — Backend
-
-```text
-React
- ↓
-FastAPI
- ↓
-Avatar API
-```
-
----
-
-## Phase 5 — AI
-
-```text
-News
- ↓
-LLM
- ↓
-Script
- ↓
-Animation Plan
- ↓
-Avatar Runtime
-```
-
----
-
-## Phase 6 — Real-Time
-
-```text
-Browser
-    ↕
-WebSocket
-    ↕
-Python
-    ↓
-LLM
-    ↓
-TTS
-    ↓
-Viseme Events
-    ↓
-Avatar Runtime
-```
-
----
-
-## Phase 7 — Video Generation
-
-```text
-News
- ↓
-LLM
- ↓
-Script
- ↓
-TTS
- ↓
-Animation Plan
- ↓
-Blender
- ↓
-MP4
- ↓
-FFmpeg
- ↓
-Final News Video
-```
-
----
-
-# 47. Multilingual Compatibility
-
-The avatar should eventually support multiple languages without requiring different characters.
-
-Conceptually:
-
-```text
-Same Avatar
-     │
-     ├── English Audio
-     ├── Myanmar Audio
-     ├── Chinese Audio
-     ├── Japanese Audio
-     └── Other Languages
-```
-
-Only the following should change:
-
-- audio
-- subtitles
-- lip-sync timing
-- language metadata
-
-The underlying avatar should remain the same.
-
----
-
-# 48. Web / iframe Compatibility
-
-The final application is intended to be embeddable.
-
-Future example:
-
-```html
-<iframe
-  src="https://avatar.example.com/presenter/123"
-  width="100%"
-  height="600"
-  allow="autoplay"
-></iframe>
-```
-
-Phase 1 does not need production iframe infrastructure.
-
-However, avoid architectural decisions that would prevent iframe embedding later.
-
----
-
-# 49. Final Architecture
-
-The long-term architecture should conceptually become:
-
-```text
-                         NEWS / USER
-                              │
-                              ▼
-                         AI BACKEND
-                              │
-                 ┌────────────┼────────────┐
-                 │            │            │
-                 ▼            ▼            ▼
-               LLM           TTS          ASR
-                 │            │
-                 ▼            ▼
-          Animation Plan    Audio
-                 │            │
-                 └──────┬─────┘
-                        ▼
-                 Avatar Runtime
-                        │
-              ┌─────────┼─────────┐
-              │         │         │
-              ▼         ▼         ▼
-          Animation   Facial     Audio
-          Controller  Controller Controller
-              │         │         │
-              └─────────┼─────────┘
-                        ▼
-                    Three.js
-                        │
-                        ▼
-                    GLB Avatar
-                        │
-                        ▼
-                    Browser
-                        │
-              ┌─────────┴─────────┐
-              │                   │
-              ▼                   ▼
-          3D Presenter        Subtitles
-```
-
----
-
-# 50. Project Deliverables
-
-Phase 1 must produce:
-
-```text
-React application
-        +
-Three.js / React Three Fiber scene
-        +
-Professional presenter GLB
-        +
-Blender source file
-        +
-Blender validation/export scripts
-        +
-Animation registry
-        +
-Animation controller
-        +
-Animation state machine
-        +
-Idle controller
-        +
-Facial controller
-        +
-Gesture controller
-        +
-Audio controller
-        +
-Debug panel
-        +
-Unit tests
-        +
-Documentation
-```
-
----
-
-# 51. Final Success Condition
-
-Phase 1 is successful when the application can demonstrate:
-
-```text
-Browser
-   ↓
-3D Presenter
-   ↓
-Breathing
-   ↓
-Blinking
-   ↓
-Eye Movement
-   ↓
-Head Movement
-   ↓
-Facial Expression
-   ↓
-Hand Gesture
-   ↓
-Return to Idle
-   ↓
-Play Test Audio
-```
-
-while maintaining a clean architecture that allows future integration of:
-
-```text
-TTS
-Lip Sync
-Subtitles
-Translation
-Multilingual Speech
-LLM
-FastAPI
-WebSocket
-Database
-Video Generation
-Iframe Embedding
-Real-Time AI Avatar
-```
-
-without requiring a complete rewrite of the avatar runtime.
-
----
-
-# 52. Important Instruction for the AI Coding Agent
-
-Implement this project incrementally.
-
-Do NOT attempt to build every future feature.
-
-Start with the Phase 1 MVP only.
-
-Before implementing each major subsystem:
-
-1. Inspect the existing project structure.
-2. Identify the appropriate module.
-3. Implement the smallest maintainable version.
-4. Keep the public API semantic.
-5. Add tests where appropriate.
-6. Verify that existing functionality still works.
-7. Document important architectural decisions.
-
-Do not introduce unnecessary dependencies.
-
-Do not over-engineer Phase 1.
-
-The most important architectural principle is:
-
-```text
-Blender = 3D Asset + Animation Authoring
-
-GLB = Asset Boundary
-
-Three.js = Browser Renderer
-
-Avatar Runtime = Animation Abstraction
-
-React = Application/UI Layer
-
-Future Python Backend = AI Orchestration
-
-Future LLM = Semantic Animation Planner
-```
-
-The Phase 1 implementation should establish these boundaries clearly so that the project can evolve into a production-quality AI-powered 3D news presenter.
+- **Blender** is the source environment for character geometry, rigging, facial topology, skin weights, and selected authored animation assets.
+- **Blender Python automation** is the controlled mechanism for AI-agent-driven structural 3D changes, inspection, validation, and export.
+- **GLB** is the validated runtime asset format, not the primary editable source of application behavior.
+- **JSON definitions** represent declarative avatar configuration and simple semantic behavior that should be easy for an AI agent to modify.
+- **TypeScript** implements runtime logic, validation, animation coordination, and application-level behavior.
+- **Three.js** renders the model and executes browser-side animation efficiently.
+- **React** manages the web application, user interface, lifecycle, and configuration.
+- **Avatar Runtime** translates semantic commands into model-specific animation and facial controls.
+- **Future Python backend services** will orchestrate AI, TTS, ASR, translation, and real-time communication when those phases are implemented.
+- **Future LLM systems** will plan semantic presenter behavior without needing to understand Blender internals, GLB structures, Three.js objects, or bone indexes.
+
+The Phase 1 MVP must establish these boundaries clearly. The objective is not to eliminate Blender or build an entire 3D modeling system in TypeScript. The objective is to make 3D authoring programmable, keep ordinary behavior changes in readable source files, and let the browser runtime handle interactive presentation. This gives the project a practical balance of visual quality, AI-agent maintainability, development efficiency, and future scalability.
