@@ -50,6 +50,10 @@ Automation lives in **`scripts/`** (not `automation/`). MVP docs that say
 | `scripts/promote_export.py` | Copy temp → candidate + frontend runtime |
 | `scripts/modify_materials.py` | List / change one material base color (backup + validate + temp export) |
 | `scripts/modify_character.py` | Safe character ops: scale, apply transforms, rename object/bone |
+| `scripts/create_animation.py` | Create contract-named stub Action clips |
+| `scripts/scaffold_presenter_blend.py` | Learning `presenter.blend` (not production) |
+| `scripts/apply_rename_map.py` | Batch bone renames from JSON map |
+| `definitions/bone_rename_map.example.json` | Example Mixamo-style rename map |
 | `scripts/generate_placeholder_glb.py` | Bootstrap GLB (writes runtime directly) |
 
 ## Naming contract

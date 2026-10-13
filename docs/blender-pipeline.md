@@ -26,6 +26,9 @@ When the MVP mentions `blender/automation/*.py`, use `blender/scripts/*.py`.
 | `promote_export.py` | `blender/scripts/promote_export.py` |
 | `modify_materials.py` | `blender/scripts/modify_materials.py` |
 | `modify_character.py` | `blender/scripts/modify_character.py` |
+| `create_animation.py` | `blender/scripts/create_animation.py` |
+| `scaffold_presenter_blend.py` | `blender/scripts/scaffold_presenter_blend.py` |
+| `apply_rename_map.py` | `blender/scripts/apply_rename_map.py` |
 
 ## Prerequisites
 
@@ -127,7 +130,9 @@ Rules:
 | Temp export + export validation + promote | Done (`validate_export.py`, `promote_export.py`) |
 | Targeted material modify | Done (`modify_materials.py`) |
 | Targeted character modify (safe ops) | Done (`modify_character.py`) |
-| Animation create script | Planned |
+| Stub animation create | Done (`create_animation.py`) |
+| Learning `.blend` scaffold | Done (`scaffold_presenter_blend.py`) |
+| Bone rename map for licensed imports | Done (`apply_rename_map.py` + example JSON) |
 
 ### Shared helpers (`common.py`)
 
@@ -254,7 +259,54 @@ blender --background --python blender/scripts/modify_character.py -- --list
 blender --background --python blender/scripts/modify_character.py -- --object Cube --scale 1.1,1.1,1.1 --no-backup --skip-validate --skip-export
 ```
 
-### Placeholder (Python only, no Blender)
+### Create stub animations (Step 7)
+
+Prefer JSON / TypeScript for simple procedural motion. Use Blender clips when the
+GLB must contain a contract-named action.
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/create_animation.py -- --list
+blender --background blender/source/presenter.blend --python blender/scripts/create_animation.py -- --create Idle_Breathing
+blender --background blender/source/presenter.blend --python blender/scripts/create_animation.py -- --create-all-required
+```
+
+Stubs are teaching motions, not art-directed performance.
+
+### Scaffold or adopt a character (Step 8)
+
+**Option A — learning scaffold (not a production presenter)**
+
+Creates `blender/source/presenter.blend` with required bones, shape-key names,
+materials, and stub clips so the pipeline can be tested end-to-end:
+
+```bash
+blender --background --python blender/scripts/scaffold_presenter_blend.py -- --force
+python blender/scripts/validate_export.py
+python blender/scripts/promote_export.py
+```
+
+**Option B — licensed base character (recommended for the real avatar)**
+
+1. Obtain a humanoid you may legally use and modify.
+2. Import it into Blender and save as `blender/source/presenter.blend` (backup first).
+3. Inspect: `inspect_scene.py` / `modify_character.py --list`.
+4. Rename bones toward `contracts.py` using a map file:
+
+```bash
+copy blender\definitions\bone_rename_map.example.json blender\definitions\bone_rename_map.json
+# edit bone_rename_map.json for your rig
+blender --background blender/source/presenter.blend --python blender/scripts/apply_rename_map.py -- --map blender/definitions/bone_rename_map.json --dry-run
+blender --background blender/source/presenter.blend --python blender/scripts/apply_rename_map.py -- --map blender/definitions/bone_rename_map.json
+```
+
+5. Align facial shape-key names to the contract (manual or future script).
+6. Add missing clips with `create_animation.py` or author them in Blender.
+7. `validate_rig` → `export_glb` → `validate_export` → `promote_export`.
+8. Verify in the browser debug panel.
+
+Do not claim production character quality while only the scaffold or GLB placeholder is in use.
+
+### Placeholder GLB (Python only, no Blender)
 
 Bootstrap shortcut — writes candidate + runtime directly (skips temp/promote):
 

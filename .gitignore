@@ -34,6 +34,10 @@ blender/source/versions/*
 # Unvalidated temp exports (keep folder via .gitkeep)
 blender/exports/tmp/*
 !blender/exports/tmp/.gitkeep
+# Local authoring blend (regenerate via scaffold_presenter_blend.py or import a licensed character)
+blender/source/presenter.blend
+# Local bone rename map (keep the .example.json in git)
+blender/definitions/bone_rename_map.json
 
 # Test / coverage
 coverage/
