@@ -49,12 +49,17 @@ def exports_dir() -> Path:
 
 
 def exports_tmp_dir() -> Path:
-    """Return ``blender/exports/tmp`` for future validated-before-promote exports."""
+    """Return ``blender/exports/tmp`` for unvalidated export output."""
     return exports_dir() / "tmp"
 
 
+def tmp_presenter_glb() -> Path:
+    """Return ``blender/exports/tmp/presenter.glb`` (pre-validation export)."""
+    return exports_tmp_dir() / "presenter.glb"
+
+
 def candidate_presenter_glb() -> Path:
-    """Return ``blender/exports/presenter.glb`` (not the browser runtime copy)."""
+    """Return ``blender/exports/presenter.glb`` (validated export, not yet runtime)."""
     return exports_dir() / "presenter.glb"
 
 
@@ -110,7 +115,7 @@ def assert_export_path_allowed(path: Path) -> None:
     if resolved == runtime:
         raise RuntimeError(
             f"Refusing to write directly to runtime asset {runtime}. "
-            "Export to blender/exports/ (or exports/tmp/) and promote only after validation."
+            "Export to blender/exports/tmp/ then run validate_export.py and promote_export.py."
         )
 
 

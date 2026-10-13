@@ -39,12 +39,11 @@ Run these from `frontend/`:
 | `npm run build` | Production build |
 | `npm test` | Vitest unit tests |
 | `npm run lint` | ESLint |
-| `npm run generate:avatar` | Write `blender/exports/presenter.glb` placeholder |
+| `npm run generate:avatar` | Write placeholder GLB (exports + frontend public) |
 | `npm run generate:audio` | Write `frontend/public/audio/test-presenter.mp3` |
 
-After generating a new GLB, copy it:
-
-`blender/exports/presenter.glb` → `frontend/public/avatars/presenter.glb`
+Blender export path (after you have `presenter.blend`): export → validate → promote.
+See [docs/blender-pipeline.md](docs/blender-pipeline.md).
 
 ## Docker
 

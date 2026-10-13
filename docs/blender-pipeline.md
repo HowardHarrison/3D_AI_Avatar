@@ -22,7 +22,8 @@ When the MVP mentions `blender/automation/*.py`, use `blender/scripts/*.py`.
 | `inspect_scene.py` | `blender/scripts/inspect_scene.py` |
 | `validate_rig.py` | `blender/scripts/validate_rig.py` |
 | `export_glb.py` | `blender/scripts/export_glb.py` |
-| `validate_export.py` / promote | planned (not yet) |
+| `validate_export.py` | `blender/scripts/validate_export.py` |
+| `promote_export.py` | `blender/scripts/promote_export.py` |
 
 ## Prerequisites
 
@@ -102,11 +103,13 @@ Rules:
    `blender/scripts/common.py` (writes timestamped copies under
    `blender/source/versions/`). Do not start structural edits on an unsaved file.
 3. **Validate the scene** before export (`validate_rig.py`).
-4. **Export to a candidate path** — `export_glb.py` writes
-   `blender/exports/presenter.glb` only. It **refuses** to write directly to
-   `frontend/public/avatars/presenter.glb`. Temp-dir export + automated promote
-   are still planned; today you copy manually after checks.
-5. **Failed export must not replace** a previously working runtime asset.
+4. **Export to a temp path** — `export_glb.py` writes
+   `blender/exports/tmp/presenter.glb` only. It **refuses** to write directly to
+   the frontend runtime GLB.
+5. **Validate then promote** — `validate_export.py` checks the temp GLB;
+   `promote_export.py` copies to `blender/exports/presenter.glb` and
+   `frontend/public/avatars/presenter.glb` only if validation passes.
+6. **Failed export must not replace** a previously working runtime asset.
 
 ## What exists today vs next steps
 
@@ -114,12 +117,12 @@ Rules:
 | --- | --- |
 | Naming contracts (`contracts.py`) | Done |
 | Rig / shape-key / clip validation | Done (`validate_rig.py`) |
-| Headless GLB export | Done (`export_glb.py` → `exports/`) |
-| Placeholder GLB (no Blender) | Done (`generate_placeholder_glb.py`) |
+| Headless GLB export | Done (`export_glb.py` → `exports/tmp/`) |
+| Placeholder GLB (no Blender) | Done (`generate_placeholder_glb.py`; writes runtime directly for bootstrap) |
 | Scene inspection script | Done (`inspect_scene.py`) |
 | Shared paths / logging / backup helpers | Done (`common.py`) |
 | Versioned `.blend` backups | Done (`save_versioned_blend` → `source/versions/`) |
-| Temp export + export validation + promote | Planned |
+| Temp export + export validation + promote | Done (`validate_export.py`, `promote_export.py`) |
 | Targeted modify scripts (materials, etc.) | Planned |
 
 ### Shared helpers (`common.py`)
@@ -133,8 +136,8 @@ as `inspect_scene.py` / `validate_rig.py` / `export_glb.py`):
 | `require_bpy` | Fail clearly when not running inside Blender |
 | `load_scripts_module` | Load `contracts` (or other sibling modules) |
 | `save_versioned_blend(label=...)` | Save + copy to `source/versions/` |
-| `assert_export_path_allowed` | Block writes to the frontend runtime GLB |
-| Path helpers | `presenter_blend_path`, `candidate_presenter_glb`, `runtime_presenter_glb`, … |
+| `assert_export_path_allowed` | Block Blender export writes to the frontend runtime GLB |
+| Path helpers | `tmp_presenter_glb`, `candidate_presenter_glb`, `runtime_presenter_glb`, … |
 
 Backup files under `versions/` are gitignored (local recovery only).
 
@@ -168,18 +171,36 @@ Output uses stable prefixes (`FILE:`, `OBJECT:`, `BONE:`, `SHAPE_KEY:`,
 blender --background blender/source/presenter.blend --python blender/scripts/validate_rig.py
 ```
 
-Export (writes `blender/exports/presenter.glb` today — treat as “candidate”
-until you have visually checked the browser):
+### Export → validate → promote
+
+Export to the **temporary** path (requires `presenter.blend`):
 
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/export_glb.py
 ```
 
-Promote manually after you are satisfied:
+Validate the temp GLB (plain Python, no Blender):
 
-`blender/exports/presenter.glb` → `frontend/public/avatars/presenter.glb`
+```bash
+python blender/scripts/validate_export.py
+```
 
-Placeholder (Python only, no Blender):
+Promote only if validation passes (copies temp → `blender/exports/presenter.glb`
+and `frontend/public/avatars/presenter.glb`):
+
+```bash
+python blender/scripts/promote_export.py
+```
+
+You can also validate any GLB path:
+
+```bash
+python blender/scripts/validate_export.py frontend/public/avatars/presenter.glb
+```
+
+### Placeholder (Python only, no Blender)
+
+Bootstrap shortcut — writes candidate + runtime directly (skips temp/promote):
 
 ```bash
 python blender/scripts/generate_placeholder_glb.py

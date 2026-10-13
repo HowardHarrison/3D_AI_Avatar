@@ -1,7 +1,9 @@
-"""Export presenter.blend to blender/exports/presenter.glb using Blender's glTF exporter.
+"""Export presenter.blend to blender/exports/tmp/presenter.glb (unvalidated).
 
-Writes only to the candidate export path under ``blender/exports/``. Never writes
-directly to ``frontend/public/avatars/presenter.glb`` (promote manually after checks).
+Never writes ``frontend/public/avatars/presenter.glb``. After export, run:
+
+    python blender/scripts/validate_export.py
+    python blender/scripts/promote_export.py
 
 Run:
 
@@ -27,11 +29,11 @@ def _load_common():
 
 
 def export() -> int:
-    """Export the current Blender scene as a candidate GLB under blender/exports/."""
+    """Export the current Blender scene as a temporary GLB under exports/tmp/."""
     common = _load_common()
     bpy = common.require_bpy()
 
-    output = common.candidate_presenter_glb()
+    output = common.tmp_presenter_glb()
     try:
         common.assert_export_path_allowed(output)
     except RuntimeError as exc:
@@ -51,11 +53,15 @@ def export() -> int:
         export_normals=True,
         export_materials="EXPORT",
     )
-    common.report("PASS", f"Exported candidate GLB: {output}")
+    common.report("PASS", f"Exported temporary GLB: {output}")
     common.report(
         "INFO",
-        f"Runtime asset is unchanged: {common.runtime_presenter_glb()} "
-        "(copy/promote only after validation).",
+        "Next: python blender/scripts/validate_export.py "
+        "then python blender/scripts/promote_export.py",
+    )
+    common.report(
+        "INFO",
+        f"Runtime asset is unchanged: {common.runtime_presenter_glb()}",
     )
     return 0
 
