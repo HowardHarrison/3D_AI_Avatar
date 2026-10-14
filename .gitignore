@@ -36,8 +36,13 @@ blender/exports/tmp/*
 !blender/exports/tmp/.gitkeep
 # Local authoring blend (regenerate via scaffold_presenter_blend.py or import a licensed character)
 blender/source/presenter.blend
-# Local bone rename map (keep the .example.json in git)
+# Local bone rename map (keep the .example.json / .mixamo.json in git)
 blender/definitions/bone_rename_map.json
+# Local Mixamo upload/download binaries (keep README)
+blender/exports/mixamo_upload/*
+!blender/exports/mixamo_upload/README.md
+blender/exports/giga_chad_rigged.glb
+blender/exports/giga_chad_rigged.fbx
 
 # Test / coverage
 coverage/

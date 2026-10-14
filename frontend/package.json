@@ -19,7 +19,9 @@
     "avatar:validate-export": "python ../blender/scripts/validate_export.py",
     "avatar:promote": "python ../blender/scripts/promote_export.py",
     "avatar:release": "npm run avatar:export && npm run avatar:validate-export && npm run avatar:promote",
-    "avatar:scaffold": "blender --background --python ../blender/scripts/scaffold_presenter_blend.py -- --force"
+    "avatar:scaffold": "blender --background --python ../blender/scripts/scaffold_presenter_blend.py -- --force",
+    "avatar:export-mixamo": "blender --background ../blender/source/presenter.blend --python ../blender/scripts/export_mesh_for_mixamo.py --",
+    "avatar:import-rigged": "blender --background --python ../blender/scripts/import_base_glb.py -- --input ../blender/exports/mixamo_upload/giga_chad_rigged.fbx"
   },
   "dependencies": {
     "@react-three/drei": "^9.117.3",

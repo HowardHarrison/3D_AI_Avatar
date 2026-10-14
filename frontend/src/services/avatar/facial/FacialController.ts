@@ -41,6 +41,9 @@ export class FacialController {
     });
     if (this.morphMeshes.length === 0) {
       this.warn("No facial morph targets found on the avatar.");
+    } else {
+      // glTF may ship non-zero morph weights; force a clean rest face on load.
+      this.resetInfluences();
     }
   }
 

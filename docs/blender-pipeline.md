@@ -29,6 +29,7 @@ When the MVP mentions `blender/automation/*.py`, use `blender/scripts/*.py`.
 | `create_animation.py` | `blender/scripts/create_animation.py` |
 | `scaffold_presenter_blend.py` | `blender/scripts/scaffold_presenter_blend.py` |
 | `apply_rename_map.py` | `blender/scripts/apply_rename_map.py` |
+| `import_base_glb.py` | `blender/scripts/import_base_glb.py` |
 
 ## Prerequisites
 
@@ -288,24 +289,58 @@ python blender/scripts/promote_export.py
 
 **Option B — licensed base character (recommended for the real avatar)**
 
-1. Obtain a humanoid you may legally use and modify.
-2. Import it into Blender and save as `blender/source/presenter.blend` (backup first).
-3. Inspect: `inspect_scene.py` / `modify_character.py --list`.
-4. Rename bones toward `contracts.py` using a map file:
+The character must be **rigged** (armature + skin). A static mesh cannot gesture.
+
+### Mixamo path (giga_chad / similar)
+
+Mixamo auto-rigging is done in the browser (Adobe login). The repo prepares the
+upload mesh and finishes import → rename → release after you drop the rigged file.
+
+1. Export upload FBX from the current `presenter.blend` mesh:
 
 ```bash
-copy blender\definitions\bone_rename_map.example.json blender\definitions\bone_rename_map.json
-# edit bone_rename_map.json for your rig
-blender --background blender/source/presenter.blend --python blender/scripts/apply_rename_map.py -- --map blender/definitions/bone_rename_map.json --dry-run
-blender --background blender/source/presenter.blend --python blender/scripts/apply_rename_map.py -- --map blender/definitions/bone_rename_map.json
+blender --background blender/source/presenter.blend --python blender/scripts/export_mesh_for_mixamo.py --
 ```
 
-5. Align facial shape-key names to the contract (manual or future script).
-6. Add missing clips with `create_animation.py` or author them in Blender.
-7. `validate_rig` → `export_glb` → `validate_export` → `promote_export`.
-8. Verify in the browser debug panel.
+2. Follow [blender/exports/mixamo_upload/README.md](../blender/exports/mixamo_upload/README.md):
+   upload → Auto-Rigger → download **With Skin** as
+   `blender/exports/giga_chad_rigged.glb` (or `.fbx`).
 
-Do not claim production character quality while only the scaffold or GLB placeholder is in use.
+3. Re-import into Blender source:
+
+```bash
+blender --background --python blender/scripts/import_base_glb.py -- --input blender/exports/giga_chad_rigged.glb
+```
+
+4. Rename Mixamo bones toward `contracts.py`:
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/apply_rename_map.py -- --map blender/definitions/bone_rename_map.mixamo.json --dry-run
+blender --background blender/source/presenter.blend --python blender/scripts/apply_rename_map.py -- --map blender/definitions/bone_rename_map.mixamo.json
+```
+
+If dry-run says the armature name is wrong, edit `"armature"` in the JSON (check
+`inspect_scene.py` output).
+
+5. Mixamo usually has **no** facial morphs and only a generic action name.
+   Add stub shape keys + contract clips before release:
+
+```bash
+blender --background blender/source/presenter.blend --python blender/scripts/add_stub_shape_keys.py --
+blender --background blender/source/presenter.blend --python blender/scripts/create_animation.py -- --create-all-required
+```
+
+6. From `frontend/`:
+
+```bash
+npm run avatar:release
+npm run dev
+```
+
+Stub shape keys satisfy the naming contract only — they are not art-directed
+expressions. Replace them later with real morphs if needed.
+
+Do not claim production character quality while only the scaffold or unrigged mesh is in use.
 
 ### Placeholder GLB (Python only, no Blender)
 

@@ -57,6 +57,9 @@ Automation lives in **`scripts/`** (not `automation/`). MVP docs that say
 | `scripts/create_animation.py` | Create contract-named stub Action clips |
 | `scripts/scaffold_presenter_blend.py` | Learning `presenter.blend` (not production) |
 | `scripts/apply_rename_map.py` | Batch bone renames from JSON map |
+| `scripts/import_base_glb.py` | Import an external `.glb`/`.fbx` into `source/presenter.blend` |
+| `scripts/add_stub_shape_keys.py` | Add contract facial shape-key *names* (Mixamo has none) |
+| `scripts/improve_facial_shape_keys.py` | Rebuild visible head-region morphs for expressions |
 | `definitions/bone_rename_map.example.json` | Example Mixamo-style rename map |
 | `scripts/generate_placeholder_glb.py` | Bootstrap GLB (writes runtime directly) |
 

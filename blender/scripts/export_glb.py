@@ -42,6 +42,15 @@ def export() -> int:
 
     output.parent.mkdir(parents=True, exist_ok=True)
 
+    # Ensure morph target rest weights are 0 (non-zero values bake into the GLB
+    # and warp the face until the runtime resets influences).
+    for obj in bpy.data.objects:
+        if obj.type != "MESH" or obj.data.shape_keys is None:
+            continue
+        for block in obj.data.shape_keys.key_blocks:
+            block.value = 0.0
+    common.report("INFO", "Zeroed shape-key values before export")
+
     bpy.ops.export_scene.gltf(
         filepath=str(output),
         export_format="GLB",

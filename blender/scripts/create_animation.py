@@ -213,59 +213,109 @@ def _build_bone_clip(bpy, arm, name: str, action) -> None:
         key_rot("Hips", 30, (0, 0, deg(3)))
         key_rot("Hips", 60, (0, 0, deg(-3)))
     elif name == "Head_Nod_Small":
+        # Pitch (X). Stronger + slight overshoot so it reads on Mixamo→Three.js.
         need("Head")
         key_rot("Head", 1, (0, 0, 0))
-        key_rot("Head", 10, (deg(12), 0, 0))
+        key_rot("Head", 8, (deg(32), 0, 0))
+        key_rot("Head", 14, (deg(-6), 0, 0))
         key_rot("Head", 20, (0, 0, 0))
     elif name == "Head_Turn_Left":
+        # Yaw on Y (was incorrectly on Z / swapped with tilt). Sign matches
+        # AvatarRuntime.setGaze left = +yaw on the Head bone in Three.js… after
+        # Mixamo export the Blender→glTF axis mapping needs the opposite Blender Y.
         need("Head")
         key_rot("Head", 1, (0, 0, 0))
-        key_rot("Head", 15, (0, 0, deg(25)))
+        key_rot("Head", 15, (0, deg(-40), 0))
         key_rot("Head", 30, (0, 0, 0))
     elif name == "Head_Turn_Right":
         need("Head")
         key_rot("Head", 1, (0, 0, 0))
-        key_rot("Head", 15, (0, 0, deg(-25)))
+        key_rot("Head", 15, (0, deg(40), 0))
         key_rot("Head", 30, (0, 0, 0))
     elif name == "Head_Tilt_Left":
+        # Roll on Z. Sign matched to Turn_Left so both "Left" buttons tip/turn
+        # toward the same screen side (Mixamo Z roll is opposite sense to Y yaw).
         need("Head")
         key_rot("Head", 1, (0, 0, 0))
-        key_rot("Head", 15, (0, deg(15), 0))
+        key_rot("Head", 15, (0, 0, deg(28)))
         key_rot("Head", 30, (0, 0, 0))
     elif name == "Head_Tilt_Right":
         need("Head")
         key_rot("Head", 1, (0, 0, 0))
-        key_rot("Head", 15, (0, deg(-15), 0))
+        key_rot("Head", 15, (0, 0, deg(-28)))
         key_rot("Head", 30, (0, 0, 0))
     elif name == "Gesture_OpenHand":
-        need("RightUpperArm")
+        # Present open palm: shoulder lift + elbow bend + wrist open
+        need("RightUpperArm", "RightLowerArm", "RightHand")
         key_rot("RightUpperArm", 1, (0, 0, 0))
-        key_rot("RightUpperArm", 12, (deg(-35), 0, deg(-20)))
+        key_rot("RightLowerArm", 1, (0, 0, 0))
+        key_rot("RightHand", 1, (0, 0, 0))
+        key_rot("RightUpperArm", 12, (deg(-40), deg(-10), deg(-25)))
+        key_rot("RightLowerArm", 12, (deg(-55), 0, 0))
+        key_rot("RightHand", 12, (deg(-15), 0, deg(10)))
         key_rot("RightUpperArm", 24, (0, 0, 0))
+        key_rot("RightLowerArm", 24, (0, 0, 0))
+        key_rot("RightHand", 24, (0, 0, 0))
     elif name == "Gesture_Emphasize":
-        need("RightUpperArm")
+        # Punchy beat gesture with elbow snap and wrist flick
+        need("RightUpperArm", "RightLowerArm", "RightHand")
         key_rot("RightUpperArm", 1, (0, 0, 0))
-        key_rot("RightUpperArm", 8, (deg(-50), 0, deg(-10)))
-        key_rot("RightUpperArm", 16, (deg(-20), 0, 0))
+        key_rot("RightLowerArm", 1, (0, 0, 0))
+        key_rot("RightHand", 1, (0, 0, 0))
+        key_rot("RightUpperArm", 8, (deg(-55), deg(-5), deg(-15)))
+        key_rot("RightLowerArm", 8, (deg(-70), 0, 0))
+        key_rot("RightHand", 8, (deg(-20), 0, deg(-8)))
+        key_rot("RightUpperArm", 16, (deg(-25), 0, deg(-8)))
+        key_rot("RightLowerArm", 16, (deg(-35), 0, 0))
+        key_rot("RightHand", 16, (deg(10), 0, 0))
         key_rot("RightUpperArm", 24, (0, 0, 0))
+        key_rot("RightLowerArm", 24, (0, 0, 0))
+        key_rot("RightHand", 24, (0, 0, 0))
     elif name == "Gesture_PointLeft":
-        need("LeftUpperArm")
+        need("LeftUpperArm", "LeftLowerArm", "LeftHand")
         key_rot("LeftUpperArm", 1, (0, 0, 0))
-        key_rot("LeftUpperArm", 12, (deg(-40), 0, deg(40)))
+        key_rot("LeftLowerArm", 1, (0, 0, 0))
+        key_rot("LeftHand", 1, (0, 0, 0))
+        key_rot("LeftUpperArm", 12, (deg(-45), deg(10), deg(45)))
+        key_rot("LeftLowerArm", 12, (deg(-40), 0, 0))
+        key_rot("LeftHand", 12, (0, deg(-15), deg(20)))
         key_rot("LeftUpperArm", 24, (0, 0, 0))
+        key_rot("LeftLowerArm", 24, (0, 0, 0))
+        key_rot("LeftHand", 24, (0, 0, 0))
     elif name == "Gesture_PointRight":
-        need("RightUpperArm")
+        need("RightUpperArm", "RightLowerArm", "RightHand")
         key_rot("RightUpperArm", 1, (0, 0, 0))
-        key_rot("RightUpperArm", 12, (deg(-40), 0, deg(-40)))
+        key_rot("RightLowerArm", 1, (0, 0, 0))
+        key_rot("RightHand", 1, (0, 0, 0))
+        key_rot("RightUpperArm", 12, (deg(-45), deg(-10), deg(-45)))
+        key_rot("RightLowerArm", 12, (deg(-40), 0, 0))
+        key_rot("RightHand", 12, (0, deg(15), deg(-20)))
         key_rot("RightUpperArm", 24, (0, 0, 0))
+        key_rot("RightLowerArm", 24, (0, 0, 0))
+        key_rot("RightHand", 24, (0, 0, 0))
     elif name == "Gesture_HandsTogether":
-        need("LeftUpperArm", "RightUpperArm")
-        key_rot("LeftUpperArm", 1, (0, 0, 0))
-        key_rot("RightUpperArm", 1, (0, 0, 0))
-        key_rot("LeftUpperArm", 14, (deg(-25), 0, deg(15)))
-        key_rot("RightUpperArm", 14, (deg(-25), 0, deg(-15)))
-        key_rot("LeftUpperArm", 28, (0, 0, 0))
-        key_rot("RightUpperArm", 28, (0, 0, 0))
+        need(
+            "LeftUpperArm",
+            "LeftLowerArm",
+            "LeftHand",
+            "RightUpperArm",
+            "RightLowerArm",
+            "RightHand",
+        )
+        for side in ("Left", "Right"):
+            key_rot(f"{side}UpperArm", 1, (0, 0, 0))
+            key_rot(f"{side}LowerArm", 1, (0, 0, 0))
+            key_rot(f"{side}Hand", 1, (0, 0, 0))
+        key_rot("LeftUpperArm", 14, (deg(-30), deg(5), deg(20)))
+        key_rot("LeftLowerArm", 14, (deg(-50), 0, 0))
+        key_rot("LeftHand", 14, (deg(-10), 0, deg(15)))
+        key_rot("RightUpperArm", 14, (deg(-30), deg(-5), deg(-20)))
+        key_rot("RightLowerArm", 14, (deg(-50), 0, 0))
+        key_rot("RightHand", 14, (deg(-10), 0, deg(-15)))
+        for side in ("Left", "Right"):
+            key_rot(f"{side}UpperArm", 28, (0, 0, 0))
+            key_rot(f"{side}LowerArm", 28, (0, 0, 0))
+            key_rot(f"{side}Hand", 28, (0, 0, 0))
     elif name == "Gesture_Nod":
         need("Head")
         key_rot("Head", 1, (0, 0, 0))

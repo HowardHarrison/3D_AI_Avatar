@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "description": "Mixamo → Phase 1 contracts.REQUIRED_BONES / OPTIONAL_BONES. After importing a Mixamo FBX/GLB, copy to bone_rename_map.json (or pass this file to apply_rename_map.py). Armature name is often Armature — confirm with inspect_scene / modify_character --list.",
+  "armature": "Armature",
+  "bones": {
+    "mixamorig:Hips": "Hips",
+    "mixamorig:Spine": "Spine",
+    "mixamorig:Spine1": "Chest",
+    "mixamorig:Neck": "Neck",
+    "mixamorig:Head": "Head",
+    "mixamorig:LeftShoulder": "LeftShoulder",
+    "mixamorig:LeftArm": "LeftUpperArm",
+    "mixamorig:LeftForeArm": "LeftLowerArm",
+    "mixamorig:LeftHand": "LeftHand",
+    "mixamorig:RightShoulder": "RightShoulder",
+    "mixamorig:RightArm": "RightUpperArm",
+    "mixamorig:RightForeArm": "RightLowerArm",
+    "mixamorig:RightHand": "RightHand",
+    "mixamorig:LeftUpLeg": "LeftUpperLeg",
+    "mixamorig:LeftLeg": "LeftLowerLeg",
+    "mixamorig:LeftFoot": "LeftFoot",
+    "mixamorig:RightUpLeg": "RightUpperLeg",
+    "mixamorig:RightLeg": "RightLowerLeg",
+    "mixamorig:RightFoot": "RightFoot"
+  }
+}
