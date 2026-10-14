@@ -2,6 +2,8 @@
 
 Phase 1 establishes layer boundaries so later AI features do not rewrite the avatar runtime.
 
+**Full project architecture** (custom face, clothes, backend `AnimationPlan`, Mermaid diagrams): [MVP_Phase_1.md](../MVP_Phase_1.md).
+
 ```text
 Blender (authoring)
     → presenter.glb (asset boundary)

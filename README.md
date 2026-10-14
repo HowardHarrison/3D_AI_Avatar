@@ -76,6 +76,8 @@ Then open http://localhost:8080
 
 ## Architecture in one line
 
-Blender authors assets → GLB is the boundary → React Three Fiber renders → Avatar runtime plays semantic clips → future AI will only send those semantic commands.
+Blender authors assets → GLB is the boundary → React Three Fiber renders → Avatar runtime plays semantic clips → backend/LLM will send timed semantic instruction plans (and later face/outfit presets).
 
-See [docs/architecture.md](docs/architecture.md).
+Overall architecture (faces, clothes, backend plans, diagrams): [MVP_Phase_1.md](MVP_Phase_1.md).
+
+Layer summary: [docs/architecture.md](docs/architecture.md).
