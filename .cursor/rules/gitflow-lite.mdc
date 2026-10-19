@@ -1,0 +1,12 @@
+---
+description: GitFlow-lite branching for this repo
+alwaysApply: true
+---
+
+# GitFlow-lite
+
+Follow [CONTRIBUTING.md](../../CONTRIBUTING.md) and the GitFlow-lite section in [AGENTS.md](../../AGENTS.md).
+
+- Prefer a short-lived branch (`feature|fix|chore|docs/<area>-<name>`) over committing implementation to `main`.
+- One learning-sized step per branch / PR.
+- Do not introduce long-lived `develop` or `release/*` unless the human asks.

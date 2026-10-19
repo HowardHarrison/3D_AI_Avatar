@@ -6,6 +6,16 @@ The npm app lives in `frontend/` (one Vite project). There is no `packages/` wor
 
 The Python API lives in `backend/` (FastAPI, TapTube-style clean architecture). Do not add LLM, TTS, or LangChain there unless the human asks for that step.
 
+## GitFlow-lite
+
+Use short-lived branches and pull requests into `main`. Full rules: [CONTRIBUTING.md](CONTRIBUTING.md).
+
+- Branch from `main`: `feature/<area>-<short-name>`, `fix/...`, `chore/...`, `docs/...`
+- One learning-sized step per branch / PR
+- Prefer Conventional Commits (`feat(backend): …`, `fix(avatar): …`)
+- Do **not** commit implementation work straight to `main` when a feature branch fits
+- No long-lived `develop` / `release/*` unless the human asks to add them later
+
 ## Durable context (Obsidian)
 
 Chat context is limited. Persist only **necessary** resume facts outside the repo:

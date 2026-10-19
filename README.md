@@ -15,6 +15,8 @@ The npm project is **`frontend/`** (one Vite app, one `node_modules`). There is 
 Blender automation layout and safe export rules:
 [docs/blender-pipeline.md](docs/blender-pipeline.md).
 
+Branching (GitFlow-lite): [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Setup
 
 ```bash

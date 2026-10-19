@@ -44,6 +44,9 @@ blender/exports/mixamo_upload/*
 blender/exports/giga_chad_rigged.glb
 blender/exports/giga_chad_rigged.fbx
 
+# graphify — rebuildable local cache (AST hashes, query stamps)
+graphify-out/cache/
+
 # Python (backend/)
 .venv/
 venv/
