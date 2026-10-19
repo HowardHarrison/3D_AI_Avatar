@@ -74,6 +74,19 @@ docker compose up --build web
 
 Then open http://localhost:8080
 
+## Backend (FastAPI)
+
+Scaffold under `backend/` (clean architecture; sample plan only — no LLM yet):
+
+```bash
+cd backend
+copy .env.example .env
+uv sync
+uv run uvicorn app.main:app --reload --port 8000
+```
+
+See [backend/README.md](backend/README.md).
+
 ## Architecture in one line
 
 Blender authors assets → GLB is the boundary → React Three Fiber renders → Avatar runtime plays semantic clips → backend/LLM will send timed semantic instruction plans (and later face/outfit presets).

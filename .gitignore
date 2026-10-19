@@ -44,6 +44,16 @@ blender/exports/mixamo_upload/*
 blender/exports/giga_chad_rigged.glb
 blender/exports/giga_chad_rigged.fbx
 
+# Python (backend/)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.uv/
+
 # Test / coverage
 coverage/
 

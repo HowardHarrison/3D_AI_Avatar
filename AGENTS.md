@@ -4,6 +4,8 @@ This is a **learning project**. The human is developing it to understand the sta
 
 The npm app lives in `frontend/` (one Vite project). There is no `packages/` workspace.
 
+The Python API lives in `backend/` (FastAPI, TapTube-style clean architecture). Do not add LLM, TTS, or LangChain there unless the human asks for that step.
+
 ## Durable context (Obsidian)
 
 Chat context is limited. Persist only **necessary** resume facts outside the repo:
@@ -68,6 +70,6 @@ If a request is ambiguous, default to **the next incomplete step only** and say 
 ## After each step
 
 1. Keep the public API semantic (no clip indexes, no UI morph/bone math).
-2. Do not add LLM, TTS, FastAPI, or other later-phase features.
+2. Do not add LLM, TTS, LangChain, or other later-phase features unless asked.
 3. Do not expand scope “while we are here.”
 4. If the step was a durable milestone, append a dated line to Obsidian `Context Log.md` (see above).
