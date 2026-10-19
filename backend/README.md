@@ -29,6 +29,13 @@ uv sync
 uv run uvicorn app.main:app --reload --port 8000
 ```
 
+Or from the repo root with Docker (see root `docker-compose.yml`):
+
+```bash
+docker compose up backend-dev
+# or: docker compose up --build backend
+```
+
 - Health: http://localhost:8000/health
 - Sample plan: http://localhost:8000/api/v1/plans/sample
 - OpenAPI: http://localhost:8000/docs

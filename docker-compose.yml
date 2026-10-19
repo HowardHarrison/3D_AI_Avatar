@@ -18,3 +18,45 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+
+  # FastAPI API — hot reload (mirrors web-dev). Run one of backend / backend-dev at a time on :8000.
+  backend-dev:
+    image: python:3.12-slim
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    command: >-
+      sh -c "pip install --no-cache-dir -e . &&
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: AI 3D Avatar API
+      DEBUG: "true"
+      LOG_LEVEL: INFO
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://localhost:8080
+
+  # FastAPI API — built image (mirrors web).
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: AI 3D Avatar API
+      DEBUG: "false"
+      LOG_LEVEL: INFO
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://localhost:8080
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

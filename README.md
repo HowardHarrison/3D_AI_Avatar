@@ -76,9 +76,32 @@ docker compose up --build web
 
 Then open http://localhost:8080
 
+Backend API (dev with reload):
+
+```bash
+docker compose up backend-dev
+```
+
+Backend API (built image):
+
+```bash
+docker compose up --build backend
+```
+
+Then open http://localhost:8000/health or http://localhost:8000/docs  
+(`backend` and `backend-dev` both bind host port 8000 — run one at a time.)
+
+Frontend + API together (dev):
+
+```bash
+docker compose up web-dev backend-dev
+```
+
 ## Backend (FastAPI)
 
-Scaffold under `backend/` (clean architecture; sample plan only — no LLM yet):
+Scaffold under `backend/` (clean architecture; sample plan only — no LLM yet).
+
+Local (without Docker):
 
 ```bash
 cd backend
