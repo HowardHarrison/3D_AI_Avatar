@@ -2,6 +2,8 @@
 
 from functools import lru_cache
 
+from fastapi import Depends
+
 from app.core.exceptions import LlmConfigurationError
 from app.core.settings import get_settings
 from app.domain.interfaces import LLMProvider
@@ -11,7 +13,7 @@ from app.services.presenter_plan_service import PresenterPlanService
 
 @lru_cache
 def get_presenter_plan_service() -> PresenterPlanService:
-    """Provide a shared PresenterPlanService instance."""
+    """Provide a shared PresenterPlanService without an LLM (sample plan)."""
     return PresenterPlanService()
 
 
@@ -21,7 +23,6 @@ def get_llm_provider() -> LLMProvider:
     Build the configured OpenAI-compatible ``LLMProvider``.
 
     Reads ``LLM_API_KEY``, ``LLM_MODEL``, and optional ``LLM_BASE_URL`` from settings.
-    Not used by routes yet — available for the next service/route step.
 
     Raises:
         LlmConfigurationError: If the API key is missing or blank.
@@ -38,3 +39,15 @@ def get_llm_provider() -> LLMProvider:
         model=settings.llm_model,
         base_url=base_url,
     )
+
+
+def get_presenter_plan_service_with_llm(
+    llm: LLMProvider = Depends(get_llm_provider),
+) -> PresenterPlanService:
+    """
+    PresenterPlanService with an injected LLM port (for generate-text routes).
+
+    Not cached: FastAPI builds a thin service wrapper per request; the LLM
+    client itself stays cached via ``get_llm_provider``.
+    """
+    return PresenterPlanService(llm=llm)

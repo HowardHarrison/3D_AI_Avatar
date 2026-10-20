@@ -432,9 +432,9 @@
     "semantic_hash": ""
   },
   "backend/app/api/dependencies.py": {
-    "mtime": 1792380660.2375875,
-    "seen": 1792381102.7959788,
-    "ast_hash": "4961607cfb70b6efbddb378f0cb85521",
+    "mtime": 1792465870.4516726,
+    "seen": 1792465981.7824743,
+    "ast_hash": "da6b0c16301c5abf24c3d3ee37150347",
     "semantic_hash": ""
   },
   "backend/app/api/routes/__init__.py": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "backend/app/core/exceptions.py": {
-    "mtime": 1792380648.4140623,
-    "seen": 1792381102.7959788,
-    "ast_hash": "07cc854a629618fca2d32563a93e8d61",
+    "mtime": 1792465862.5538807,
+    "seen": 1792465981.7824743,
+    "ast_hash": "26410148c6281f456358df0583b3200b",
     "semantic_hash": ""
   },
   "backend/app/core/logging.py": {
@@ -558,9 +558,9 @@
     "semantic_hash": ""
   },
   "backend/pyproject.toml": {
-    "mtime": 1792380671.780137,
-    "seen": 1792381102.7959788,
-    "ast_hash": "a343f5a3b62b3b0ebb918a820c3878d3",
+    "mtime": 1792465873.5305877,
+    "seen": 1792465981.7824743,
+    "ast_hash": "40cd6df79e8e21f5d7c36fcef4a27dc2",
     "semantic_hash": ""
   },
   "backend/tests/test_health.py": {
@@ -600,9 +600,9 @@
     "semantic_hash": ""
   },
   "backend/README.md": {
-    "mtime": 1792464694.884677,
-    "seen": 1792464710.2570558,
-    "ast_hash": "22e5b57cad0e3a138279493a73b4a2e3",
+    "mtime": 1792465921.1995673,
+    "seen": 1792465981.7824743,
+    "ast_hash": "8964e4e6cb2f3751c131fd0f90521c8a",
     "semantic_hash": ""
   },
   "blender/README.md": {
@@ -705,6 +705,24 @@
     "mtime": 1792384584.6665182,
     "seen": 1792464710.2570558,
     "ast_hash": "241239ad0b2285c739b567ba7aa346b5",
+    "semantic_hash": ""
+  },
+  "backend/app/infrastructure/openai_compatible/__init__.py": {
+    "mtime": 1792465964.4637594,
+    "seen": 1792465981.7824743,
+    "ast_hash": "48eae4ce15908eb2a6e40d169b129639",
+    "semantic_hash": ""
+  },
+  "backend/app/infrastructure/openai_compatible/llm_provider.py": {
+    "mtime": 1792465965.169981,
+    "seen": 1792465981.7824743,
+    "ast_hash": "d07989ca11fa874b899242a780906d95",
+    "semantic_hash": ""
+  },
+  "backend/tests/test_openai_compatible_llm_provider.py": {
+    "mtime": 1792465873.132133,
+    "seen": 1792465981.7824743,
+    "ast_hash": "85c4f3c9b8277e4263077f475c2b954d",
     "semantic_hash": ""
   }
 }

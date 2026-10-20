@@ -45,3 +45,15 @@ class AnimationPlanSchema(BaseModel):
     model_config = ConfigDict(ser_json_by_alias=True)
 
     segments: list[AnimationSegmentSchema]
+
+
+class GeneratePlanTextRequest(BaseModel):
+    """Request body for LLM-backed presenter script text."""
+
+    topic: str = Field(..., min_length=1, max_length=500)
+
+
+class GeneratePlanTextResponse(BaseModel):
+    """Plain-text script to drive a later AnimationPlan step."""
+
+    text: str
