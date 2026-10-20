@@ -450,15 +450,15 @@
     "semantic_hash": ""
   },
   "backend/app/api/routes/plans.py": {
-    "mtime": 1792470155.5204046,
-    "seen": 1792470197.7463899,
-    "ast_hash": "a311bb19e9d672c5a67578aca4387f83",
+    "mtime": 1792471964.1942267,
+    "seen": 1792472009.2706103,
+    "ast_hash": "7b1594baa2ad3b1a5ee0b6e9d2f4a5f4",
     "semantic_hash": ""
   },
   "backend/app/api/schemas.py": {
-    "mtime": 1792470152.166382,
-    "seen": 1792470197.7463899,
-    "ast_hash": "b1b8e8be80d6680faddf432535499270",
+    "mtime": 1792471960.6747944,
+    "seen": 1792472009.2706103,
+    "ast_hash": "dc7b1e81f513b5261df80df1671a92aa",
     "semantic_hash": ""
   },
   "backend/app/core/__init__.py": {
@@ -528,15 +528,15 @@
     "semantic_hash": ""
   },
   "backend/app/main.py": {
-    "mtime": 1792470165.108383,
-    "seen": 1792470197.7463899,
-    "ast_hash": "cc3eccfcfe34ea68faf0606644c18cb8",
+    "mtime": 1792471965.8286119,
+    "seen": 1792472009.2706103,
+    "ast_hash": "922ba3f50ab2cfb0789e18d5f95a86d1",
     "semantic_hash": ""
   },
   "backend/app/prompts/__init__.py": {
-    "mtime": 1792470144.758021,
-    "seen": 1792470197.7463899,
-    "ast_hash": "b80e8b7dc6381b8a32013e376df0fcf0",
+    "mtime": 1792471952.8182395,
+    "seen": 1792472009.2706103,
+    "ast_hash": "3e2b82cc836c83c188f6e34bc65053ad",
     "semantic_hash": ""
   },
   "backend/app/services/__init__.py": {
@@ -546,9 +546,9 @@
     "semantic_hash": ""
   },
   "backend/app/services/presenter_plan_service.py": {
-    "mtime": 1792470147.6990404,
-    "seen": 1792470197.7463899,
-    "ast_hash": "5d01bca2de2fa86ac0c1cd78e00d4fde",
+    "mtime": 1792471957.9271479,
+    "seen": 1792472009.2706103,
+    "ast_hash": "6feb9cf09be6bc113c80fc13e86adc17",
     "semantic_hash": ""
   },
   "backend/app/utils/__init__.py": {
@@ -600,9 +600,9 @@
     "semantic_hash": ""
   },
   "backend/README.md": {
-    "mtime": 1792470159.8515258,
-    "seen": 1792470197.7463899,
-    "ast_hash": "9b4fa9fc0ae62c0fb9c98f6af8d67c93",
+    "mtime": 1792471973.3265982,
+    "seen": 1792472009.2706103,
+    "ast_hash": "b01f52f8a08db8a3fc69c749c4f15e70",
     "semantic_hash": ""
   },
   "blender/README.md": {
@@ -735,6 +735,30 @@
     "mtime": 1792470157.3210754,
     "seen": 1792470197.7463899,
     "ast_hash": "db52bede79eb846005ecf2012e9e7302",
+    "semantic_hash": ""
+  },
+  "backend/app/domain/parse_animation_plan.py": {
+    "mtime": 1792471949.9321046,
+    "seen": 1792472009.2706103,
+    "ast_hash": "8ade7d0c76c3952323e3f89253ed3c2f",
+    "semantic_hash": ""
+  },
+  "backend/app/prompts/animation_plan.py": {
+    "mtime": 1792471952.251846,
+    "seen": 1792472009.2706103,
+    "ast_hash": "697f63ed345505ceadc1d95833d93ddc",
+    "semantic_hash": ""
+  },
+  "backend/tests/test_generate_plan.py": {
+    "mtime": 1792471971.148509,
+    "seen": 1792472009.2706103,
+    "ast_hash": "4997e85cfc06125a571c715258d8b478",
+    "semantic_hash": ""
+  },
+  "backend/tests/test_parse_animation_plan.py": {
+    "mtime": 1792471967.7249608,
+    "seen": 1792472009.2706103,
+    "ast_hash": "1f305ce8c5563dd63a4a83dc7bd69635",
     "semantic_hash": ""
   }
 }

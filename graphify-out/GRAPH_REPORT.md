@@ -1,22 +1,22 @@
 # Graph Report - AI_3D_Avatar  (2026-10-20)
 
 ## Corpus Check
-- 119 files · ~32,873 words
+- 123 files · ~34,064 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1098 nodes · 1569 edges · 95 communities (79 shown, 13 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 28 edges (avg confidence: 0.92)
+- 1150 nodes · 1685 edges · 105 communities (88 shown, 14 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 39 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3df7383b`
+- Built from commit: `012bf443`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- AvatarScene.tsx
-- AvatarRuntime.ts
+- PresenterPage.tsx
+- AnimationRegistry.ts
 - AnimationController
 - common.py
 - GltfBuilder
@@ -39,38 +39,44 @@
 - .prettierrc.json
 - vite-env.d.ts
 - 3D Avatar News Presenter — Overall Architecture
-- AvatarController
-- get_llm_provider
+- animation.ts
+- Settings
 - AvatarRuntime
-- dependencies.py
+- PresenterPlanService
 - Expected Output Format
 - main.py
 - LLMProvider
 - AnimationStateMachine
 - Output Expectations
 - Commands available now
-- AudioControllerApi
+- AvatarRuntime.ts
 - plans.py
 - Bug Reporting Format
-- Avatar.tsx
+- validateAvatarConfig.ts
 - tts_provider.py
 - Architecture Review Process
 - pull_request_template.md
-- Contributing — GitFlow-lite
+- Agent instructions — learn by building
 - FacialController
-- parseAnimationPlan.ts
+- PlanValidationError
 - apply_rename_map.py
 - frontend-developer-agent.md
 - Documentation Standards
-- animation.ts
-- OpenAICompatibleLLMProvider
+- devDependencies
+- AvatarScene.tsx
+- LlmConfigurationError
 - QA Engineer Agent
 - Output Formats
 - solution-architect-agent.md
 - Technical Decision Making
+- blender-pipeline.md
+- Contributing — GitFlow-lite
 - test_health.py
+- Blender presenter pipeline
 - System Design Responsibilities
 - Architecture Analysis Framework
+- Avatar News Presenter
+- README.md
 - UI/UX Principles
 - Performance Optimization
 - Frontend Security
@@ -94,6 +100,7 @@
 - Business Requirement Analysis
 - Current System Understanding
 - Observability
+- architecture.md
 - Core Responsibilities
 - UI Testing
 - api/__init__.py
@@ -102,23 +109,26 @@
 - infrastructure/__init__.py
 - langchain/__init__.py
 - app/__init__.py
-- LlmConfigurationError
+- presenter_plan_service.py
 - services/__init__.py
 - utils/__init__.py
 - definitions/README.md
 - ai-3d-avatar-backend
+- dependencies
+- Mixamo upload pack
+- @vitejs/plugin-react
 
 ## God Nodes (most connected - your core abstractions)
 1. `AvatarRuntime` - 26 edges
-2. `scripts` - 19 edges
-3. `3D Avatar News Presenter — Overall Architecture` - 19 edges
-4. `LlmConfigurationError` - 17 edges
-5. `AnimationController` - 16 edges
-6. `AvatarController` - 16 edges
-7. `compilerOptions` - 16 edges
-8. `LLMProvider` - 15 edges
-9. `OpenAICompatibleLLMProvider` - 15 edges
-10. `PresenterPlanService` - 15 edges
+2. `PlanValidationError` - 19 edges
+3. `LLMProvider` - 19 edges
+4. `PresenterPlanService` - 19 edges
+5. `scripts` - 19 edges
+6. `3D Avatar News Presenter — Overall Architecture` - 19 edges
+7. `LlmConfigurationError` - 18 edges
+8. `LLMResult` - 16 edges
+9. `AnimationController` - 16 edges
+10. `AvatarController` - 16 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `get_llm_provider()` --uses--> `LlmConfigurationError`  [INFERRED]
@@ -135,15 +145,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (95 total, 13 thin omitted)
+## Communities (105 total, 14 thin omitted)
 
-### Community 0 - "AvatarScene.tsx"
-Cohesion: 0.07
-Nodes (33): App(), StatusPanel(), StatusPanelProps, avatarConfig, AppEnvironment, environment, studioConfig, AnimationControls() (+25 more)
+### Community 0 - "PresenterPage.tsx"
+Cohesion: 0.10
+Nodes (23): App(), StatusPanel(), StatusPanelProps, AppEnvironment, environment, AnimationControls(), AnimationControlsProps, EXPRESSIONS (+15 more)
 
-### Community 1 - "AvatarRuntime.ts"
-Cohesion: 0.20
-Nodes (13): animationRegistry, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), resolveExpressionClip() (+5 more)
+### Community 1 - "AnimationRegistry.ts"
+Cohesion: 0.15
+Nodes (17): animationRegistry, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), resolveExpressionClip() (+9 more)
 
 ### Community 2 - "AnimationController"
 Cohesion: 0.17
@@ -162,8 +172,8 @@ Cohesion: 0.07
 Nodes (43): _action_fcurve_count(), _allowed_clip_names(), _assign_nla_slot(), _bone_exists(), _build_bone_clip(), key_loc(), key_rot(), need() (+35 more)
 
 ### Community 6 - "package.json"
-Cohesion: 0.05
-Nodes (39): dependencies, react, react-dom, @react-three/drei, @react-three/fiber, three, devDependencies, eslint (+31 more)
+Cohesion: 0.13
+Nodes (16): name, private, type, version, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh (+8 more)
 
 ### Community 7 - "modify_character.py"
 Cohesion: 0.09
@@ -225,17 +235,17 @@ Nodes (4): printWidth, semi, singleQuote, trailingComma
 Cohesion: 0.06
 Nodes (35): 10.1 Goals, 10.2 Architecture split, 10.3 Paths to change clothes, 10.4 Constraints, 10. Avatar Clothing, 11. Blender Automation Strategy, 12. Animation and Appearance Strategy, 13. Phase Map (+27 more)
 
-### Community 24 - "AvatarController"
-Cohesion: 0.13
-Nodes (4): GazeTarget, AvatarController, AvatarRuntimeStatus, VisemeEvent
+### Community 24 - "animation.ts"
+Cohesion: 0.09
+Nodes (14): defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, ResolvedClip, AnimationLayerPriority, GazeTarget (+6 more)
 
-### Community 25 - "get_llm_provider"
-Cohesion: 0.20
-Nodes (9): get_llm_provider(), Build the configured OpenAI-compatible ``LLMProvider``. Reads ``LLM_API_KEY``,…, get_settings(), Application configuration loaded from environment variables., Parse CORS origins into a list for middleware., Return a cached settings instance., Runtime settings. Secrets must come from env / `.env`, never source code., Settings (+1 more)
+### Community 25 - "Settings"
+Cohesion: 0.40
+Nodes (4): Parse CORS origins into a list for middleware., Runtime settings. Secrets must come from env / `.env`, never source code., Settings, BaseSettings
 
-### Community 27 - "dependencies.py"
-Cohesion: 0.15
-Nodes (14): get_presenter_plan_service(), get_presenter_plan_service_with_llm(), FastAPI dependency injection wiring., Provide a shared PresenterPlanService without an LLM (sample plan)., PresenterPlanService with an injected LLM port (for generate-text routes). Not…, AnimationPlan, AnimationSegment, One timed slice of a presenter performance plan. (+6 more)
+### Community 27 - "PresenterPlanService"
+Cohesion: 0.12
+Nodes (15): get_presenter_plan_service(), get_presenter_plan_service_with_llm(), Provide a shared PresenterPlanService without an LLM (sample plan)., PresenterPlanService with an injected LLM port (for generate-text routes). Not…, AnimationPlan, Sequence of semantic animation segments for web/mobile clients., PresenterPlanService, AnimationPlan (+7 more)
 
 ### Community 28 - "Expected Output Format"
 Cohesion: 0.13
@@ -243,11 +253,11 @@ Nodes (15): Assumptions, Business Context, Component Diagram Description, Curren
 
 ### Community 29 - "main.py"
 Cohesion: 0.16
-Nodes (10): health_check(), get, Return API liveness status., Application-wide logging setup., Configure root logging to stdout., setup_logging(), create_app(), FastAPI application entrypoint. (+2 more)
+Nodes (9): Application-wide logging setup., Configure root logging to stdout., setup_logging(), get_settings(), Application configuration loaded from environment variables., Return a cached settings instance., create_app(), FastAPI application entrypoint. (+1 more)
 
 ### Community 30 - "LLMProvider"
-Cohesion: 0.11
-Nodes (21): Provider ports implemented by infrastructure adapters., LLMProvider, ABC, LLM provider port. Implementations live under infrastructure/ (e.g. LangChain…, Generate a text response from the given prompt., Interface for large language model text generation., LLMResult, Core domain models for presenter plans (semantic only — no bones/clips). (+13 more)
+Cohesion: 0.07
+Nodes (39): get_llm_provider(), FastAPI dependency injection wiring., Build the configured OpenAI-compatible ``LLMProvider``. Reads ``LLM_API_KEY``,…, Provider ports implemented by infrastructure adapters., LLMProvider, ABC, LLM provider port. Implementations live under infrastructure/ (e.g. LangChain…, Generate a text response from the given prompt. (+31 more)
 
 ### Community 31 - "AnimationStateMachine"
 Cohesion: 0.23
@@ -258,24 +268,24 @@ Cohesion: 0.17
 Nodes (12): Accessibility Considerations, API Integration Strategy, Architecture Approach, Clean Production-Ready Code, Folder Structure, Output Expectations, Performance Considerations, Requirement Analysis (+4 more)
 
 ### Community 33 - "Commands available now"
-Cohesion: 0.04
-Nodes (40): 1. Prepare the mesh (already done by script), 2. Auto-rig on Mixamo (you do this in the browser), 3. Drop the file back into the repo, 4. Tell the agent (or run yourself), Mixamo upload pack, Blender presenter pipeline, Export settings (manual), Folder layout (+32 more)
+Cohesion: 0.10
+Nodes (21): Agent decision rule, Blender asset pipeline, Check Blender CLI, Commands available now, Create stub animations (Step 7), Example: change suit color, Export → validate → promote, Inspect scene (always run before modifying) (+13 more)
 
-### Community 34 - "AudioControllerApi"
-Cohesion: 0.16
-Nodes (3): AudioControllerApi, logger, LogLevel
+### Community 34 - "AvatarRuntime.ts"
+Cohesion: 0.36
+Nodes (5): EXPRESSION_SHAPES, MorphMesh, logger, LogLevel, three
 
 ### Community 35 - "plans.py"
-Cohesion: 0.15
-Nodes (20): generate_plan_text(), get_sample_plan(), get, Animation plan routes. Thin layer — orchestration stays in services., Map domain plan to API schema with camelCase aliases., Return a hardcoded sample plan for frontend/mobile integration tests., Generate a short spoken script for a topic via the LLM port. Does not return an…, _to_schema() (+12 more)
+Cohesion: 0.11
+Nodes (28): health_check(), get, Return API liveness status., generate_plan(), generate_plan_text(), get_sample_plan(), get, Animation plan routes. Thin layer — orchestration stays in services. (+20 more)
 
 ### Community 36 - "Bug Reporting Format"
 Cohesion: 0.18
 Nodes (11): Actual Result, Bug Reporting Format, Environment, Evidence, Expected Result, Possible Root Cause, Preconditions, Priority (+3 more)
 
-### Community 37 - "Avatar.tsx"
-Cohesion: 0.20
-Nodes (9): defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, Avatar(), AvatarConfigError, AvatarConfigInput (+1 more)
+### Community 37 - "validateAvatarConfig.ts"
+Cohesion: 0.47
+Nodes (3): AvatarConfigError, AvatarConfigInput, validateAvatarConfig()
 
 ### Community 38 - "tts_provider.py"
 Cohesion: 0.28
@@ -289,17 +299,17 @@ Nodes (9): Alignment with business goals, Architecture Review Process, Cost impl
 Cohesion: 0.40
 Nodes (4): Area, How to verify, Notes, Summary
 
-### Community 41 - "Contributing — GitFlow-lite"
-Cohesion: 0.05
-Nodes (31): After each step, Agent instructions — learn by building, Default: one small step, Do not finish a whole phase unprompted, Durable context (Obsidian), GitFlow-lite, Navigate by graphify nodes (save tokens), Backend — Avatar News Presenter API (+23 more)
+### Community 41 - "Agent instructions — learn by building"
+Cohesion: 0.22
+Nodes (7): After each step, Agent instructions — learn by building, Default: one small step, Do not finish a whole phase unprompted, Durable context (Obsidian), GitFlow-lite, Navigate by graphify nodes (save tokens)
 
 ### Community 42 - "FacialController"
-Cohesion: 0.32
-Nodes (4): EXPRESSION_SHAPES, FacialController, MorphMesh, ExpressionName
+Cohesion: 0.35
+Nodes (3): FacialController, BlendShapeMap, ExpressionName
 
-### Community 43 - "parseAnimationPlan.ts"
-Cohesion: 0.29
-Nodes (7): AnimationPlanError, GAZE, parseAnimationPlan(), parseSegment(), AnimationPlan, AnimationSegment, vitest
+### Community 43 - "PlanValidationError"
+Cohesion: 0.13
+Nodes (25): AnimationSegment, Any, PlanValidationError, Raised when an animation plan fails semantic validation., AnimationSegment, One timed slice of a presenter performance plan., _coerce_object(), _optional_enum() (+17 more)
 
 ### Community 44 - "apply_rename_map.py"
 Cohesion: 0.32
@@ -313,13 +323,17 @@ Nodes (7): Code Review Responsibilities, Communication Style, Core Responsibilit
 Cohesion: 0.25
 Nodes (8): Architecture Overview, Component Design, Data Flow, Deployment Architecture, Documentation Standards, Executive Summary, Recommendations, Risks
 
-### Community 47 - "animation.ts"
-Cohesion: 0.32
-Nodes (4): ResolvedClip, BlendShapeMap, AnimationLayerPriority, PlayAnimationOptions
+### Community 47 - "devDependencies"
+Cohesion: 0.13
+Nodes (15): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, jsdom, prettier, @types/react (+7 more)
 
-### Community 49 - "OpenAICompatibleLLMProvider"
-Cohesion: 0.18
-Nodes (13): LlmProviderError, Raised when an LLM provider request fails., OpenAI-compatible HTTP adapters (official OpenAI API and compatible gateways)., OpenAICompatibleLLMProvider, Chat Completions client for OpenAI and OpenAI-compatible base URLs., Generate text from a single user prompt via Chat Completions. Args: prompt:…, Unit tests for OpenAI-compatible LLMProvider (no live network)., generate() maps Chat Completions content into LLMResult.text. (+5 more)
+### Community 48 - "AvatarScene.tsx"
+Cohesion: 0.21
+Nodes (10): avatarConfig, studioConfig, AvatarCamera(), AvatarLighting(), AvatarScene(), AvatarSceneProps, Studio(), AvatarLoadHandlers (+2 more)
+
+### Community 49 - "LlmConfigurationError"
+Cohesion: 0.14
+Nodes (16): AppError, LlmConfigurationError, LlmProviderError, Domain and application exceptions., Raised when LLM settings are missing or invalid for a provider call., Raised when an LLM provider request fails., Base application error., Create a provider bound to one model endpoint. Args: api_key: Provider secret… (+8 more)
 
 ### Community 50 - "QA Engineer Agent"
 Cohesion: 0.29
@@ -337,9 +351,21 @@ Nodes (6): Architectural Principles, Communication Style, Performance Analysis, 
 Cohesion: 0.29
 Nodes (7): Alternatives Considered, Context, Decision, Mitigations, Risks, Technical Decision Making, Tradeoffs
 
+### Community 54 - "blender-pipeline.md"
+Cohesion: 0.18
+Nodes (6): Presenter source, Quick start (learning scaffold), Asset, Avatar specification, Placeholder vs authored character, Runtime API
+
+### Community 55 - "Contributing — GitFlow-lite"
+Cohesion: 0.22
+Nodes (9): Agents, Branch names, Commit messages, Contributing — GitFlow-lite, Monorepo, Pull requests, Trunk, What we are not doing yet (+1 more)
+
 ### Community 56 - "test_health.py"
 Cohesion: 0.33
 Nodes (5): Smoke tests for the health endpoint., Health endpoint returns ok., Sample plan returns semantic segments with camelCase headMotion., test_health_ok(), test_sample_plan_has_segments()
+
+### Community 57 - "Blender presenter pipeline"
+Cohesion: 0.25
+Nodes (8): Blender presenter pipeline, Export settings (manual), Folder layout, Goal, Local workflow, Naming contract, Orientation and scale, Prerequisites
 
 ### Community 58 - "System Design Responsibilities"
 Cohesion: 0.33
@@ -348,6 +374,14 @@ Nodes (6): API Design, Application Architecture, Data Architecture, Integration 
 ### Community 59 - "Architecture Analysis Framework"
 Cohesion: 0.33
 Nodes (6): Architecture Analysis Framework, Cost, Maintainability, Reliability, Scalability, Security
+
+### Community 60 - "Avatar News Presenter"
+Cohesion: 0.29
+Nodes (7): Architecture in one line, Avatar News Presenter, Backend (FastAPI), Docker, Prerequisites, Scripts, Setup
+
+### Community 61 - "README.md"
+Cohesion: 0.33
+Nodes (4): Backend — Avatar News Presenter API, Layout, Next (not in this step), Setup
 
 ### Community 62 - "UI/UX Principles"
 Cohesion: 0.40
@@ -441,6 +475,10 @@ Nodes (4): Current System Understanding, Existing Architecture, Existing Constra
 Cohesion: 0.50
 Nodes (4): Logging, Monitoring, Observability, Tracing
 
+### Community 85 - "architecture.md"
+Cohesion: 0.33
+Nodes (4): Architecture, Future attachment points, Responsibilities, `frontend/src` layout
+
 ### Community 86 - "Core Responsibilities"
 Cohesion: 0.67
 Nodes (3): 1. Requirement Analysis, 2. Test Planning, Core Responsibilities
@@ -449,29 +487,37 @@ Nodes (3): 1. Requirement Analysis, 2. Test Planning, Core Responsibilities
 Cohesion: 0.67
 Nodes (3): Functional Quality, UI Testing, Visual Quality
 
-### Community 94 - "LlmConfigurationError"
-Cohesion: 0.13
-Nodes (15): AppError, LlmConfigurationError, PlanValidationError, Domain and application exceptions., Raised when LLM settings are missing or invalid for a provider call., Base application error., Raised when an animation plan fails semantic validation., Create a provider bound to one model endpoint. Args: api_key: Provider secret… (+7 more)
+### Community 94 - "presenter_plan_service.py"
+Cohesion: 0.23
+Nodes (8): build_animation_plan_prompt(), Prompt templates for LLM-produced semantic AnimationPlan JSON., Ask the model for a JSON AnimationPlan matching the frontend contract. Args:…, Prompt templates. Keep prompts out of services., build_plan_script_prompt(), Prompt templates for presenter script / plan text generation., Build the user prompt for a short spoken presenter script. Args: topic: News or…, Presenter plan use cases. Sample plan is deterministic; LLM builds text/plans.
+
+### Community 102 - "dependencies"
+Cohesion: 0.33
+Nodes (6): dependencies, react, react-dom, @react-three/drei, @react-three/fiber, three
+
+### Community 103 - "Mixamo upload pack"
+Cohesion: 0.40
+Nodes (5): 1. Prepare the mesh (already done by script), 2. Auto-rig on Mixamo (you do this in the browser), 3. Drop the file back into the repo, 4. Tell the agent (or run yourself), Mixamo upload pack
 
 ## Knowledge Gaps
 - **359 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+354 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 654 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 679 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `three` connect `AvatarRuntime.ts` to `AvatarScene.tsx`, `Avatar.tsx`, `package.json`, `FacialController`, `animation.ts`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `AvatarRuntime` connect `AvatarRuntime` to `AvatarRuntime.ts`, `AnimationController`, `Avatar.tsx`, `AudioController`, `FacialController`, `AvatarController`, `AnimationStateMachine`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `react` connect `AvatarScene.tsx` to `Avatar.tsx`, `package.json`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **Are the 6 inferred relationships involving `LlmConfigurationError` (e.g. with `get_llm_provider()` and `generate_plan_text()`) actually correct?**
-  _`LlmConfigurationError` has 6 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `three` connect `AvatarRuntime.ts` to `AvatarScene.tsx`, `package.json`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `scripts` connect `scripts` to `package.json`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+- **Why does `AvatarController` connect `animation.ts` to `PresenterPage.tsx`, `AvatarRuntime.ts`, `AvatarRuntime`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Are the 6 inferred relationships involving `PlanValidationError` (e.g. with `generate_plan()` and `generate_plan_text()`) actually correct?**
+  _`PlanValidationError` has 6 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 7 inferred relationships involving `PresenterPlanService` (e.g. with `generate_plan()` and `generate_plan_text()`) actually correct?**
+  _`PresenterPlanService` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `ai-3d-avatar-backend`, `singleQuote`, `semi` to the rest of the system?**
   _359 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `AvatarScene.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07058823529411765 - nodes in this community are weakly interconnected._
-- **Should `common.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.06821480406386067 - nodes in this community are weakly interconnected._
+- **Should `PresenterPage.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.09841269841269841 - nodes in this community are weakly interconnected._

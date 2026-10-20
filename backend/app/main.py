@@ -5,7 +5,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.api.routes import health, plans
-from app.core.exceptions import LlmConfigurationError, LlmProviderError
+from app.core.exceptions import (
+    LlmConfigurationError,
+    LlmProviderError,
+    PlanValidationError,
+)
 from app.core.logging import setup_logging
 from app.core.settings import get_settings
 
@@ -39,6 +43,14 @@ def create_app() -> FastAPI:
     ) -> JSONResponse:
         """Upstream LLM failure → 502."""
         return JSONResponse(status_code=502, content={"detail": str(exc)})
+
+    @app.exception_handler(PlanValidationError)
+    async def plan_validation_handler(
+        _request: Request,
+        exc: PlanValidationError,
+    ) -> JSONResponse:
+        """Invalid plan / topic → 400."""
+        return JSONResponse(status_code=400, content={"detail": str(exc)})
 
     app.include_router(health.router)
     app.include_router(plans.router, prefix="/api/v1")

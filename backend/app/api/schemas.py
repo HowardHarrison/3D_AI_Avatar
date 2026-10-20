@@ -57,3 +57,9 @@ class GeneratePlanTextResponse(BaseModel):
     """Plain-text script to drive a later AnimationPlan step."""
 
     text: str
+
+
+class GeneratePlanRequest(BaseModel):
+    """Request body for LLM-backed semantic AnimationPlan generation."""
+
+    topic: str = Field(..., min_length=1, max_length=500)

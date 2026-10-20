@@ -1,11 +1,12 @@
-"""Presenter plan use cases. Sample plan is deterministic; script text uses LLM port."""
+"""Presenter plan use cases. Sample plan is deterministic; LLM builds text/plans."""
 
 import logging
 
 from app.core.exceptions import LlmConfigurationError, PlanValidationError
 from app.domain.interfaces import LLMProvider
 from app.domain.models import AnimationPlan, AnimationSegment
-from app.prompts import build_plan_script_prompt
+from app.domain.parse_animation_plan import parse_animation_plan
+from app.prompts import build_animation_plan_prompt, build_plan_script_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -18,10 +19,25 @@ class PresenterPlanService:
         Create the service.
 
         Args:
-            llm: Optional LLM port. Required for ``generate_plan_text``;
+            llm: Optional LLM port. Required for LLM-backed methods;
                 sample plans work without it.
         """
         self._llm = llm
+
+    def _require_llm(self) -> LLMProvider:
+        """Return the injected LLM port or raise if missing."""
+        if self._llm is None:
+            raise LlmConfigurationError(
+                "LLM provider is not configured for this service instance"
+            )
+        return self._llm
+
+    def _require_topic(self, topic: str) -> str:
+        """Trim and validate a topic string."""
+        cleaned = topic.strip()
+        if not cleaned:
+            raise PlanValidationError("topic must not be empty")
+        return cleaned
 
     def get_sample_plan(self) -> AnimationPlan:
         """
@@ -72,14 +88,30 @@ class PresenterPlanService:
             LlmConfigurationError: If no LLM was injected.
             LlmProviderError: Propagated from the provider on API failure.
         """
-        cleaned = topic.strip()
-        if not cleaned:
-            raise PlanValidationError("topic must not be empty")
-        if self._llm is None:
-            raise LlmConfigurationError(
-                "LLM provider is not configured for this service instance"
-            )
-
+        cleaned = self._require_topic(topic)
+        llm = self._require_llm()
         prompt = build_plan_script_prompt(cleaned)
         logger.info("Generating plan script text via LLM port")
-        return self._llm.generate(prompt, max_output_tokens=300).text
+        return llm.generate(prompt, max_output_tokens=300).text
+
+    def generate_plan(self, topic: str) -> AnimationPlan:
+        """
+        Ask the LLM for semantic AnimationPlan JSON and validate it.
+
+        Args:
+            topic: Subject of the news/presenter segment.
+
+        Returns:
+            Domain ``AnimationPlan`` safe for API serialization.
+
+        Raises:
+            PlanValidationError: Blank topic or invalid LLM JSON / semantics.
+            LlmConfigurationError: If no LLM was injected.
+            LlmProviderError: Propagated from the provider on API failure.
+        """
+        cleaned = self._require_topic(topic)
+        llm = self._require_llm()
+        prompt = build_animation_plan_prompt(cleaned)
+        logger.info("Generating AnimationPlan JSON via LLM port")
+        raw = llm.generate(prompt, max_output_tokens=800).text
+        return parse_animation_plan(raw)
