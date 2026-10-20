@@ -956,6 +956,18 @@
       "source_location": "L45"
     },
     {
+      "id": "frontend_src_services_avatar_animation_animationregistry_resolveheadclip",
+      "label": "resolveHeadClip()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "AnimationRegistry.ts",
+      "file_type": "code",
+      "norm_label": "resolveheadclip()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
+      "source_location": "L67"
+    },
+    {
       "id": "frontend_src_services_avatar_animation_parseanimationplan_animationplanerror_constructor",
       "label": ".constructor()",
       "_callable": true,
@@ -1002,6 +1014,18 @@
       "norm_label": ".playgesture()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
       "source_location": "L62"
+    },
+    {
+      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_setheadmotion",
+      "label": ".setHeadMotion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "AnimationRegistry.ts",
+      "file_type": "code",
+      "norm_label": ".setheadmotion()",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L94"
     },
     {
       "id": "frontend_src_types_avatar_avatarcontroller_playgesture",
@@ -1808,18 +1832,6 @@
       "source_location": "L16"
     },
     {
-      "id": "frontend_src_types_avatar_avatarcontroller_setexpression",
-      "label": ".setExpression()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": ".setexpression()",
-      "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L11"
-    },
-    {
       "id": "frontend_src_types_avatar_avatarcontroller_setgaze",
       "label": ".setGaze()",
       "_callable": true,
@@ -1901,7 +1913,7 @@
       "file_type": "code",
       "norm_label": "get_settings()",
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L31"
+      "source_location": "L37"
     },
     {
       "id": "backend_app_core_settings_settings_cors_origin_list",
@@ -1913,7 +1925,7 @@
       "file_type": "code",
       "norm_label": ".cors_origin_list()",
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L25"
+      "source_location": "L31"
     },
     {
       "id": "backend_app_main_create_app",
@@ -1938,18 +1950,6 @@
       "norm_label": "resolveexpressionclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
       "source_location": "L56"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationregistry_resolveheadclip",
-      "label": "resolveHeadClip()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarRuntime",
-      "file_type": "code",
-      "norm_label": "resolveheadclip()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L67"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_assertarmature",
@@ -2070,18 +2070,6 @@
       "norm_label": ".setgaze()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
       "source_location": "L107"
-    },
-    {
-      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_setheadmotion",
-      "label": ".setHeadMotion()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarRuntime",
-      "file_type": "code",
-      "norm_label": ".setheadmotion()",
-      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L94"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_startspeaking",
@@ -2898,6 +2886,18 @@
       "norm_label": ".warn()",
       "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
       "source_location": "L102"
+    },
+    {
+      "id": "frontend_src_types_avatar_avatarcontroller_setexpression",
+      "label": ".setExpression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".setexpression()",
+      "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L11"
     },
     {
       "id": "blender_scripts_apply_rename_map_apply_rename_map",
@@ -4030,6 +4030,17 @@
       "file_type": "code",
       "norm_label": "validateavatarconfig.test.ts",
       "source_file": "frontend/src/tests/services/avatar/validateAvatarConfig.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_index",
+      "label": "index.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "AvatarScene.tsx",
+      "file_type": "code",
+      "norm_label": "index.ts",
+      "source_file": "frontend/src/types/index.ts",
       "source_location": "L1"
     },
     {
@@ -5789,17 +5800,6 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_types_index",
-      "label": "index.ts",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": "index.ts",
-      "source_file": "frontend/src/types/index.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "backend_app_api_routes_init",
       "label": "routes/__init__.py",
       "_origin": "ast",
@@ -5888,7 +5888,7 @@
       "source_location": "L1"
     },
     {
-      "id": "backend_app_core_settings_rationale_26",
+      "id": "backend_app_core_settings_rationale_32",
       "label": "Parse CORS origins into a list for middleware.",
       "_origin": "ast",
       "community": 25,
@@ -5896,10 +5896,10 @@
       "file_type": "rationale",
       "norm_label": "parse cors origins into a list for middleware.",
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L26"
+      "source_location": "L32"
     },
     {
-      "id": "backend_app_core_settings_rationale_32",
+      "id": "backend_app_core_settings_rationale_38",
       "label": "Return a cached settings instance.",
       "_origin": "ast",
       "community": 25,
@@ -5907,7 +5907,7 @@
       "file_type": "rationale",
       "norm_label": "return a cached settings instance.",
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L32"
+      "source_location": "L38"
     },
     {
       "id": "backend_app_core_settings_rationale_9",
@@ -7059,6 +7059,42 @@
       "source_location": "L654"
     },
     {
+      "id": "docs_blender_pipeline_agent_decision_rule",
+      "label": "Agent decision rule",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "agent decision rule",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L408"
+    },
+    {
+      "id": "docs_blender_pipeline_blender_asset_pipeline",
+      "label": "Blender asset pipeline",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "blender asset pipeline",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_blender_pipeline_check_blender_cli",
+      "label": "Check Blender CLI",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "check blender cli",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L43"
+    },
+    {
       "id": "docs_blender_pipeline_commands_available_now",
       "label": "Commands available now",
       "_origin": "ast",
@@ -7179,6 +7215,30 @@
       "source_location": "L345"
     },
     {
+      "id": "docs_blender_pipeline_prerequisites",
+      "label": "Prerequisites",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "prerequisites",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "docs_blender_pipeline_safe_automation_sequence",
+      "label": "Safe automation sequence",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "safe automation sequence",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L75"
+    },
+    {
       "id": "docs_blender_pipeline_scaffold_or_adopt_a_character_step_8",
       "label": "Scaffold or adopt a character (Step 8)",
       "_origin": "ast",
@@ -7191,6 +7251,30 @@
       "source_location": "L277"
     },
     {
+      "id": "docs_blender_pipeline_scripts_location_important",
+      "label": "Scripts location (important)",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scripts location (important)",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L11"
+    },
+    {
+      "id": "docs_blender_pipeline_shared_helpers_common_py",
+      "label": "Shared helpers (`common.py`)",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "shared helpers (`common.py`)",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L139"
+    },
+    {
       "id": "docs_blender_pipeline_validate",
       "label": "Validate",
       "_origin": "ast",
@@ -7201,6 +7285,30 @@
       "norm_label": "validate",
       "source_file": "docs/blender-pipeline.md",
       "source_location": "L179"
+    },
+    {
+      "id": "docs_blender_pipeline_what_exists_today_vs_next_steps",
+      "label": "What exists today vs next steps",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "what exists today vs next steps",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L120"
+    },
+    {
+      "id": "docs_blender_pipeline_when_you_do_not_need_blender",
+      "label": "When you do not need Blender",
+      "_origin": "ast",
+      "community": 33,
+      "community_name": "Commands available now",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "when you do not need blender",
+      "source_file": "docs/blender-pipeline.md",
+      "source_location": "L61"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationcontroller",
@@ -7522,11 +7630,71 @@
       "source_location": "L290"
     },
     {
+      "id": "backend_readme",
+      "label": "backend/README.md",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "backend/readme.md",
+      "source_file": "backend/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_readme_backend_avatar_news_presenter_api",
+      "label": "Backend \u2014 Avatar News Presenter API",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "backend \u2014 avatar news presenter api",
+      "source_file": "backend/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_readme_layout",
+      "label": "Layout",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "layout",
+      "source_file": "backend/README.md",
+      "source_location": "L5"
+    },
+    {
+      "id": "backend_readme_next_not_in_this_step",
+      "label": "Next (not in this step)",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "next (not in this step)",
+      "source_file": "backend/README.md",
+      "source_location": "L51"
+    },
+    {
+      "id": "backend_readme_setup",
+      "label": "Setup",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "setup",
+      "source_file": "backend/README.md",
+      "source_location": "L21"
+    },
+    {
       "id": "blender_exports_mixamo_upload_readme",
       "label": "mixamo_upload/README.md",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "mixamo_upload/readme.md",
@@ -7538,7 +7706,7 @@
       "label": "1. Prepare the mesh (already done by script)",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "1. prepare the mesh (already done by script)",
@@ -7550,7 +7718,7 @@
       "label": "2. Auto-rig on Mixamo (you do this in the browser)",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "2. auto-rig on mixamo (you do this in the browser)",
@@ -7562,7 +7730,7 @@
       "label": "3. Drop the file back into the repo",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "3. drop the file back into the repo",
@@ -7574,7 +7742,7 @@
       "label": "4. Tell the agent (or run yourself)",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "4. tell the agent (or run yourself)",
@@ -7586,7 +7754,7 @@
       "label": "Mixamo upload pack",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "mixamo upload pack",
@@ -7594,11 +7762,119 @@
       "source_location": "L1"
     },
     {
+      "id": "blender_readme",
+      "label": "blender/README.md",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "blender/readme.md",
+      "source_file": "blender/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "blender_readme_blender_presenter_pipeline",
+      "label": "Blender presenter pipeline",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "blender presenter pipeline",
+      "source_file": "blender/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "blender_readme_export_settings_manual",
+      "label": "Export settings (manual)",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "export settings (manual)",
+      "source_file": "blender/README.md",
+      "source_location": "L136"
+    },
+    {
+      "id": "blender_readme_folder_layout",
+      "label": "Folder layout",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "folder layout",
+      "source_file": "blender/README.md",
+      "source_location": "L36"
+    },
+    {
+      "id": "blender_readme_goal",
+      "label": "Goal",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "goal",
+      "source_file": "blender/README.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "blender_readme_local_workflow",
+      "label": "Local workflow",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "local workflow",
+      "source_file": "blender/README.md",
+      "source_location": "L82"
+    },
+    {
+      "id": "blender_readme_naming_contract",
+      "label": "Naming contract",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "naming contract",
+      "source_file": "blender/README.md",
+      "source_location": "L66"
+    },
+    {
+      "id": "blender_readme_orientation_and_scale",
+      "label": "Orientation and scale",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "orientation and scale",
+      "source_file": "blender/README.md",
+      "source_location": "L144"
+    },
+    {
+      "id": "blender_readme_prerequisites",
+      "label": "Prerequisites",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "prerequisites",
+      "source_file": "blender/README.md",
+      "source_location": "L24"
+    },
+    {
       "id": "blender_source_readme",
       "label": "source/README.md",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "source/readme.md",
@@ -7610,7 +7886,7 @@
       "label": "Presenter source",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "presenter source",
@@ -7622,7 +7898,7 @@
       "label": "Quick start (learning scaffold)",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "quick start (learning scaffold)",
@@ -7630,16 +7906,244 @@
       "source_location": "L6"
     },
     {
+      "id": "docs_architecture",
+      "label": "architecture.md",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "architecture.md",
+      "source_file": "docs/architecture.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_architecture_architecture",
+      "label": "Architecture",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "architecture",
+      "source_file": "docs/architecture.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_architecture_future_attachment_points",
+      "label": "Future attachment points",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "future attachment points",
+      "source_file": "docs/architecture.md",
+      "source_location": "L51"
+    },
+    {
+      "id": "docs_architecture_responsibilities",
+      "label": "Responsibilities",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "responsibilities",
+      "source_file": "docs/architecture.md",
+      "source_location": "L20"
+    },
+    {
+      "id": "docs_avatar_spec",
+      "label": "avatar-spec.md",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "avatar-spec.md",
+      "source_file": "docs/avatar-spec.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_avatar_spec_asset",
+      "label": "Asset",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "asset",
+      "source_file": "docs/avatar-spec.md",
+      "source_location": "L3"
+    },
+    {
+      "id": "docs_avatar_spec_avatar_specification",
+      "label": "Avatar specification",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "avatar specification",
+      "source_file": "docs/avatar-spec.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_avatar_spec_placeholder_vs_authored_character",
+      "label": "Placeholder vs authored character",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "placeholder vs authored character",
+      "source_file": "docs/avatar-spec.md",
+      "source_location": "L10"
+    },
+    {
+      "id": "docs_avatar_spec_runtime_api",
+      "label": "Runtime API",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "runtime api",
+      "source_file": "docs/avatar-spec.md",
+      "source_location": "L14"
+    },
+    {
       "id": "docs_blender_pipeline",
       "label": "blender-pipeline.md",
       "_origin": "ast",
       "community": 37,
-      "community_name": "blender-pipeline.md",
+      "community_name": "Blender presenter pipeline",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "blender-pipeline.md",
       "source_file": "docs/blender-pipeline.md",
       "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_readme",
+      "label": "src/README.md",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "src/readme.md",
+      "source_file": "frontend/src/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_readme_frontend_src_layout",
+      "label": "`frontend/src` layout",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "`frontend/src` layout",
+      "source_file": "frontend/src/README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme",
+      "label": "README.md",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "readme.md",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme_architecture_in_one_line",
+      "label": "Architecture in one line",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "architecture in one line",
+      "source_file": "README.md",
+      "source_location": "L92"
+    },
+    {
+      "id": "readme_avatar_news_presenter",
+      "label": "Avatar News Presenter",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "avatar news presenter",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme_backend_fastapi",
+      "label": "Backend (FastAPI)",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "backend (fastapi)",
+      "source_file": "README.md",
+      "source_location": "L79"
+    },
+    {
+      "id": "readme_docker",
+      "label": "Docker",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "docker",
+      "source_file": "README.md",
+      "source_location": "L63"
+    },
+    {
+      "id": "readme_prerequisites",
+      "label": "Prerequisites",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "prerequisites",
+      "source_file": "README.md",
+      "source_location": "L7"
+    },
+    {
+      "id": "readme_scripts",
+      "label": "Scripts",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "scripts",
+      "source_file": "README.md",
+      "source_location": "L34"
+    },
+    {
+      "id": "readme_setup",
+      "label": "Setup",
+      "_origin": "ast",
+      "community": 37,
+      "community_name": "Blender presenter pipeline",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "setup",
+      "source_file": "README.md",
+      "source_location": "L20"
     },
     {
       "id": "backend_app_domain_interfaces_tts_provider",
@@ -8069,112 +8573,64 @@
       "source_location": "L99"
     },
     {
-      "id": "docs_blender_pipeline_agent_decision_rule",
-      "label": "Agent decision rule",
+      "id": "github_pull_request_template",
+      "label": "pull_request_template.md",
       "_origin": "ast",
       "community": 40,
-      "community_name": "Blender asset pipeline",
+      "community_name": "pull_request_template.md",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "agent decision rule",
-      "source_file": "docs/blender-pipeline.md",
-      "source_location": "L408"
-    },
-    {
-      "id": "docs_blender_pipeline_blender_asset_pipeline",
-      "label": "Blender asset pipeline",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "Blender asset pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "blender asset pipeline",
-      "source_file": "docs/blender-pipeline.md",
+      "node_kind": "page",
+      "norm_label": "pull_request_template.md",
+      "source_file": ".github/pull_request_template.md",
       "source_location": "L1"
     },
     {
-      "id": "docs_blender_pipeline_check_blender_cli",
-      "label": "Check Blender CLI",
+      "id": "github_pull_request_template_area",
+      "label": "Area",
       "_origin": "ast",
       "community": 40,
-      "community_name": "Blender asset pipeline",
+      "community_name": "pull_request_template.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "check blender cli",
-      "source_file": "docs/blender-pipeline.md",
-      "source_location": "L43"
+      "norm_label": "area",
+      "source_file": ".github/pull_request_template.md",
+      "source_location": "L5"
     },
     {
-      "id": "docs_blender_pipeline_prerequisites",
-      "label": "Prerequisites",
+      "id": "github_pull_request_template_how_to_verify",
+      "label": "How to verify",
       "_origin": "ast",
       "community": 40,
-      "community_name": "Blender asset pipeline",
+      "community_name": "pull_request_template.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "prerequisites",
-      "source_file": "docs/blender-pipeline.md",
-      "source_location": "L34"
+      "norm_label": "how to verify",
+      "source_file": ".github/pull_request_template.md",
+      "source_location": "L12"
     },
     {
-      "id": "docs_blender_pipeline_safe_automation_sequence",
-      "label": "Safe automation sequence",
+      "id": "github_pull_request_template_notes",
+      "label": "Notes",
       "_origin": "ast",
       "community": 40,
-      "community_name": "Blender asset pipeline",
+      "community_name": "pull_request_template.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "safe automation sequence",
-      "source_file": "docs/blender-pipeline.md",
-      "source_location": "L75"
+      "norm_label": "notes",
+      "source_file": ".github/pull_request_template.md",
+      "source_location": "L20"
     },
     {
-      "id": "docs_blender_pipeline_scripts_location_important",
-      "label": "Scripts location (important)",
+      "id": "github_pull_request_template_summary",
+      "label": "Summary",
       "_origin": "ast",
       "community": 40,
-      "community_name": "Blender asset pipeline",
+      "community_name": "pull_request_template.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "scripts location (important)",
-      "source_file": "docs/blender-pipeline.md",
-      "source_location": "L11"
-    },
-    {
-      "id": "docs_blender_pipeline_shared_helpers_common_py",
-      "label": "Shared helpers (`common.py`)",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "Blender asset pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "shared helpers (`common.py`)",
-      "source_file": "docs/blender-pipeline.md",
-      "source_location": "L139"
-    },
-    {
-      "id": "docs_blender_pipeline_what_exists_today_vs_next_steps",
-      "label": "What exists today vs next steps",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "Blender asset pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what exists today vs next steps",
-      "source_file": "docs/blender-pipeline.md",
-      "source_location": "L120"
-    },
-    {
-      "id": "docs_blender_pipeline_when_you_do_not_need_blender",
-      "label": "When you do not need Blender",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "Blender asset pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "when you do not need blender",
-      "source_file": "docs/blender-pipeline.md",
-      "source_location": "L61"
+      "norm_label": "summary",
+      "source_file": ".github/pull_request_template.md",
+      "source_location": "L1"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationtypes",
@@ -8219,102 +8675,6 @@
       "norm_label": "animationlayerpriority",
       "source_file": "frontend/src/types/animation.ts",
       "source_location": "L26"
-    },
-    {
-      "id": "blender_readme_blender_presenter_pipeline",
-      "label": "Blender presenter pipeline",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "Blender presenter pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "blender presenter pipeline",
-      "source_file": "blender/README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "blender_readme_export_settings_manual",
-      "label": "Export settings (manual)",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "Blender presenter pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "export settings (manual)",
-      "source_file": "blender/README.md",
-      "source_location": "L136"
-    },
-    {
-      "id": "blender_readme_folder_layout",
-      "label": "Folder layout",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "Blender presenter pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "folder layout",
-      "source_file": "blender/README.md",
-      "source_location": "L36"
-    },
-    {
-      "id": "blender_readme_goal",
-      "label": "Goal",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "Blender presenter pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "goal",
-      "source_file": "blender/README.md",
-      "source_location": "L13"
-    },
-    {
-      "id": "blender_readme_local_workflow",
-      "label": "Local workflow",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "Blender presenter pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "local workflow",
-      "source_file": "blender/README.md",
-      "source_location": "L82"
-    },
-    {
-      "id": "blender_readme_naming_contract",
-      "label": "Naming contract",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "Blender presenter pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "naming contract",
-      "source_file": "blender/README.md",
-      "source_location": "L66"
-    },
-    {
-      "id": "blender_readme_orientation_and_scale",
-      "label": "Orientation and scale",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "Blender presenter pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "orientation and scale",
-      "source_file": "blender/README.md",
-      "source_location": "L144"
-    },
-    {
-      "id": "blender_readme_prerequisites",
-      "label": "Prerequisites",
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "Blender presenter pipeline",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "prerequisites",
-      "source_file": "blender/README.md",
-      "source_location": "L24"
     },
     {
       "id": "blender_scripts_apply_rename_map",
@@ -8568,7 +8928,7 @@
       "label": "AGENTS.md",
       "_origin": "ast",
       "community": 47,
-      "community_name": "Agent instructions \u2014 learn by building",
+      "community_name": "Contributing \u2014 GitFlow-lite",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "agents.md",
@@ -8580,19 +8940,19 @@
       "label": "After each step",
       "_origin": "ast",
       "community": 47,
-      "community_name": "Agent instructions \u2014 learn by building",
+      "community_name": "Contributing \u2014 GitFlow-lite",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "after each step",
       "source_file": "AGENTS.md",
-      "source_location": "L70"
+      "source_location": "L80"
     },
     {
       "id": "agents_agent_instructions_learn_by_building",
       "label": "Agent instructions \u2014 learn by building",
       "_origin": "ast",
       "community": 47,
-      "community_name": "Agent instructions \u2014 learn by building",
+      "community_name": "Contributing \u2014 GitFlow-lite",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "agent instructions \u2014 learn by building",
@@ -8604,34 +8964,46 @@
       "label": "Default: one small step",
       "_origin": "ast",
       "community": 47,
-      "community_name": "Agent instructions \u2014 learn by building",
+      "community_name": "Contributing \u2014 GitFlow-lite",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "default: one small step",
       "source_file": "AGENTS.md",
-      "source_location": "L44"
+      "source_location": "L54"
     },
     {
       "id": "agents_do_not_finish_a_whole_phase_unprompted",
       "label": "Do not finish a whole phase unprompted",
       "_origin": "ast",
       "community": 47,
-      "community_name": "Agent instructions \u2014 learn by building",
+      "community_name": "Contributing \u2014 GitFlow-lite",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "do not finish a whole phase unprompted",
       "source_file": "AGENTS.md",
-      "source_location": "L53"
+      "source_location": "L63"
     },
     {
       "id": "agents_durable_context_obsidian",
       "label": "Durable context (Obsidian)",
       "_origin": "ast",
       "community": 47,
-      "community_name": "Agent instructions \u2014 learn by building",
+      "community_name": "Contributing \u2014 GitFlow-lite",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "durable context (obsidian)",
+      "source_file": "AGENTS.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "agents_gitflow_lite",
+      "label": "GitFlow-lite",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "gitflow-lite",
       "source_file": "AGENTS.md",
       "source_location": "L9"
     },
@@ -8640,12 +9012,132 @@
       "label": "Navigate by graphify nodes (save tokens)",
       "_origin": "ast",
       "community": 47,
-      "community_name": "Agent instructions \u2014 learn by building",
+      "community_name": "Contributing \u2014 GitFlow-lite",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "navigate by graphify nodes (save tokens)",
       "source_file": "AGENTS.md",
-      "source_location": "L26"
+      "source_location": "L36"
+    },
+    {
+      "id": "contributing",
+      "label": "CONTRIBUTING.md",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "contributing.md",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "contributing_agents",
+      "label": "Agents",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "agents",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "contributing_branch_names",
+      "label": "Branch names",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "branch names",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L14"
+    },
+    {
+      "id": "contributing_commit_messages",
+      "label": "Commit messages",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "commit messages",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L50"
+    },
+    {
+      "id": "contributing_contributing_gitflow_lite",
+      "label": "Contributing \u2014 GitFlow-lite",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "contributing \u2014 gitflow-lite",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "contributing_monorepo",
+      "label": "Monorepo",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "monorepo",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L45"
+    },
+    {
+      "id": "contributing_pull_requests",
+      "label": "Pull requests",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "pull requests",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L63"
+    },
+    {
+      "id": "contributing_trunk",
+      "label": "Trunk",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "trunk",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L6"
+    },
+    {
+      "id": "contributing_what_we_are_not_doing_yet",
+      "label": "What we are not doing yet",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "what we are not doing yet",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L71"
+    },
+    {
+      "id": "contributing_workflow",
+      "label": "Workflow",
+      "_origin": "ast",
+      "community": 47,
+      "community_name": "Contributing \u2014 GitFlow-lite",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "workflow",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L34"
     },
     {
       "id": "backend_app_api_routes_plans_py_get",
@@ -9325,162 +9817,6 @@
       "source_location": "L384"
     },
     {
-      "id": "readme_architecture_in_one_line",
-      "label": "Architecture in one line",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "Avatar News Presenter",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "architecture in one line",
-      "source_file": "README.md",
-      "source_location": "L90"
-    },
-    {
-      "id": "readme_avatar_news_presenter",
-      "label": "Avatar News Presenter",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "Avatar News Presenter",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "avatar news presenter",
-      "source_file": "README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "readme_backend_fastapi",
-      "label": "Backend (FastAPI)",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "Avatar News Presenter",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "backend (fastapi)",
-      "source_file": "README.md",
-      "source_location": "L77"
-    },
-    {
-      "id": "readme_docker",
-      "label": "Docker",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "Avatar News Presenter",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "docker",
-      "source_file": "README.md",
-      "source_location": "L61"
-    },
-    {
-      "id": "readme_prerequisites",
-      "label": "Prerequisites",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "Avatar News Presenter",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "prerequisites",
-      "source_file": "README.md",
-      "source_location": "L7"
-    },
-    {
-      "id": "readme_scripts",
-      "label": "Scripts",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "Avatar News Presenter",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "scripts",
-      "source_file": "README.md",
-      "source_location": "L32"
-    },
-    {
-      "id": "readme_setup",
-      "label": "Setup",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "Avatar News Presenter",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "setup",
-      "source_file": "README.md",
-      "source_location": "L18"
-    },
-    {
-      "id": "backend_readme",
-      "label": "backend/README.md",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "Backend \u2014 Avatar News Presenter API",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "backend/readme.md",
-      "source_file": "backend/README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_readme_backend_avatar_news_presenter_api",
-      "label": "Backend \u2014 Avatar News Presenter API",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "Backend \u2014 Avatar News Presenter API",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "backend \u2014 avatar news presenter api",
-      "source_file": "backend/README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_readme_layout",
-      "label": "Layout",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "Backend \u2014 Avatar News Presenter API",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "layout",
-      "source_file": "backend/README.md",
-      "source_location": "L5"
-    },
-    {
-      "id": "backend_readme_next_not_in_this_step",
-      "label": "Next (not in this step)",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "Backend \u2014 Avatar News Presenter API",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "next (not in this step)",
-      "source_file": "backend/README.md",
-      "source_location": "L46"
-    },
-    {
-      "id": "backend_readme_setup",
-      "label": "Setup",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "Backend \u2014 Avatar News Presenter API",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "setup",
-      "source_file": "backend/README.md",
-      "source_location": "L21"
-    },
-    {
-      "id": "readme",
-      "label": "README.md",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "Backend \u2014 Avatar News Presenter API",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "readme.md",
-      "source_file": "README.md",
-      "source_location": "L1"
-    },
-    {
       "id": "backend_tests_test_health",
       "label": "test_health.py",
       "_origin": "ast",
@@ -9523,78 +9859,6 @@
       "norm_label": "sample plan returns semantic segments with camelcase headmotion.",
       "source_file": "backend/tests/test_health.py",
       "source_location": "L18"
-    },
-    {
-      "id": "blender_readme",
-      "label": "blender/README.md",
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Avatar specification",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "blender/readme.md",
-      "source_file": "blender/README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_avatar_spec",
-      "label": "avatar-spec.md",
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Avatar specification",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "avatar-spec.md",
-      "source_file": "docs/avatar-spec.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_avatar_spec_asset",
-      "label": "Asset",
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Avatar specification",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "asset",
-      "source_file": "docs/avatar-spec.md",
-      "source_location": "L3"
-    },
-    {
-      "id": "docs_avatar_spec_avatar_specification",
-      "label": "Avatar specification",
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Avatar specification",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "avatar specification",
-      "source_file": "docs/avatar-spec.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_avatar_spec_placeholder_vs_authored_character",
-      "label": "Placeholder vs authored character",
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Avatar specification",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "placeholder vs authored character",
-      "source_file": "docs/avatar-spec.md",
-      "source_location": "L10"
-    },
-    {
-      "id": "docs_avatar_spec_runtime_api",
-      "label": "Runtime API",
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "Avatar specification",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "runtime api",
-      "source_file": "docs/avatar-spec.md",
-      "source_location": "L14"
     },
     {
       "id": "cursor_agents_solution_architect_agent_api_design",
@@ -9937,78 +10201,6 @@
       "norm_label": "typescript-eslint",
       "source_file": "frontend/package.json",
       "source_location": "L45"
-    },
-    {
-      "id": "docs_architecture",
-      "label": "architecture.md",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "architecture.md",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "architecture.md",
-      "source_file": "docs/architecture.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_architecture_architecture",
-      "label": "Architecture",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "architecture.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "architecture",
-      "source_file": "docs/architecture.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_architecture_future_attachment_points",
-      "label": "Future attachment points",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "architecture.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "future attachment points",
-      "source_file": "docs/architecture.md",
-      "source_location": "L51"
-    },
-    {
-      "id": "docs_architecture_responsibilities",
-      "label": "Responsibilities",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "architecture.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "responsibilities",
-      "source_file": "docs/architecture.md",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_src_readme",
-      "label": "src/README.md",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "architecture.md",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "src/readme.md",
-      "source_file": "frontend/src/README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_readme_frontend_src_layout",
-      "label": "`frontend/src` layout",
-      "_origin": "ast",
-      "community": 60,
-      "community_name": "architecture.md",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "`frontend/src` layout",
-      "source_file": "frontend/src/README.md",
-      "source_location": "L1"
     },
     {
       "id": "frontend_package_dependencies",
@@ -12041,7 +12233,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -18170,13 +18362,24 @@
     },
     {
       "source": "agents_agent_instructions_learn_by_building",
+      "target": "agents_durable_context_obsidian",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "agents_agent_instructions_learn_by_building",
       "target": "agents_navigate_by_graphify_nodes_save_tokens",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L26",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -18187,7 +18390,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L44",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -18198,7 +18401,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L53",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -18209,12 +18412,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "AGENTS.md",
-      "source_location": "L70",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
       "source": "agents_agent_instructions_learn_by_building",
-      "target": "agents_durable_context_obsidian",
+      "target": "agents_gitflow_lite",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18341,7 +18544,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L31",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -18467,17 +18670,6 @@
     },
     {
       "source": "backend_readme_backend_avatar_news_presenter_api",
-      "target": "backend_readme_next_not_in_this_step",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "backend/README.md",
-      "source_location": "L46",
-      "weight": 1.0
-    },
-    {
-      "source": "backend_readme_backend_avatar_news_presenter_api",
       "target": "backend_readme_layout",
       "relation": "contains",
       "_origin": "ast",
@@ -18485,6 +18677,17 @@
       "confidence_score": 1.0,
       "source_file": "backend/README.md",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_readme_backend_avatar_news_presenter_api",
+      "target": "backend_readme_next_not_in_this_step",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/README.md",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -19937,6 +20140,105 @@
       "confidence_score": 1.0,
       "source_file": "blender/source/README.md",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing",
+      "target": "contributing_contributing_gitflow_lite",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_contributing_gitflow_lite",
+      "target": "contributing_branch_names",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_contributing_gitflow_lite",
+      "target": "contributing_workflow",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_contributing_gitflow_lite",
+      "target": "contributing_monorepo",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_contributing_gitflow_lite",
+      "target": "contributing_commit_messages",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_contributing_gitflow_lite",
+      "target": "contributing_trunk",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_contributing_gitflow_lite",
+      "target": "contributing_pull_requests",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_contributing_gitflow_lite",
+      "target": "contributing_what_we_are_not_doing_yet",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "contributing_contributing_gitflow_lite",
+      "target": "contributing_agents",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -24560,6 +24862,50 @@
       "weight": 1.0
     },
     {
+      "source": "github_pull_request_template",
+      "target": "github_pull_request_template_summary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/pull_request_template.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "github_pull_request_template",
+      "target": "github_pull_request_template_how_to_verify",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/pull_request_template.md",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "github_pull_request_template",
+      "target": "github_pull_request_template_notes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/pull_request_template.md",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "github_pull_request_template",
+      "target": "github_pull_request_template_area",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".github/pull_request_template.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "readme",
       "target": "readme_avatar_news_presenter",
       "relation": "contains",
@@ -24578,7 +24924,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -24589,7 +24935,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -24600,7 +24946,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L61",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -24622,7 +24968,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L77",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -24633,7 +24979,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L90",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -24732,7 +25078,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L25",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -25935,25 +26281,25 @@
       "weight": 1.0
     },
     {
-      "source": "backend_app_core_settings_rationale_26",
+      "source": "backend_app_core_settings_rationale_32",
       "target": "backend_app_core_settings_settings_cors_origin_list",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L26",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
-      "source": "backend_app_core_settings_rationale_32",
+      "source": "backend_app_core_settings_rationale_38",
       "target": "backend_app_core_settings_get_settings",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/core/settings.py",
-      "source_location": "L32",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -27827,6 +28173,17 @@
       "weight": 1.0
     },
     {
+      "source": "agents",
+      "target": "contributing",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
       "source": "blender_readme",
       "target": "docs_blender_pipeline",
       "relation": "references",
@@ -27905,13 +28262,24 @@
     },
     {
       "source": "readme",
+      "target": "contributing",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "readme",
       "target": "backend_readme",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L88",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -27922,7 +28290,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L96",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -28068,5 +28436,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8387fe722a2deff99fd7b233a02aed9153ee0591"
+  "built_at_commit": "b97d18a13fa3daedceaa85ee42dc88d4ed75d326"
 }

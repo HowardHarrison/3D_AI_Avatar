@@ -1,16 +1,16 @@
-# Graph Report - AI_3D_Avatar  (2026-10-19)
+# Graph Report - AI_3D_Avatar  (2026-10-20)
 
 ## Corpus Check
-- 112 files · ~31,205 words
+- 114 files · ~31,735 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1026 nodes · 1413 edges · 102 communities (84 shown, 15 thin omitted)
+- 1042 nodes · 1429 edges · 97 communities (78 shown, 16 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8387fe72`
+- Built from commit: `b97d18a1`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -52,30 +52,25 @@
 - AvatarRuntime.ts
 - schemas.py
 - Bug Reporting Format
-- blender-pipeline.md
+- Blender presenter pipeline
 - tts_provider.py
 - Architecture Review Process
-- Blender asset pipeline
+- pull_request_template.md
 - animation.ts
 - FacialController
-- Blender presenter pipeline
 - apply_rename_map.py
 - frontend-developer-agent.md
 - Documentation Standards
-- Agent instructions — learn by building
+- Contributing — GitFlow-lite
 - get_sample_plan
 - AppError
 - QA Engineer Agent
 - Output Formats
 - solution-architect-agent.md
 - Technical Decision Making
-- Avatar News Presenter
-- Backend — Avatar News Presenter API
 - test_health.py
-- Avatar specification
 - System Design Responsibilities
 - Architecture Analysis Framework
-- architecture.md
 - dependencies
 - UI/UX Principles
 - Performance Optimization
@@ -142,15 +137,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (102 total, 15 thin omitted)
+## Communities (97 total, 16 thin omitted)
 
 ### Community 0 - "AvatarScene.tsx"
 Cohesion: 0.06
 Nodes (42): App(), StatusPanel(), StatusPanelProps, avatarConfig, defaultExpression, defaultGaze, SemanticExpression, SemanticGesture (+34 more)
 
 ### Community 1 - "AnimationRegistry.ts"
-Cohesion: 0.19
-Nodes (13): animationRegistry, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), resolveGestureClip() (+5 more)
+Cohesion: 0.18
+Nodes (14): animationRegistry, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), resolveGestureClip() (+6 more)
 
 ### Community 2 - "AnimationController"
 Cohesion: 0.17
@@ -233,16 +228,12 @@ Cohesion: 0.06
 Nodes (35): 10.1 Goals, 10.2 Architecture split, 10.3 Paths to change clothes, 10.4 Constraints, 10. Avatar Clothing, 11. Blender Automation Strategy, 12. Animation and Appearance Strategy, 13. Phase Map (+27 more)
 
 ### Community 24 - "AvatarController"
-Cohesion: 0.13
+Cohesion: 0.15
 Nodes (5): GazeTarget, HeadMotionName, AvatarController, AvatarRuntimeStatus, VisemeEvent
 
 ### Community 25 - "main.py"
 Cohesion: 0.14
 Nodes (13): Application-wide logging setup., Configure root logging to stdout., setup_logging(), get_settings(), Application configuration loaded from environment variables., Parse CORS origins into a list for middleware., Return a cached settings instance., Runtime settings. Secrets must come from env / `.env`, never source code. (+5 more)
-
-### Community 26 - "AvatarRuntime"
-Cohesion: 0.15
-Nodes (3): resolveExpressionClip(), resolveHeadClip(), AvatarRuntime
 
 ### Community 27 - "plans.py"
 Cohesion: 0.19
@@ -269,8 +260,8 @@ Cohesion: 0.17
 Nodes (12): Accessibility Considerations, API Integration Strategy, Architecture Approach, Clean Production-Ready Code, Folder Structure, Output Expectations, Performance Considerations, Requirement Analysis (+4 more)
 
 ### Community 33 - "Commands available now"
-Cohesion: 0.17
-Nodes (12): Commands available now, Create stub animations (Step 7), Example: change suit color, Export → validate → promote, Inspect scene (always run before modifying), Mixamo path (giga_chad / similar), Modify a material (first edit script), Modify character (safe transforms only) (+4 more)
+Cohesion: 0.10
+Nodes (21): Agent decision rule, Blender asset pipeline, Check Blender CLI, Commands available now, Create stub animations (Step 7), Example: change suit color, Export → validate → promote, Inspect scene (always run before modifying) (+13 more)
 
 ### Community 34 - "AvatarRuntime.ts"
 Cohesion: 0.35
@@ -284,9 +275,9 @@ Nodes (9): health_check(), get, Return API liveness status., AnimationSegmentSch
 Cohesion: 0.18
 Nodes (11): Actual Result, Bug Reporting Format, Environment, Evidence, Expected Result, Possible Root Cause, Preconditions, Priority (+3 more)
 
-### Community 37 - "blender-pipeline.md"
-Cohesion: 0.20
-Nodes (7): 1. Prepare the mesh (already done by script), 2. Auto-rig on Mixamo (you do this in the browser), 3. Drop the file back into the repo, 4. Tell the agent (or run yourself), Mixamo upload pack, Presenter source, Quick start (learning scaffold)
+### Community 37 - "Blender presenter pipeline"
+Cohesion: 0.05
+Nodes (34): Backend — Avatar News Presenter API, Layout, Next (not in this step), Setup, 1. Prepare the mesh (already done by script), 2. Auto-rig on Mixamo (you do this in the browser), 3. Drop the file back into the repo, 4. Tell the agent (or run yourself) (+26 more)
 
 ### Community 38 - "tts_provider.py"
 Cohesion: 0.28
@@ -296,17 +287,13 @@ Nodes (7): ABC, TTS provider port. Implementations live under infrastructure/., 
 Cohesion: 0.22
 Nodes (9): Alignment with business goals, Architecture Review Process, Cost implications, Maintainability, Operational complexity, Reliability risks, Scalability risks, Security risks (+1 more)
 
-### Community 40 - "Blender asset pipeline"
-Cohesion: 0.22
-Nodes (9): Agent decision rule, Blender asset pipeline, Check Blender CLI, Prerequisites, Safe automation sequence, Scripts location (important), Shared helpers (`common.py`), What exists today vs next steps (+1 more)
+### Community 40 - "pull_request_template.md"
+Cohesion: 0.40
+Nodes (4): Area, How to verify, Notes, Summary
 
 ### Community 41 - "animation.ts"
 Cohesion: 0.25
 Nodes (6): ResolvedClip, BlendShapeMap, AnimationLayerPriority, AnimationPlan, AnimationSegment, PlayAnimationOptions
-
-### Community 43 - "Blender presenter pipeline"
-Cohesion: 0.25
-Nodes (8): Blender presenter pipeline, Export settings (manual), Folder layout, Goal, Local workflow, Naming contract, Orientation and scale, Prerequisites
 
 ### Community 44 - "apply_rename_map.py"
 Cohesion: 0.32
@@ -320,9 +307,9 @@ Nodes (7): Code Review Responsibilities, Communication Style, Core Responsibilit
 Cohesion: 0.25
 Nodes (8): Architecture Overview, Component Design, Data Flow, Deployment Architecture, Documentation Standards, Executive Summary, Recommendations, Risks
 
-### Community 47 - "Agent instructions — learn by building"
-Cohesion: 0.29
-Nodes (6): After each step, Agent instructions — learn by building, Default: one small step, Do not finish a whole phase unprompted, Durable context (Obsidian), Navigate by graphify nodes (save tokens)
+### Community 47 - "Contributing — GitFlow-lite"
+Cohesion: 0.11
+Nodes (16): After each step, Agent instructions — learn by building, Default: one small step, Do not finish a whole phase unprompted, Durable context (Obsidian), GitFlow-lite, Navigate by graphify nodes (save tokens), Agents (+8 more)
 
 ### Community 48 - "get_sample_plan"
 Cohesion: 0.33
@@ -348,21 +335,9 @@ Nodes (6): Architectural Principles, Communication Style, Performance Analysis, 
 Cohesion: 0.29
 Nodes (7): Alternatives Considered, Context, Decision, Mitigations, Risks, Technical Decision Making, Tradeoffs
 
-### Community 54 - "Avatar News Presenter"
-Cohesion: 0.29
-Nodes (7): Architecture in one line, Avatar News Presenter, Backend (FastAPI), Docker, Prerequisites, Scripts, Setup
-
-### Community 55 - "Backend — Avatar News Presenter API"
-Cohesion: 0.33
-Nodes (4): Backend — Avatar News Presenter API, Layout, Next (not in this step), Setup
-
 ### Community 56 - "test_health.py"
 Cohesion: 0.33
 Nodes (5): Smoke tests for the health endpoint., Health endpoint returns ok., Sample plan returns semantic segments with camelCase headMotion., test_health_ok(), test_sample_plan_has_segments()
-
-### Community 57 - "Avatar specification"
-Cohesion: 0.33
-Nodes (4): Asset, Avatar specification, Placeholder vs authored character, Runtime API
 
 ### Community 58 - "System Design Responsibilities"
 Cohesion: 0.33
@@ -371,10 +346,6 @@ Nodes (6): API Design, Application Architecture, Data Architecture, Integration 
 ### Community 59 - "Architecture Analysis Framework"
 Cohesion: 0.33
 Nodes (6): Architecture Analysis Framework, Cost, Maintainability, Reliability, Scalability, Security
-
-### Community 60 - "architecture.md"
-Cohesion: 0.33
-Nodes (4): Architecture, Future attachment points, Responsibilities, `frontend/src` layout
 
 ### Community 61 - "dependencies"
 Cohesion: 0.33
@@ -481,23 +452,23 @@ Cohesion: 0.67
 Nodes (3): Functional Quality, UI Testing, Visual Quality
 
 ## Knowledge Gaps
-- **346 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+341 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 614 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **359 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+354 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 626 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `three` connect `AvatarRuntime.ts` to `AvatarScene.tsx`, `package.json`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `AnimationController` connect `AnimationController` to `AvatarRuntime.ts`, `AvatarRuntime`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `scripts` connect `scripts` to `package.json`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **Why does `AvatarRuntime` connect `AvatarRuntime` to `AvatarScene.tsx`, `AnimationRegistry.ts`, `AvatarRuntime.ts`, `AnimationController`, `AudioController`, `FacialController`, `AvatarController`, `AnimationStateMachine`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **What connects `ai-3d-avatar-backend`, `singleQuote`, `semi` to the rest of the system?**
-  _346 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _359 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `AvatarScene.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.057342657342657345 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0574400723654455 - nodes in this community are weakly interconnected._
 - **Should `common.py` be split into smaller, more focused modules?**
   _Cohesion score 0.06821480406386067 - nodes in this community are weakly interconnected._
 - **Should `GltfBuilder` be split into smaller, more focused modules?**
