@@ -480,9 +480,9 @@
     "semantic_hash": ""
   },
   "backend/app/core/settings.py": {
-    "mtime": 1792380646.5300922,
-    "seen": 1792381102.7959788,
-    "ast_hash": "9ff5f3f37d508fd2f4d1f649f329b95b",
+    "mtime": 1792464690.7014902,
+    "seen": 1792464710.2570558,
+    "ast_hash": "964e5303c175f2dcf96d8c28fe7fc502",
     "semantic_hash": ""
   },
   "backend/app/domain/__init__.py": {
@@ -588,21 +588,21 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1792380673.4862406,
-    "seen": 1792381102.7959788,
-    "ast_hash": "afa2ea3f9878ed1282e8acfe187bb1b4",
+    "mtime": 1792384586.2066677,
+    "seen": 1792464710.2570558,
+    "ast_hash": "fb940436e4e49de0c127aa0ec9853a8c",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1792380675.227639,
-    "seen": 1792381102.7959788,
-    "ast_hash": "2e52af40252fef8dd77e1ef92ad8125a",
+    "mtime": 1792464684.2036593,
+    "seen": 1792464710.2570558,
+    "ast_hash": "f7da19dc803aab89fea328666b8b8412",
     "semantic_hash": ""
   },
   "backend/README.md": {
-    "mtime": 1792380643.9324555,
-    "seen": 1792381102.7959788,
-    "ast_hash": "937ce942c94d8cd0770a0afb86a97918",
+    "mtime": 1792464694.884677,
+    "seen": 1792464710.2570558,
+    "ast_hash": "22e5b57cad0e3a138279493a73b4a2e3",
     "semantic_hash": ""
   },
   "blender/README.md": {
@@ -648,8 +648,8 @@
     "semantic_hash": ""
   },
   "docker-compose.yml": {
-    "mtime": 1791284166.5155075,
-    "seen": 1792381102.7959788,
+    "mtime": 1792464684.2046502,
+    "seen": 1792464710.2570558,
     "ast_hash": "fc5d7420e950e9f15457d9046420b49c",
     "semantic_hash": ""
   },
@@ -693,6 +693,18 @@
     "mtime": 1791284206.715961,
     "seen": 1792381102.7959788,
     "ast_hash": "8eec6f0e5169199a8536e3525a461f7e",
+    "semantic_hash": ""
+  },
+  ".github/pull_request_template.md": {
+    "mtime": 1792384585.0709138,
+    "seen": 1792464710.2570558,
+    "ast_hash": "4f830b127f4d8e41d0e9c18b19c46227",
+    "semantic_hash": ""
+  },
+  "CONTRIBUTING.md": {
+    "mtime": 1792384584.6665182,
+    "seen": 1792464710.2570558,
+    "ast_hash": "241239ad0b2285c739b567ba7aa346b5",
     "semantic_hash": ""
   }
 }

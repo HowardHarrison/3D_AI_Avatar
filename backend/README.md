@@ -29,6 +29,11 @@ uv sync
 uv run uvicorn app.main:app --reload --port 8000
 ```
 
+Set `LLM_API_KEY` in `.env` when you are ready to call a model (OpenAI by default).
+Do not put LLM keys in the frontend or any `VITE_*` variable. Config is loaded via
+`app.core.settings.Settings` (`LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL`, optional `LLM_BASE_URL`).
+No provider client is wired yet — settings only.
+
 - Health: http://localhost:8000/health
 - Sample plan: http://localhost:8000/api/v1/plans/sample
 - OpenAPI: http://localhost:8000/docs
