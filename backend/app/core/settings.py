@@ -21,6 +21,12 @@ class Settings(BaseSettings):
     # Comma-separated browser origins (Vite default included).
     cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
 
+    # LLM (OpenAI-compatible initially). Never put keys in frontend / VITE_*.
+    llm_provider: str = "openai"
+    llm_api_key: str | None = None
+    llm_model: str = "gpt-4o-mini"
+    llm_base_url: str | None = None
+
     @property
     def cors_origin_list(self) -> list[str]:
         """Parse CORS origins into a list for middleware."""
