@@ -1,10 +1,10 @@
-# Blender presenter pipeline
+# Blender avatar pipeline
 
-Blender authors the 3D news presenter. The browser never opens `.blend` files.
-The only runtime asset is `presenter.glb`.
+Blender authors the **stylized** chatbot avatar (skeleton, clips, morphs). The browser never opens `.blend` files.
+The only runtime asset is `presenter.glb` (stand-in until a cartoon character is exported). Naming contract: [docs/avatar-art-contract.md](../docs/avatar-art-contract.md).
 
 Safe inspect → modify → validate → export → promote flow, CLI prerequisites,
-and MVP path mapping: [docs/blender-pipeline.md](../docs/blender-pipeline.md).
+and path mapping: [docs/blender-pipeline.md](../docs/blender-pipeline.md).
 
 From `frontend/` you can also run `npm run avatar:inspect`, `avatar:validate-rig`,
 `avatar:export`, `avatar:validate-export`, `avatar:promote`, `avatar:release`,
@@ -12,7 +12,7 @@ and `avatar:scaffold` (Blender must be on PATH for the Blender-backed commands).
 
 ## Goal
 
-A lightweight professional humanoid, framed **waist-up**, suitable for news,
+A lightweight **stylized** humanoid, framed **waist-up / bust**, suitable for chat,
 education, and a future conversational assistant.
 
 Target hardware is modest (integrated GPU / 2 GB discrete). Prefer:

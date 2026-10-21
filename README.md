@@ -1,6 +1,8 @@
-# Avatar News Presenter
+# Stylized Chatbot Avatar
 
-Phase 1 MVP: a browser 3D news presenter loaded from a GLB, driven by a semantic TypeScript runtime. There is no LLM, TTS, or backend in this phase.
+Learning project: a browser **stylized** 3D chatbot avatar (Snapchat / Bitmoji-like), loaded from a GLB and driven by a semantic TypeScript runtime. Primary UX will be **interactive chat** (text, then voice). The current public GLB is a **contract-compliant stand-in** until stylized art lands.
+
+Art / naming contract: [docs/avatar-art-contract.md](docs/avatar-art-contract.md).
 
 The npm project is **`frontend/`** (one Vite app, one `node_modules`). There is no `apps/` workspace and no `packages/shared`.
 
@@ -29,7 +31,7 @@ npm run dev
 
 Open http://localhost:5173
 
-You should see a waist-up presenter (placeholder humanoid until you export your Blender character), idle breathing, blinks, and a debug panel.
+You should see a waist-up avatar (stand-in humanoid until a stylized character is exported), idle breathing, blinks, and a debug panel.
 
 ## Scripts
 
@@ -114,8 +116,8 @@ See [backend/README.md](backend/README.md).
 
 ## Architecture in one line
 
-Blender authors assets → GLB is the boundary → React Three Fiber renders → Avatar runtime plays semantic clips → backend/LLM will send timed semantic instruction plans (and later face/outfit presets).
+Blender authors skeleton/motion → GLB is the boundary → React Three Fiber renders + materials → Avatar runtime plays semantic behaviors → backend chat / TTS (and optional timed plans) drive the avatar.
 
-Overall architecture (faces, clothes, backend plans, diagrams): [MVP_Phase_1.md](MVP_Phase_1.md).
-
+Overall architecture: [docs/Overall_Architecture.md](docs/Overall_Architecture.md).  
+Art contract: [docs/avatar-art-contract.md](docs/avatar-art-contract.md).  
 Layer summary: [docs/architecture.md](docs/architecture.md).

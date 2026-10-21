@@ -1,12 +1,15 @@
-# 3D Avatar News Presenter — Overall Architecture
+# Stylized Chatbot Avatar — Overall Architecture
 
-This document is the **project architecture** for the Avatar News Presenter. It describes system boundaries, data flows, and how Phase 1 foundations extend to customized faces, clothing changes, and backend-driven instruction plans.
+This document is the **project architecture** for an interactive **stylized** 3D chatbot avatar (Snapchat / Bitmoji-like look). It describes system boundaries, data flows, and how the existing semantic runtime extends to chat (text/voice), customized looks, and optional timed instruction plans.
+
+**Product pivot (Phase 0):** primary UX is **conversation** (text first, then voice). The earlier “news presenter + AnimationPlan” path remains a valid **optional scripted mode**, not the main product story.
 
 Implementation is incremental (learn-by-building). Not every capability below is fully coded yet; items marked **Planned** are approved architecture, not unfinished guesses.
 
 Related docs:
 
 - [docs/architecture.md](docs/architecture.md) — layer summary
+- [docs/avatar-art-contract.md](docs/avatar-art-contract.md) — stylized look + bone/clip/morph contract
 - [docs/blender-pipeline.md](docs/blender-pipeline.md) — Blender → GLB automation
 - [docs/avatar-spec.md](docs/avatar-spec.md) — asset and semantic API notes
 - [AGENTS.md](AGENTS.md) — one-step implementation rule for coding agents
@@ -15,13 +18,14 @@ Related docs:
 
 ## 1. Product Goal
 
-Build a browser-based 3D news presenter that:
+Build a browser-based **interactive chatbot avatar** that:
 
-1. Loads a humanoid avatar from a validated **GLB**
-2. Plays **semantic** behaviors (idle, gestures, expressions, head, gaze, audio)
-3. Accepts an **array of timed instructions** from a backend (or mock) without exposing bones/clips to the UI
-4. Supports **visual customization** of face and clothes through clear asset + runtime boundaries
-5. Stays maintainable for a developer + AI coding agent (Blender Python for structure, TypeScript/JSON for behavior)
+1. Loads a **stylized** humanoid from a validated **GLB** (skeleton + motion; looks swapable in Three.js)
+2. Plays **semantic** behaviors (idle, talk reaction, gestures, expressions, head, gaze, audio)
+3. Converses with the user via **text** first, then **voice in/out** (STT / TTS) without exposing bones/clips to the UI
+4. Optionally accepts a timed **AnimationPlan** for scripted performances (legacy presenter path)
+5. Supports **visual customization** (materials / accessories) through clear asset + runtime boundaries
+6. Stays maintainable for a developer + AI coding agent (Blender Python for structure, TypeScript/JSON for behavior)
 
 ---
 
@@ -33,7 +37,8 @@ Build a browser-based 3D news presenter that:
 4. **Separate look from behavior** — mesh/materials/morphs vs gestures/idle/plans.
 5. **Inspect → backup → modify → validate → export temp → promote** for asset changes.
 6. **Backend sends plans, not renderer details** — emotion/gesture/head/gaze (+ later outfit/face presets), never Mixamo bone paths or Three.js objects.
-7. **Grow in phases** — Phase 1 local runtime first; network/LLM/TTS attach at stable APIs.
+7. **Grow in phases** — local runtime first; chat → TTS → STT → skins (see roadmap below).
+8. **Stylized over photoreal** — cartoon proportions and soft/flat materials; see [avatar-art-contract.md](avatar-art-contract.md).
 
 ---
 
@@ -48,19 +53,20 @@ flowchart LR
   end
 
   subgraph Assets["Asset boundary"]
-    GLB["presenter.glb"]
+    GLB["presenter.glb stand-in → stylized GLB"]
   end
 
   subgraph Runtime["Browser"]
-    UI[React UI / Debug panel]
+    UI[Chat UI + debug panel]
     RT[AvatarRuntime]
     R3F[React Three Fiber / Three.js]
   end
 
-  subgraph Future["Backend - Planned"]
+  subgraph Backend["Backend"]
     API[API / Orchestrator]
-    LLM[LLM planner]
+    LLM[LLM chat turns]
     TTS[TTS / media]
+    STT[STT - Planned]
   end
 
   DEV --> BL
@@ -70,10 +76,24 @@ flowchart LR
   GLB --> RT
   UI --> RT
   RT --> R3F
-  API -.->|AnimationPlan JSON| UI
-  LLM -.-> API
-  TTS -.-> API
+  UI <-->|chat turns| API
+  LLM --> API
+  TTS --> API
+  STT -.-> API
+  API -.->|optional AnimationPlan| UI
 ```
+
+### Roadmap (learning-sized phases)
+
+| Phase | Focus | Status |
+| --- | --- | --- |
+| 0 | Product goal + art/naming contract; keep stand-in GLB | **This docs step** |
+| 1 | Stylized avatar art + bust framing | Next |
+| 2 | Text chat loop → avatar talk/idle | Planned |
+| 3 | TTS → `AudioController` + mouth morphs | Planned |
+| 4 | Voice in (STT) | Planned |
+| 5 | Three.js skins / material presets | Planned |
+| 6 | Polish (streaming, barge-in, richer gestures) | Planned |
 
 ---
 

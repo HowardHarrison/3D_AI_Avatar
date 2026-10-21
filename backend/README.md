@@ -1,6 +1,6 @@
-# Backend — Avatar News Presenter API
+# Backend — Chatbot Avatar API
 
-TapTube-style **clean architecture** FastAPI app. Produces semantic `AnimationPlan` JSON for the web (and later mobile) clients. OpenAI-compatible `LLMProvider` can generate script text and validated plans; `GET /plans/sample` remains a hardcoded integration fixture.
+TapTube-style **clean architecture** FastAPI app for the stylized chatbot avatar. Today: OpenAI-compatible `LLMProvider`, TTS ports, and semantic `AnimationPlan` helpers (optional scripted mode). Next product path: **chat turns** (text → reply; later STT/TTS). `GET /plans/sample` remains a hardcoded integration fixture.
 
 ## Layout
 

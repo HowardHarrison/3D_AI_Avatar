@@ -1,6 +1,6 @@
 # Agent instructions — learn by building
 
-This is a **learning project**. The human is developing it to understand the stack (Blender → GLB → React / R3F → avatar runtime → later AI). Speed and completeness are not the goal.
+This is a **learning project**. The human is developing a **stylized interactive chatbot avatar** (Blender → GLB skeleton/motion → React / R3F → semantic runtime → chat / TTS / STT). Speed and completeness are not the goal. Art contract: [docs/avatar-art-contract.md](docs/avatar-art-contract.md).
 
 The npm app lives in `frontend/` (one Vite project). There is no `packages/` workspace.
 

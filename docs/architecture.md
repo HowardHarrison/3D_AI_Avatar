@@ -1,14 +1,16 @@
 # Architecture
 
-Phase 1 establishes layer boundaries so later AI features do not rewrite the avatar runtime.
+Layer boundaries so chat / TTS / STT and skins do not rewrite the avatar runtime.
 
-**Full project architecture** (custom face, clothes, backend `AnimationPlan`, Mermaid diagrams): [MVP_Phase_1.md](../MVP_Phase_1.md).
+**Product:** stylized interactive chatbot avatar (not photoreal). Art contract: [avatar-art-contract.md](avatar-art-contract.md).
+
+**Full project architecture** (custom face, clothes, chat, optional `AnimationPlan`, Mermaid diagrams): [Overall_Architecture.md](Overall_Architecture.md).
 
 ```text
 Blender (authoring)
-    → presenter.glb (asset boundary)
-    → React / Vite (UI, lifecycle)
-    → React Three Fiber (scene, camera, lights)
+    → presenter.glb (asset boundary; stand-in until stylized character)
+    → React / Vite (UI, chat lifecycle)
+    → React Three Fiber (scene, camera, lights, materials)
     → AvatarRuntime (semantic API)
         → AnimationController
         → FacialController
@@ -28,7 +30,7 @@ Blender (authoring)
 
 Per-frame updates stay in `AvatarRuntime.update`. The debug panel samples status about four times per second and must not `setState` on every animation frame.
 
-Frontend folders in `frontend/src` (conventional React tree; one feature: the 3D presenter):
+Frontend folders in `frontend/src` (conventional React tree; one feature: the 3D avatar / future chat shell):
 
 | Folder | Layer |
 | --- | --- |
@@ -50,8 +52,9 @@ See [frontend/src/README.md](../frontend/src/README.md).
 
 ## Future attachment points
 
+- Chat turn API (text → assistant text; later STT/TTS)
 - `startSpeaking` / `stopSpeaking` on `AvatarController`
-- `VisemeEvent` in `frontend/src/types`
-- `parseAnimationPlan` for LLM or FastAPI payloads
+- `VisemeEvent` in `frontend/src/types` (simple mouth morphs first)
+- `parseAnimationPlan` for optional scripted performances
 
-Those systems must emit `{ "emotion", "gesture", "headMotion", "gaze" }`, never bone rotations.
+Chat and plan systems must drive the avatar with semantic fields (`emotion`, `gesture`, `headMotion`, `gaze`, speak/stop), never bone rotations.
