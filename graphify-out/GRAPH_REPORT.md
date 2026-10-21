@@ -1,21 +1,21 @@
-# Graph Report - AI_3D_Avatar  (2026-10-20)
+# Graph Report - AI_3D_Avatar  (2026-10-21)
 
 ## Corpus Check
-- 123 files · ~34,064 words
+- 124 files · ~35,941 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1150 nodes · 1685 edges · 105 communities (88 shown, 14 thin omitted)
+- 1166 nodes · 1711 edges · 106 communities (88 shown, 15 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 39 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `012bf443`
+- Built from commit: `95d51d95`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- PresenterPage.tsx
+- AvatarScene.tsx
 - AnimationRegistry.ts
 - AnimationController
 - common.py
@@ -38,7 +38,7 @@
 - validate_rig.py
 - .prettierrc.json
 - vite-env.d.ts
-- 3D Avatar News Presenter — Overall Architecture
+- Stylized Chatbot Avatar — Overall Architecture
 - animation.ts
 - Settings
 - AvatarRuntime
@@ -52,7 +52,7 @@
 - AvatarRuntime.ts
 - plans.py
 - Bug Reporting Format
-- validateAvatarConfig.ts
+- Avatar art contract (stylized chatbot)
 - tts_provider.py
 - Architecture Review Process
 - pull_request_template.md
@@ -63,20 +63,20 @@
 - frontend-developer-agent.md
 - Documentation Standards
 - devDependencies
-- AvatarScene.tsx
+- validateAvatarConfig.ts
 - LlmConfigurationError
 - QA Engineer Agent
 - Output Formats
 - solution-architect-agent.md
 - Technical Decision Making
-- blender-pipeline.md
+- avatar-art-contract.md
 - Contributing — GitFlow-lite
 - test_health.py
-- Blender presenter pipeline
+- Blender avatar pipeline
 - System Design Responsibilities
 - Architecture Analysis Framework
-- Avatar News Presenter
-- README.md
+- Stylized Chatbot Avatar
+- Backend — Chatbot Avatar API
 - UI/UX Principles
 - Performance Optimization
 - Frontend Security
@@ -100,7 +100,7 @@
 - Business Requirement Analysis
 - Current System Understanding
 - Observability
-- architecture.md
+- Architecture
 - Core Responsibilities
 - UI Testing
 - api/__init__.py
@@ -117,6 +117,7 @@
 - dependencies
 - Mixamo upload pack
 - @vitejs/plugin-react
+- Avatar specification
 
 ## God Nodes (most connected - your core abstractions)
 1. `AvatarRuntime` - 26 edges
@@ -124,7 +125,7 @@
 3. `LLMProvider` - 19 edges
 4. `PresenterPlanService` - 19 edges
 5. `scripts` - 19 edges
-6. `3D Avatar News Presenter — Overall Architecture` - 19 edges
+6. `Stylized Chatbot Avatar — Overall Architecture` - 19 edges
 7. `LlmConfigurationError` - 18 edges
 8. `LLMResult` - 16 edges
 9. `AnimationController` - 16 edges
@@ -145,15 +146,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (105 total, 14 thin omitted)
+## Communities (106 total, 15 thin omitted)
 
-### Community 0 - "PresenterPage.tsx"
-Cohesion: 0.10
-Nodes (23): App(), StatusPanel(), StatusPanelProps, AppEnvironment, environment, AnimationControls(), AnimationControlsProps, EXPRESSIONS (+15 more)
+### Community 0 - "AvatarScene.tsx"
+Cohesion: 0.07
+Nodes (33): App(), StatusPanel(), StatusPanelProps, avatarConfig, AppEnvironment, environment, studioConfig, AnimationControls() (+25 more)
 
 ### Community 1 - "AnimationRegistry.ts"
-Cohesion: 0.15
-Nodes (17): animationRegistry, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), resolveExpressionClip() (+9 more)
+Cohesion: 0.16
+Nodes (16): EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), resolveExpressionClip(), resolveGestureClip() (+8 more)
 
 ### Community 2 - "AnimationController"
 Cohesion: 0.17
@@ -165,7 +166,7 @@ Nodes (50): assert_export_path_allowed(), blender_dir(), candidate_presenter_glb
 
 ### Community 4 - "GltfBuilder"
 Cohesion: 0.06
-Nodes (30): Shared naming contracts for Blender validation, GLB export, and the placeholder…, _align4(), _box_indices(), _box_normals(), _box_positions(), build_presenter(), GltfBuilder, _identity_mat4() (+22 more)
+Nodes (32): Shared naming contracts for Blender validation, GLB export, and the placeholder…, _align4(), _box_indices(), _box_normals(), _box_positions(), build_presenter(), _facial_morph_deltas(), GltfBuilder (+24 more)
 
 ### Community 5 - "create_animation.py"
 Cohesion: 0.07
@@ -231,13 +232,13 @@ Nodes (5): _load_common(), Validate presenter.blend against the Phase 1 avatar c
 Cohesion: 0.40
 Nodes (4): printWidth, semi, singleQuote, trailingComma
 
-### Community 23 - "3D Avatar News Presenter — Overall Architecture"
+### Community 23 - "Stylized Chatbot Avatar — Overall Architecture"
 Cohesion: 0.06
-Nodes (35): 10.1 Goals, 10.2 Architecture split, 10.3 Paths to change clothes, 10.4 Constraints, 10. Avatar Clothing, 11. Blender Automation Strategy, 12. Animation and Appearance Strategy, 13. Phase Map (+27 more)
+Nodes (36): 10.1 Goals, 10.2 Architecture split, 10.3 Paths to change clothes, 10.4 Constraints, 10. Avatar Clothing, 11. Blender Automation Strategy, 12. Animation and Appearance Strategy, 13. Phase Map (+28 more)
 
 ### Community 24 - "animation.ts"
-Cohesion: 0.09
-Nodes (14): defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, ResolvedClip, AnimationLayerPriority, GazeTarget (+6 more)
+Cohesion: 0.08
+Nodes (15): defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, ResolvedClip, BlendShapeMap, AnimationLayerPriority (+7 more)
 
 ### Community 25 - "Settings"
 Cohesion: 0.40
@@ -272,8 +273,8 @@ Cohesion: 0.10
 Nodes (21): Agent decision rule, Blender asset pipeline, Check Blender CLI, Commands available now, Create stub animations (Step 7), Example: change suit color, Export → validate → promote, Inspect scene (always run before modifying) (+13 more)
 
 ### Community 34 - "AvatarRuntime.ts"
-Cohesion: 0.36
-Nodes (5): EXPRESSION_SHAPES, MorphMesh, logger, LogLevel, three
+Cohesion: 0.32
+Nodes (6): animationRegistry, EXPRESSION_SHAPES, MorphMesh, logger, LogLevel, three
 
 ### Community 35 - "plans.py"
 Cohesion: 0.11
@@ -283,9 +284,9 @@ Nodes (28): health_check(), get, Return API liveness status., generate_plan(), g
 Cohesion: 0.18
 Nodes (11): Actual Result, Bug Reporting Format, Environment, Evidence, Expected Result, Possible Root Cause, Preconditions, Priority (+3 more)
 
-### Community 37 - "validateAvatarConfig.ts"
-Cohesion: 0.47
-Nodes (3): AvatarConfigError, AvatarConfigInput, validateAvatarConfig()
+### Community 37 - "Avatar art contract (stylized chatbot)"
+Cohesion: 0.20
+Nodes (10): Animation clips, Avatar art contract (stylized chatbot), Chatbot “talk” (behavior, not a new required clip yet), Facial morphs (shape keys), Product look, Required (current contract), Semantic API (unchanged rule), Skeleton (required bones) (+2 more)
 
 ### Community 38 - "tts_provider.py"
 Cohesion: 0.28
@@ -302,10 +303,6 @@ Nodes (4): Area, How to verify, Notes, Summary
 ### Community 41 - "Agent instructions — learn by building"
 Cohesion: 0.22
 Nodes (7): After each step, Agent instructions — learn by building, Default: one small step, Do not finish a whole phase unprompted, Durable context (Obsidian), GitFlow-lite, Navigate by graphify nodes (save tokens)
-
-### Community 42 - "FacialController"
-Cohesion: 0.35
-Nodes (3): FacialController, BlendShapeMap, ExpressionName
 
 ### Community 43 - "PlanValidationError"
 Cohesion: 0.13
@@ -327,9 +324,9 @@ Nodes (8): Architecture Overview, Component Design, Data Flow, Deployment Archit
 Cohesion: 0.13
 Nodes (15): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, jsdom, prettier, @types/react (+7 more)
 
-### Community 48 - "AvatarScene.tsx"
-Cohesion: 0.21
-Nodes (10): avatarConfig, studioConfig, AvatarCamera(), AvatarLighting(), AvatarScene(), AvatarSceneProps, Studio(), AvatarLoadHandlers (+2 more)
+### Community 48 - "validateAvatarConfig.ts"
+Cohesion: 0.47
+Nodes (3): AvatarConfigError, AvatarConfigInput, validateAvatarConfig()
 
 ### Community 49 - "LlmConfigurationError"
 Cohesion: 0.14
@@ -351,9 +348,9 @@ Nodes (6): Architectural Principles, Communication Style, Performance Analysis, 
 Cohesion: 0.29
 Nodes (7): Alternatives Considered, Context, Decision, Mitigations, Risks, Technical Decision Making, Tradeoffs
 
-### Community 54 - "blender-pipeline.md"
-Cohesion: 0.18
-Nodes (6): Presenter source, Quick start (learning scaffold), Asset, Avatar specification, Placeholder vs authored character, Runtime API
+### Community 54 - "avatar-art-contract.md"
+Cohesion: 0.27
+Nodes (3): Presenter source, Quick start (learning scaffold), `frontend/src` layout
 
 ### Community 55 - "Contributing — GitFlow-lite"
 Cohesion: 0.22
@@ -363,9 +360,9 @@ Nodes (9): Agents, Branch names, Commit messages, Contributing — GitFlow-lite,
 Cohesion: 0.33
 Nodes (5): Smoke tests for the health endpoint., Health endpoint returns ok., Sample plan returns semantic segments with camelCase headMotion., test_health_ok(), test_sample_plan_has_segments()
 
-### Community 57 - "Blender presenter pipeline"
+### Community 57 - "Blender avatar pipeline"
 Cohesion: 0.25
-Nodes (8): Blender presenter pipeline, Export settings (manual), Folder layout, Goal, Local workflow, Naming contract, Orientation and scale, Prerequisites
+Nodes (8): Blender avatar pipeline, Export settings (manual), Folder layout, Goal, Local workflow, Naming contract, Orientation and scale, Prerequisites
 
 ### Community 58 - "System Design Responsibilities"
 Cohesion: 0.33
@@ -375,13 +372,13 @@ Nodes (6): API Design, Application Architecture, Data Architecture, Integration 
 Cohesion: 0.33
 Nodes (6): Architecture Analysis Framework, Cost, Maintainability, Reliability, Scalability, Security
 
-### Community 60 - "Avatar News Presenter"
+### Community 60 - "Stylized Chatbot Avatar"
 Cohesion: 0.29
-Nodes (7): Architecture in one line, Avatar News Presenter, Backend (FastAPI), Docker, Prerequisites, Scripts, Setup
+Nodes (7): Architecture in one line, Backend (FastAPI), Docker, Prerequisites, Scripts, Setup, Stylized Chatbot Avatar
 
-### Community 61 - "README.md"
-Cohesion: 0.33
-Nodes (4): Backend — Avatar News Presenter API, Layout, Next (not in this step), Setup
+### Community 61 - "Backend — Chatbot Avatar API"
+Cohesion: 0.40
+Nodes (4): Backend — Chatbot Avatar API, Layout, Next (not in this step), Setup
 
 ### Community 62 - "UI/UX Principles"
 Cohesion: 0.40
@@ -475,9 +472,9 @@ Nodes (4): Current System Understanding, Existing Architecture, Existing Constra
 Cohesion: 0.50
 Nodes (4): Logging, Monitoring, Observability, Tracing
 
-### Community 85 - "architecture.md"
-Cohesion: 0.33
-Nodes (4): Architecture, Future attachment points, Responsibilities, `frontend/src` layout
+### Community 85 - "Architecture"
+Cohesion: 0.67
+Nodes (3): Architecture, Future attachment points, Responsibilities
 
 ### Community 86 - "Core Responsibilities"
 Cohesion: 0.67
@@ -496,28 +493,32 @@ Cohesion: 0.33
 Nodes (6): dependencies, react, react-dom, @react-three/drei, @react-three/fiber, three
 
 ### Community 103 - "Mixamo upload pack"
-Cohesion: 0.40
+Cohesion: 0.33
 Nodes (5): 1. Prepare the mesh (already done by script), 2. Auto-rig on Mixamo (you do this in the browser), 3. Drop the file back into the repo, 4. Tell the agent (or run yourself), Mixamo upload pack
 
+### Community 105 - "Avatar specification"
+Cohesion: 0.40
+Nodes (5): Asset, Avatar specification, Look vs motion, Placeholder vs authored character, Runtime API
+
 ## Knowledge Gaps
-- **359 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+354 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 679 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **368 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+363 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 689 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `three` connect `AvatarRuntime.ts` to `AvatarScene.tsx`, `package.json`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `scripts` connect `scripts` to `package.json`?**
-  _High betweenness centrality (0.013) - this node is a cross-community bridge._
-- **Why does `AvatarController` connect `animation.ts` to `PresenterPage.tsx`, `AvatarRuntime.ts`, `AvatarRuntime`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `three` connect `AvatarRuntime.ts` to `AvatarScene.tsx`, `package.json`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
+- **Why does `AvatarController` connect `animation.ts` to `AvatarScene.tsx`, `AvatarRuntime.ts`, `AvatarRuntime`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Are the 6 inferred relationships involving `PlanValidationError` (e.g. with `generate_plan()` and `generate_plan_text()`) actually correct?**
   _`PlanValidationError` has 6 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 7 inferred relationships involving `PresenterPlanService` (e.g. with `generate_plan()` and `generate_plan_text()`) actually correct?**
   _`PresenterPlanService` has 7 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `ai-3d-avatar-backend`, `singleQuote`, `semi` to the rest of the system?**
-  _359 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `PresenterPage.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.09841269841269841 - nodes in this community are weakly interconnected._
+  _368 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `AvatarScene.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.07058823529411765 - nodes in this community are weakly interconnected._

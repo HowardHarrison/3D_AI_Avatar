@@ -1,8 +1,8 @@
 /**
- * Studio colors for the presenter scene. Avoid high-resolution textures in Phase 1.
+ * Soft studio colors for the stylized chatbot bust shot. Flat, low-detail.
  */
 export const studioConfig = {
-  floorColor: "#1b2230",
-  backdropColor: "#243044",
-  background: "#0e141d",
+  floorColor: "#d5dde4",
+  backdropColor: "#c5d0da",
+  background: "#e8eef2",
 } as const;

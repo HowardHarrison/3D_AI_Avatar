@@ -8,7 +8,7 @@ Product direction: **stylized interactive chatbot** (Snapchat / Bitmoji-like), n
 - **Stand-in decision (Phase 0):** keep this GLB until a stylized chatbot character is authored. It must stay contract-compliant (`blender/scripts/contracts.py`).
 - Humanoid armature with hips, spine, chest, neck, head, and arm chains
 - Facial morph targets listed in [blender/README.md](../blender/README.md) and the art contract
-- Default framing today: waist-up (camera at `[0, 1.65, 3.2]`, look at `[0, 1.4, 0]`, FOV 35). Chat UI may later prefer bust framing without changing bone names.
+- Default framing: **bust / upper body** (camera at `[0, 1.55, 2.2]`, look at `[0, 1.55, 0]`, FOV 34). Stand-in GLB uses stylized big-head proportions from `generate_placeholder_glb.py`.
 
 ## Placeholder vs authored character
 

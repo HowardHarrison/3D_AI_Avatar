@@ -1,7 +1,8 @@
-"""Generate a contract-compliant placeholder presenter.glb without Blender.
+"""Generate a contract-compliant stylized placeholder presenter.glb without Blender.
 
-The mesh is a low-poly humanoid stand-in so the web runtime can be developed
-before the authored character exists. Replace it with a Blender export when ready.
+Big-head cartoon proportions and flat colors (chatbot / Bitmoji-like stand-in).
+Bone, clip, and morph names match ``contracts.py``. Replace with an authored
+stylized character when ready — keep the same names.
 
     python blender/scripts/generate_placeholder_glb.py
 """
@@ -93,6 +94,70 @@ def _quat_from_euler(rx: float, ry: float, rz: float) -> tuple[float, float, flo
     y = cx * sy * cz + sx * cy * sz
     z = cx * cy * sz - sx * sy * cz
     return (x, y, z, w)
+
+
+def _facial_morph_deltas(positions: list[float], morph_name: str) -> list[float]:
+    """Build per-vertex position deltas so box-head morphs read as a cartoon face.
+
+    Uniform whole-head offsets are nearly invisible. Region masks (mouth / brow /
+    eyes) make expressions distinct on the stylized placeholder.
+    """
+    deltas: list[float] = []
+    for i in range(len(positions) // 3):
+        x = positions[i * 3]
+        y = positions[i * 3 + 1]
+        z = positions[i * 3 + 2]
+        # Soft masks in local head space (origin at head center).
+        front = max(0.0, z * 2.2)
+        lower = max(0.0, -y * 2.0)
+        upper = max(0.0, y * 2.0)
+        left = max(0.0, -x * 2.2)
+        right = max(0.0, x * 2.2)
+        mouth = lower * (0.35 + front)
+        brow = upper * (0.35 + front)
+        eye_l = front * upper * left
+        eye_r = front * upper * right
+        dx = dy = dz = 0.0
+
+        if morph_name == "mouth_open":
+            dy, dz = -0.11 * mouth, 0.05 * mouth
+        elif morph_name == "mouth_close":
+            dy, dz = 0.05 * mouth, -0.03 * mouth
+        elif morph_name == "mouth_wide":
+            side = right - left
+            dx, dz = 0.09 * side * (0.4 + front), 0.03 * mouth
+        elif morph_name == "mouth_round":
+            dy, dz = -0.04 * mouth, 0.08 * mouth
+            dx = 0.03 * (right - left) * front
+        elif morph_name == "mouth_smile":
+            corner = mouth * (0.5 + right + left)
+            dx = 0.1 * (1.0 if x >= 0.0 else -1.0) * corner
+            dy = 0.07 * mouth
+            dz = 0.02 * mouth
+        elif morph_name == "mouth_frown":
+            corner = mouth * (0.5 + right + left)
+            dx = 0.06 * (1.0 if x >= 0.0 else -1.0) * corner
+            dy = -0.08 * mouth
+        elif morph_name == "jaw_open":
+            dy, dz = -0.14 * mouth, 0.04 * mouth
+        elif morph_name == "brow_up":
+            dy, dz = 0.09 * brow, 0.02 * brow
+        elif morph_name == "brow_down":
+            dy = -0.08 * brow
+        elif morph_name == "eye_blink_left":
+            dy = -0.1 * eye_l
+        elif morph_name == "eye_blink_right":
+            dy = -0.1 * eye_r
+        elif morph_name == "eye_wide":
+            dy = 0.07 * (eye_l + eye_r)
+            dz = 0.03 * front * upper
+        elif morph_name == "eye_squint":
+            dy = -0.06 * (eye_l + eye_r)
+        else:
+            dy = 0.01 * front
+
+        deltas.extend((dx, dy, dz))
+    return deltas
 
 
 class GltfBuilder:
@@ -195,7 +260,7 @@ class GltfBuilder:
                 "pbrMetallicRoughness": {
                     "baseColorFactor": [color[0], color[1], color[2], 1.0],
                     "metallicFactor": 0.0,
-                    "roughnessFactor": 0.7,
+                    "roughnessFactor": 0.92,
                 },
             }
         )
@@ -224,14 +289,9 @@ class GltfBuilder:
         if morphs:
             targets = []
             names = []
-            vertex_count = len(positions) // 3
-            for morph_name, offset in morphs.items():
+            for morph_name in morphs:
                 names.append(morph_name)
-                deltas: list[float] = []
-                for i in range(vertex_count):
-                    y = positions[i * 3 + 1]
-                    scale = 1.0 if y > 0.0 else 0.35
-                    deltas.extend((offset[0] * scale, offset[1] * scale, offset[2] * scale))
+                deltas = _facial_morph_deltas(positions, morph_name)
                 targets.append({"POSITION": self.add_float_accessor(deltas, "VEC3")})
             primitive["targets"] = targets
             mesh["weights"] = [0.0] * len(names)
@@ -368,44 +428,46 @@ def _identity_mat4() -> list[float]:
 
 
 def build_presenter() -> bytes:
-    """Build the placeholder presenter document and return GLB bytes."""
-    builder = GltfBuilder()
-    suit = builder.add_material("Suit", (0.12, 0.18, 0.32))
-    shirt = builder.add_material("Shirt", (0.85, 0.88, 0.92))
-    skin = builder.add_material("Skin", (0.83, 0.67, 0.55))
-    hair = builder.add_material("Hair", (0.18, 0.14, 0.12))
+    """Build a stylized (Bitmoji-like) contract-compliant placeholder GLB.
 
-    morph_offsets = {
-        "mouth_open": (0.0, -0.012, 0.018),
-        "mouth_close": (0.0, 0.006, -0.004),
-        "mouth_wide": (0.02, 0.0, 0.006),
-        "mouth_round": (0.0, -0.006, 0.02),
-        "mouth_smile": (0.012, 0.008, 0.004),
-        "mouth_frown": (0.008, -0.01, 0.0),
-        "jaw_open": (0.0, -0.02, 0.01),
-        "brow_up": (0.0, 0.018, 0.0),
-        "brow_down": (0.0, -0.012, 0.0),
-        "eye_blink_left": (-0.008, -0.016, 0.0),
-        "eye_blink_right": (0.008, -0.016, 0.0),
-        "eye_wide": (0.0, 0.01, 0.008),
-        "eye_squint": (0.0, -0.008, 0.0),
-    }
+    Same bone / clip / morph names as ``contracts.py``. Larger head, brighter
+    flat colors, chunkier limbs — intentional cartoon, not photoreal.
+    """
+    builder = GltfBuilder()
+    # Flat cartoon palette (teal top, warm skin) — readable at low poly.
+    top = builder.add_material("Top", (0.18, 0.62, 0.68))
+    shirt = builder.add_material("Shirt", (0.96, 0.94, 0.90))
+    skin = builder.add_material("Skin", (1.0, 0.84, 0.72))
+    hair = builder.add_material("Hair", (0.42, 0.26, 0.16))
+    eye_white = builder.add_material("EyeWhite", (0.98, 0.98, 1.0))
+    pupil = builder.add_material("Pupil", (0.04, 0.04, 0.06))
+    nose_mat = builder.add_material("Nose", (0.94, 0.72, 0.6))
+    mouth_mat = builder.add_material("Mouth", (0.28, 0.08, 0.1))
+    shoe = builder.add_material("Shoe", (0.25, 0.28, 0.32))
+
+    # Keys only — vertex deltas come from ``_facial_morph_deltas`` (region masks).
+    morph_offsets = {name: (0.0, 0.0, 0.0) for name in REQUIRED_SHAPE_KEYS}
     assert tuple(morph_offsets.keys()) == REQUIRED_SHAPE_KEYS
 
-    hips_mesh = builder.add_box_mesh("HipsMesh", (0.32, 0.14, 0.18), suit)
-    spine_mesh = builder.add_box_mesh("SpineMesh", (0.28, 0.18, 0.16), shirt)
-    chest_mesh = builder.add_box_mesh("ChestMesh", (0.38, 0.28, 0.2), suit)
-    neck_mesh = builder.add_box_mesh("NeckMesh", (0.08, 0.1, 0.08), skin)
-    head_mesh = builder.add_box_mesh("HeadMesh", (0.2, 0.24, 0.2), skin, morph_offsets)
-    hair_mesh = builder.add_box_mesh("HairMesh", (0.21, 0.08, 0.22), hair)
-    eye_mesh = builder.add_box_mesh("EyeMesh", (0.04, 0.02, 0.02), shirt)
-    upper_arm_mesh = builder.add_box_mesh("UpperArmMesh", (0.08, 0.28, 0.08), suit)
-    lower_arm_mesh = builder.add_box_mesh("LowerArmMesh", (0.07, 0.26, 0.07), shirt)
-    hand_mesh = builder.add_box_mesh("HandMesh", (0.08, 0.12, 0.04), skin)
-    shoulder_mesh = builder.add_box_mesh("ShoulderMesh", (0.12, 0.1, 0.1), suit)
-    thigh_mesh = builder.add_box_mesh("ThighMesh", (0.12, 0.36, 0.12), suit)
-    shin_mesh = builder.add_box_mesh("ShinMesh", (0.1, 0.36, 0.1), suit)
-    foot_mesh = builder.add_box_mesh("FootMesh", (0.1, 0.06, 0.22), (builder.add_material("Shoe", (0.08, 0.08, 0.09))))
+    # Big-head / short-limb proportions for a Snapchat-style read in bust framing.
+    hips_mesh = builder.add_box_mesh("HipsMesh", (0.34, 0.14, 0.2), top)
+    spine_mesh = builder.add_box_mesh("SpineMesh", (0.3, 0.16, 0.18), shirt)
+    chest_mesh = builder.add_box_mesh("ChestMesh", (0.4, 0.26, 0.22), top)
+    neck_mesh = builder.add_box_mesh("NeckMesh", (0.1, 0.08, 0.1), skin)
+    head_mesh = builder.add_box_mesh("HeadMesh", (0.34, 0.38, 0.34), skin, morph_offsets)
+    hair_mesh = builder.add_box_mesh("HairMesh", (0.36, 0.12, 0.36), hair)
+    # Clear B&W cartoon eyes + simple nose / mouth (feature meshes, not morph-only).
+    sclera_mesh = builder.add_box_mesh("EyeWhiteMesh", (0.1, 0.09, 0.045), eye_white)
+    pupil_mesh = builder.add_box_mesh("PupilMesh", (0.048, 0.048, 0.04), pupil)
+    nose_mesh = builder.add_box_mesh("NoseMesh", (0.055, 0.048, 0.07), nose_mat)
+    mouth_mesh = builder.add_box_mesh("MouthMesh", (0.13, 0.032, 0.035), mouth_mat)
+    upper_arm_mesh = builder.add_box_mesh("UpperArmMesh", (0.1, 0.26, 0.1), top)
+    lower_arm_mesh = builder.add_box_mesh("LowerArmMesh", (0.09, 0.24, 0.09), shirt)
+    hand_mesh = builder.add_box_mesh("HandMesh", (0.1, 0.12, 0.06), skin)
+    shoulder_mesh = builder.add_box_mesh("ShoulderMesh", (0.14, 0.12, 0.12), top)
+    thigh_mesh = builder.add_box_mesh("ThighMesh", (0.14, 0.32, 0.14), top)
+    shin_mesh = builder.add_box_mesh("ShinMesh", (0.12, 0.32, 0.12), top)
+    foot_mesh = builder.add_box_mesh("FootMesh", (0.12, 0.06, 0.22), shoe)
 
     def limb(name: str, mesh: int, translation: tuple[float, float, float]) -> int:
         return builder.add_node(name, translation=translation, mesh=mesh)
@@ -447,16 +509,31 @@ def build_presenter() -> bytes:
         "RightShoulder", translation=(0.26, 0.08, 0.0), mesh=shoulder_mesh, children=[right_upper_arm]
     )
 
-    left_eye = limb("LeftEye", eye_mesh, (-0.05, 0.04, 0.1))
-    right_eye = limb("RightEye", eye_mesh, (0.05, 0.04, 0.1))
-    hair_node = builder.add_node("Hair", translation=(0.0, 0.14, 0.0), mesh=hair_mesh)
+    # Eye bones stay named LeftEye / RightEye (idle look uses them). Sclera + pupil are children.
+    left_pupil = builder.add_node("LeftPupil", translation=(0.0, 0.0, 0.028), mesh=pupil_mesh)
+    left_sclera = builder.add_node(
+        "LeftSclera", translation=(0.0, 0.0, 0.0), mesh=sclera_mesh, children=[left_pupil]
+    )
+    left_eye = builder.add_node(
+        "LeftEye", translation=(-0.085, 0.055, 0.178), children=[left_sclera]
+    )
+    right_pupil = builder.add_node("RightPupil", translation=(0.0, 0.0, 0.028), mesh=pupil_mesh)
+    right_sclera = builder.add_node(
+        "RightSclera", translation=(0.0, 0.0, 0.0), mesh=sclera_mesh, children=[right_pupil]
+    )
+    right_eye = builder.add_node(
+        "RightEye", translation=(0.085, 0.055, 0.178), children=[right_sclera]
+    )
+    nose_node = builder.add_node("Nose", translation=(0.0, -0.015, 0.188), mesh=nose_mesh)
+    mouth_node = builder.add_node("Mouth", translation=(0.0, -0.105, 0.178), mesh=mouth_mesh)
+    hair_node = builder.add_node("Hair", translation=(0.0, 0.2, 0.0), mesh=hair_mesh)
     head = builder.add_node(
         "Head",
-        translation=(0.0, 0.16, 0.0),
+        translation=(0.0, 0.14, 0.0),
         mesh=head_mesh,
-        children=[left_eye, right_eye, hair_node],
+        children=[left_eye, right_eye, nose_node, mouth_node, hair_node],
     )
-    neck = builder.add_node("Neck", translation=(0.0, 0.2, 0.0), mesh=neck_mesh, children=[head])
+    neck = builder.add_node("Neck", translation=(0.0, 0.16, 0.0), mesh=neck_mesh, children=[head])
     chest = builder.add_node(
         "Chest",
         translation=(0.0, 0.2, 0.0),
@@ -513,6 +590,9 @@ def build_presenter() -> bytes:
 
     identity = (0.0, 0.0, 0.0)
     rest_arm = (0.15, 0.0, 0.0)
+    # Same magnitude for L/R mirrors so Turn/Tilt Right match Left (sign flip only).
+    turn_yaw = 0.7
+    tilt_roll = 0.55
 
     def loop(name: str, node: str, motion: tuple[float, float, float], duration: float = 2.0) -> None:
         builder.add_rotation_animation(
@@ -522,6 +602,24 @@ def build_presenter() -> bytes:
                 (0.0, identity),
                 (duration / 2.0, motion),
                 (duration, identity),
+            ],
+        )
+
+    def hold_pose(
+        name: str,
+        node: str,
+        motion: tuple[float, float, float],
+        arrive: float = 0.35,
+        hold_until: float = 1.15,
+    ) -> None:
+        """Move to pose and hold (clampWhenFinished keeps the readable end pose)."""
+        builder.add_rotation_animation(
+            name,
+            node,
+            [
+                (0.0, identity),
+                (arrive, motion),
+                (hold_until, motion),
             ],
         )
 
@@ -539,50 +637,92 @@ def build_presenter() -> bytes:
             "Hips": [(0.0, identity), (1.2, (0.0, 0.0, 0.06)), (2.4, identity)],
         },
     )
-    loop("Head_Nod_Small", "Head", (0.18, 0.0, 0.0), 1.2)
-    loop("Head_Turn_Left", "Head", (0.0, 0.35, 0.0), 1.6)
-    loop("Head_Turn_Right", "Head", (0.0, -0.35, 0.0), 1.6)
-    loop("Head_Tilt_Left", "Head", (0.0, 0.0, 0.22), 1.4)
-    loop("Head_Tilt_Right", "Head", (0.0, 0.0, -0.22), 1.4)
-    loop("Gesture_Nod", "Head", (0.25, 0.0, 0.0), 1.0)
+    # Clear double-nod (not a tiny single bob).
+    builder.add_rotation_animation(
+        "Head_Nod_Small",
+        "Head",
+        [
+            (0.0, identity),
+            (0.22, (0.55, 0.0, 0.0)),
+            (0.4, (0.08, 0.0, 0.0)),
+            (0.62, (0.55, 0.0, 0.0)),
+            (0.95, identity),
+        ],
+    )
+    hold_pose("Head_Turn_Left", "Head", (0.0, turn_yaw, 0.0))
+    hold_pose("Head_Turn_Right", "Head", (0.0, -turn_yaw, 0.0))
+    hold_pose("Head_Tilt_Left", "Head", (0.0, 0.0, tilt_roll))
+    hold_pose("Head_Tilt_Right", "Head", (0.0, 0.0, -tilt_roll))
+    builder.add_rotation_animation(
+        "Gesture_Nod",
+        "Head",
+        [
+            (0.0, identity),
+            (0.2, (0.5, 0.0, 0.0)),
+            (0.38, (0.05, 0.0, 0.0)),
+            (0.58, (0.5, 0.0, 0.0)),
+            (0.85, identity),
+        ],
+    )
 
     builder.add_multi_rotation_animation(
         "Gesture_OpenHand",
         {
-            "LeftUpperArm": [(0.0, rest_arm), (0.4, (0.4, 0.0, 0.5)), (1.2, rest_arm)],
-            "LeftLowerArm": [(0.0, identity), (0.4, (0.2, 0.0, 0.0)), (1.2, identity)],
-            "RightUpperArm": [(0.0, rest_arm), (0.4, (0.4, 0.0, -0.5)), (1.2, rest_arm)],
-            "RightLowerArm": [(0.0, identity), (0.4, (0.2, 0.0, 0.0)), (1.2, identity)],
+            "LeftUpperArm": [(0.0, rest_arm), (0.4, (0.55, 0.15, 0.75)), (1.2, rest_arm)],
+            "LeftLowerArm": [(0.0, identity), (0.4, (0.35, 0.0, 0.15)), (1.2, identity)],
+            "RightUpperArm": [(0.0, rest_arm), (0.4, (0.55, -0.15, -0.75)), (1.2, rest_arm)],
+            "RightLowerArm": [(0.0, identity), (0.4, (0.35, 0.0, -0.15)), (1.2, identity)],
         },
     )
     builder.add_multi_rotation_animation(
         "Gesture_Emphasize",
         {
-            "RightUpperArm": [(0.0, rest_arm), (0.35, (0.7, -0.2, -0.4)), (0.9, rest_arm)],
-            "RightLowerArm": [(0.0, identity), (0.35, (0.5, 0.0, 0.0)), (0.9, identity)],
+            "RightUpperArm": [(0.0, rest_arm), (0.35, (0.95, -0.35, -0.55)), (0.9, rest_arm)],
+            "RightLowerArm": [(0.0, identity), (0.35, (0.75, 0.0, 0.0)), (0.9, identity)],
         },
     )
     builder.add_multi_rotation_animation(
         "Gesture_PointLeft",
         {
-            "LeftUpperArm": [(0.0, rest_arm), (0.4, (0.55, 0.4, 0.8)), (1.1, rest_arm)],
-            "LeftLowerArm": [(0.0, identity), (0.4, (0.15, 0.0, 0.0)), (1.1, identity)],
+            "LeftUpperArm": [(0.0, rest_arm), (0.4, (0.75, 0.55, 1.0)), (1.1, rest_arm)],
+            "LeftLowerArm": [(0.0, identity), (0.4, (0.25, 0.0, 0.2)), (1.1, identity)],
         },
     )
     builder.add_multi_rotation_animation(
         "Gesture_PointRight",
         {
-            "RightUpperArm": [(0.0, rest_arm), (0.4, (0.55, -0.4, -0.8)), (1.1, rest_arm)],
-            "RightLowerArm": [(0.0, identity), (0.4, (0.15, 0.0, 0.0)), (1.1, identity)],
+            "RightUpperArm": [(0.0, rest_arm), (0.4, (0.75, -0.55, -1.0)), (1.1, rest_arm)],
+            "RightLowerArm": [(0.0, identity), (0.4, (0.25, 0.0, -0.2)), (1.1, identity)],
         },
     )
+    # Hands meet in front of the chest (hold mid pose so it reads clearly).
     builder.add_multi_rotation_animation(
         "Gesture_HandsTogether",
         {
-            "LeftUpperArm": [(0.0, rest_arm), (0.4, (0.5, 0.2, 0.3)), (1.2, rest_arm)],
-            "RightUpperArm": [(0.0, rest_arm), (0.4, (0.5, -0.2, -0.3)), (1.2, rest_arm)],
-            "LeftLowerArm": [(0.0, identity), (0.4, (0.4, 0.0, 0.0)), (1.2, identity)],
-            "RightLowerArm": [(0.0, identity), (0.4, (0.4, 0.0, 0.0)), (1.2, identity)],
+            "LeftUpperArm": [
+                (0.0, rest_arm),
+                (0.4, (1.05, 0.65, 0.95)),
+                (0.95, (1.05, 0.65, 0.95)),
+                (1.45, rest_arm),
+            ],
+            "RightUpperArm": [
+                (0.0, rest_arm),
+                (0.4, (1.05, -0.65, -0.95)),
+                (0.95, (1.05, -0.65, -0.95)),
+                (1.45, rest_arm),
+            ],
+            "LeftLowerArm": [
+                (0.0, identity),
+                (0.4, (1.25, 0.15, 0.45)),
+                (0.95, (1.25, 0.15, 0.45)),
+                (1.45, identity),
+            ],
+            "RightLowerArm": [
+                (0.0, identity),
+                (0.4, (1.25, -0.15, -0.45)),
+                (0.95, (1.25, -0.15, -0.45)),
+                (1.45, identity),
+            ],
         },
     )
 
@@ -601,9 +741,21 @@ def build_presenter() -> bytes:
         )
 
     morph_clip("Emotion_Neutral", {}, 0.4)
-    morph_clip("Emotion_Serious", {"brow_down": 0.7, "mouth_frown": 0.35, "mouth_close": 0.2}, 0.8)
-    morph_clip("Emotion_Positive", {"mouth_smile": 0.85, "brow_up": 0.25, "eye_wide": 0.15}, 0.8)
-    morph_clip("Emotion_Concerned", {"brow_up": 0.45, "brow_down": 0.2, "mouth_frown": 0.5, "eye_squint": 0.2}, 0.8)
+    morph_clip(
+        "Emotion_Serious",
+        {"brow_down": 1.0, "mouth_frown": 0.9, "mouth_close": 0.55, "eye_squint": 0.45},
+        0.8,
+    )
+    morph_clip(
+        "Emotion_Positive",
+        {"mouth_smile": 1.0, "brow_up": 0.65, "eye_wide": 0.5, "mouth_open": 0.2},
+        0.8,
+    )
+    morph_clip(
+        "Emotion_Concerned",
+        {"brow_up": 0.85, "mouth_frown": 0.9, "eye_squint": 0.55, "mouth_wide": 0.35},
+        0.8,
+    )
     morph_clip("Blink", {"eye_blink_left": 1.0, "eye_blink_right": 1.0}, 0.22)
 
     present = {anim["name"] for anim in builder.animations}

@@ -12,10 +12,10 @@ Related: [avatar-spec.md](avatar-spec.md) · [blender-pipeline.md](blender-pipel
 | --- | --- |
 | Style | Stylized cartoon (Snapchat / Bitmoji-like), not photoreal |
 | Why | Simple graphics stay intentional; avoids uncanny valley |
-| Framing | Bust / upper body for chat (waist-up camera is fine until reframed) |
+| Framing | Bust / upper body (`avatarConfig.camera`: closer shot on head/chest) |
 | GLB role | Skeleton + skin weights + animation clips (+ facial morphs) |
 | Three.js role | Materials, colors, accessories, outfit/skin presets at runtime |
-| Temporary asset | Keep `frontend/public/avatars/presenter.glb` as the **stand-in** until a stylized rig is authored (Phase 1 art step) |
+| Stand-in asset | `presenter.glb` from `generate_placeholder_glb.py` — stylized big-head boxes with drawn eyes (white+pupil), nose, and mouth; replace later with authored cartoon character, same bone/clip names |
 
 ---
 

@@ -17,6 +17,7 @@ import { AudioController } from "./audio/AudioController";
 import { AnimationController } from "./animation/AnimationController";
 import { AnimationStateMachine } from "./animation/AnimationStateMachine";
 import {
+  animationRegistry,
   isExpressionName,
   isGestureName,
   isHeadMotionName,
@@ -101,17 +102,27 @@ export class AvatarRuntime implements AvatarController {
       this.pushWarning(`Animation "${clip}" not found.`);
       return;
     }
-    this.animation.play(clip, { loop: false, exclusive: false, fadeInSeconds: 0.2 });
+    // Drop prior head clips so Left/Right do not blend into uneven poses.
+    for (const headClip of Object.values(animationRegistry.head)) {
+      if (headClip !== clip) {
+        this.animation.stop(headClip);
+      }
+    }
+    // Clear direct gaze overrides so the mixer owns head rotation for this clip.
+    if (this.head) {
+      this.head.rotation.set(0, 0, 0);
+    }
+    this.animation.play(clip, { loop: false, exclusive: false, fadeInSeconds: 0.15 });
   }
 
   setGaze(target: GazeTarget): void {
     if (!this.head) {
       return;
     }
-    const yaw = target === "left" ? 0.35 : target === "right" ? -0.35 : 0;
-    const pitch = target === "down" ? 0.15 : 0;
-    this.head.rotation.y = yaw;
-    this.head.rotation.x = pitch;
+    // Match head-turn clip magnitude (±0.7) so gaze and Turn Left/Right agree.
+    const yaw = target === "left" ? 0.7 : target === "right" ? -0.7 : 0;
+    const pitch = target === "down" ? 0.25 : 0;
+    this.head.rotation.set(pitch, yaw, 0);
   }
 
   startSpeaking(): void {

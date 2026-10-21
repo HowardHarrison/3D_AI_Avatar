@@ -1,5 +1,5 @@
 /**
- * News-presenter camera. Numbers come from avatarConfig.
+ * Bust-framing chat camera. Numbers come from avatarConfig.
  */
 
 import { PerspectiveCamera } from "@react-three/drei";

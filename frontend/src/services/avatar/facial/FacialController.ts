@@ -6,11 +6,12 @@ import { Mesh, Object3D } from "three";
 import type { ExpressionName } from "../../../types/animation";
 import { logger } from "../../../utils/logger";
 
+/** Strong stylized weights so box-head morphs read clearly in the debug UI. */
 const EXPRESSION_SHAPES: Record<ExpressionName, Record<string, number>> = {
   neutral: {},
-  serious: { brow_down: 0.7, mouth_frown: 0.35, mouth_close: 0.2 },
-  positive: { mouth_smile: 0.85, brow_up: 0.25, eye_wide: 0.15 },
-  concerned: { brow_up: 0.45, mouth_frown: 0.5, eye_squint: 0.2 },
+  serious: { brow_down: 1.0, mouth_frown: 0.9, mouth_close: 0.55, eye_squint: 0.45 },
+  positive: { mouth_smile: 1.0, brow_up: 0.65, eye_wide: 0.5, mouth_open: 0.2 },
+  concerned: { brow_up: 0.85, mouth_frown: 0.9, eye_squint: 0.55, mouth_wide: 0.35 },
 };
 
 interface MorphMesh {
