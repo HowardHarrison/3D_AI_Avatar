@@ -10,7 +10,7 @@ This is a conventional React frontend tree for the stylized chatbot avatar.
 | `layouts/` | Page chrome | `main.page` wrapping children | AvatarRuntime |
 | `components/` | Shared presentational DOM | Props-only UI (`StatusPanel`) | Avatar imports beyond props |
 | `features/avatar/` | Avatar feature | R3F, debug UI, avatar hooks/types | HTTP secrets |
-| `features/chat/` | Chat UI + talk reaction + mic STT | Panel, hooks, Web Speech, semantic avatar calls | Mixer / morph math |
+| `features/chat/` | Chat UI + reply reaction mapper + mic STT | Panel, hooks, Web Speech, `mapReplyReaction` → semantic avatar calls | Mixer / morph math |
 | `api/` | HTTP clients | `postChatTurn` etc. | Secrets, React |
 | `services/avatar/` | Imperative runtime | Classes: mixer, facial, idle, audio | JSX |
 | `constants/` | Config | avatar, studio, Vite env | Secrets |

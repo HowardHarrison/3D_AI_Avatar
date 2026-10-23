@@ -258,9 +258,9 @@
     "semantic_hash": "b66181b3374f0210ff240059ce0ee210"
   },
   "frontend/src/services/avatar/AvatarRuntime.ts": {
-    "mtime": 1792728504.6392474,
-    "seen": 1792728512.3148603,
-    "ast_hash": "5c315da11a35dea2be522aae43c3ec43",
+    "mtime": 1792740659.9029083,
+    "seen": 1792740727.5293808,
+    "ast_hash": "3c0a67bfbe04f473837b37093fb477d7",
     "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/AnimationController.ts": {
@@ -690,9 +690,9 @@
     "semantic_hash": ""
   },
   "frontend/src/README.md": {
-    "mtime": 1792731954.708376,
-    "seen": 1792731975.3629804,
-    "ast_hash": "c936f1970f6929b3ea5f124dbf17e623",
+    "mtime": 1792740668.4387145,
+    "seen": 1792740727.5293808,
+    "ast_hash": "6196a107a307bdca4e33cf77ea186e86",
     "semantic_hash": ""
   },
   ".github/pull_request_template.md": {
@@ -810,9 +810,9 @@
     "semantic_hash": ""
   },
   "frontend/src/features/chat/playAssistantReaction.ts": {
-    "mtime": 1792728489.514602,
-    "seen": 1792728512.3148603,
-    "ast_hash": "23b0247ca9481f49cda61edbb6988b92",
+    "mtime": 1792740667.74617,
+    "seen": 1792740727.5293808,
+    "ast_hash": "1d50cd3534a047c80640c19588909163",
     "semantic_hash": ""
   },
   "frontend/src/tests/api/chat.test.ts": {
@@ -879,6 +879,18 @@
     "mtime": 1792731955.5213094,
     "seen": 1792731975.3629804,
     "ast_hash": "5f9601105812e599aa11236d948531e8",
+    "semantic_hash": ""
+  },
+  "frontend/src/features/chat/mapReplyReaction.ts": {
+    "mtime": 1792740685.0873418,
+    "seen": 1792740727.5293808,
+    "ast_hash": "922f7c84c7ec188bbaaf9216f4c86b29",
+    "semantic_hash": ""
+  },
+  "frontend/src/tests/features/chat/mapReplyReaction.test.ts": {
+    "mtime": 1792740687.1313765,
+    "seen": 1792740727.5293808,
+    "ast_hash": "ef892e14544c1aa2f1532cf0d5f53955",
     "semantic_hash": ""
   }
 }

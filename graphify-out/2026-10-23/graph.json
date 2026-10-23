@@ -521,7 +521,7 @@
       "file_type": "code",
       "norm_label": "usespeechtotextoptions",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "frontend_src_features_chat_hooks_usespeechtotext_usespeechtotextresult",
@@ -534,7 +534,7 @@
       "file_type": "code",
       "norm_label": "usespeechtotextresult",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "frontend_src_features_chat_speechrecognition_browserspeechrecognition",
@@ -1999,7 +1999,7 @@
       "file_type": "code",
       "norm_label": "usespeechtotext()",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L31"
+      "source_location": "L33"
     },
     {
       "id": "frontend_src_features_chat_speechrecognition_browserspeechrecognition_abort",
@@ -18106,7 +18106,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L35",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -18147,6 +18147,18 @@
     },
     {
       "source": "frontend_src_features_chat_hooks_usespeechtotext_usespeechtotext",
+      "target": "frontend_src_features_chat_speechrecognition_speecherrormessage",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_hooks_usespeechtotext_usespeechtotext",
       "target": "frontend_src_features_chat_speechrecognition_browserspeechrecognition_start",
       "relation": "calls",
       "_origin": "ast",
@@ -18154,7 +18166,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L118",
+      "source_location": "L154",
       "weight": 1.0
     },
     {
@@ -18166,7 +18178,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L33",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -18178,19 +18190,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_features_chat_hooks_usespeechtotext_usespeechtotext",
-      "target": "frontend_src_features_chat_speechrecognition_speecherrormessage",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L90",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -21409,7 +21409,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -21421,7 +21421,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -21433,7 +21433,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -23895,7 +23895,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -23907,7 +23907,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -32335,7 +32335,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -32346,7 +32346,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -32357,7 +32357,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/chat/hooks/useSpeechToText.ts",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0
     },
     {

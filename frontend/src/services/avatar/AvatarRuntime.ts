@@ -180,10 +180,9 @@ export class AvatarRuntime implements AvatarController {
       return;
     }
 
+    // Expression / gesture are chosen by the chat layer (mapReplyReaction), not here.
     this.startSpeaking();
     this.setGaze("camera");
-    this.setExpression("positive");
-    this.playGesture("openHand");
     this.facial.setBlendShape("mouth_open", 0.4);
 
     await new Promise<void>((resolve) => {

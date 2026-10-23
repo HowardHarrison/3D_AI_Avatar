@@ -1,7 +1,7 @@
 # Graph Report - AI_3D_Avatar  (2026-10-23)
 
 ## Corpus Check
-- 143 files · ~40,831 words
+- 143 files · ~41,005 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
