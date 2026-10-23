@@ -25,6 +25,11 @@ export interface AvatarController {
   pauseAudio(): void;
   /** Stop playback and rewind to the start of the clip. */
   stopAudio(): void;
+  /**
+   * Play speech from a URL: speaking state while audio plays, idle when it ends.
+   * @param url - Playable audio URL (e.g. `/api/v1/tts/audio/...mp3`).
+   */
+  speakFromUrl(url: string): Promise<void>;
   /** Snapshot for the debug panel; not intended as per-frame React state. */
   getStatus(): AvatarRuntimeStatus;
 }

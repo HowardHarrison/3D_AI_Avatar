@@ -1,5 +1,5 @@
 /**
- * Local HTMLAudioElement playback for Phase 1. No backend streaming.
+ * Local HTMLAudioElement playback. No secrets; URLs come from the app/backend.
  */
 
 import { logger } from "../../../utils/logger";
@@ -9,20 +9,25 @@ export class AudioController implements AudioControllerApi {
   private element: HTMLAudioElement | null = null;
   private loadedUrl: string | null = null;
   private lastError: string | null = null;
+  private readonly endedListeners = new Set<() => void>();
+  private readonly onNativeEnded = (): void => {
+    this.endedListeners.forEach((listener) => listener());
+  };
 
   getError(): string | null {
     return this.lastError;
   }
 
   /**
-   * Load a same-origin audio URL. Replaces any previous element.
+   * Load a playable audio URL. Replaces any previous element.
    */
   async load(url: string): Promise<void> {
-    this.dispose();
+    this.disposeElement();
     this.lastError = null;
     const audio = new Audio();
     audio.preload = "auto";
     audio.src = url;
+    audio.addEventListener("ended", this.onNativeEnded);
     this.element = audio;
     this.loadedUrl = url;
     await new Promise<void>((resolve, reject) => {
@@ -83,8 +88,21 @@ export class AudioController implements AudioControllerApi {
     return this.loadedUrl;
   }
 
+  onEnded(listener: () => void): () => void {
+    this.endedListeners.add(listener);
+    return () => {
+      this.endedListeners.delete(listener);
+    };
+  }
+
   dispose(): void {
+    this.endedListeners.clear();
+    this.disposeElement();
+  }
+
+  private disposeElement(): void {
     if (this.element) {
+      this.element.removeEventListener("ended", this.onNativeEnded);
       this.element.pause();
       this.element.src = "";
     }

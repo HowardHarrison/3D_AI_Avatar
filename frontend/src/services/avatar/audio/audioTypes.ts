@@ -8,5 +8,7 @@ export interface AudioControllerApi {
   stop(): void;
   getCurrentTime(): number;
   getDuration(): number;
+  /** Register a listener for natural playback end; returns an unsubscribe. */
+  onEnded(listener: () => void): () => void;
   dispose(): void;
 }

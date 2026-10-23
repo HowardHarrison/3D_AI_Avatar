@@ -2,6 +2,8 @@
  * Chat turn HTTP client. Calls the backend; never holds LLM secrets.
  */
 
+import { readErrorDetail } from "./httpError";
+
 export interface ChatTurnResponse {
   reply: string;
 }
@@ -26,7 +28,7 @@ export async function postChatTurn(message: string, apiBaseUrl = ""): Promise<st
   });
 
   if (!response.ok) {
-    throw new Error(await readErrorDetail(response));
+    throw new Error(await readErrorDetail(response, "Chat request failed"));
   }
 
   const body = (await response.json()) as ChatTurnResponse;
@@ -34,22 +36,4 @@ export async function postChatTurn(message: string, apiBaseUrl = ""): Promise<st
     throw new Error("Chat response missing reply text.");
   }
   return body.reply.trim();
-}
-
-async function readErrorDetail(response: Response): Promise<string> {
-  try {
-    const payload: unknown = await response.json();
-    if (payload && typeof payload === "object" && "detail" in payload) {
-      const detail = (payload as { detail: unknown }).detail;
-      if (typeof detail === "string") {
-        return detail;
-      }
-      if (Array.isArray(detail)) {
-        return detail.map((item) => JSON.stringify(item)).join("; ");
-      }
-    }
-  } catch {
-    // fall through
-  }
-  return `Chat request failed (${response.status}).`;
 }

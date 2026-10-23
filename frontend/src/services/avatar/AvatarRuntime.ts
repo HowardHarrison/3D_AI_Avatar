@@ -41,6 +41,7 @@ export class AvatarRuntime implements AvatarController {
   private fpsFrames = 0;
   private readonly head: Object3D | null;
   private unsubscribeFinished: () => void;
+  private speechGeneration = 0;
 
   constructor(root: Object3D, clips: AnimationClip[]) {
     this.animation = new AnimationController(root, clips);
@@ -168,6 +169,54 @@ export class AvatarRuntime implements AvatarController {
     this.audio.stop();
   }
 
+  /**
+   * Load and play speech audio, holding SPEAKING until playback ends.
+   */
+  async speakFromUrl(url: string): Promise<void> {
+    const generation = ++this.speechGeneration;
+    this.audio.stop();
+    await this.audio.load(url);
+    if (generation !== this.speechGeneration) {
+      return;
+    }
+
+    this.startSpeaking();
+    this.setGaze("camera");
+    this.setExpression("positive");
+    this.playGesture("openHand");
+    this.facial.setBlendShape("mouth_open", 0.4);
+
+    await new Promise<void>((resolve) => {
+      let settled = false;
+      const finish = (): void => {
+        if (settled) {
+          return;
+        }
+        settled = true;
+        unsubscribe();
+        window.clearTimeout(fallbackTimer);
+        if (generation !== this.speechGeneration) {
+          resolve();
+          return;
+        }
+        this.facial.setBlendShape("mouth_open", 0);
+        this.stopSpeaking();
+        this.setExpression("neutral");
+        resolve();
+      };
+
+      const unsubscribe = this.audio.onEnded(finish);
+      this.audio.play();
+
+      const duration = this.audio.getDuration();
+      const fallbackMs =
+        duration > 0
+          ? Math.ceil((duration + 0.35) * 1000)
+          : Math.min(12000, Math.max(2500, url.length * 20));
+      const fallbackTimer = window.setTimeout(finish, fallbackMs);
+    });
+  }
+
   update(delta: number): void {
     this.animation.update(delta);
     this.idle.update(delta, this.state.getState() === "GESTURE");
@@ -195,6 +244,7 @@ export class AvatarRuntime implements AvatarController {
   }
 
   dispose(): void {
+    this.speechGeneration += 1;
     this.unsubscribeFinished();
     this.animation.dispose();
     this.audio.dispose();

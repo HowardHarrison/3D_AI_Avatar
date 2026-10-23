@@ -67,6 +67,6 @@ uvicorn app.main:app --reload --port 8000
 
 ## Next (not in this step)
 
-- Frontend: after chat reply, call TTS synthesize → `AudioController` + talk/idle
 - Conversation history on chat turns
+- STT (voice in)
 - Optional LangChain adapter under `infrastructure/langchain/`

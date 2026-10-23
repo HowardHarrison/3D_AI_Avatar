@@ -53,7 +53,8 @@ export function useChatTurn(controller: AvatarHandle | null): UseChatTurnResult 
       const reply = await postChatTurn(text, environment.apiBaseUrl);
       setMessages((prev) => [...prev, { id: nextId(), role: "assistant", text: reply }]);
       if (controller) {
-        playAssistantReaction(controller, reply);
+        // Keep busy until speech finishes so the user does not overlap turns.
+        await playAssistantReaction(controller, reply, environment.apiBaseUrl);
       }
     } catch (err) {
       const message = err instanceof Error ? err.message : "Chat request failed.";

@@ -90,7 +90,7 @@ flowchart LR
 | 0 | Product goal + art/naming contract; keep stand-in GLB | Done |
 | 1 | Stylized avatar art + bust framing | Done |
 | 2 | Text chat loop → avatar talk/idle | Done |
-| 3 | TTS → `AudioController` + mouth morphs | **In progress** (3.1 synthesize API) |
+| 3 | TTS → `AudioController` + mouth morphs | **In progress** (3.2 frontend playback) |
 | 4 | Voice in (STT) | Planned |
 | 5 | Three.js skins / material presets | Planned |
 | 6 | Polish (streaming, barge-in, richer gestures) | Planned |
