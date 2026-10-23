@@ -1,11 +1,12 @@
 /**
- * Presenter page: 3D studio plus optional debug controls.
+ * Main page: 3D avatar scene, chat panel, and optional debug controls.
  */
 
 import { useCallback, useMemo, useState } from "react";
 import { environment } from "../constants/environment";
 import { AvatarScene } from "../features/avatar/components/AvatarScene";
 import { DebugPanel } from "../features/avatar/components/DebugPanel";
+import { ChatPanel } from "../features/chat/components/ChatPanel";
 import { useAvatar } from "../features/avatar/hooks/useAvatar";
 import type { AvatarHandle } from "../types";
 import { PresenterLayout } from "../layouts/PresenterLayout";
@@ -40,7 +41,7 @@ export function PresenterPage(): JSX.Element {
     return (
       <PresenterLayout>
         <p className="status-error">
-          WebGL is not available in this browser, so the 3D presenter cannot be rendered.
+          WebGL is not available in this browser, so the 3D avatar cannot be rendered.
         </p>
       </PresenterLayout>
     );
@@ -48,12 +49,15 @@ export function PresenterPage(): JSX.Element {
 
   return (
     <PresenterLayout>
-      <AvatarScene className="scene" onReady={onReady} onError={onError} />
+      <div className="scene-wrap">
+        <AvatarScene className="scene" onReady={onReady} onError={onError} />
+        <ChatPanel controller={controller} />
+        {loadError && !environment.enableDebugPanel ? (
+          <p className="status-error overlay-error">{loadError}</p>
+        ) : null}
+      </div>
       {environment.enableDebugPanel ? (
         <DebugPanel controller={controller} loadError={loadError} />
-      ) : null}
-      {loadError && !environment.enableDebugPanel ? (
-        <p className="status-error overlay-error">{loadError}</p>
       ) : null}
     </PresenterLayout>
   );

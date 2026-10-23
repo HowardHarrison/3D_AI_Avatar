@@ -10,6 +10,13 @@ export default defineConfig({
   server: {
     host: true,
     port: 5173,
+    proxy: {
+      // Dev-only: browser calls /api/* → FastAPI on :8000 (no CORS needed).
+      "/api": {
+        target: "http://127.0.0.1:8000",
+        changeOrigin: true,
+      },
+    },
   },
   preview: {
     host: true,

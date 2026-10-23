@@ -68,7 +68,6 @@ uvicorn app.main:app --reload --port 8000
 
 ## Next (not in this step)
 
-- Frontend chat UI calling `POST /api/v1/chat/turns` + avatar talk/idle
 - Conversation history on chat turns
-- Wire `TtsProvider` implementation
+- Wire `TtsProvider` implementation (Phase 3)
 - Optional LangChain adapter under `infrastructure/langchain/`

@@ -7,6 +7,11 @@ export interface AppEnvironment {
   appName: string;
   avatarModelUrl: string;
   enableDebugPanel: boolean;
+  /**
+   * Backend origin for chat/API calls.
+   * Empty string = same origin (Vite dev proxy `/api` → backend).
+   */
+  apiBaseUrl: string;
 }
 
 /**
@@ -14,10 +19,12 @@ export interface AppEnvironment {
  */
 export function loadEnvironment(): AppEnvironment {
   const debugRaw = import.meta.env.VITE_ENABLE_DEBUG_PANEL;
+  const apiBase = import.meta.env.VITE_API_BASE_URL;
   return {
-    appName: import.meta.env.VITE_APP_NAME ?? "Avatar News Presenter",
+    appName: import.meta.env.VITE_APP_NAME ?? "Stylized Chatbot Avatar",
     avatarModelUrl: import.meta.env.VITE_AVATAR_MODEL_URL ?? "/avatars/presenter.glb",
     enableDebugPanel: debugRaw !== "false",
+    apiBaseUrl: typeof apiBase === "string" ? apiBase.trim() : "",
   };
 }
 
