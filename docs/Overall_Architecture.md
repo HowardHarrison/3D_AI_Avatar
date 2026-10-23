@@ -87,9 +87,9 @@ flowchart LR
 
 | Phase | Focus | Status |
 | --- | --- | --- |
-| 0 | Product goal + art/naming contract; keep stand-in GLB | **This docs step** |
-| 1 | Stylized avatar art + bust framing | Next |
-| 2 | Text chat loop → avatar talk/idle | Planned |
+| 0 | Product goal + art/naming contract; keep stand-in GLB | Done |
+| 1 | Stylized avatar art + bust framing | Done |
+| 2 | Text chat loop → avatar talk/idle | **In progress** (2.1 backend turn API) |
 | 3 | TTS → `AudioController` + mouth morphs | Planned |
 | 4 | Voice in (STT) | Planned |
 | 5 | Three.js skins / material presets | Planned |

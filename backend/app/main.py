@@ -4,8 +4,9 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api.routes import health, plans
+from app.api.routes import chat, health, plans
 from app.core.exceptions import (
+    ChatValidationError,
     LlmConfigurationError,
     LlmProviderError,
     PlanValidationError,
@@ -52,8 +53,17 @@ def create_app() -> FastAPI:
         """Invalid plan / topic → 400."""
         return JSONResponse(status_code=400, content={"detail": str(exc)})
 
+    @app.exception_handler(ChatValidationError)
+    async def chat_validation_handler(
+        _request: Request,
+        exc: ChatValidationError,
+    ) -> JSONResponse:
+        """Invalid chat message → 400."""
+        return JSONResponse(status_code=400, content={"detail": str(exc)})
+
     app.include_router(health.router)
     app.include_router(plans.router, prefix="/api/v1")
+    app.include_router(chat.router, prefix="/api/v1")
     return app
 
 

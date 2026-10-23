@@ -63,3 +63,15 @@ class GeneratePlanRequest(BaseModel):
     """Request body for LLM-backed semantic AnimationPlan generation."""
 
     topic: str = Field(..., min_length=1, max_length=500)
+
+
+class ChatTurnRequest(BaseModel):
+    """One user utterance for an interactive chatbot turn."""
+
+    message: str = Field(..., min_length=1, max_length=2000)
+
+
+class ChatTurnResponse(BaseModel):
+    """Assistant reply text for the avatar / chat UI."""
+
+    reply: str

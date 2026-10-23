@@ -9,6 +9,10 @@ class PlanValidationError(AppError):
     """Raised when an animation plan fails semantic validation."""
 
 
+class ChatValidationError(AppError):
+    """Raised when a chat turn request fails validation."""
+
+
 class LlmConfigurationError(AppError):
     """Raised when LLM settings are missing or invalid for a provider call."""
 

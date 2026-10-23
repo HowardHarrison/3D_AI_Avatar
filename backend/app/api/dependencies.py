@@ -8,6 +8,7 @@ from app.core.exceptions import LlmConfigurationError
 from app.core.settings import get_settings
 from app.domain.interfaces import LLMProvider
 from app.infrastructure.openai_compatible import OpenAICompatibleLLMProvider
+from app.services.chat_service import ChatService
 from app.services.presenter_plan_service import PresenterPlanService
 
 
@@ -51,3 +52,14 @@ def get_presenter_plan_service_with_llm(
     client itself stays cached via ``get_llm_provider``.
     """
     return PresenterPlanService(llm=llm)
+
+
+def get_chat_service(
+    llm: LLMProvider = Depends(get_llm_provider),
+) -> ChatService:
+    """
+    ChatService with an injected LLM port (for chat turn routes).
+
+    Not cached: thin per-request wrapper; LLM client stays cached.
+    """
+    return ChatService(llm=llm)

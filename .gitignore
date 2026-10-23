@@ -46,6 +46,10 @@ blender/exports/giga_chad_rigged.fbx
 
 # graphify — rebuildable local cache (AST hashes, query stamps)
 graphify-out/cache/
+# Canonical graph lives only at repo root. Ignore accidental nested runs
+# (e.g. `graphify update .` from backend/ or frontend/).
+backend/graphify-out/
+frontend/graphify-out/
 
 # Python (backend/)
 .venv/

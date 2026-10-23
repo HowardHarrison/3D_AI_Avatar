@@ -60,8 +60,8 @@
     "semantic_hash": "ee03fa3457c0d1070f74797386ca9da7"
   },
   "blender/scripts/generate_placeholder_glb.py": {
-    "mtime": 1792579040.9565802,
-    "seen": 1792579056.8376353,
+    "mtime": 1792656392.1728146,
+    "seen": 1792656679.5785503,
     "ast_hash": "099d5cc531455f9888bd80c750d14d9f",
     "semantic_hash": ""
   },
@@ -156,8 +156,8 @@
     "semantic_hash": "c63ac5e35eaa24e715e188cdfa88b415"
   },
   "frontend/src/constants/avatarConfig.ts": {
-    "mtime": 1792578252.2415562,
-    "seen": 1792578294.7757914,
+    "mtime": 1792656392.191382,
+    "seen": 1792656679.5785503,
     "ast_hash": "e739c8239dd3cb63d3c7d52965d75193",
     "semantic_hash": ""
   },
@@ -168,8 +168,8 @@
     "semantic_hash": "bbf81568f06f97fbcb763586d8d9fc5b"
   },
   "frontend/src/constants/studioConfig.ts": {
-    "mtime": 1792578254.268943,
-    "seen": 1792578294.7757914,
+    "mtime": 1792656392.196936,
+    "seen": 1792656679.5785503,
     "ast_hash": "d54c2c8708b508fc6ac9995d24375c5c",
     "semantic_hash": ""
   },
@@ -186,14 +186,14 @@
     "semantic_hash": "15129e697877bfdc369a547b850b696f"
   },
   "frontend/src/features/avatar/components/AvatarCamera.tsx": {
-    "mtime": 1792578255.0512033,
-    "seen": 1792578294.7757914,
+    "mtime": 1792656392.2024221,
+    "seen": 1792656679.5785503,
     "ast_hash": "699969c65d77cb9de383d9ca5cebe09f",
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/AvatarLighting.tsx": {
-    "mtime": 1792578301.1368744,
-    "seen": 1792578800.4060018,
+    "mtime": 1792656392.2084248,
+    "seen": 1792656679.5785503,
     "ast_hash": "b869fa27629d2ab4997f7649854637ec",
     "semantic_hash": ""
   },
@@ -258,8 +258,8 @@
     "semantic_hash": "b66181b3374f0210ff240059ce0ee210"
   },
   "frontend/src/services/avatar/AvatarRuntime.ts": {
-    "mtime": 1792578783.7219267,
-    "seen": 1792578800.4060018,
+    "mtime": 1792656392.2149541,
+    "seen": 1792656679.5785503,
     "ast_hash": "0723d75cafa3a7edad1785ac47538154",
     "semantic_hash": ""
   },
@@ -312,8 +312,8 @@
     "semantic_hash": "185dd605cb44dc3dedf8275198ada6da"
   },
   "frontend/src/services/avatar/facial/FacialController.ts": {
-    "mtime": 1792578776.3275628,
-    "seen": 1792578800.4060018,
+    "mtime": 1792656392.22101,
+    "seen": 1792656679.5785503,
     "ast_hash": "13d99b989b98bfedb1861ffd8aa1a54c",
     "semantic_hash": ""
   },
@@ -432,9 +432,9 @@
     "semantic_hash": ""
   },
   "backend/app/api/dependencies.py": {
-    "mtime": 1792490384.0079572,
-    "seen": 1792578294.7757914,
-    "ast_hash": "07d79e36dd03e3978c40947b62a1daed",
+    "mtime": 1792656582.821858,
+    "seen": 1792656679.5785503,
+    "ast_hash": "ddba121a39c813ab37835706065a17a0",
     "semantic_hash": ""
   },
   "backend/app/api/routes/__init__.py": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "backend/app/api/schemas.py": {
-    "mtime": 1792490384.025448,
-    "seen": 1792578294.7757914,
-    "ast_hash": "dc7b1e81f513b5261df80df1671a92aa",
+    "mtime": 1792656575.1123981,
+    "seen": 1792656679.5785503,
+    "ast_hash": "1bc52c83597bf22555c76d78fff1e1ab",
     "semantic_hash": ""
   },
   "backend/app/core/__init__.py": {
@@ -468,9 +468,9 @@
     "semantic_hash": ""
   },
   "backend/app/core/exceptions.py": {
-    "mtime": 1792490384.034006,
-    "seen": 1792578294.7757914,
-    "ast_hash": "26410148c6281f456358df0583b3200b",
+    "mtime": 1792656570.8187542,
+    "seen": 1792656679.5785503,
+    "ast_hash": "24dce9ed4c731ad8140ff29b8bcfc7c3",
     "semantic_hash": ""
   },
   "backend/app/core/logging.py": {
@@ -528,15 +528,15 @@
     "semantic_hash": ""
   },
   "backend/app/main.py": {
-    "mtime": 1792490384.06681,
-    "seen": 1792578294.7757914,
-    "ast_hash": "922ba3f50ab2cfb0789e18d5f95a86d1",
+    "mtime": 1792656587.3617322,
+    "seen": 1792656679.5785503,
+    "ast_hash": "17bd5d10cff91e22fd5081795dc2b649",
     "semantic_hash": ""
   },
   "backend/app/prompts/__init__.py": {
-    "mtime": 1792490384.07435,
-    "seen": 1792578294.7757914,
-    "ast_hash": "3e2b82cc836c83c188f6e34bc65053ad",
+    "mtime": 1792656573.2139657,
+    "seen": 1792656679.5785503,
+    "ast_hash": "8b366b64d51c732a17b261818cb34b9b",
     "semantic_hash": ""
   },
   "backend/app/services/__init__.py": {
@@ -600,9 +600,9 @@
     "semantic_hash": ""
   },
   "backend/README.md": {
-    "mtime": 1792578134.3305023,
-    "seen": 1792578294.7757914,
-    "ast_hash": "4144d230df822ceec8b366d49021cdd1",
+    "mtime": 1792656638.1231837,
+    "seen": 1792656679.5785503,
+    "ast_hash": "354e7a069a873f4ed193c41c8d9f8a97",
     "semantic_hash": ""
   },
   "blender/README.md": {
@@ -654,9 +654,9 @@
     "semantic_hash": ""
   },
   "docs/Overall_Architecture.md": {
-    "mtime": 1792578134.3335006,
-    "seen": 1792578294.7757914,
-    "ast_hash": "0e2addac5f21ea161cf18053b844d217",
+    "mtime": 1792656597.287261,
+    "seen": 1792656679.5785503,
+    "ast_hash": "d3157931eba184c985eef5f686204333",
     "semantic_hash": ""
   },
   "docs/animation-system.md": {
@@ -672,8 +672,8 @@
     "semantic_hash": ""
   },
   "docs/avatar-spec.md": {
-    "mtime": 1792578256.770324,
-    "seen": 1792578294.7757914,
+    "mtime": 1792656392.1838322,
+    "seen": 1792656679.5785503,
     "ast_hash": "07cd9db86cd8f449902c7818bedf95e3",
     "semantic_hash": ""
   },
@@ -762,9 +762,33 @@
     "semantic_hash": ""
   },
   "docs/avatar-art-contract.md": {
-    "mtime": 1792579046.3870924,
-    "seen": 1792579056.8376353,
+    "mtime": 1792656392.178797,
+    "seen": 1792656679.5785503,
     "ast_hash": "8bc2cb535a259f84c4eaedb15c0fbded",
+    "semantic_hash": ""
+  },
+  "backend/app/api/routes/chat.py": {
+    "mtime": 1792656578.5522647,
+    "seen": 1792656679.5785503,
+    "ast_hash": "68bd9146d95b4ce70acf6ccc7b306a66",
+    "semantic_hash": ""
+  },
+  "backend/app/prompts/chat_turn.py": {
+    "mtime": 1792656565.4397118,
+    "seen": 1792656679.5785503,
+    "ast_hash": "1de9ea5bae026c69b3a3d28cdf04242f",
+    "semantic_hash": ""
+  },
+  "backend/app/services/chat_service.py": {
+    "mtime": 1792656568.7955315,
+    "seen": 1792656679.5785503,
+    "ast_hash": "ba683941471d982433acfb8e453afb5d",
+    "semantic_hash": ""
+  },
+  "backend/tests/test_chat_turn.py": {
+    "mtime": 1792656591.7925665,
+    "seen": 1792656679.5785503,
+    "ast_hash": "c2978e3e394b25c8ac088e22ea9f027f",
     "semantic_hash": ""
   }
 }

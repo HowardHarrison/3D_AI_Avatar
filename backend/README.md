@@ -41,12 +41,16 @@ Do not put LLM keys in the frontend or any `VITE_*` variable. Config is loaded v
 `app.core.settings.Settings` (`LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL`, optional `LLM_BASE_URL`).
 
 Adapter: `OpenAICompatibleLLMProvider` (`app.infrastructure.openai_compatible`).
-DI: `get_llm_provider()` → `get_presenter_plan_service_with_llm()` →
-`POST /api/v1/plans/generate-text` (script) or `POST /api/v1/plans/generate`
-(validated `AnimationPlan` JSON; `parse_animation_plan` rejects unknown semantics).
-Optional `LLM_BASE_URL` works with OpenAI-compatible gateways (OpenRouter, Azure-style proxies, local).
+DI: `get_llm_provider()` → chat / plan services.
+
+- Chat turn: `POST /api/v1/chat/turns` — `{ "message": "..." }` → `{ "reply": "..." }`
+  (`ChatService` + `get_chat_service()`; single-turn, no history yet)
+- Plan script: `POST /api/v1/plans/generate-text`
+- Plan JSON: `POST /api/v1/plans/generate` (validated `AnimationPlan`)
+- Optional `LLM_BASE_URL` for OpenAI-compatible gateways (OpenRouter, Azure-style proxies, local)
 
 - Health: http://localhost:8000/health
+- Chat turn: http://localhost:8000/api/v1/chat/turns
 - Sample plan: http://localhost:8000/api/v1/plans/sample
 - Generate script text (LLM): `POST /api/v1/plans/generate-text` with `{"topic":"..."}`
 - Generate AnimationPlan (LLM + validate): `POST /api/v1/plans/generate` with `{"topic":"..."}`
@@ -64,7 +68,7 @@ uvicorn app.main:app --reload --port 8000
 
 ## Next (not in this step)
 
-- Frontend: fetch `/plans/generate` (or sample) and play via AnimationPlanPlayer
+- Frontend chat UI calling `POST /api/v1/chat/turns` + avatar talk/idle
+- Conversation history on chat turns
 - Wire `TtsProvider` implementation
 - Optional LangChain adapter under `infrastructure/langchain/`
-- Auth and mobile-oriented session endpoints
