@@ -4,12 +4,15 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api.routes import chat, health, plans
+from app.api.routes import chat, health, plans, tts
 from app.core.exceptions import (
     ChatValidationError,
     LlmConfigurationError,
     LlmProviderError,
     PlanValidationError,
+    TtsConfigurationError,
+    TtsProviderError,
+    TtsValidationError,
 )
 from app.core.logging import setup_logging
 from app.core.settings import get_settings
@@ -61,9 +64,34 @@ def create_app() -> FastAPI:
         """Invalid chat message → 400."""
         return JSONResponse(status_code=400, content={"detail": str(exc)})
 
+    @app.exception_handler(TtsValidationError)
+    async def tts_validation_handler(
+        _request: Request,
+        exc: TtsValidationError,
+    ) -> JSONResponse:
+        """Invalid TTS request → 400."""
+        return JSONResponse(status_code=400, content={"detail": str(exc)})
+
+    @app.exception_handler(TtsConfigurationError)
+    async def tts_config_handler(
+        _request: Request,
+        exc: TtsConfigurationError,
+    ) -> JSONResponse:
+        """Missing/invalid TTS settings → 503."""
+        return JSONResponse(status_code=503, content={"detail": str(exc)})
+
+    @app.exception_handler(TtsProviderError)
+    async def tts_provider_handler(
+        _request: Request,
+        exc: TtsProviderError,
+    ) -> JSONResponse:
+        """Upstream TTS failure → 502."""
+        return JSONResponse(status_code=502, content={"detail": str(exc)})
+
     app.include_router(health.router)
     app.include_router(plans.router, prefix="/api/v1")
     app.include_router(chat.router, prefix="/api/v1")
+    app.include_router(tts.router, prefix="/api/v1")
     return app
 
 

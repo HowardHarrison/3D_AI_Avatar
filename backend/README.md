@@ -40,20 +40,19 @@ Set `LLM_API_KEY` in `.env` when you are ready to call a model (OpenAI by defaul
 Do not put LLM keys in the frontend or any `VITE_*` variable. Config is loaded via
 `app.core.settings.Settings` (`LLM_PROVIDER`, `LLM_API_KEY`, `LLM_MODEL`, optional `LLM_BASE_URL`).
 
-Adapter: `OpenAICompatibleLLMProvider` (`app.infrastructure.openai_compatible`).
-DI: `get_llm_provider()` → chat / plan services.
+Adapters: `OpenAICompatibleLLMProvider`, `OpenAICompatibleTtsProvider`
+(`app.infrastructure.openai_compatible`).
 
 - Chat turn: `POST /api/v1/chat/turns` — `{ "message": "..." }` → `{ "reply": "..." }`
-  (`ChatService` + `get_chat_service()`; single-turn, no history yet)
+- TTS: `POST /api/v1/tts/synthesize` — `{ "text": "..." }` →
+  `{ "audioUrl": "/api/v1/tts/audio/<id>.mp3", "durationSeconds": ... }`
+  then `GET` the `audioUrl`. Uses `TTS_API_KEY` or falls back to `LLM_API_KEY`.
+  Cache dir: `backend/.tts_cache/` (gitignored).
 - Plan script: `POST /api/v1/plans/generate-text`
-- Plan JSON: `POST /api/v1/plans/generate` (validated `AnimationPlan`)
-- Optional `LLM_BASE_URL` for OpenAI-compatible gateways (OpenRouter, Azure-style proxies, local)
+- Plan JSON: `POST /api/v1/plans/generate`
+- Optional `LLM_BASE_URL` / `TTS_BASE_URL` for OpenAI-compatible gateways
 
 - Health: http://localhost:8000/health
-- Chat turn: http://localhost:8000/api/v1/chat/turns
-- Sample plan: http://localhost:8000/api/v1/plans/sample
-- Generate script text (LLM): `POST /api/v1/plans/generate-text` with `{"topic":"..."}`
-- Generate AnimationPlan (LLM + validate): `POST /api/v1/plans/generate` with `{"topic":"..."}`
 - OpenAPI: http://localhost:8000/docs
 
 Without uv:
@@ -68,6 +67,6 @@ uvicorn app.main:app --reload --port 8000
 
 ## Next (not in this step)
 
+- Frontend: after chat reply, call TTS synthesize → `AudioController` + talk/idle
 - Conversation history on chat turns
-- Wire `TtsProvider` implementation (Phase 3)
 - Optional LangChain adapter under `infrastructure/langchain/`

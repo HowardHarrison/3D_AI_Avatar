@@ -27,6 +27,13 @@ class Settings(BaseSettings):
     llm_model: str = "gpt-4o-mini"
     llm_base_url: str | None = None
 
+    # TTS (OpenAI speech initially). Falls back to LLM_API_KEY when TTS_API_KEY blank.
+    tts_provider: str = "openai"
+    tts_api_key: str | None = None
+    tts_model: str = "tts-1"
+    tts_voice: str = "alloy"
+    tts_base_url: str | None = None
+
     @property
     def cors_origin_list(self) -> list[str]:
         """Parse CORS origins into a list for middleware."""

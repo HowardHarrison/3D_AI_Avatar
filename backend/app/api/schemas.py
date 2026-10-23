@@ -75,3 +75,24 @@ class ChatTurnResponse(BaseModel):
     """Assistant reply text for the avatar / chat UI."""
 
     reply: str
+
+
+class SynthesizeSpeechRequest(BaseModel):
+    """Request body for TTS synthesis."""
+
+    model_config = ConfigDict(populate_by_name=True)
+
+    text: str = Field(..., min_length=1, max_length=4000)
+    voice_id: str | None = Field(default=None, alias="voiceId", max_length=64)
+
+
+class SynthesizeSpeechResponse(BaseModel):
+    """Playable audio URL (relative) plus estimated duration."""
+
+    model_config = ConfigDict(populate_by_name=True, ser_json_by_alias=True)
+
+    audio_url: str = Field(alias="audioUrl", serialization_alias="audioUrl")
+    duration_seconds: float = Field(
+        alias="durationSeconds",
+        serialization_alias="durationSeconds",
+    )

@@ -60,6 +60,8 @@ __pycache__/
 .ruff_cache/
 *.egg-info/
 .uv/
+backend/.tts_cache/
+backend/tests/_tts_test_cache/
 
 # Test / coverage
 coverage/

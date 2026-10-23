@@ -1,5 +1,5 @@
 {
-  "0": "AvatarScene.tsx",
+  "0": "DebugPanel.tsx",
   "1": "AnimationRegistry.ts",
   "2": "AnimationController",
   "3": "common.py",
@@ -26,15 +26,15 @@
   "24": "AvatarController",
   "25": "Settings",
   "26": "AvatarRuntime",
-  "27": "PresenterPlanService",
+  "27": "plans.py",
   "28": "Expected Output Format",
-  "29": "main.py",
+  "29": "create_app",
   "30": "LLMResult",
   "31": "AnimationStateMachine",
   "32": "Output Expectations",
   "33": "Commands available now",
   "34": "AvatarRuntime.ts",
-  "35": "plans.py",
+  "35": "schemas.py",
   "36": "Bug Reporting Format",
   "37": "Avatar art contract (stylized chatbot)",
   "38": "tts_provider.py",
@@ -105,5 +105,11 @@
   "103": "Mixamo upload pack",
   "104": "@vitejs/plugin-react",
   "105": "Avatar specification",
-  "106": "animation.ts"
+  "106": "animation.ts",
+  "107": "useChatTurn.ts",
+  "108": "PresenterPage.tsx",
+  "109": "avatarConfig.ts",
+  "110": "Avatar.tsx",
+  "111": "AvatarScene.tsx",
+  "112": "_FakeLLM"
 }

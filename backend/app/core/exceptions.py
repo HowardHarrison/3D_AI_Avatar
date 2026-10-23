@@ -19,3 +19,15 @@ class LlmConfigurationError(AppError):
 
 class LlmProviderError(AppError):
     """Raised when an LLM provider request fails."""
+
+
+class TtsValidationError(AppError):
+    """Raised when a TTS request fails validation."""
+
+
+class TtsConfigurationError(AppError):
+    """Raised when TTS settings are missing or invalid for a provider call."""
+
+
+class TtsProviderError(AppError):
+    """Raised when a TTS provider request fails."""
