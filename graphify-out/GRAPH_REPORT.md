@@ -1,21 +1,21 @@
 # Graph Report - AI_3D_Avatar  (2026-10-23)
 
 ## Corpus Check
-- 140 files · ~40,022 words
+- 143 files · ~41,005 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1314 nodes · 2047 edges · 116 communities (98 shown, 15 thin omitted)
+- 1329 nodes · 2074 edges · 121 communities (102 shown, 16 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 68 edges (avg confidence: 0.94)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fe9e3400`
+- Built from commit: `381629f5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- PresenterPage.tsx
+- playAssistantReaction.ts
 - AnimationRegistry.ts
 - AnimationController
 - common.py
@@ -46,7 +46,7 @@
 - Expected Output Format
 - create_app
 - test_generate_plan.py
-- animation.ts
+- AnimationStateMachine
 - Output Expectations
 - Commands available now
 - AvatarRuntime.ts
@@ -128,6 +128,11 @@
 - TtsProvider
 - OpenAICompatibleLLMProvider
 - LLMResult
+- DebugPanel.tsx
+- animation.ts
+- PresenterPage.tsx
+- useSpeechToText.ts
+- useChatTurn.ts
 
 ## God Nodes (most connected - your core abstractions)
 1. `AvatarRuntime` - 27 edges
@@ -156,11 +161,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (116 total, 15 thin omitted)
+## Communities (121 total, 16 thin omitted)
 
-### Community 0 - "PresenterPage.tsx"
-Cohesion: 0.06
-Nodes (43): ChatApiRole, ChatHistoryItem, ChatTurnResponse, postChatTurn(), PostChatTurnOptions, readErrorDetail(), resolveAudioUrl(), synthesizeSpeech() (+35 more)
+### Community 0 - "playAssistantReaction.ts"
+Cohesion: 0.19
+Nodes (13): ChatApiRole, ChatHistoryItem, ChatTurnResponse, postChatTurn(), PostChatTurnOptions, readErrorDetail(), resolveAudioUrl(), synthesizeSpeech() (+5 more)
 
 ### Community 1 - "AnimationRegistry.ts"
 Cohesion: 0.19
@@ -246,10 +251,6 @@ Nodes (4): printWidth, semi, singleQuote, trailingComma
 Cohesion: 0.06
 Nodes (36): 10.1 Goals, 10.2 Architecture split, 10.3 Paths to change clothes, 10.4 Constraints, 10. Avatar Clothing, 11. Blender Automation Strategy, 12. Animation and Appearance Strategy, 13. Phase Map (+28 more)
 
-### Community 24 - "AvatarController"
-Cohesion: 0.12
-Nodes (5): GazeTarget, HeadMotionName, AvatarController, AvatarRuntimeStatus, VisemeEvent
-
 ### Community 25 - "get_settings"
 Cohesion: 0.25
 Nodes (7): get_settings(), Application configuration loaded from environment variables., Parse CORS origins into a list for middleware., Return a cached settings instance., Runtime settings. Secrets must come from env / `.env`, never source code., Settings, BaseSettings
@@ -270,9 +271,9 @@ Nodes (5): Configure root logging to stdout., setup_logging(), create_app(), Bui
 Cohesion: 0.16
 Nodes (11): _FakePlanLLM, _InvalidPlanLLM, API tests for POST /api/v1/plans/generate (mocked LLM)., Returns fixed AnimationPlan JSON., Returns JSON with an illegal gesture name., Clear FastAPI overrides after each test., Route returns validated camelCase AnimationPlan JSON., Invalid LLM semantics surface as 400 PlanValidationError. (+3 more)
 
-### Community 31 - "animation.ts"
-Cohesion: 0.12
-Nodes (9): ALLOWED, AnimationStateMachine, ResolvedClip, BlendShapeMap, AnimationLayerPriority, AnimationPlan, AnimationSegment, AnimationStateName (+1 more)
+### Community 31 - "AnimationStateMachine"
+Cohesion: 0.23
+Nodes (3): ALLOWED, AnimationStateMachine, AnimationStateName
 
 ### Community 32 - "Output Expectations"
 Cohesion: 0.17
@@ -524,7 +525,7 @@ Nodes (11): API tests for POST /api/v1/chat/turns (mocked LLM)., Install fake LL
 
 ### Community 109 - "AvatarScene.tsx"
 Cohesion: 0.12
-Nodes (19): avatarConfig, defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, studioConfig, Avatar() (+11 more)
+Nodes (18): avatarConfig, defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, studioConfig, AvatarCamera() (+10 more)
 
 ### Community 110 - "dependencies.py"
 Cohesion: 0.24
@@ -550,15 +551,35 @@ Nodes (8): get_llm_provider(), Build the configured OpenAI-compatible ``LLMProvi
 Cohesion: 0.33
 Nodes (5): Generate a text response from the given prompt., LLMResult, Raw text result from an LLM provider., _FakeLLM, In-memory LLM port that echoes whether history was in the prompt.
 
+### Community 116 - "DebugPanel.tsx"
+Cohesion: 0.20
+Nodes (12): StatusPanel(), StatusPanelProps, AnimationControls(), AnimationControlsProps, EXPRESSIONS, GESTURES, HEADS, DebugPanel() (+4 more)
+
+### Community 117 - "animation.ts"
+Cohesion: 0.17
+Nodes (10): ResolvedClip, BlendShapeMap, AnimationLayerPriority, AnimationPlan, AnimationSegment, GazeTarget, GestureName, PlayAnimationOptions (+2 more)
+
+### Community 118 - "PresenterPage.tsx"
+Cohesion: 0.23
+Nodes (9): App(), useAvatar(), PresenterLayout(), PresenterLayoutProps, rootElement, PresenterPage(), supportsWebGL(), AppRoutes() (+1 more)
+
+### Community 119 - "useSpeechToText.ts"
+Cohesion: 0.21
+Nodes (9): useSpeechToText(), UseSpeechToTextOptions, UseSpeechToTextResult, BrowserSpeechRecognition, BrowserSpeechRecognitionErrorEvent, BrowserSpeechRecognitionEvent, getSpeechRecognitionConstructor(), speechErrorMessage() (+1 more)
+
+### Community 120 - "useChatTurn.ts"
+Cohesion: 0.21
+Nodes (9): AppEnvironment, environment, ChatPanel(), ChatPanelProps, ChatMessage, ChatRole, nextId(), useChatTurn() (+1 more)
+
 ## Knowledge Gaps
-- **377 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+372 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 760 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **382 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+377 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 766 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **16 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `PresenterPage.tsx` to `AvatarScene.tsx`, `package.json`?**
+- **Why does `react` connect `PresenterPage.tsx` to `package.json`, `AvatarScene.tsx`, `DebugPanel.tsx`, `useSpeechToText.ts`, `useChatTurn.ts`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Why does `three` connect `AvatarRuntime.ts` to `AvatarScene.tsx`, `package.json`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
@@ -571,4 +592,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 6 inferred relationships involving `LLMResult` (e.g. with `LLMProvider` and `OpenAICompatibleLLMProvider`) actually correct?**
   _`LLMResult` has 6 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `ai-3d-avatar-backend`, `singleQuote`, `semi` to the rest of the system?**
-  _377 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _382 weakly-connected nodes found - possible documentation gaps or missing edges._

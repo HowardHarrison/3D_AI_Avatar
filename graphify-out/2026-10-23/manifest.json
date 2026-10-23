@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "backend/app/api/schemas.py": {
-    "mtime": 1792726960.2092524,
-    "seen": 1792727112.486415,
-    "ast_hash": "98c26e85bb3f9032e05e395e6c4634ba",
+    "mtime": 1792729682.3271718,
+    "seen": 1792729745.4553046,
+    "ast_hash": "8a15700aa79a8ee0dd0cfa7da95f437b",
     "semantic_hash": ""
   },
   "backend/app/core/__init__.py": {
@@ -600,9 +600,9 @@
     "semantic_hash": ""
   },
   "backend/README.md": {
-    "mtime": 1792728496.209182,
-    "seen": 1792728512.3148603,
-    "ast_hash": "1880121c8d7d9f2e51c4831772055de2",
+    "mtime": 1792729723.2770147,
+    "seen": 1792729745.4553046,
+    "ast_hash": "e271c3faf14410245060bb44608e5799",
     "semantic_hash": ""
   },
   "blender/README.md": {
@@ -654,9 +654,9 @@
     "semantic_hash": ""
   },
   "docs/Overall_Architecture.md": {
-    "mtime": 1792728495.5575185,
-    "seen": 1792728512.3148603,
-    "ast_hash": "7aea5c429cdc42e01dc5a764c8b2e09c",
+    "mtime": 1792731954.120878,
+    "seen": 1792731975.3629804,
+    "ast_hash": "e67343ac4b8b7ba4b3b7060f4e974fad",
     "semantic_hash": ""
   },
   "docs/animation-system.md": {
@@ -690,9 +690,9 @@
     "semantic_hash": ""
   },
   "frontend/src/README.md": {
-    "mtime": 1792724933.8341703,
-    "seen": 1792724980.9213588,
-    "ast_hash": "de6d58abb13275f1906a023025962c36",
+    "mtime": 1792731954.708376,
+    "seen": 1792731975.3629804,
+    "ast_hash": "c936f1970f6929b3ea5f124dbf17e623",
     "semantic_hash": ""
   },
   ".github/pull_request_template.md": {
@@ -768,45 +768,45 @@
     "semantic_hash": ""
   },
   "backend/app/api/routes/chat.py": {
-    "mtime": 1792724609.7913108,
-    "seen": 1792724980.9213588,
-    "ast_hash": "68bd9146d95b4ce70acf6ccc7b306a66",
+    "mtime": 1792729697.3705282,
+    "seen": 1792729745.4553046,
+    "ast_hash": "4b006fb258c87b1427c301cb31225d60",
     "semantic_hash": ""
   },
   "backend/app/prompts/chat_turn.py": {
-    "mtime": 1792724609.7972016,
-    "seen": 1792724980.9213588,
-    "ast_hash": "1de9ea5bae026c69b3a3d28cdf04242f",
+    "mtime": 1792729667.8320694,
+    "seen": 1792729745.4553046,
+    "ast_hash": "e286247bd77c879ca6b6de502a58c297",
     "semantic_hash": ""
   },
   "backend/app/services/chat_service.py": {
-    "mtime": 1792724609.798232,
-    "seen": 1792724980.9213588,
-    "ast_hash": "ba683941471d982433acfb8e453afb5d",
+    "mtime": 1792729679.3551795,
+    "seen": 1792729745.4553046,
+    "ast_hash": "6441bdcf197217657ed62fa5ba9254ff",
     "semantic_hash": ""
   },
   "backend/tests/test_chat_turn.py": {
-    "mtime": 1792724609.798232,
-    "seen": 1792724980.9213588,
-    "ast_hash": "c2978e3e394b25c8ac088e22ea9f027f",
+    "mtime": 1792729714.4798124,
+    "seen": 1792729745.4553046,
+    "ast_hash": "50a3d463d8bf88d3c21948d64f258944",
     "semantic_hash": ""
   },
   "frontend/src/api/chat.ts": {
-    "mtime": 1792728470.0995266,
-    "seen": 1792728512.3148603,
-    "ast_hash": "706ab295e7ed213166b9b89b49479903",
+    "mtime": 1792729702.105034,
+    "seen": 1792729745.4553046,
+    "ast_hash": "88bbdc88a84d3e4f45af8db785cf3043",
     "semantic_hash": ""
   },
   "frontend/src/features/chat/components/ChatPanel.tsx": {
-    "mtime": 1792728492.6827164,
-    "seen": 1792728512.3148603,
-    "ast_hash": "0cebef8ba1b20f3a4bdc7823b09af0d0",
+    "mtime": 1792731950.934301,
+    "seen": 1792731975.3629804,
+    "ast_hash": "f2934ab23583efab7fa39b98b303c4dc",
     "semantic_hash": ""
   },
   "frontend/src/features/chat/hooks/useChatTurn.ts": {
-    "mtime": 1792728491.2365644,
-    "seen": 1792728512.3148603,
-    "ast_hash": "eb1c7f7df88f0b03e780975e0b5bf8ed",
+    "mtime": 1792731943.5657873,
+    "seen": 1792731975.3629804,
+    "ast_hash": "74ec802e363ef95eb20a7db72d2f8c11",
     "semantic_hash": ""
   },
   "frontend/src/features/chat/playAssistantReaction.ts": {
@@ -816,9 +816,9 @@
     "semantic_hash": ""
   },
   "frontend/src/tests/api/chat.test.ts": {
-    "mtime": 1792724925.9468217,
-    "seen": 1792724980.9213588,
-    "ast_hash": "b31de1292870295b296301a95a55c7f8",
+    "mtime": 1792729720.000703,
+    "seen": 1792729745.4553046,
+    "ast_hash": "dd4456902b4013deb377c89e7dcd1f2a",
     "semantic_hash": ""
   },
   "backend/app/api/routes/tts.py": {
@@ -861,6 +861,24 @@
     "mtime": 1792728494.9967709,
     "seen": 1792728512.3148603,
     "ast_hash": "586e8efc6c884a3fb85747f806d911e3",
+    "semantic_hash": ""
+  },
+  "frontend/src/features/chat/hooks/useSpeechToText.ts": {
+    "mtime": 1792731937.1262136,
+    "seen": 1792731975.3629804,
+    "ast_hash": "4e333178d2122c9ab6d6dde5deeee985",
+    "semantic_hash": ""
+  },
+  "frontend/src/features/chat/speechRecognition.ts": {
+    "mtime": 1792731930.549221,
+    "seen": 1792731975.3629804,
+    "ast_hash": "2d7ff9f9243e77ad9168202a0d13db07",
+    "semantic_hash": ""
+  },
+  "frontend/src/tests/features/chat/speechRecognition.test.ts": {
+    "mtime": 1792731955.5213094,
+    "seen": 1792731975.3629804,
+    "ast_hash": "5f9601105812e599aa11236d948531e8",
     "semantic_hash": ""
   }
 }

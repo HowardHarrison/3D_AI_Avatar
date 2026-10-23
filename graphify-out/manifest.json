@@ -654,9 +654,9 @@
     "semantic_hash": ""
   },
   "docs/Overall_Architecture.md": {
-    "mtime": 1792728495.5575185,
-    "seen": 1792728512.3148603,
-    "ast_hash": "7aea5c429cdc42e01dc5a764c8b2e09c",
+    "mtime": 1792731954.120878,
+    "seen": 1792731975.3629804,
+    "ast_hash": "e67343ac4b8b7ba4b3b7060f4e974fad",
     "semantic_hash": ""
   },
   "docs/animation-system.md": {
@@ -690,9 +690,9 @@
     "semantic_hash": ""
   },
   "frontend/src/README.md": {
-    "mtime": 1792724933.8341703,
-    "seen": 1792724980.9213588,
-    "ast_hash": "de6d58abb13275f1906a023025962c36",
+    "mtime": 1792731954.708376,
+    "seen": 1792731975.3629804,
+    "ast_hash": "c936f1970f6929b3ea5f124dbf17e623",
     "semantic_hash": ""
   },
   ".github/pull_request_template.md": {
@@ -798,15 +798,15 @@
     "semantic_hash": ""
   },
   "frontend/src/features/chat/components/ChatPanel.tsx": {
-    "mtime": 1792729720.7729583,
-    "seen": 1792729745.4553046,
-    "ast_hash": "e0730d1674f593738cc6478c0c5cbf09",
+    "mtime": 1792738970.1521459,
+    "seen": 1792738988.2815993,
+    "ast_hash": "4c6defa2a20bc69dccc1eeff201afb59",
     "semantic_hash": ""
   },
   "frontend/src/features/chat/hooks/useChatTurn.ts": {
-    "mtime": 1792729707.232931,
-    "seen": 1792729745.4553046,
-    "ast_hash": "0f30888eb7320125d43dadafd7d4a75b",
+    "mtime": 1792731943.5657873,
+    "seen": 1792731975.3629804,
+    "ast_hash": "74ec802e363ef95eb20a7db72d2f8c11",
     "semantic_hash": ""
   },
   "frontend/src/features/chat/playAssistantReaction.ts": {
@@ -861,6 +861,24 @@
     "mtime": 1792728494.9967709,
     "seen": 1792728512.3148603,
     "ast_hash": "586e8efc6c884a3fb85747f806d911e3",
+    "semantic_hash": ""
+  },
+  "frontend/src/features/chat/hooks/useSpeechToText.ts": {
+    "mtime": 1792738959.7170832,
+    "seen": 1792738988.2815993,
+    "ast_hash": "eccae75c36dcf6f38177f09f39a8b0d5",
+    "semantic_hash": ""
+  },
+  "frontend/src/features/chat/speechRecognition.ts": {
+    "mtime": 1792731930.549221,
+    "seen": 1792731975.3629804,
+    "ast_hash": "2d7ff9f9243e77ad9168202a0d13db07",
+    "semantic_hash": ""
+  },
+  "frontend/src/tests/features/chat/speechRecognition.test.ts": {
+    "mtime": 1792731955.5213094,
+    "seen": 1792731975.3629804,
+    "ast_hash": "5f9601105812e599aa11236d948531e8",
     "semantic_hash": ""
   }
 }

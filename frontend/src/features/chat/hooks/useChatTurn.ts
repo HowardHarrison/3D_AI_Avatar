@@ -23,6 +23,8 @@ export interface UseChatTurnResult {
   busy: boolean;
   error: string | null;
   send: () => Promise<void>;
+  /** Send an explicit utterance (used by mic STT). */
+  sendText: (text: string) => Promise<void>;
 }
 
 /** Match backend cap so older turns drop from the request, not from the UI list. */
@@ -41,38 +43,45 @@ export function useChatTurn(controller: AvatarHandle | null): UseChatTurnResult 
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const send = useCallback(async () => {
-    const text = draft.trim();
-    if (!text || busy) {
-      return;
-    }
-
-    const history = messages.slice(-MAX_HISTORY_SENT).map((item) => ({
-      role: item.role,
-      content: item.text,
-    }));
-
-    setDraft("");
-    setBusy(true);
-    setError(null);
-    setMessages((prev) => [...prev, { id: nextId(), role: "user", text }]);
-
-    try {
-      const reply = await postChatTurn(text, {
-        apiBaseUrl: environment.apiBaseUrl,
-        history,
-      });
-      setMessages((prev) => [...prev, { id: nextId(), role: "assistant", text: reply }]);
-      if (controller) {
-        await playAssistantReaction(controller, reply, environment.apiBaseUrl);
+  const sendText = useCallback(
+    async (raw: string) => {
+      const text = raw.trim();
+      if (!text || busy) {
+        return;
       }
-    } catch (err) {
-      const message = err instanceof Error ? err.message : "Chat request failed.";
-      setError(message);
-    } finally {
-      setBusy(false);
-    }
-  }, [busy, controller, draft, messages]);
 
-  return { messages, draft, setDraft, busy, error, send };
+      const history = messages.slice(-MAX_HISTORY_SENT).map((item) => ({
+        role: item.role,
+        content: item.text,
+      }));
+
+      setDraft("");
+      setBusy(true);
+      setError(null);
+      setMessages((prev) => [...prev, { id: nextId(), role: "user", text }]);
+
+      try {
+        const reply = await postChatTurn(text, {
+          apiBaseUrl: environment.apiBaseUrl,
+          history,
+        });
+        setMessages((prev) => [...prev, { id: nextId(), role: "assistant", text: reply }]);
+        if (controller) {
+          await playAssistantReaction(controller, reply, environment.apiBaseUrl);
+        }
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Chat request failed.";
+        setError(message);
+      } finally {
+        setBusy(false);
+      }
+    },
+    [busy, controller, messages],
+  );
+
+  const send = useCallback(async () => {
+    await sendText(draft);
+  }, [draft, sendText]);
+
+  return { messages, draft, setDraft, busy, error, send, sendText };
 }

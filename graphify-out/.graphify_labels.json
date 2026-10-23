@@ -1,5 +1,5 @@
 {
-  "0": "PresenterPage.tsx",
+  "0": "playAssistantReaction.ts",
   "1": "AnimationRegistry.ts",
   "2": "AnimationController",
   "3": "common.py",
@@ -30,7 +30,7 @@
   "28": "Expected Output Format",
   "29": "create_app",
   "30": "test_generate_plan.py",
-  "31": "animation.ts",
+  "31": "AnimationStateMachine",
   "32": "Output Expectations",
   "33": "Commands available now",
   "34": "AvatarRuntime.ts",
@@ -114,5 +114,10 @@
   "112": "TtsConfigurationError",
   "113": "TtsProvider",
   "114": "OpenAICompatibleLLMProvider",
-  "115": "LLMResult"
+  "115": "LLMResult",
+  "116": "DebugPanel.tsx",
+  "117": "animation.ts",
+  "118": "PresenterPage.tsx",
+  "119": "useSpeechToText.ts",
+  "120": "useChatTurn.ts"
 }
