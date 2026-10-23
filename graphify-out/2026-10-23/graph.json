@@ -4,17 +4,56 @@
   "graph": {},
   "nodes": [
     {
+      "id": "frontend_src_api_chat_chatturnresponse",
+      "label": "ChatTurnResponse",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "chatturnresponse",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "frontend_src_api_tts_synthesizespeechresult",
+      "label": "SynthesizeSpeechResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "synthesizespeechresult",
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L7"
+    },
+    {
       "id": "frontend_src_components_statuspanel_statuspanelprops",
       "label": "StatusPanelProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "statuspanelprops",
       "source_file": "frontend/src/components/StatusPanel.tsx",
       "source_location": "L5"
+    },
+    {
+      "id": "frontend_src_constants_environment_appenvironment",
+      "label": "AppEnvironment",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "appenvironment",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L6"
     },
     {
       "id": "frontend_src_features_avatar_components_animationcontrols_animationcontrolsprops",
@@ -23,7 +62,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "animationcontrolsprops",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
@@ -36,7 +75,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "debugpanelprops",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
@@ -49,7 +88,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "avatarhandle",
       "source_file": "frontend/src/features/avatar/types.ts",
@@ -62,63 +101,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "chatpanelprops",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
       "source_location": "L9"
-    },
-    {
-      "id": "frontend_src_types_events_avatarruntimestatus",
-      "label": "AvatarRuntimeStatus",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DebugPanel.tsx",
-      "file_type": "code",
-      "norm_label": "avatarruntimestatus",
-      "source_file": "frontend/src/types/events.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "frontend_src_types_events_visemeevent",
-      "label": "VisemeEvent",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DebugPanel.tsx",
-      "file_type": "code",
-      "norm_label": "visemeevent",
-      "source_file": "frontend/src/types/events.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_parseanimationplan_animationplanerror",
-      "label": "AnimationPlanError",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AnimationRegistry.ts",
-      "file_type": "code",
-      "norm_label": "animationplanerror",
-      "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "frontend_src_api_chat_chatturnresponse",
-      "label": "ChatTurnResponse",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chatturnresponse",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L5"
     },
     {
       "id": "frontend_src_features_chat_hooks_usechatturn_chatmessage",
@@ -126,8 +113,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "chatmessage",
       "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
@@ -139,8 +126,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "chatrole",
       "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
@@ -152,8 +139,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "usechatturnresult",
       "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
@@ -165,12 +152,90 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 108,
+      "community": 0,
       "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "presenterlayoutprops",
       "source_file": "frontend/src/layouts/PresenterLayout.tsx",
       "source_location": "L7"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_parseanimationplan_animationplanerror",
+      "label": "AnimationPlanError",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animationplanerror",
+      "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "frontend_src_types_animation_animationplan",
+      "label": "AnimationPlan",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animationplan",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L59"
+    },
+    {
+      "id": "frontend_src_types_animation_animationsegment",
+      "label": "AnimationSegment",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animationsegment",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "frontend_src_types_animation_gazetarget",
+      "label": "GazeTarget",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "gazetarget",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "frontend_src_types_animation_gesturename",
+      "label": "GestureName",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "gesturename",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "frontend_src_types_animation_headmotionname",
+      "label": "HeadMotionName",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "headmotionname",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L17"
     },
     {
       "id": "frontend_src_constants_avatarconfig_semanticexpression",
@@ -238,26 +303,13 @@
       "source_location": "L7"
     },
     {
-      "id": "frontend_src_constants_environment_appenvironment",
-      "label": "AppEnvironment",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "appenvironment",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L6"
-    },
-    {
       "id": "frontend_src_services_avatar_validateavatarconfig_avatarconfigerror",
       "label": "AvatarConfigError",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
       "file_type": "code",
       "norm_label": "avatarconfigerror",
       "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
@@ -269,8 +321,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
       "file_type": "code",
       "norm_label": "avatarconfiginput",
       "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
@@ -290,6 +342,19 @@
       "source_location": "L17"
     },
     {
+      "id": "frontend_src_services_avatar_animation_animationtypes_resolvedclip",
+      "label": "ResolvedClip",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": "resolvedclip",
+      "source_file": "frontend/src/services/avatar/animation/animationTypes.ts",
+      "source_location": "L6"
+    },
+    {
       "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller",
       "label": "IdleController",
       "_callable": true,
@@ -301,6 +366,19 @@
       "norm_label": "idlecontroller",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
       "source_location": "L15"
+    },
+    {
+      "id": "frontend_src_types_animation_playanimationoptions",
+      "label": "PlayAnimationOptions",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": "playanimationoptions",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L39"
     },
     {
       "id": "frontend_src_vite_env_d_importmeta",
@@ -329,121 +407,43 @@
       "source_location": "L3"
     },
     {
-      "id": "frontend_src_services_avatar_animation_animationtypes_resolvedclip",
-      "label": "ResolvedClip",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "resolvedclip",
-      "source_file": "frontend/src/services/avatar/animation/animationTypes.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialtypes_blendshapemap",
-      "label": "BlendShapeMap",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "blendshapemap",
-      "source_file": "frontend/src/services/avatar/facial/facialTypes.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "frontend_src_types_animation_animationplan",
-      "label": "AnimationPlan",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "animationplan",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L59"
-    },
-    {
-      "id": "frontend_src_types_animation_animationsegment",
-      "label": "AnimationSegment",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "animationsegment",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L49"
-    },
-    {
-      "id": "frontend_src_types_animation_gazetarget",
-      "label": "GazeTarget",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "gazetarget",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_src_types_animation_gesturename",
-      "label": "GestureName",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "gesturename",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "frontend_src_types_animation_headmotionname",
-      "label": "HeadMotionName",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "headmotionname",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "frontend_src_types_animation_playanimationoptions",
-      "label": "PlayAnimationOptions",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "playanimationoptions",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L39"
-    },
-    {
       "id": "frontend_src_types_avatar_avatarcontroller",
       "label": "AvatarController",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": "avatarcontroller",
       "source_file": "frontend/src/types/avatar.ts",
       "source_location": "L9"
+    },
+    {
+      "id": "frontend_src_types_events_avatarruntimestatus",
+      "label": "AvatarRuntimeStatus",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "AvatarController",
+      "file_type": "code",
+      "norm_label": "avatarruntimestatus",
+      "source_file": "frontend/src/types/events.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "frontend_src_types_events_visemeevent",
+      "label": "VisemeEvent",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "AvatarController",
+      "file_type": "code",
+      "norm_label": "visemeevent",
+      "source_file": "frontend/src/types/events.ts",
+      "source_location": "L6"
     },
     {
       "id": "backend_app_core_settings_settings",
@@ -745,30 +745,30 @@
       "source_location": "L89"
     },
     {
-      "id": "backend_app_domain_interfaces_tts_provider_ttsresult",
-      "label": "TtsResult",
+      "id": "backend_app_core_exceptions_chatvalidationerror",
+      "label": "ChatValidationError",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
+      "community": 35,
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "ttsresult",
-      "source_file": "backend/app/domain/interfaces/tts_provider.py",
-      "source_location": "L8"
+      "norm_label": "chatvalidationerror",
+      "source_file": "backend/app/core/exceptions.py",
+      "source_location": "L12"
     },
     {
-      "id": "backend_tests_test_tts_synthesize_faketts",
-      "label": "_FakeTts",
+      "id": "backend_app_core_exceptions_llmprovidererror",
+      "label": "LlmProviderError",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
+      "community": 35,
+      "community_name": "main.py",
       "file_type": "code",
-      "norm_label": "_faketts",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L14"
+      "norm_label": "llmprovidererror",
+      "source_file": "backend/app/core/exceptions.py",
+      "source_location": "L20"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_gltfbuilder",
@@ -795,6 +795,19 @@
       "norm_label": "facialcontroller",
       "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
       "source_location": "L22"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialtypes_blendshapemap",
+      "label": "BlendShapeMap",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": "blendshapemap",
+      "source_file": "frontend/src/services/avatar/facial/facialTypes.ts",
+      "source_location": "L6"
     },
     {
       "id": "frontend_src_types_animation_expressionname",
@@ -849,6 +862,19 @@
       "source_location": "L19"
     },
     {
+      "id": "backend_app_core_exceptions_apperror",
+      "label": "AppError",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "apperror",
+      "source_file": "backend/app/core/exceptions.py",
+      "source_location": "L4"
+    },
+    {
       "id": "backend_app_core_exceptions_ttsconfigurationerror",
       "label": "TtsConfigurationError",
       "_callable": true,
@@ -901,6 +927,19 @@
       "source_location": "L15"
     },
     {
+      "id": "backend_app_domain_interfaces_tts_provider_ttsresult",
+      "label": "TtsResult",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "ttsresult",
+      "source_file": "backend/app/domain/interfaces/tts_provider.py",
+      "source_location": "L8"
+    },
+    {
       "id": "backend_app_infrastructure_openai_compatible_tts_provider_openaicompatiblettsprovider",
       "label": "OpenAICompatibleTtsProvider",
       "_callable": true,
@@ -927,30 +966,17 @@
       "source_location": "L15"
     },
     {
-      "id": "backend_app_core_exceptions_apperror",
-      "label": "AppError",
+      "id": "backend_tests_test_tts_synthesize_faketts",
+      "label": "_FakeTts",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
+      "community": 48,
+      "community_name": "dependencies.py",
       "file_type": "code",
-      "norm_label": "apperror",
-      "source_file": "backend/app/core/exceptions.py",
-      "source_location": "L4"
-    },
-    {
-      "id": "backend_app_core_exceptions_chatvalidationerror",
-      "label": "ChatValidationError",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "chatvalidationerror",
-      "source_file": "backend/app/core/exceptions.py",
-      "source_location": "L12"
+      "norm_label": "_faketts",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L14"
     },
     {
       "id": "backend_app_core_exceptions_llmconfigurationerror",
@@ -966,19 +992,6 @@
       "source_location": "L16"
     },
     {
-      "id": "backend_app_core_exceptions_llmprovidererror",
-      "label": "LlmProviderError",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "llmprovidererror",
-      "source_file": "backend/app/core/exceptions.py",
-      "source_location": "L20"
-    },
-    {
       "id": "backend_app_infrastructure_openai_compatible_llm_provider_openaicompatiblellmprovider",
       "label": "OpenAICompatibleLLMProvider",
       "_callable": true,
@@ -990,19 +1003,6 @@
       "norm_label": "openaicompatiblellmprovider",
       "source_file": "backend/app/infrastructure/openai_compatible/llm_provider.py",
       "source_location": "L10"
-    },
-    {
-      "id": "backend_app_services_chat_service_chatservice",
-      "label": "ChatService",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "chatservice",
-      "source_file": "backend/app/services/chat_service.py",
-      "source_location": "L12"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
@@ -1031,16 +1031,101 @@
       "source_location": "L4"
     },
     {
+      "id": "backend_app_services_chat_service_chatservice",
+      "label": "ChatService",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "code",
+      "norm_label": "chatservice",
+      "source_file": "backend/app/services/chat_service.py",
+      "source_location": "L12"
+    },
+    {
+      "id": "frontend_src_api_chat_postchatturn",
+      "label": "postChatTurn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "postchatturn()",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "frontend_src_api_httperror_readerrordetail",
+      "label": "readErrorDetail()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "readerrordetail()",
+      "source_file": "frontend/src/api/httpError.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "frontend_src_api_tts_resolveaudiourl",
+      "label": "resolveAudioUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "resolveaudiourl()",
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "frontend_src_api_tts_synthesizespeech",
+      "label": "synthesizeSpeech()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "synthesizespeech()",
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "frontend_src_app_app",
+      "label": "App()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "app()",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L7"
+    },
+    {
       "id": "frontend_src_components_statuspanel_statuspanel",
       "label": "StatusPanel()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "statuspanel()",
       "source_file": "frontend/src/components/StatusPanel.tsx",
       "source_location": "L17"
+    },
+    {
+      "id": "frontend_src_constants_environment_loadenvironment",
+      "label": "loadEnvironment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "loadenvironment()",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L20"
     },
     {
       "id": "frontend_src_features_avatar_components_animationcontrols_animationcontrols",
@@ -1048,7 +1133,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "animationcontrols()",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
@@ -1060,7 +1145,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "debugpanel()",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
@@ -1072,11 +1157,143 @@
       "_callable": true,
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "useaudio()",
       "source_file": "frontend/src/features/avatar/hooks/useAudio.ts",
       "source_location": "L8"
+    },
+    {
+      "id": "frontend_src_features_avatar_hooks_useavatar_useavatar",
+      "label": "useAvatar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "useavatar()",
+      "source_file": "frontend/src/features/avatar/hooks/useAvatar.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "frontend_src_features_chat_components_chatpanel_chatpanel",
+      "label": "ChatPanel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "chatpanel()",
+      "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "frontend_src_features_chat_hooks_usechatturn_nextid",
+      "label": "nextId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "nextid()",
+      "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "frontend_src_features_chat_hooks_usechatturn_usechatturn",
+      "label": "useChatTurn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "usechatturn()",
+      "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "frontend_src_features_chat_playassistantreaction_cleartimedfallback",
+      "label": "clearTimedFallback()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "cleartimedfallback()",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "frontend_src_features_chat_playassistantreaction_playassistantreaction",
+      "label": "playAssistantReaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "playassistantreaction()",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "frontend_src_features_chat_playassistantreaction_playtimedfallback",
+      "label": "playTimedFallback()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "playtimedfallback()",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L44"
+    },
+    {
+      "id": "frontend_src_layouts_presenterlayout_presenterlayout",
+      "label": "PresenterLayout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "presenterlayout()",
+      "source_file": "frontend/src/layouts/PresenterLayout.tsx",
+      "source_location": "L11"
+    },
+    {
+      "id": "frontend_src_pages_presenterpage_presenterpage",
+      "label": "PresenterPage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "presenterpage()",
+      "source_file": "frontend/src/pages/PresenterPage.tsx",
+      "source_location": "L23"
+    },
+    {
+      "id": "frontend_src_pages_presenterpage_supportswebgl",
+      "label": "supportsWebGL()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "supportswebgl()",
+      "source_file": "frontend/src/pages/PresenterPage.tsx",
+      "source_location": "L14"
+    },
+    {
+      "id": "frontend_src_routes_index_approutes",
+      "label": "AppRoutes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "approutes()",
+      "source_file": "frontend/src/routes/index.tsx",
+      "source_location": "L7"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_isexpressionname",
@@ -1084,7 +1301,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "isexpressionname()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -1096,7 +1313,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "isgesturename()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -1108,7 +1325,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "isheadmotionname()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -1120,7 +1337,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "resolveexpressionclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -1132,7 +1349,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "resolvegestureclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -1144,7 +1361,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "resolveheadclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -1156,7 +1373,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -1168,7 +1385,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "parseanimationplan()",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -1180,7 +1397,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "parsesegment()",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -1192,11 +1409,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".playgesture()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L63"
+      "source_location": "L64"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_setexpression",
@@ -1204,11 +1421,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".setexpression()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L83"
+      "source_location": "L84"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_setheadmotion",
@@ -1216,11 +1433,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".setheadmotion()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L95"
+      "source_location": "L96"
+    },
+    {
+      "id": "frontend_src_types_avatar_avatarcontroller_playgesture",
+      "label": ".playGesture()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": ".playgesture()",
+      "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L10"
     },
     {
       "id": "blender_scripts_modify_materials_build_parser",
@@ -1331,148 +1560,16 @@
       "source_location": "L93"
     },
     {
-      "id": "frontend_src_api_chat_postchatturn",
-      "label": "postChatTurn()",
+      "id": "frontend_src_features_avatar_components_avatar_avatar",
+      "label": "Avatar()",
       "_callable": true,
       "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
       "file_type": "code",
-      "norm_label": "postchatturn()",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L16"
-    },
-    {
-      "id": "frontend_src_api_chat_readerrordetail",
-      "label": "readErrorDetail()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "readerrordetail()",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L39"
-    },
-    {
-      "id": "frontend_src_features_chat_components_chatpanel_chatpanel",
-      "label": "ChatPanel()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chatpanel()",
-      "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L13"
-    },
-    {
-      "id": "frontend_src_features_chat_hooks_usechatturn_nextid",
-      "label": "nextId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "nextid()",
-      "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
-      "source_location": "L28"
-    },
-    {
-      "id": "frontend_src_features_chat_hooks_usechatturn_usechatturn",
-      "label": "useChatTurn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "usechatturn()",
-      "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
-      "source_location": "L35"
-    },
-    {
-      "id": "frontend_src_features_chat_playassistantreaction_playassistantreaction",
-      "label": "playAssistantReaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "playassistantreaction()",
-      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
-      "source_location": "L16"
-    },
-    {
-      "id": "frontend_src_app_app",
-      "label": "App()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "app()",
-      "source_file": "frontend/src/App.tsx",
-      "source_location": "L7"
-    },
-    {
-      "id": "frontend_src_features_avatar_hooks_useavatar_useavatar",
-      "label": "useAvatar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "useavatar()",
-      "source_file": "frontend/src/features/avatar/hooks/useAvatar.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "frontend_src_layouts_presenterlayout_presenterlayout",
-      "label": "PresenterLayout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "presenterlayout()",
-      "source_file": "frontend/src/layouts/PresenterLayout.tsx",
-      "source_location": "L11"
-    },
-    {
-      "id": "frontend_src_pages_presenterpage_presenterpage",
-      "label": "PresenterPage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "presenterpage()",
-      "source_file": "frontend/src/pages/PresenterPage.tsx",
-      "source_location": "L23"
-    },
-    {
-      "id": "frontend_src_pages_presenterpage_supportswebgl",
-      "label": "supportsWebGL()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "supportswebgl()",
-      "source_file": "frontend/src/pages/PresenterPage.tsx",
-      "source_location": "L14"
-    },
-    {
-      "id": "frontend_src_routes_index_approutes",
-      "label": "AppRoutes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "approutes()",
-      "source_file": "frontend/src/routes/index.tsx",
-      "source_location": "L7"
+      "norm_label": "avatar()",
+      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
+      "source_location": "L17"
     },
     {
       "id": "frontend_src_features_avatar_components_avatarcamera_avatarcamera",
@@ -1523,48 +1620,12 @@
       "source_location": "L7"
     },
     {
-      "id": "frontend_src_constants_environment_loadenvironment",
-      "label": "loadEnvironment()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "loadenvironment()",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_src_features_avatar_components_avatar_avatar",
-      "label": "Avatar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "avatar()",
-      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
-      "source_location": "L17"
-    },
-    {
-      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_getstatus",
-      "label": ".getStatus()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": ".getstatus()",
-      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L183"
-    },
-    {
       "id": "frontend_src_services_avatar_validateavatarconfig_avatarconfigerror_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
@@ -1575,8 +1636,8 @@
       "label": "validateAvatarConfig()",
       "_callable": true,
       "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
       "file_type": "code",
       "norm_label": "validateavatarconfig()",
       "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
@@ -2207,16 +2268,28 @@
       "source_location": "L28"
     },
     {
+      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_getstatus",
+      "label": ".getStatus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "AvatarController",
+      "file_type": "code",
+      "norm_label": ".getstatus()",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L232"
+    },
+    {
       "id": "frontend_src_types_avatar_avatarcontroller_getstatus",
       "label": ".getStatus()",
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".getstatus()",
       "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L29"
+      "source_location": "L34"
     },
     {
       "id": "frontend_src_types_avatar_avatarcontroller_loadaudio",
@@ -2224,7 +2297,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".loadaudio()",
       "source_file": "frontend/src/types/avatar.ts",
@@ -2236,7 +2309,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".pauseaudio()",
       "source_file": "frontend/src/types/avatar.ts",
@@ -2248,23 +2321,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".playaudio()",
       "source_file": "frontend/src/types/avatar.ts",
       "source_location": "L23"
-    },
-    {
-      "id": "frontend_src_types_avatar_avatarcontroller_playgesture",
-      "label": ".playGesture()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": ".playgesture()",
-      "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L10"
     },
     {
       "id": "frontend_src_types_avatar_avatarcontroller_reset",
@@ -2272,7 +2333,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".reset()",
       "source_file": "frontend/src/types/avatar.ts",
@@ -2284,7 +2345,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".setgaze()",
       "source_file": "frontend/src/types/avatar.ts",
@@ -2296,11 +2357,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".setheadmotion()",
       "source_file": "frontend/src/types/avatar.ts",
       "source_location": "L12"
+    },
+    {
+      "id": "frontend_src_types_avatar_avatarcontroller_speakfromurl",
+      "label": ".speakFromUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "AvatarController",
+      "file_type": "code",
+      "norm_label": ".speakfromurl()",
+      "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L32"
     },
     {
       "id": "frontend_src_types_avatar_avatarcontroller_startspeaking",
@@ -2308,7 +2381,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".startspeaking()",
       "source_file": "frontend/src/types/avatar.ts",
@@ -2320,7 +2393,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".stopaudio()",
       "source_file": "frontend/src/types/avatar.ts",
@@ -2332,7 +2405,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": ".stopspeaking()",
       "source_file": "frontend/src/types/avatar.ts",
@@ -2360,7 +2433,7 @@
       "file_type": "code",
       "norm_label": ".assertarmature()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L203"
+      "source_location": "L253"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
@@ -2372,7 +2445,7 @@
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_dispose",
@@ -2384,7 +2457,7 @@
       "file_type": "code",
       "norm_label": ".dispose()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L197"
+      "source_location": "L246"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_loadaudio",
@@ -2396,7 +2469,7 @@
       "file_type": "code",
       "norm_label": ".loadaudio()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L152"
+      "source_location": "L153"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_pauseaudio",
@@ -2408,7 +2481,7 @@
       "file_type": "code",
       "norm_label": ".pauseaudio()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L162"
+      "source_location": "L163"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_playaudio",
@@ -2420,7 +2493,7 @@
       "file_type": "code",
       "norm_label": ".playaudio()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L157"
+      "source_location": "L158"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_pushwarning",
@@ -2432,7 +2505,7 @@
       "file_type": "code",
       "norm_label": ".pushwarning()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L215"
+      "source_location": "L265"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_reset",
@@ -2444,7 +2517,7 @@
       "file_type": "code",
       "norm_label": ".reset()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L139"
+      "source_location": "L140"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_setgaze",
@@ -2456,7 +2529,19 @@
       "file_type": "code",
       "norm_label": ".setgaze()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L118"
+      "source_location": "L119"
+    },
+    {
+      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_speakfromurl",
+      "label": ".speakFromUrl()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 26,
+      "community_name": "AvatarRuntime",
+      "file_type": "code",
+      "norm_label": ".speakfromurl()",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L175"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_startspeaking",
@@ -2468,7 +2553,7 @@
       "file_type": "code",
       "norm_label": ".startspeaking()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L128"
+      "source_location": "L129"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_stopaudio",
@@ -2480,7 +2565,7 @@
       "file_type": "code",
       "norm_label": ".stopaudio()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L167"
+      "source_location": "L168"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_stopspeaking",
@@ -2492,7 +2577,7 @@
       "file_type": "code",
       "norm_label": ".stopspeaking()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L132"
+      "source_location": "L133"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_update",
@@ -2504,7 +2589,7 @@
       "file_type": "code",
       "norm_label": ".update()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L171"
+      "source_location": "L220"
     },
     {
       "id": "backend_app_api_dependencies_get_presenter_plan_service",
@@ -2579,16 +2664,16 @@
       "source_location": "L35"
     },
     {
-      "id": "backend_app_core_logging_setup_logging",
-      "label": "setup_logging()",
+      "id": "backend_app_core_settings_get_settings",
+      "label": "get_settings()",
       "_callable": true,
       "_origin": "ast",
       "community": 29,
       "community_name": "create_app",
       "file_type": "code",
-      "norm_label": "setup_logging()",
-      "source_file": "backend/app/core/logging.py",
-      "source_location": "L7"
+      "norm_label": "get_settings()",
+      "source_file": "backend/app/core/settings.py",
+      "source_location": "L44"
     },
     {
       "id": "backend_app_main_create_app",
@@ -3275,6 +3360,18 @@
       "source_location": "L7"
     },
     {
+      "id": "backend_app_api_routes_chat_post_chat_turn",
+      "label": "post_chat_turn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "post_chat_turn()",
+      "source_file": "backend/app/api/routes/chat.py",
+      "source_location": "L18"
+    },
+    {
       "id": "backend_app_api_routes_health_health_check",
       "label": "health_check()",
       "_callable": true,
@@ -3335,100 +3432,16 @@
       "source_location": "L27"
     },
     {
-      "id": "backend_app_domain_interfaces_tts_provider_ttsprovider_synthesize",
-      "label": ".synthesize()",
+      "id": "backend_app_api_routes_tts_get_synthesized_audio",
+      "label": "get_synthesized_audio()",
       "_callable": true,
       "_origin": "ast",
       "community": 38,
-      "community_name": "test_tts_synthesize.py",
+      "community_name": "get_synthesized_audio",
       "file_type": "code",
-      "norm_label": ".synthesize()",
-      "source_file": "backend/app/domain/interfaces/tts_provider.py",
-      "source_location": "L19"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_faketts_init",
-      "label": ".__init__()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": ".__init__()",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L17"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_faketts_synthesize",
-      "label": ".synthesize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": ".synthesize()",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L21"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_setup_function",
-      "label": "setup_function()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": "setup_function()",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L33"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_teardown_function",
-      "label": "teardown_function()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": "teardown_function()",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L40"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_test_get_audio_ok",
-      "label": "test_get_audio_ok()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": "test_get_audio_ok()",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L69"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_test_synthesize_ok",
-      "label": "test_synthesize_ok()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": "test_synthesize_ok()",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L51"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_test_synthesize_rejects_empty_text",
-      "label": "test_synthesize_rejects_empty_text()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": "test_synthesize_rejects_empty_text()",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L63"
+      "norm_label": "get_synthesized_audio()",
+      "source_file": "backend/app/api/routes/tts.py",
+      "source_location": "L43"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_align4",
@@ -4007,18 +4020,6 @@
       "source_location": "L110"
     },
     {
-      "id": "backend_app_api_routes_tts_get_synthesized_audio",
-      "label": "get_synthesized_audio()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 48,
-      "community_name": "dependencies.py",
-      "file_type": "code",
-      "norm_label": "get_synthesized_audio()",
-      "source_file": "backend/app/api/routes/tts.py",
-      "source_location": "L43"
-    },
-    {
       "id": "backend_app_api_routes_tts_synthesize_speech",
       "label": "synthesize_speech()",
       "_callable": true,
@@ -4031,16 +4032,16 @@
       "source_location": "L19"
     },
     {
-      "id": "backend_app_core_settings_get_settings",
-      "label": "get_settings()",
+      "id": "backend_app_domain_interfaces_tts_provider_ttsprovider_synthesize",
+      "label": ".synthesize()",
       "_callable": true,
       "_origin": "ast",
       "community": 48,
       "community_name": "dependencies.py",
       "file_type": "code",
-      "norm_label": "get_settings()",
-      "source_file": "backend/app/core/settings.py",
-      "source_location": "L44"
+      "norm_label": ".synthesize()",
+      "source_file": "backend/app/domain/interfaces/tts_provider.py",
+      "source_location": "L19"
     },
     {
       "id": "backend_app_infrastructure_openai_compatible_tts_provider_openaicompatiblettsprovider_init",
@@ -4103,28 +4104,88 @@
       "source_location": "L30"
     },
     {
-      "id": "backend_app_api_dependencies_get_chat_service",
-      "label": "get_chat_service()",
+      "id": "backend_tests_test_tts_synthesize_faketts_init",
+      "label": ".__init__()",
       "_callable": true,
       "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
+      "community": 48,
+      "community_name": "dependencies.py",
       "file_type": "code",
-      "norm_label": "get_chat_service()",
-      "source_file": "backend/app/api/dependencies.py",
-      "source_location": "L66"
+      "norm_label": ".__init__()",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L17"
     },
     {
-      "id": "backend_app_api_routes_chat_post_chat_turn",
-      "label": "post_chat_turn()",
+      "id": "backend_tests_test_tts_synthesize_faketts_synthesize",
+      "label": ".synthesize()",
       "_callable": true,
       "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
+      "community": 48,
+      "community_name": "dependencies.py",
       "file_type": "code",
-      "norm_label": "post_chat_turn()",
-      "source_file": "backend/app/api/routes/chat.py",
-      "source_location": "L18"
+      "norm_label": ".synthesize()",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L21"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_setup_function",
+      "label": "setup_function()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "setup_function()",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L33"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_teardown_function",
+      "label": "teardown_function()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "teardown_function()",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L40"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_test_get_audio_ok",
+      "label": "test_get_audio_ok()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "test_get_audio_ok()",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L69"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_test_synthesize_ok",
+      "label": "test_synthesize_ok()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "test_synthesize_ok()",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L51"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_test_synthesize_rejects_empty_text",
+      "label": "test_synthesize_rejects_empty_text()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "test_synthesize_rejects_empty_text()",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L63"
     },
     {
       "id": "backend_app_infrastructure_openai_compatible_llm_provider_openaicompatiblellmprovider_generate",
@@ -4149,18 +4210,6 @@
       "norm_label": ".__init__()",
       "source_file": "backend/app/infrastructure/openai_compatible/llm_provider.py",
       "source_location": "L13"
-    },
-    {
-      "id": "backend_app_services_chat_service_chatservice_send_turn",
-      "label": ".send_turn()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": ".send_turn()",
-      "source_file": "backend/app/services/chat_service.py",
-      "source_location": "L24"
     },
     {
       "id": "backend_tests_test_openai_compatible_llm_provider_test_api_error_becomes_llm_provider_error",
@@ -4688,7 +4737,19 @@
       "file_type": "code",
       "norm_label": ".dispose()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L86"
+      "source_location": "L98"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_disposeelement",
+      "label": ".disposeElement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "AudioController",
+      "file_type": "code",
+      "norm_label": ".disposeelement()",
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
+      "source_location": "L103"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_getcurrenttime",
@@ -4700,7 +4761,7 @@
       "file_type": "code",
       "norm_label": ".getcurrenttime()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L73"
+      "source_location": "L78"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_getduration",
@@ -4712,7 +4773,7 @@
       "file_type": "code",
       "norm_label": ".getduration()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L77"
+      "source_location": "L82"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_geterror",
@@ -4724,7 +4785,7 @@
       "file_type": "code",
       "norm_label": ".geterror()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L13"
+      "source_location": "L17"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_getloadedurl",
@@ -4736,7 +4797,7 @@
       "file_type": "code",
       "norm_label": ".getloadedurl()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L82"
+      "source_location": "L87"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_load",
@@ -4748,7 +4809,31 @@
       "file_type": "code",
       "norm_label": ".load()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L20"
+      "source_location": "L24"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_onended",
+      "label": ".onEnded()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "AudioController",
+      "file_type": "code",
+      "norm_label": ".onended()",
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
+      "source_location": "L91"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_onnativeended",
+      "label": ".onNativeEnded()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "AudioController",
+      "file_type": "code",
+      "norm_label": ".onnativeended()",
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
+      "source_location": "L13"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_pause",
@@ -4760,7 +4845,7 @@
       "file_type": "code",
       "norm_label": ".pause()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L61"
+      "source_location": "L66"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_play",
@@ -4772,7 +4857,7 @@
       "file_type": "code",
       "norm_label": ".play()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L49"
+      "source_location": "L54"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_stop",
@@ -4784,7 +4869,7 @@
       "file_type": "code",
       "norm_label": ".stop()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L65"
+      "source_location": "L70"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_dispose",
@@ -4796,7 +4881,7 @@
       "file_type": "code",
       "norm_label": ".dispose()",
       "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L11"
+      "source_location": "L13"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_getcurrenttime",
@@ -4833,6 +4918,18 @@
       "norm_label": ".load()",
       "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
       "source_location": "L5"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_onended",
+      "label": ".onEnded()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "AudioController",
+      "file_type": "code",
+      "norm_label": ".onended()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L12"
     },
     {
       "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_pause",
@@ -4931,12 +5028,36 @@
       "source_location": "L37"
     },
     {
+      "id": "backend_app_api_dependencies_get_chat_service",
+      "label": "get_chat_service()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "code",
+      "norm_label": "get_chat_service()",
+      "source_file": "backend/app/api/dependencies.py",
+      "source_location": "L66"
+    },
+    {
+      "id": "backend_app_core_logging_setup_logging",
+      "label": "setup_logging()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "code",
+      "norm_label": "setup_logging()",
+      "source_file": "backend/app/core/logging.py",
+      "source_location": "L7"
+    },
+    {
       "id": "backend_app_prompts_animation_plan_build_animation_plan_prompt",
       "label": "build_animation_plan_prompt()",
       "_callable": true,
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "code",
       "norm_label": "build_animation_plan_prompt()",
       "source_file": "backend/app/prompts/animation_plan.py",
@@ -4948,7 +5069,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "code",
       "norm_label": "build_chat_turn_prompt()",
       "source_file": "backend/app/prompts/chat_turn.py",
@@ -4960,29 +5081,107 @@
       "_callable": true,
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "code",
       "norm_label": "build_plan_script_prompt()",
       "source_file": "backend/app/prompts/plan_script.py",
       "source_location": "L4"
     },
     {
+      "id": "backend_app_services_chat_service_chatservice_send_turn",
+      "label": ".send_turn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "code",
+      "norm_label": ".send_turn()",
+      "source_file": "backend/app/services/chat_service.py",
+      "source_location": "L24"
+    },
+    {
+      "id": "frontend_src_api_chat",
+      "label": "chat.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "chat.ts",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_api_httperror",
+      "label": "httpError.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "httperror.ts",
+      "source_file": "frontend/src/api/httpError.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_api_tts",
+      "label": "tts.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "tts.ts",
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_app",
+      "label": "App.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "app.tsx",
+      "source_file": "frontend/src/App.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "frontend_src_components_statuspanel",
       "label": "StatusPanel.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "statuspanel.tsx",
       "source_file": "frontend/src/components/StatusPanel.tsx",
       "source_location": "L1"
     },
     {
+      "id": "frontend_src_constants_environment",
+      "label": "environment.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "environment.ts",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_constants_environment_environment",
+      "label": "environment",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "environment",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L31"
+    },
+    {
       "id": "frontend_src_features_avatar_components_animationcontrols",
       "label": "AnimationControls.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "animationcontrols.tsx",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
@@ -4993,7 +5192,7 @@
       "label": "EXPRESSIONS",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "expressions",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
@@ -5004,7 +5203,7 @@
       "label": "GESTURES",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "gestures",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
@@ -5015,7 +5214,7 @@
       "label": "HEADS",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "heads",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
@@ -5026,7 +5225,7 @@
       "label": "DebugPanel.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "debugpanel.tsx",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
@@ -5037,7 +5236,7 @@
       "label": "EMPTY_STATUS",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "empty_status",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
@@ -5048,10 +5247,21 @@
       "label": "useAudio.ts",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "useaudio.ts",
       "source_file": "frontend/src/features/avatar/hooks/useAudio.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_features_avatar_hooks_useavatar",
+      "label": "useAvatar.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "useavatar.ts",
+      "source_file": "frontend/src/features/avatar/hooks/useAvatar.ts",
       "source_location": "L1"
     },
     {
@@ -5059,29 +5269,150 @@
       "label": "types.ts",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
       "norm_label": "types.ts",
       "source_file": "frontend/src/features/avatar/types.ts",
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_types_events",
-      "label": "events.ts",
+      "id": "frontend_src_features_chat_components_chatpanel",
+      "label": "ChatPanel.tsx",
       "_origin": "ast",
       "community": 0,
-      "community_name": "DebugPanel.tsx",
+      "community_name": "PresenterPage.tsx",
       "file_type": "code",
-      "norm_label": "events.ts",
-      "source_file": "frontend/src/types/events.ts",
+      "norm_label": "chatpanel.tsx",
+      "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_features_chat_hooks_usechatturn",
+      "label": "useChatTurn.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "usechatturn.ts",
+      "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_features_chat_playassistantreaction",
+      "label": "playAssistantReaction.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "playassistantreaction.ts",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_features_chat_playassistantreaction_timers",
+      "label": "timers",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "timers",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "frontend_src_layouts_presenterlayout",
+      "label": "PresenterLayout.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "presenterlayout.tsx",
+      "source_file": "frontend/src/layouts/PresenterLayout.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_main",
+      "label": "main.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "main.tsx",
+      "source_file": "frontend/src/main.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_main_rootelement",
+      "label": "rootElement",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "rootelement",
+      "source_file": "frontend/src/main.tsx",
+      "source_location": "L6"
+    },
+    {
+      "id": "frontend_src_pages_presenterpage",
+      "label": "PresenterPage.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "presenterpage.tsx",
+      "source_file": "frontend/src/pages/PresenterPage.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_routes_index",
+      "label": "index.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "index.tsx",
+      "source_file": "frontend/src/routes/index.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_tests_api_chat_test",
+      "label": "chat.test.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "chat.test.ts",
+      "source_file": "frontend/src/tests/api/chat.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_tests_api_tts_test",
+      "label": "tts.test.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "code",
+      "norm_label": "tts.test.ts",
+      "source_file": "frontend/src/tests/api/tts.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "PresenterPage.tsx",
+      "file_type": "concept",
+      "norm_label": "react",
+      "source_file": "frontend/package.json",
+      "source_location": "L29"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry",
       "label": "AnimationRegistry.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "animationregistry.ts",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -5092,7 +5423,7 @@
       "label": "EXPRESSION_NAMES",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "expression_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -5103,7 +5434,7 @@
       "label": "GESTURE_NAMES",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "gesture_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -5114,7 +5445,7 @@
       "label": "HEAD_NAMES",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "head_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
@@ -5125,7 +5456,7 @@
       "label": "parseAnimationPlan.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "parseanimationplan.ts",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -5136,7 +5467,7 @@
       "label": "GAZE",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "gaze",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -5147,7 +5478,7 @@
       "label": "AnimationRegistry.test.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "animationregistry.test.ts",
       "source_file": "frontend/src/tests/services/avatar/animation/AnimationRegistry.test.ts",
@@ -5158,11 +5489,44 @@
       "label": "parseAnimationPlan.test.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AnimationRegistry.ts",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "parseanimationplan.test.ts",
       "source_file": "frontend/src/tests/services/avatar/animation/parseAnimationPlan.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_animation",
+      "label": "animation.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animation.ts",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_animation_animationlayerpriority",
+      "label": "AnimationLayerPriority",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animationlayerpriority",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "ref_vitest",
+      "label": "vitest",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "animation.ts",
+      "file_type": "concept",
+      "norm_label": "vitest",
+      "source_file": "frontend/package.json",
+      "source_location": "L47"
     },
     {
       "id": "blender_scripts_modify_materials",
@@ -5565,160 +5929,6 @@
       "source_location": "L25"
     },
     {
-      "id": "frontend_src_api_chat",
-      "label": "chat.ts",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chat.ts",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_features_chat_components_chatpanel",
-      "label": "ChatPanel.tsx",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chatpanel.tsx",
-      "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_features_chat_hooks_usechatturn",
-      "label": "useChatTurn.ts",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "usechatturn.ts",
-      "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_features_chat_playassistantreaction",
-      "label": "playAssistantReaction.ts",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "playassistantreaction.ts",
-      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_features_chat_playassistantreaction_timers",
-      "label": "timers",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "timers",
-      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "frontend_src_tests_api_chat_test",
-      "label": "chat.test.ts",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chat.test.ts",
-      "source_file": "frontend/src/tests/api/chat.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_app",
-      "label": "App.tsx",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "app.tsx",
-      "source_file": "frontend/src/App.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_features_avatar_hooks_useavatar",
-      "label": "useAvatar.ts",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "useavatar.ts",
-      "source_file": "frontend/src/features/avatar/hooks/useAvatar.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_layouts_presenterlayout",
-      "label": "PresenterLayout.tsx",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "presenterlayout.tsx",
-      "source_file": "frontend/src/layouts/PresenterLayout.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_main",
-      "label": "main.tsx",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "main.tsx",
-      "source_file": "frontend/src/main.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_main_rootelement",
-      "label": "rootElement",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "rootelement",
-      "source_file": "frontend/src/main.tsx",
-      "source_location": "L6"
-    },
-    {
-      "id": "frontend_src_pages_presenterpage",
-      "label": "PresenterPage.tsx",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "presenterpage.tsx",
-      "source_file": "frontend/src/pages/PresenterPage.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_routes_index",
-      "label": "index.tsx",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "index.tsx",
-      "source_file": "frontend/src/routes/index.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_react",
-      "label": "react",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "concept",
-      "norm_label": "react",
-      "source_file": "frontend/package.json",
-      "source_location": "L29"
-    },
-    {
       "id": "frontend_src_constants_avatarconfig",
       "label": "avatarConfig.ts",
       "_origin": "ast",
@@ -5785,6 +5995,17 @@
       "source_location": "L4"
     },
     {
+      "id": "frontend_src_features_avatar_components_avatar",
+      "label": "Avatar.tsx",
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
+      "file_type": "code",
+      "norm_label": "avatar.tsx",
+      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "frontend_src_features_avatar_components_avatarcamera",
       "label": "AvatarCamera.tsx",
       "_origin": "ast",
@@ -5829,6 +6050,28 @@
       "source_location": "L1"
     },
     {
+      "id": "frontend_src_services_avatar_validateavatarconfig",
+      "label": "validateAvatarConfig.ts",
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
+      "file_type": "code",
+      "norm_label": "validateavatarconfig.ts",
+      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_tests_services_avatar_validateavatarconfig_test",
+      "label": "validateAvatarConfig.test.ts",
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
+      "file_type": "code",
+      "norm_label": "validateavatarconfig.test.ts",
+      "source_file": "frontend/src/tests/services/avatar/validateAvatarConfig.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "ref_react_three_drei",
       "label": "@react-three/drei",
       "_origin": "ast",
@@ -5838,6 +6081,17 @@
       "norm_label": "@react-three/drei",
       "source_file": "frontend/package.json",
       "source_location": "L27"
+    },
+    {
+      "id": "ref_react_three_fiber",
+      "label": "@react-three/fiber",
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AvatarScene.tsx",
+      "file_type": "concept",
+      "norm_label": "@react-three/fiber",
+      "source_file": "frontend/package.json",
+      "source_location": "L28"
     },
     {
       "id": "frontend_package_scripts",
@@ -6047,72 +6301,6 @@
       "norm_label": "test:watch",
       "source_file": "frontend/package.json",
       "source_location": "L11"
-    },
-    {
-      "id": "frontend_src_constants_environment",
-      "label": "environment.ts",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "environment.ts",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_constants_environment_environment",
-      "label": "environment",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "environment",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L31"
-    },
-    {
-      "id": "frontend_src_features_avatar_components_avatar",
-      "label": "Avatar.tsx",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "avatar.tsx",
-      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_services_avatar_validateavatarconfig",
-      "label": "validateAvatarConfig.ts",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "validateavatarconfig.ts",
-      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_tests_services_avatar_validateavatarconfig_test",
-      "label": "validateAvatarConfig.test.ts",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "validateavatarconfig.test.ts",
-      "source_file": "frontend/src/tests/services/avatar/validateAvatarConfig.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_react_three_fiber",
-      "label": "@react-three/fiber",
-      "_origin": "ast",
-      "community": 110,
-      "community_name": "Avatar.tsx",
-      "file_type": "concept",
-      "norm_label": "@react-three/fiber",
-      "source_file": "frontend/package.json",
-      "source_location": "L28"
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys",
@@ -6808,6 +6996,17 @@
       "source_location": "L32"
     },
     {
+      "id": "frontend_src_services_avatar_animation_animationtypes",
+      "label": "animationTypes.ts",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": "animationtypes.ts",
+      "source_file": "frontend/src/services/avatar/animation/animationTypes.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "blender_scripts_validate_rig",
       "label": "validate_rig.py",
       "_origin": "ast",
@@ -7350,58 +7549,25 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_services_avatar_animation_animationtypes",
-      "label": "animationTypes.ts",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "animationtypes.ts",
-      "source_file": "frontend/src/services/avatar/animation/animationTypes.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialtypes",
-      "label": "facialTypes.ts",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "facialtypes.ts",
-      "source_file": "frontend/src/services/avatar/facial/facialTypes.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_types_animation",
-      "label": "animation.ts",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "animation.ts",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_types_animation_animationlayerpriority",
-      "label": "AnimationLayerPriority",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "animationlayerpriority",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L26"
-    },
-    {
       "id": "frontend_src_types_avatar",
       "label": "avatar.ts",
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": "avatar.ts",
       "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_events",
+      "label": "events.ts",
+      "_origin": "ast",
+      "community": 24,
+      "community_name": "AvatarController",
+      "file_type": "code",
+      "norm_label": "events.ts",
+      "source_file": "frontend/src/types/events.ts",
       "source_location": "L1"
     },
     {
@@ -7409,7 +7575,7 @@
       "label": "index.ts",
       "_origin": "ast",
       "community": 24,
-      "community_name": "animation.ts",
+      "community_name": "AvatarController",
       "file_type": "code",
       "norm_label": "index.ts",
       "source_file": "frontend/src/types/index.ts",
@@ -7706,37 +7872,37 @@
       "source_location": "L504"
     },
     {
-      "id": "backend_app_core_logging",
-      "label": "logging.py",
+      "id": "backend_app_core_settings",
+      "label": "settings.py",
       "_origin": "ast",
       "community": 29,
       "community_name": "create_app",
       "file_type": "code",
-      "norm_label": "logging.py",
-      "source_file": "backend/app/core/logging.py",
+      "norm_label": "settings.py",
+      "source_file": "backend/app/core/settings.py",
       "source_location": "L1"
     },
     {
-      "id": "backend_app_core_logging_rationale_1",
-      "label": "Application-wide logging setup.",
+      "id": "backend_app_core_settings_rationale_1",
+      "label": "Application configuration loaded from environment variables.",
       "_origin": "ast",
       "community": 29,
       "community_name": "create_app",
       "file_type": "rationale",
-      "norm_label": "application-wide logging setup.",
-      "source_file": "backend/app/core/logging.py",
+      "norm_label": "application configuration loaded from environment variables.",
+      "source_file": "backend/app/core/settings.py",
       "source_location": "L1"
     },
     {
-      "id": "backend_app_core_logging_rationale_8",
-      "label": "Configure root logging to stdout.",
+      "id": "backend_app_core_settings_rationale_45",
+      "label": "Return a cached settings instance.",
       "_origin": "ast",
       "community": 29,
       "community_name": "create_app",
       "file_type": "rationale",
-      "norm_label": "configure root logging to stdout.",
-      "source_file": "backend/app/core/logging.py",
-      "source_location": "L8"
+      "norm_label": "return a cached settings instance.",
+      "source_file": "backend/app/core/settings.py",
+      "source_location": "L45"
     },
     {
       "id": "backend_app_main_rationale_22",
@@ -8476,17 +8642,6 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_vitest",
-      "label": "vitest",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationStateMachine",
-      "file_type": "concept",
-      "norm_label": "vitest",
-      "source_file": "frontend/package.json",
-      "source_location": "L47"
-    },
-    {
       "id": "cursor_agents_frontend_developer_agent_accessibility_considerations",
       "label": "Accessibility Considerations",
       "_origin": "ast",
@@ -8916,17 +9071,6 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_services_avatar_audio_audiocontroller",
-      "label": "AudioController.ts",
-      "_origin": "ast",
-      "community": 34,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "audiocontroller.ts",
-      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "frontend_src_services_avatar_avatarruntime",
       "label": "AvatarRuntime.ts",
       "_origin": "ast",
@@ -9004,6 +9148,17 @@
       "source_location": "L1"
     },
     {
+      "id": "backend_app_api_routes_chat_py_post",
+      "label": "post",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "post",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "backend_app_api_routes_health",
       "label": "health.py",
       "_origin": "ast",
@@ -9070,17 +9225,6 @@
       "source_location": ""
     },
     {
-      "id": "backend_app_api_routes_tts",
-      "label": "tts.py",
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "main.py",
-      "file_type": "code",
-      "norm_label": "tts.py",
-      "source_file": "backend/app/api/routes/tts.py",
-      "source_location": "L1"
-    },
-    {
       "id": "backend_app_api_schemas",
       "label": "schemas.py",
       "_origin": "ast",
@@ -9114,6 +9258,17 @@
       "source_location": ""
     },
     {
+      "id": "chatturnresponse",
+      "label": "ChatTurnResponse",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "main.py",
+      "file_type": "code",
+      "norm_label": "chatturnresponse",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
       "id": "fastapi",
       "label": "FastAPI",
       "_origin": "ast",
@@ -9134,6 +9289,17 @@
       "norm_label": "interactive chatbot turn routes. thin layer \u2014 orchestration stays in services.",
       "source_file": "backend/app/api/routes/chat.py",
       "source_location": "L1"
+    },
+    {
+      "id": "backend_app_api_routes_chat_rationale_22",
+      "label": "Run one chat turn: user ``message`` \u2192 assistant ``reply`` via the LLM port.\u2026",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "main.py",
+      "file_type": "rationale",
+      "norm_label": "run one chat turn: user ``message`` \u2192 assistant ``reply`` via the llm port....",
+      "source_file": "backend/app/api/routes/chat.py",
+      "source_location": "L22"
     },
     {
       "id": "backend_app_api_routes_health_rationale_12",
@@ -9200,17 +9366,6 @@
       "norm_label": "generate a validated semantic ``animationplan`` from a topic via the llm....",
       "source_file": "backend/app/api/routes/plans.py",
       "source_location": "L74"
-    },
-    {
-      "id": "backend_app_api_routes_tts_rationale_1",
-      "label": "TTS routes. Thin layer \u2014 orchestration stays in services.",
-      "_origin": "ast",
-      "community": 35,
-      "community_name": "main.py",
-      "file_type": "rationale",
-      "norm_label": "tts routes. thin layer \u2014 orchestration stays in services.",
-      "source_file": "backend/app/api/routes/tts.py",
-      "source_location": "L1"
     },
     {
       "id": "backend_app_api_schemas_rationale_1",
@@ -9321,6 +9476,28 @@
       "norm_label": "playable audio url (relative) plus estimated duration.",
       "source_file": "backend/app/api/schemas.py",
       "source_location": "L90"
+    },
+    {
+      "id": "backend_app_core_exceptions_rationale_13",
+      "label": "Raised when a chat turn request fails validation.",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "main.py",
+      "file_type": "rationale",
+      "norm_label": "raised when a chat turn request fails validation.",
+      "source_file": "backend/app/core/exceptions.py",
+      "source_location": "L13"
+    },
+    {
+      "id": "backend_app_core_exceptions_rationale_21",
+      "label": "Raised when an LLM provider request fails.",
+      "_origin": "ast",
+      "community": 35,
+      "community_name": "main.py",
+      "file_type": "rationale",
+      "norm_label": "raised when an llm provider request fails.",
+      "source_file": "backend/app/core/exceptions.py",
+      "source_location": "L21"
     },
     {
       "id": "backend_app_main_rationale_1",
@@ -9586,158 +9763,37 @@
       "source_location": "L94"
     },
     {
-      "id": "backend_app_domain_interfaces_tts_provider",
-      "label": "interfaces/tts_provider.py",
+      "id": "backend_app_api_routes_tts_py_get",
+      "label": "get",
       "_origin": "ast",
       "community": 38,
-      "community_name": "test_tts_synthesize.py",
+      "community_name": "get_synthesized_audio",
       "file_type": "code",
-      "norm_label": "interfaces/tts_provider.py",
-      "source_file": "backend/app/domain/interfaces/tts_provider.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_app_domain_interfaces_tts_provider_py_abc",
-      "label": "ABC",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": "abc",
+      "norm_label": "get",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "backend_tests_test_tts_synthesize",
-      "label": "test_tts_synthesize.py",
+      "id": "fileresponse",
+      "label": "FileResponse",
       "_origin": "ast",
       "community": 38,
-      "community_name": "test_tts_synthesize.py",
+      "community_name": "get_synthesized_audio",
       "file_type": "code",
-      "norm_label": "test_tts_synthesize.py",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "code",
-      "norm_label": "path",
+      "norm_label": "fileresponse",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "backend_app_domain_interfaces_tts_provider_rationale_1",
-      "label": "TTS provider port. Implementations live under infrastructure/.",
+      "id": "backend_app_api_routes_tts_rationale_47",
+      "label": "Serve a previously synthesized MP3 from the local TTS cache.",
       "_origin": "ast",
       "community": 38,
-      "community_name": "test_tts_synthesize.py",
+      "community_name": "get_synthesized_audio",
       "file_type": "rationale",
-      "norm_label": "tts provider port. implementations live under infrastructure/.",
-      "source_file": "backend/app/domain/interfaces/tts_provider.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_app_domain_interfaces_tts_provider_rationale_20",
-      "label": "Synthesize speech and return a playable URL plus duration.",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "synthesize speech and return a playable url plus duration.",
-      "source_file": "backend/app/domain/interfaces/tts_provider.py",
-      "source_location": "L20"
-    },
-    {
-      "id": "backend_app_domain_interfaces_tts_provider_rationale_9",
-      "label": "Synthesized speech metadata and optional audio URL or bytes path.",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "synthesized speech metadata and optional audio url or bytes path.",
-      "source_file": "backend/app/domain/interfaces/tts_provider.py",
-      "source_location": "L9"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_rationale_1",
-      "label": "API tests for POST /api/v1/tts/synthesize and GET audio (mocked TTS).",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "api tests for post /api/v1/tts/synthesize and get audio (mocked tts).",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_rationale_15",
-      "label": "Writes a tiny fake MP3 marker file into the cache.",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "writes a tiny fake mp3 marker file into the cache.",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L15"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_rationale_34",
-      "label": "Install fake TTS and a test cache dir before each test.",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "install fake tts and a test cache dir before each test.",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L34"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_rationale_41",
-      "label": "Clear overrides and test cache files.",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "clear overrides and test cache files.",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L41"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_rationale_52",
-      "label": "Route returns audioUrl and estimated duration.",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "route returns audiourl and estimated duration.",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L52"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_rationale_64",
-      "label": "Pydantic rejects blank text.",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "pydantic rejects blank text.",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L64"
-    },
-    {
-      "id": "backend_tests_test_tts_synthesize_rationale_70",
-      "label": "Synthesize then fetch the cached MP3 bytes.",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "test_tts_synthesize.py",
-      "file_type": "rationale",
-      "norm_label": "synthesize then fetch the cached mp3 bytes.",
-      "source_file": "backend/tests/test_tts_synthesize.py",
-      "source_location": "L70"
+      "norm_label": "serve a previously synthesized mp3 from the local tts cache.",
+      "source_file": "backend/app/api/routes/tts.py",
+      "source_location": "L47"
     },
     {
       "id": "cursor_agents_solution_architect_agent_alignment_with_business_goals",
@@ -10277,6 +10333,17 @@
       "node_kind": "page",
       "norm_label": "contributing.md",
       "source_file": "CONTRIBUTING.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialtypes",
+      "label": "facialTypes.ts",
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": "facialtypes.ts",
+      "source_file": "frontend/src/services/avatar/facial/facialTypes.ts",
       "source_location": "L1"
     },
     {
@@ -10978,15 +11045,15 @@
       "source_location": ""
     },
     {
-      "id": "backend_app_api_routes_tts_py_get",
-      "label": "get",
+      "id": "backend_app_api_routes_tts",
+      "label": "tts.py",
       "_origin": "ast",
       "community": 48,
       "community_name": "dependencies.py",
       "file_type": "code",
-      "norm_label": "get",
-      "source_file": "",
-      "source_location": ""
+      "norm_label": "tts.py",
+      "source_file": "backend/app/api/routes/tts.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_app_api_routes_tts_py_post",
@@ -11000,14 +11067,47 @@
       "source_location": ""
     },
     {
-      "id": "backend_app_core_settings",
-      "label": "settings.py",
+      "id": "backend_app_core_exceptions",
+      "label": "exceptions.py",
       "_origin": "ast",
       "community": 48,
       "community_name": "dependencies.py",
       "file_type": "code",
-      "norm_label": "settings.py",
-      "source_file": "backend/app/core/settings.py",
+      "norm_label": "exceptions.py",
+      "source_file": "backend/app/core/exceptions.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_app_domain_interfaces_tts_provider",
+      "label": "interfaces/tts_provider.py",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "interfaces/tts_provider.py",
+      "source_file": "backend/app/domain/interfaces/tts_provider.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_app_domain_interfaces_tts_provider_py_abc",
+      "label": "ABC",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "abc",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "backend_app_infrastructure_openai_compatible_init",
+      "label": "openai_compatible/__init__.py",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "openai_compatible/__init__.py",
+      "source_file": "backend/app/infrastructure/openai_compatible/__init__.py",
       "source_location": "L1"
     },
     {
@@ -11055,13 +11155,35 @@
       "source_location": ""
     },
     {
-      "id": "fileresponse",
-      "label": "FileResponse",
+      "id": "backend_tests_test_tts_synthesize",
+      "label": "test_tts_synthesize.py",
       "_origin": "ast",
       "community": 48,
       "community_name": "dependencies.py",
       "file_type": "code",
-      "norm_label": "fileresponse",
+      "norm_label": "test_tts_synthesize.py",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "exception",
+      "label": "Exception",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "code",
+      "norm_label": "exception",
       "source_file": "",
       "source_location": ""
     },
@@ -11121,6 +11243,17 @@
       "source_location": "L86"
     },
     {
+      "id": "backend_app_api_routes_tts_rationale_1",
+      "label": "TTS routes. Thin layer \u2014 orchestration stays in services.",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "tts routes. thin layer \u2014 orchestration stays in services.",
+      "source_file": "backend/app/api/routes/tts.py",
+      "source_location": "L1"
+    },
+    {
       "id": "backend_app_api_routes_tts_rationale_23",
       "label": "Synthesize speech for ``text`` and return a playable audio URL. Audio bytes are\u2026",
       "_origin": "ast",
@@ -11132,15 +11265,15 @@
       "source_location": "L23"
     },
     {
-      "id": "backend_app_api_routes_tts_rationale_47",
-      "label": "Serve a previously synthesized MP3 from the local TTS cache.",
+      "id": "backend_app_core_exceptions_rationale_1",
+      "label": "Domain and application exceptions.",
       "_origin": "ast",
       "community": 48,
       "community_name": "dependencies.py",
       "file_type": "rationale",
-      "norm_label": "serve a previously synthesized mp3 from the local tts cache.",
-      "source_file": "backend/app/api/routes/tts.py",
-      "source_location": "L47"
+      "norm_label": "domain and application exceptions.",
+      "source_file": "backend/app/core/exceptions.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_app_core_exceptions_rationale_25",
@@ -11176,26 +11309,26 @@
       "source_location": "L33"
     },
     {
-      "id": "backend_app_core_settings_rationale_1",
-      "label": "Application configuration loaded from environment variables.",
+      "id": "backend_app_core_exceptions_rationale_5",
+      "label": "Base application error.",
       "_origin": "ast",
       "community": 48,
       "community_name": "dependencies.py",
       "file_type": "rationale",
-      "norm_label": "application configuration loaded from environment variables.",
-      "source_file": "backend/app/core/settings.py",
-      "source_location": "L1"
+      "norm_label": "base application error.",
+      "source_file": "backend/app/core/exceptions.py",
+      "source_location": "L5"
     },
     {
-      "id": "backend_app_core_settings_rationale_45",
-      "label": "Return a cached settings instance.",
+      "id": "backend_app_domain_interfaces_tts_provider_rationale_1",
+      "label": "TTS provider port. Implementations live under infrastructure/.",
       "_origin": "ast",
       "community": 48,
       "community_name": "dependencies.py",
       "file_type": "rationale",
-      "norm_label": "return a cached settings instance.",
-      "source_file": "backend/app/core/settings.py",
-      "source_location": "L45"
+      "norm_label": "tts provider port. implementations live under infrastructure/.",
+      "source_file": "backend/app/domain/interfaces/tts_provider.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_app_domain_interfaces_tts_provider_rationale_16",
@@ -11207,6 +11340,39 @@
       "norm_label": "interface for text-to-speech synthesis.",
       "source_file": "backend/app/domain/interfaces/tts_provider.py",
       "source_location": "L16"
+    },
+    {
+      "id": "backend_app_domain_interfaces_tts_provider_rationale_20",
+      "label": "Synthesize speech and return a playable URL plus duration.",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "synthesize speech and return a playable url plus duration.",
+      "source_file": "backend/app/domain/interfaces/tts_provider.py",
+      "source_location": "L20"
+    },
+    {
+      "id": "backend_app_domain_interfaces_tts_provider_rationale_9",
+      "label": "Synthesized speech metadata and optional audio URL or bytes path.",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "synthesized speech metadata and optional audio url or bytes path.",
+      "source_file": "backend/app/domain/interfaces/tts_provider.py",
+      "source_location": "L9"
+    },
+    {
+      "id": "backend_app_infrastructure_openai_compatible_init_rationale_1",
+      "label": "OpenAI-compatible HTTP adapters (official OpenAI API and compatible gateways).",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "openai-compatible http adapters (official openai api and compatible gateways).",
+      "source_file": "backend/app/infrastructure/openai_compatible/__init__.py",
+      "source_location": "L1"
     },
     {
       "id": "backend_app_infrastructure_openai_compatible_tts_provider_rationale_1",
@@ -11308,37 +11474,81 @@
       "source_location": "L55"
     },
     {
-      "id": "backend_app_api_routes_chat_py_post",
-      "label": "post",
+      "id": "backend_tests_test_tts_synthesize_rationale_1",
+      "label": "API tests for POST /api/v1/tts/synthesize and GET audio (mocked TTS).",
       "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "post",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_app_core_exceptions",
-      "label": "exceptions.py",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "exceptions.py",
-      "source_file": "backend/app/core/exceptions.py",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "api tests for post /api/v1/tts/synthesize and get audio (mocked tts).",
+      "source_file": "backend/tests/test_tts_synthesize.py",
       "source_location": "L1"
     },
     {
-      "id": "backend_app_infrastructure_openai_compatible_init",
-      "label": "openai_compatible/__init__.py",
+      "id": "backend_tests_test_tts_synthesize_rationale_15",
+      "label": "Writes a tiny fake MP3 marker file into the cache.",
       "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "openai_compatible/__init__.py",
-      "source_file": "backend/app/infrastructure/openai_compatible/__init__.py",
-      "source_location": "L1"
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "writes a tiny fake mp3 marker file into the cache.",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L15"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_rationale_34",
+      "label": "Install fake TTS and a test cache dir before each test.",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "install fake tts and a test cache dir before each test.",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L34"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_rationale_41",
+      "label": "Clear overrides and test cache files.",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "clear overrides and test cache files.",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L41"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_rationale_52",
+      "label": "Route returns audioUrl and estimated duration.",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "route returns audiourl and estimated duration.",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L52"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_rationale_64",
+      "label": "Pydantic rejects blank text.",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "pydantic rejects blank text.",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L64"
+    },
+    {
+      "id": "backend_tests_test_tts_synthesize_rationale_70",
+      "label": "Synthesize then fetch the cached MP3 bytes.",
+      "_origin": "ast",
+      "community": 48,
+      "community_name": "dependencies.py",
+      "file_type": "rationale",
+      "norm_label": "synthesize then fetch the cached mp3 bytes.",
+      "source_file": "backend/tests/test_tts_synthesize.py",
+      "source_location": "L70"
     },
     {
       "id": "backend_app_infrastructure_openai_compatible_llm_provider",
@@ -11349,17 +11559,6 @@
       "file_type": "code",
       "norm_label": "openai_compatible/llm_provider.py",
       "source_file": "backend/app/infrastructure/openai_compatible/llm_provider.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_app_services_chat_service",
-      "label": "chat_service.py",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "chat_service.py",
-      "source_file": "backend/app/services/chat_service.py",
       "source_location": "L1"
     },
     {
@@ -11374,72 +11573,6 @@
       "source_location": "L1"
     },
     {
-      "id": "chatturnresponse",
-      "label": "ChatTurnResponse",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "chatturnresponse",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "exception",
-      "label": "Exception",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "code",
-      "norm_label": "exception",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "backend_app_api_dependencies_rationale_69",
-      "label": "ChatService with an injected LLM port (for chat turn routes). Not cached: thin\u2026",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "chatservice with an injected llm port (for chat turn routes). not cached: thin...",
-      "source_file": "backend/app/api/dependencies.py",
-      "source_location": "L69"
-    },
-    {
-      "id": "backend_app_api_routes_chat_rationale_22",
-      "label": "Run one chat turn: user ``message`` \u2192 assistant ``reply`` via the LLM port.\u2026",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "run one chat turn: user ``message`` \u2192 assistant ``reply`` via the llm port....",
-      "source_file": "backend/app/api/routes/chat.py",
-      "source_location": "L22"
-    },
-    {
-      "id": "backend_app_core_exceptions_rationale_1",
-      "label": "Domain and application exceptions.",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "domain and application exceptions.",
-      "source_file": "backend/app/core/exceptions.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_app_core_exceptions_rationale_13",
-      "label": "Raised when a chat turn request fails validation.",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "raised when a chat turn request fails validation.",
-      "source_file": "backend/app/core/exceptions.py",
-      "source_location": "L13"
-    },
-    {
       "id": "backend_app_core_exceptions_rationale_17",
       "label": "Raised when LLM settings are missing or invalid for a provider call.",
       "_origin": "ast",
@@ -11449,39 +11582,6 @@
       "norm_label": "raised when llm settings are missing or invalid for a provider call.",
       "source_file": "backend/app/core/exceptions.py",
       "source_location": "L17"
-    },
-    {
-      "id": "backend_app_core_exceptions_rationale_21",
-      "label": "Raised when an LLM provider request fails.",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "raised when an llm provider request fails.",
-      "source_file": "backend/app/core/exceptions.py",
-      "source_location": "L21"
-    },
-    {
-      "id": "backend_app_core_exceptions_rationale_5",
-      "label": "Base application error.",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "base application error.",
-      "source_file": "backend/app/core/exceptions.py",
-      "source_location": "L5"
-    },
-    {
-      "id": "backend_app_infrastructure_openai_compatible_init_rationale_1",
-      "label": "OpenAI-compatible HTTP adapters (official OpenAI API and compatible gateways).",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "openai-compatible http adapters (official openai api and compatible gateways).",
-      "source_file": "backend/app/infrastructure/openai_compatible/__init__.py",
-      "source_location": "L1"
     },
     {
       "id": "backend_app_infrastructure_openai_compatible_llm_provider_rationale_1",
@@ -11526,39 +11626,6 @@
       "norm_label": "generate text from a single user prompt via chat completions. args: prompt:...",
       "source_file": "backend/app/infrastructure/openai_compatible/llm_provider.py",
       "source_location": "L51"
-    },
-    {
-      "id": "backend_app_services_chat_service_rationale_1",
-      "label": "Chat turn use cases. One user message \u2192 one assistant reply via LLM port.",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "chat turn use cases. one user message \u2192 one assistant reply via llm port.",
-      "source_file": "backend/app/services/chat_service.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "backend_app_services_chat_service_rationale_13",
-      "label": "Orchestrates interactive chatbot turns for avatar clients.",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "orchestrates interactive chatbot turns for avatar clients.",
-      "source_file": "backend/app/services/chat_service.py",
-      "source_location": "L13"
-    },
-    {
-      "id": "backend_app_services_chat_service_rationale_25",
-      "label": "Generate one assistant reply for a user message. Args: message: User text from\u2026",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "LlmConfigurationError",
-      "file_type": "rationale",
-      "norm_label": "generate one assistant reply for a user message. args: message: user text from...",
-      "source_file": "backend/app/services/chat_service.py",
-      "source_location": "L25"
     },
     {
       "id": "backend_tests_test_openai_compatible_llm_provider_rationale_1",
@@ -14254,6 +14321,17 @@
       "source_location": "L131"
     },
     {
+      "id": "frontend_src_services_avatar_audio_audiocontroller",
+      "label": "AudioController.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "AudioController",
+      "file_type": "code",
+      "norm_label": "audiocontroller.ts",
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "frontend_src_services_avatar_audio_audiotypes",
       "label": "audioTypes.ts",
       "_origin": "ast",
@@ -14833,11 +14911,22 @@
       "source_location": "L1"
     },
     {
+      "id": "backend_app_core_logging",
+      "label": "logging.py",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "code",
+      "norm_label": "logging.py",
+      "source_file": "backend/app/core/logging.py",
+      "source_location": "L1"
+    },
+    {
       "id": "backend_app_prompts_animation_plan",
       "label": "animation_plan.py",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "code",
       "norm_label": "animation_plan.py",
       "source_file": "backend/app/prompts/animation_plan.py",
@@ -14848,7 +14937,7 @@
       "label": "chat_turn.py",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "code",
       "norm_label": "chat_turn.py",
       "source_file": "backend/app/prompts/chat_turn.py",
@@ -14859,7 +14948,7 @@
       "label": "prompts/__init__.py",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "code",
       "norm_label": "prompts/__init__.py",
       "source_file": "backend/app/prompts/__init__.py",
@@ -14870,18 +14959,62 @@
       "label": "plan_script.py",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "code",
       "norm_label": "plan_script.py",
       "source_file": "backend/app/prompts/plan_script.py",
       "source_location": "L1"
     },
     {
+      "id": "backend_app_services_chat_service",
+      "label": "chat_service.py",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "code",
+      "norm_label": "chat_service.py",
+      "source_file": "backend/app/services/chat_service.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_app_api_dependencies_rationale_69",
+      "label": "ChatService with an injected LLM port (for chat turn routes). Not cached: thin\u2026",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "rationale",
+      "norm_label": "chatservice with an injected llm port (for chat turn routes). not cached: thin...",
+      "source_file": "backend/app/api/dependencies.py",
+      "source_location": "L69"
+    },
+    {
+      "id": "backend_app_core_logging_rationale_1",
+      "label": "Application-wide logging setup.",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "rationale",
+      "norm_label": "application-wide logging setup.",
+      "source_file": "backend/app/core/logging.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_app_core_logging_rationale_8",
+      "label": "Configure root logging to stdout.",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "rationale",
+      "norm_label": "configure root logging to stdout.",
+      "source_file": "backend/app/core/logging.py",
+      "source_location": "L8"
+    },
+    {
       "id": "backend_app_prompts_animation_plan_rationale_1",
       "label": "Prompt templates for LLM-produced semantic AnimationPlan JSON.",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "rationale",
       "norm_label": "prompt templates for llm-produced semantic animationplan json.",
       "source_file": "backend/app/prompts/animation_plan.py",
@@ -14892,7 +15025,7 @@
       "label": "Ask the model for a JSON AnimationPlan matching the frontend contract. Args:\u2026",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "rationale",
       "norm_label": "ask the model for a json animationplan matching the frontend contract. args:...",
       "source_file": "backend/app/prompts/animation_plan.py",
@@ -14903,7 +15036,7 @@
       "label": "Prompt templates for interactive chatbot turns.",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "rationale",
       "norm_label": "prompt templates for interactive chatbot turns.",
       "source_file": "backend/app/prompts/chat_turn.py",
@@ -14914,7 +15047,7 @@
       "label": "Build the prompt for one stylized chatbot reply. Args: message: User utterance\u2026",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "rationale",
       "norm_label": "build the prompt for one stylized chatbot reply. args: message: user utterance...",
       "source_file": "backend/app/prompts/chat_turn.py",
@@ -14925,7 +15058,7 @@
       "label": "Prompt templates. Keep prompts out of services.",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "rationale",
       "norm_label": "prompt templates. keep prompts out of services.",
       "source_file": "backend/app/prompts/__init__.py",
@@ -14936,7 +15069,7 @@
       "label": "Prompt templates for presenter script / plan text generation.",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "rationale",
       "norm_label": "prompt templates for presenter script / plan text generation.",
       "source_file": "backend/app/prompts/plan_script.py",
@@ -14947,11 +15080,44 @@
       "label": "Build the user prompt for a short spoken presenter script. Args: topic: News or\u2026",
       "_origin": "ast",
       "community": 94,
-      "community_name": "prompts/__init__.py",
+      "community_name": "chat_service.py",
       "file_type": "rationale",
       "norm_label": "build the user prompt for a short spoken presenter script. args: topic: news or...",
       "source_file": "backend/app/prompts/plan_script.py",
       "source_location": "L5"
+    },
+    {
+      "id": "backend_app_services_chat_service_rationale_1",
+      "label": "Chat turn use cases. One user message \u2192 one assistant reply via LLM port.",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "rationale",
+      "norm_label": "chat turn use cases. one user message \u2192 one assistant reply via llm port.",
+      "source_file": "backend/app/services/chat_service.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_app_services_chat_service_rationale_13",
+      "label": "Orchestrates interactive chatbot turns for avatar clients.",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "rationale",
+      "norm_label": "orchestrates interactive chatbot turns for avatar clients.",
+      "source_file": "backend/app/services/chat_service.py",
+      "source_location": "L13"
+    },
+    {
+      "id": "backend_app_services_chat_service_rationale_25",
+      "label": "Generate one assistant reply for a user message. Args: message: User text from\u2026",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "chat_service.py",
+      "file_type": "rationale",
+      "norm_label": "generate one assistant reply for a user message. args: message: user text from...",
+      "source_file": "backend/app/services/chat_service.py",
+      "source_location": "L25"
     },
     {
       "id": "backend_app_services_init",
@@ -17545,14 +17711,26 @@
     },
     {
       "source": "frontend_src_api_chat_postchatturn",
-      "target": "frontend_src_api_chat_readerrordetail",
+      "target": "frontend_src_api_httperror_readerrordetail",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L29",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_api_tts_synthesizespeech",
+      "target": "frontend_src_api_httperror_readerrordetail",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -17636,7 +17814,67 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
-      "source_location": "L56",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction_playassistantreaction",
+      "target": "frontend_src_features_chat_playassistantreaction_cleartimedfallback",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction_playassistantreaction",
+      "target": "frontend_src_api_tts_synthesizespeech",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction_playassistantreaction",
+      "target": "frontend_src_api_tts_resolveaudiourl",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction_playassistantreaction",
+      "target": "frontend_src_features_chat_playassistantreaction_playtimedfallback",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction_playtimedfallback",
+      "target": "frontend_src_features_chat_playassistantreaction_cleartimedfallback",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -17868,15 +18106,27 @@
       "weight": 1.0
     },
     {
-      "source": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_load",
-      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_dispose",
+      "source": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_dispose",
+      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_disposeelement",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L21",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_load",
+      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_disposeelement",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -17888,7 +18138,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L45",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -17900,7 +18150,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L211",
+      "source_location": "L261",
       "weight": 1.0
     },
     {
@@ -17912,36 +18162,12 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
       "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
       "target": "frontend_src_services_avatar_avatarruntime_avatarruntime_pushwarning",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L47",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
-      "target": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L47",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
-      "target": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17953,7 +18179,19 @@
     },
     {
       "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
-      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
+      "target": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
+      "target": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17965,7 +18203,7 @@
     },
     {
       "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
-      "target": "frontend_src_services_avatar_animation_animationstatemachine_animationstatemachine",
+      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17977,6 +18215,18 @@
     },
     {
       "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
+      "target": "frontend_src_services_avatar_animation_animationstatemachine_animationstatemachine",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_constructor",
       "target": "frontend_src_services_avatar_avatarruntime_avatarruntime_assertarmature",
       "relation": "calls",
       "_origin": "ast",
@@ -17984,7 +18234,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -17996,7 +18246,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -18008,7 +18258,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L65",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -18020,7 +18270,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -18032,7 +18282,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L143",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -18044,7 +18294,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -18056,7 +18306,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L85",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -18068,7 +18318,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L89",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -18080,7 +18330,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L100",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -18092,7 +18342,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L96",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -18104,7 +18354,67 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L97",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_speakfromurl",
+      "target": "frontend_src_services_avatar_avatarruntime_avatarruntime_startspeaking",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L183",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_speakfromurl",
+      "target": "frontend_src_services_avatar_avatarruntime_avatarruntime_setgaze",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_speakfromurl",
+      "target": "frontend_src_services_avatar_avatarruntime_avatarruntime_setexpression",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L185",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_speakfromurl",
+      "target": "frontend_src_services_avatar_avatarruntime_avatarruntime_playgesture",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime_speakfromurl",
+      "target": "frontend_src_services_avatar_avatarruntime_avatarruntime_stopspeaking",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L203",
       "weight": 1.0
     },
     {
@@ -20211,6 +20521,30 @@
       "weight": 1.0
     },
     {
+      "source": "frontend_src_api_chat",
+      "target": "frontend_src_api_httperror_readerrordetail",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_api_tts",
+      "target": "frontend_src_api_httperror_readerrordetail",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "frontend_src_app",
       "target": "frontend_src_routes_index_approutes",
       "relation": "imports",
@@ -20680,7 +21014,31 @@
     },
     {
       "source": "frontend_src_features_chat_playassistantreaction",
-      "target": "frontend_src_features_avatar_types_avatarhandle",
+      "target": "frontend_src_api_tts_resolveaudiourl",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_api_tts_synthesizespeech",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_constants_environment_environment",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20688,6 +21046,30 @@
       "context": "import",
       "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_utils_logger_logger",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_features_avatar_types_avatarhandle",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -21323,6 +21705,30 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/tests/api/chat.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_tests_api_tts_test",
+      "target": "frontend_src_api_tts_resolveaudiourl",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/tests/api/tts.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_tests_api_tts_test",
+      "target": "frontend_src_api_tts_synthesizespeech",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/tests/api/tts.test.ts",
       "source_location": "L6",
       "weight": 1.0
     },
@@ -22455,6 +22861,30 @@
       "weight": 1.0
     },
     {
+      "source": "frontend_src_api_chat",
+      "target": "frontend_src_api_httperror",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_api_tts",
+      "target": "frontend_src_api_httperror",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "frontend_src_app",
       "target": "frontend_src_routes_index",
       "relation": "imports_from",
@@ -23010,7 +23440,19 @@
     },
     {
       "source": "frontend_src_features_chat_playassistantreaction",
-      "target": "frontend_src_types_index",
+      "target": "frontend_src_api_tts",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_constants_environment",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -23018,6 +23460,30 @@
       "context": "import",
       "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
       "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_utils_logger",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_types_index",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L8",
       "type_only": true,
       "weight": 1.0
     },
@@ -23501,6 +23967,30 @@
       "weight": 1.0
     },
     {
+      "source": "frontend_src_tests_api_tts_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/tests/api/tts.test.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_tests_api_tts_test",
+      "target": "frontend_src_api_tts",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/tests/api/tts.test.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "frontend_src_tests_services_avatar_animation_animationregistry_test",
       "target": "ref_vitest",
       "relation": "imports_from",
@@ -23931,7 +24421,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L63",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -23943,7 +24433,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -23955,7 +24445,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L118",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -23967,7 +24457,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L95",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -24377,7 +24867,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L183",
+      "source_location": "L232",
       "weight": 1.0
     },
     {
@@ -24401,7 +24891,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L29",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -30810,18 +31300,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_api_chat",
-      "target": "frontend_src_api_chat_readerrordetail",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L39",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -30832,7 +31311,51 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L5",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_api_httperror",
+      "target": "frontend_src_api_httperror_readerrordetail",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/api/httpError.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_api_tts",
+      "target": "frontend_src_api_tts_synthesizespeech",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_api_tts",
+      "target": "frontend_src_api_tts_resolveaudiourl",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_api_tts",
+      "target": "frontend_src_api_tts_synthesizespeechresult",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/api/tts.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -31255,24 +31778,46 @@
     },
     {
       "source": "frontend_src_features_chat_playassistantreaction",
-      "target": "frontend_src_features_chat_playassistantreaction_playassistantreaction",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_features_chat_playassistantreaction",
       "target": "frontend_src_features_chat_playassistantreaction_timers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
-      "source_location": "L8",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_features_chat_playassistantreaction_playassistantreaction",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_features_chat_playassistantreaction_cleartimedfallback",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_chat_playassistantreaction",
+      "target": "frontend_src_features_chat_playassistantreaction_playtimedfallback",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/features/chat/playAssistantReaction.ts",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -33147,7 +33692,18 @@
     },
     {
       "source": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
-      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_geterror",
+      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_disposeelement",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
+      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_onnativeended",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -33158,13 +33714,24 @@
     },
     {
       "source": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
+      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_geterror",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
       "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_load",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L20",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -33175,7 +33742,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L49",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -33186,7 +33753,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L61",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -33197,7 +33764,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L65",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -33208,7 +33775,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L73",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -33219,7 +33786,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L77",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -33230,7 +33797,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L82",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
+      "target": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller_onended",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -33241,7 +33819,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L86",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -33257,13 +33835,24 @@
     },
     {
       "source": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi",
+      "target": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_onended",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi",
       "target": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_dispose",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -33329,7 +33918,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L118",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -33340,7 +33929,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L128",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -33351,7 +33940,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L132",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -33362,7 +33951,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L139",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -33373,7 +33962,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L152",
+      "source_location": "L153",
       "weight": 1.0
     },
     {
@@ -33384,7 +33973,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L157",
+      "source_location": "L158",
       "weight": 1.0
     },
     {
@@ -33395,7 +33984,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L162",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -33406,7 +33995,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L167",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_avatarruntime_avatarruntime",
+      "target": "frontend_src_services_avatar_avatarruntime_avatarruntime_speakfromurl",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L175",
       "weight": 1.0
     },
     {
@@ -33417,7 +34017,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L171",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -33428,7 +34028,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L183",
+      "source_location": "L232",
       "weight": 1.0
     },
     {
@@ -33439,7 +34039,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L197",
+      "source_location": "L246",
       "weight": 1.0
     },
     {
@@ -33450,7 +34050,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L203",
+      "source_location": "L253",
       "weight": 1.0
     },
     {
@@ -33461,7 +34061,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L215",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
@@ -33472,7 +34072,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -33483,7 +34083,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L63",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -33494,7 +34094,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -33505,7 +34105,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L95",
+      "source_location": "L96",
       "weight": 1.0
     },
     {
@@ -33719,13 +34319,24 @@
     },
     {
       "source": "frontend_src_types_avatar_avatarcontroller",
+      "target": "frontend_src_types_avatar_avatarcontroller_speakfromurl",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_types_avatar_avatarcontroller",
       "target": "frontend_src_types_avatar_avatarcontroller_getstatus",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L29",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -37853,5 +38464,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "811c0c6df81ed3a741c8539337543ee3f56ab441"
+  "built_at_commit": "8b1b8b7f43143c4d01fe928f80ac9cbfc031e1b1"
 }

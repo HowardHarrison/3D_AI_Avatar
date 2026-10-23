@@ -4,18 +4,41 @@
 
 import { readErrorDetail } from "./httpError";
 
+export type ChatApiRole = "user" | "assistant";
+
+export interface ChatHistoryItem {
+  role: ChatApiRole;
+  content: string;
+}
+
 export interface ChatTurnResponse {
   reply: string;
 }
 
+export interface PostChatTurnOptions {
+  /** Origin of the API (empty string = same origin / Vite proxy). */
+  apiBaseUrl?: string;
+  /** Prior turns only (do not include the current ``message``). */
+  history?: ChatHistoryItem[];
+}
+
 /**
- * POST one user message and return the assistant reply text.
+ * POST one user message (with optional history) and return the assistant reply.
  *
  * @param message - User utterance (non-empty).
- * @param apiBaseUrl - Origin of the API (empty string = same origin / Vite proxy).
+ * @param options - Base URL and prior conversation turns.
  * @throws Error when the network fails or the API returns a non-OK status.
  */
-export async function postChatTurn(message: string, apiBaseUrl = ""): Promise<string> {
+export async function postChatTurn(
+  message: string,
+  options: PostChatTurnOptions | string = "",
+): Promise<string> {
+  // Back-compat: second arg used to be apiBaseUrl string.
+  const opts: PostChatTurnOptions =
+    typeof options === "string" ? { apiBaseUrl: options } : options;
+  const apiBaseUrl = opts.apiBaseUrl ?? "";
+  const history = opts.history ?? [];
+
   const base = apiBaseUrl.replace(/\/$/, "");
   const url = `${base}/api/v1/chat/turns`;
   const response = await fetch(url, {
@@ -24,7 +47,13 @@ export async function postChatTurn(message: string, apiBaseUrl = ""): Promise<st
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ message }),
+    body: JSON.stringify({
+      message,
+      history: history.map((item) => ({
+        role: item.role,
+        content: item.content,
+      })),
+    }),
   });
 
   if (!response.ok) {

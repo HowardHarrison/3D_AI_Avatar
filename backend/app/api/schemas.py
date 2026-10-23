@@ -65,10 +65,18 @@ class GeneratePlanRequest(BaseModel):
     topic: str = Field(..., min_length=1, max_length=500)
 
 
+class ChatHistoryMessage(BaseModel):
+    """One prior chat turn (user or assistant)."""
+
+    role: Literal["user", "assistant"]
+    content: str = Field(..., min_length=1, max_length=2000)
+
+
 class ChatTurnRequest(BaseModel):
-    """One user utterance for an interactive chatbot turn."""
+    """One user utterance, optionally with prior conversation turns."""
 
     message: str = Field(..., min_length=1, max_length=2000)
+    history: list[ChatHistoryMessage] = Field(default_factory=list, max_length=20)
 
 
 class ChatTurnResponse(BaseModel):

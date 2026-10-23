@@ -22,7 +22,41 @@ describe("postChatTurn", () => {
     await expect(postChatTurn("Hi", "")).resolves.toBe("Hello from the avatar.");
     expect(fetch).toHaveBeenCalledWith(
       "/api/v1/chat/turns",
-      expect.objectContaining({ method: "POST" }),
+      expect.objectContaining({
+        method: "POST",
+        body: JSON.stringify({ message: "Hi", history: [] }),
+      }),
+    );
+  });
+
+  it("sends history with the current message", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ reply: "Your name is Sam." }),
+      }),
+    );
+
+    await postChatTurn("What is my name?", {
+      apiBaseUrl: "",
+      history: [
+        { role: "user", content: "My name is Sam." },
+        { role: "assistant", content: "Nice to meet you!" },
+      ],
+    });
+
+    expect(fetch).toHaveBeenCalledWith(
+      "/api/v1/chat/turns",
+      expect.objectContaining({
+        body: JSON.stringify({
+          message: "What is my name?",
+          history: [
+            { role: "user", content: "My name is Sam." },
+            { role: "assistant", content: "Nice to meet you!" },
+          ],
+        }),
+      }),
     );
   });
 

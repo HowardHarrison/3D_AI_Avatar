@@ -43,7 +43,9 @@ Do not put LLM keys in the frontend or any `VITE_*` variable. Config is loaded v
 Adapters: `OpenAICompatibleLLMProvider`, `OpenAICompatibleTtsProvider`
 (`app.infrastructure.openai_compatible`).
 
-- Chat turn: `POST /api/v1/chat/turns` — `{ "message": "..." }` → `{ "reply": "..." }`
+- Chat turn: `POST /api/v1/chat/turns` —
+  `{ "message": "...", "history": [{ "role": "user"|"assistant", "content": "..." }] }`
+  → `{ "reply": "..." }` (`history` optional; prior turns only)
 - TTS: `POST /api/v1/tts/synthesize` — `{ "text": "..." }` →
   `{ "audioUrl": "/api/v1/tts/audio/<id>.mp3", "durationSeconds": ... }`
   then `GET` the `audioUrl`. Uses `TTS_API_KEY` or falls back to `LLM_API_KEY`.
@@ -67,6 +69,5 @@ uvicorn app.main:app --reload --port 8000
 
 ## Next (not in this step)
 
-- Conversation history on chat turns
 - STT (voice in)
 - Optional LangChain adapter under `infrastructure/langchain/`

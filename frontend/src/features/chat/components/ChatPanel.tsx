@@ -23,7 +23,9 @@ export function ChatPanel(props: ChatPanelProps): JSX.Element {
     <section className="chat-panel" aria-label="Chat">
       <header className="chat-panel__header">
         <h2>Chat</h2>
-        <p className="chat-panel__hint">Type a message — the avatar will speak the reply.</p>
+        <p className="chat-panel__hint">
+          Type a message — the avatar remembers this chat and will speak the reply.
+        </p>
       </header>
 
       <ul className="chat-panel__messages">

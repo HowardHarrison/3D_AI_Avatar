@@ -20,12 +20,13 @@ def post_chat_turn(
     service: ChatService = Depends(get_chat_service),
 ) -> ChatTurnResponse:
     """
-    Run one chat turn: user ``message`` → assistant ``reply`` via the LLM port.
+    Run one chat turn: user ``message`` (+ optional ``history``) → ``reply``.
 
-    Single-turn only (no history yet). Frontend wires avatar talk/idle next.
+    ``history`` is prior turns only (not the current ``message``).
     """
     try:
-        reply = service.send_turn(body.message)
+        history = [(item.role, item.content) for item in body.history]
+        reply = service.send_turn(body.message, history=history)
     except ChatValidationError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
     except LlmConfigurationError as exc:

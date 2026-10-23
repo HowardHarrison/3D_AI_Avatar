@@ -1,5 +1,5 @@
 /**
- * Chat turn state: message list, draft input, and send → API → avatar reaction.
+ * Chat turn state: message list, draft input, and send → API (with history) → avatar.
  */
 
 import { useCallback, useState } from "react";
@@ -25,6 +25,9 @@ export interface UseChatTurnResult {
   send: () => Promise<void>;
 }
 
+/** Match backend cap so older turns drop from the request, not from the UI list. */
+const MAX_HISTORY_SENT = 12;
+
 function nextId(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 }
@@ -44,16 +47,23 @@ export function useChatTurn(controller: AvatarHandle | null): UseChatTurnResult 
       return;
     }
 
+    const history = messages.slice(-MAX_HISTORY_SENT).map((item) => ({
+      role: item.role,
+      content: item.text,
+    }));
+
     setDraft("");
     setBusy(true);
     setError(null);
     setMessages((prev) => [...prev, { id: nextId(), role: "user", text }]);
 
     try {
-      const reply = await postChatTurn(text, environment.apiBaseUrl);
+      const reply = await postChatTurn(text, {
+        apiBaseUrl: environment.apiBaseUrl,
+        history,
+      });
       setMessages((prev) => [...prev, { id: nextId(), role: "assistant", text: reply }]);
       if (controller) {
-        // Keep busy until speech finishes so the user does not overlap turns.
         await playAssistantReaction(controller, reply, environment.apiBaseUrl);
       }
     } catch (err) {
@@ -62,7 +72,7 @@ export function useChatTurn(controller: AvatarHandle | null): UseChatTurnResult 
     } finally {
       setBusy(false);
     }
-  }, [busy, controller, draft]);
+  }, [busy, controller, draft, messages]);
 
   return { messages, draft, setDraft, busy, error, send };
 }
