@@ -593,7 +593,8 @@ def build_presenter() -> bytes:
     builder.add_node("Armature", children=[hips])
 
     identity = (0.0, 0.0, 0.0)
-    rest_arm = (0.15, 0.0, 0.0)
+    # Arms hang along local -Y. Positive X swings them behind the back — use negative X to raise forward/up.
+    rest_arm = (-0.12, 0.0, 0.0)
     # Same magnitude for L/R mirrors so Turn/Tilt Right match Left (sign flip only).
     turn_yaw = 0.7
     tilt_roll = 0.55
@@ -669,63 +670,119 @@ def build_presenter() -> bytes:
         ],
     )
 
+    # Raise via the SIDE (Z), not forward (X) — forward arc covers the face mid-motion.
+    # Hang (-Y) → Rz ≈ ±π/2 out to side → Rz ≈ ±π straight up above the shoulder.
+    _up_r = (0.05, 0.0, 3.05)  # right arm vertical
+    _wave_a = (0.05, 0.2, 3.25)
+    _wave_b = (0.05, -0.2, 2.85)
+    _up_l = (0.05, 0.0, -3.05)  # left arm vertical
     builder.add_multi_rotation_animation(
         "Gesture_OpenHand",
         {
-            "LeftUpperArm": [(0.0, rest_arm), (0.4, (0.55, 0.15, 0.75)), (1.2, rest_arm)],
-            "LeftLowerArm": [(0.0, identity), (0.4, (0.35, 0.0, 0.15)), (1.2, identity)],
-            "RightUpperArm": [(0.0, rest_arm), (0.4, (0.55, -0.15, -0.75)), (1.2, rest_arm)],
-            "RightLowerArm": [(0.0, identity), (0.4, (0.35, 0.0, -0.15)), (1.2, identity)],
+            "RightUpperArm": [
+                (0.0, rest_arm),
+                (0.2, (0.0, 0.0, 1.0)),  # out to side
+                (0.4, (0.0, 0.0, 2.0)),  # climbing outside the face
+                (0.55, _up_r),  # straight up
+                (0.75, _wave_a),
+                (0.95, _wave_b),
+                (1.15, _wave_a),
+                (1.35, _wave_b),
+                (1.5, _up_r),
+                (1.85, (0.0, 0.0, 1.0)),
+                (2.1, rest_arm),
+            ],
+            "RightLowerArm": [
+                (0.0, identity),
+                (0.55, identity),
+                (1.5, identity),
+                (2.1, identity),
+            ],
+            "LeftUpperArm": [(0.0, rest_arm), (2.1, rest_arm)],
+            "LeftLowerArm": [(0.0, identity), (2.1, identity)],
         },
     )
     builder.add_multi_rotation_animation(
         "Gesture_Emphasize",
         {
-            "RightUpperArm": [(0.0, rest_arm), (0.35, (0.95, -0.35, -0.55)), (0.9, rest_arm)],
-            "RightLowerArm": [(0.0, identity), (0.35, (0.75, 0.0, 0.0)), (0.9, identity)],
+            "RightUpperArm": [
+                (0.0, rest_arm),
+                (0.2, (0.0, 0.0, 1.0)),
+                (0.4, (0.0, 0.0, 2.05)),
+                (0.55, _up_r),
+                (1.25, _up_r),
+                (1.5, (0.0, 0.0, 1.0)),
+                (1.75, rest_arm),
+            ],
+            "RightLowerArm": [
+                (0.0, identity),
+                (1.75, identity),
+            ],
         },
     )
     builder.add_multi_rotation_animation(
         "Gesture_PointLeft",
         {
-            "LeftUpperArm": [(0.0, rest_arm), (0.4, (0.75, 0.55, 1.0)), (1.1, rest_arm)],
-            "LeftLowerArm": [(0.0, identity), (0.4, (0.25, 0.0, 0.2)), (1.1, identity)],
+            "LeftUpperArm": [
+                (0.0, rest_arm),
+                (0.2, (0.0, 0.0, -1.0)),
+                (0.4, (0.0, 0.0, -2.05)),
+                (0.55, _up_l),
+                (1.25, _up_l),
+                (1.5, (0.0, 0.0, -1.0)),
+                (1.75, rest_arm),
+            ],
+            "LeftLowerArm": [
+                (0.0, identity),
+                (1.75, identity),
+            ],
         },
     )
     builder.add_multi_rotation_animation(
         "Gesture_PointRight",
         {
-            "RightUpperArm": [(0.0, rest_arm), (0.4, (0.75, -0.55, -1.0)), (1.1, rest_arm)],
-            "RightLowerArm": [(0.0, identity), (0.4, (0.25, 0.0, -0.2)), (1.1, identity)],
+            "RightUpperArm": [
+                (0.0, rest_arm),
+                (0.25, (0.0, 0.0, 1.2)),
+                (0.5, (-0.2, 0.0, 1.55)),
+                (1.2, (-0.2, 0.0, 1.55)),
+                (1.55, rest_arm),
+            ],
+            "RightLowerArm": [
+                (0.0, identity),
+                (0.5, (-0.2, 0.0, 0.0)),
+                (1.2, (-0.2, 0.0, 0.0)),
+                (1.55, identity),
+            ],
         },
     )
-    # Hands meet in front of the chest (hold mid pose so it reads clearly).
+    # Hands meet in front of the chest (forward, not behind the back).
     builder.add_multi_rotation_animation(
         "Gesture_HandsTogether",
         {
             "LeftUpperArm": [
                 (0.0, rest_arm),
-                (0.4, (1.05, 0.65, 0.95)),
-                (0.95, (1.05, 0.65, 0.95)),
-                (1.45, rest_arm),
+                (0.35, (-1.15, 0.45, 0.55)),
+                (0.95, (-1.15, 0.45, 0.55)),
+                (1.4, rest_arm),
             ],
             "RightUpperArm": [
                 (0.0, rest_arm),
-                (0.4, (1.05, -0.65, -0.95)),
-                (0.95, (1.05, -0.65, -0.95)),
-                (1.45, rest_arm),
+                (0.35, (-1.15, -0.45, -0.55)),
+                (0.95, (-1.15, -0.45, -0.55)),
+                (1.4, rest_arm),
             ],
             "LeftLowerArm": [
                 (0.0, identity),
-                (0.4, (1.25, 0.15, 0.45)),
-                (0.95, (1.25, 0.15, 0.45)),
-                (1.45, identity),
+                (0.35, (-1.35, 0.1, 0.25)),
+                (0.95, (-1.35, 0.1, 0.25)),
+                (1.4, identity),
             ],
             "RightLowerArm": [
                 (0.0, identity),
-                (0.4, (1.25, -0.15, -0.45)),
-                (0.95, (1.25, -0.15, -0.45)),
-                (1.45, identity),
+                (0.35, (-1.35, -0.1, -0.25)),
+                (0.95, (-1.35, -0.1, -0.25)),
+                (1.4, identity),
             ],
         },
     )

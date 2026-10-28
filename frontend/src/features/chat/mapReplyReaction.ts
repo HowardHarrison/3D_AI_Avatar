@@ -20,9 +20,29 @@ const POSITIVE =
 const SHORT_AFFIRM = /^(ok|okay|yes|yep|sure|alright|got it|sounds good)[.!]?$/i;
 /** Explicit wave stage directions or wording in the assistant reply. */
 const WAVE = /\b(wave|waves|waving)\b|\*\s*waves?\b/i;
+/** Raise / hand-up — must win over "can't/sorry" so refusals-in-text still don't steal the gesture. */
+const RAISE =
+  /\b(raise|raising|raised|lift|lifting)\b[\s\S]{0,48}\b(hand|arm)s?\b|\b(hand|arm)s?\b[\s\S]{0,32}\b(up|air)\b|\bin the air\b|\*\s*raises?\b/i;
 /** Hello / greeting — raise open hand (closest clip to a friendly wave). */
 const GREETING =
   /\b(hi there|hello|hey there|good (morning|afternoon|evening)|nice to (see|meet) you|great to see you)\b/i;
+
+/**
+ * Default wave/raise = right arm overhead (`openHand`).
+ * Explicit left → `pointLeft`. Explicit right (no wave) still uses `emphasize`.
+ */
+function raiseGesture(text: string): GestureName {
+  const left = /\bleft\b/i.test(text);
+  const right = /\bright\b/i.test(text);
+  const wantsWave = /\b(wave|waves|waving)\b|\*\s*waves?\b/i.test(text);
+  if (left && !right) {
+    return "pointLeft";
+  }
+  if (right && !left && !wantsWave) {
+    return "emphasize";
+  }
+  return "openHand";
+}
 
 /**
  * Choose a lightweight face + body reaction from reply wording.
@@ -36,9 +56,13 @@ export function mapReplyReaction(reply: string): ReplyReaction {
     return { expression: "neutral" };
   }
 
-  // Wave / hello before generic "great" so greetings actually raise a hand.
-  if (WAVE.test(text) || GREETING.test(text)) {
-    return { expression: "positive", gesture: "openHand", headMotion: "nod" };
+  // Hand-up / wave / hello before concern ("can't", "sorry") and before generic "great".
+  if (WAVE.test(text) || RAISE.test(text) || GREETING.test(text)) {
+    return {
+      expression: "positive",
+      gesture: raiseGesture(text),
+      headMotion: "nod",
+    };
   }
 
   // Tone keywords beat length heuristics (e.g. short "Sorry.").

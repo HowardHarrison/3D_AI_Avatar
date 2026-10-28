@@ -53,6 +53,28 @@ describe("mapReplyReaction", () => {
     });
   });
 
+  it("raises even when the reply also says can't/sorry (left → pointLeft)", () => {
+    expect(
+      mapReplyReaction("Sure! *raises left hand* I can't stay like this forever though."),
+    ).toMatchObject({
+      expression: "positive",
+      gesture: "pointLeft",
+      headMotion: "nod",
+    });
+  });
+
+  it("uses emphasize when the raise is explicitly right-sided (no wave)", () => {
+    expect(mapReplyReaction("Okay — raising my right hand now!")).toMatchObject({
+      gesture: "emphasize",
+    });
+  });
+
+  it("uses pointLeft when the raise is explicitly left-sided", () => {
+    expect(mapReplyReaction("*raises left hand* Here you go!")).toMatchObject({
+      gesture: "pointLeft",
+    });
+  });
+
   it("uses curious cues for questions", () => {
     expect(mapReplyReaction("Would you like me to try another approach?")).toEqual({
       expression: "curious",
