@@ -2144,7 +2144,7 @@
       "file_type": "code",
       "norm_label": "_apply_deltas()",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L109"
+      "source_location": "L111"
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys_find_armature",
@@ -2180,7 +2180,7 @@
       "file_type": "code",
       "norm_label": "improve_facial_shape_keys()",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L115"
+      "source_location": "L117"
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys_improve_impl",
@@ -2192,7 +2192,7 @@
       "file_type": "code",
       "norm_label": "_improve_impl()",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L125"
+      "source_location": "L127"
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys_improve_impl_for_each_head",
@@ -2204,7 +2204,7 @@
       "file_type": "code",
       "norm_label": "for_each_head()",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L185"
+      "source_location": "L187"
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys_improve_impl_key",
@@ -2216,7 +2216,7 @@
       "file_type": "code",
       "norm_label": "key()",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L182"
+      "source_location": "L184"
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys_load_common",
@@ -7208,17 +7208,17 @@
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys_rationale_101",
-      "label": "Clear shape keys and recreate Basis + required empty keys.",
+      "label": "Clear shape keys and recreate Basis + required/optional empty keys.",
       "_origin": "ast",
       "community": 12,
       "community_name": "_improve_impl",
       "file_type": "rationale",
-      "norm_label": "clear shape keys and recreate basis + required empty keys.",
+      "norm_label": "clear shape keys and recreate basis + required/optional empty keys.",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
       "source_location": "L101"
     },
     {
-      "id": "blender_scripts_improve_facial_shape_keys_rationale_110",
+      "id": "blender_scripts_improve_facial_shape_keys_rationale_112",
       "label": "Write world-space-ish offsets into a shape key (mesh local coords).",
       "_origin": "ast",
       "community": 12,
@@ -7226,10 +7226,10 @@
       "file_type": "rationale",
       "norm_label": "write world-space-ish offsets into a shape key (mesh local coords).",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L110"
+      "source_location": "L112"
     },
     {
-      "id": "blender_scripts_improve_facial_shape_keys_rationale_116",
+      "id": "blender_scripts_improve_facial_shape_keys_rationale_118",
       "label": "Rebuild visible stub facial morphs; return exit code.",
       "_origin": "ast",
       "community": 12,
@@ -7237,10 +7237,10 @@
       "file_type": "rationale",
       "norm_label": "rebuild visible stub facial morphs; return exit code.",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L116"
+      "source_location": "L118"
     },
     {
-      "id": "blender_scripts_improve_facial_shape_keys_rationale_126",
+      "id": "blender_scripts_improve_facial_shape_keys_rationale_128",
       "label": "Implementation body for improve_facial_shape_keys.",
       "_origin": "ast",
       "community": 12,
@@ -7248,7 +7248,7 @@
       "file_type": "rationale",
       "norm_label": "implementation body for improve_facial_shape_keys.",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L126"
+      "source_location": "L128"
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys_rationale_20",
@@ -17445,7 +17445,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L118",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -17457,7 +17457,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L127",
+      "source_location": "L129",
       "weight": 1.0
     },
     {
@@ -17469,7 +17469,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L136",
+      "source_location": "L138",
       "weight": 1.0
     },
     {
@@ -17481,7 +17481,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L141",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -17493,7 +17493,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L142",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -17505,7 +17505,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L161",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -17517,7 +17517,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L177",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -19125,7 +19125,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L182",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -19137,7 +19137,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L185",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -27816,7 +27816,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L109",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -27827,7 +27827,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L115",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -27838,7 +27838,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L125",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -37962,36 +37962,36 @@
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_improve_facial_shape_keys_rationale_110",
+      "source": "blender_scripts_improve_facial_shape_keys_rationale_112",
       "target": "blender_scripts_improve_facial_shape_keys_apply_deltas",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L110",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_improve_facial_shape_keys_rationale_116",
+      "source": "blender_scripts_improve_facial_shape_keys_rationale_118",
       "target": "blender_scripts_improve_facial_shape_keys_improve_facial_shape_keys",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L116",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_improve_facial_shape_keys_rationale_126",
+      "source": "blender_scripts_improve_facial_shape_keys_rationale_128",
       "target": "blender_scripts_improve_facial_shape_keys_improve_impl",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
-      "source_location": "L126",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -39567,5 +39567,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ce4187abc6000432fadf74f198b848f086895d8b"
+  "built_at_commit": "bc97bd2b78849c24dceec1b7d1510f2a2ab1a0b5"
 }

@@ -4580,7 +4580,7 @@
       "file_type": "code",
       "norm_label": "create_animation()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L459"
+      "source_location": "L464"
     },
     {
       "id": "blender_scripts_create_animation_create_animation_impl",
@@ -4592,7 +4592,7 @@
       "file_type": "code",
       "norm_label": "_create_animation_impl()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L469"
+      "source_location": "L474"
     },
     {
       "id": "blender_scripts_create_animation_create_one",
@@ -4604,7 +4604,7 @@
       "file_type": "code",
       "norm_label": "_create_one()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L441"
+      "source_location": "L446"
     },
     {
       "id": "blender_scripts_create_animation_ensure_action",
@@ -12261,7 +12261,7 @@
       "source_location": "L405"
     },
     {
-      "id": "blender_scripts_create_animation_rationale_442",
+      "id": "blender_scripts_create_animation_rationale_447",
       "label": "Create a single stub clip by name.",
       "_origin": "ast",
       "community": 5,
@@ -12269,7 +12269,7 @@
       "file_type": "rationale",
       "norm_label": "create a single stub clip by name.",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L442"
+      "source_location": "L447"
     },
     {
       "id": "blender_scripts_create_animation_rationale_46",
@@ -12283,7 +12283,7 @@
       "source_location": "L46"
     },
     {
-      "id": "blender_scripts_create_animation_rationale_460",
+      "id": "blender_scripts_create_animation_rationale_465",
       "label": "List or create stub animation clip(s); return process exit code.",
       "_origin": "ast",
       "community": 5,
@@ -12291,10 +12291,10 @@
       "file_type": "rationale",
       "norm_label": "list or create stub animation clip(s); return process exit code.",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L460"
+      "source_location": "L465"
     },
     {
-      "id": "blender_scripts_create_animation_rationale_470",
+      "id": "blender_scripts_create_animation_rationale_475",
       "label": "Implementation of create_animation with typed failures as return codes.",
       "_origin": "ast",
       "community": 5,
@@ -12302,7 +12302,7 @@
       "file_type": "rationale",
       "norm_label": "implementation of create_animation with typed failures as return codes.",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L470"
+      "source_location": "L475"
     },
     {
       "id": "blender_scripts_create_animation_rationale_54",
@@ -16869,7 +16869,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L462",
+      "source_location": "L467",
       "weight": 1.0
     },
     {
@@ -16881,7 +16881,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L471",
+      "source_location": "L476",
       "weight": 1.0
     },
     {
@@ -16893,7 +16893,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L477",
+      "source_location": "L482",
       "weight": 1.0
     },
     {
@@ -16905,7 +16905,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L479",
+      "source_location": "L484",
       "weight": 1.0
     },
     {
@@ -16917,7 +16917,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L487",
+      "source_location": "L492",
       "weight": 1.0
     },
     {
@@ -16929,7 +16929,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L494",
+      "source_location": "L503",
       "weight": 1.0
     },
     {
@@ -16941,7 +16941,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L500",
+      "source_location": "L509",
       "weight": 1.0
     },
     {
@@ -16953,7 +16953,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L511",
+      "source_location": "L523",
       "weight": 1.0
     },
     {
@@ -16965,7 +16965,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L533",
+      "source_location": "L561",
       "weight": 1.0
     },
     {
@@ -16977,7 +16977,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L443",
+      "source_location": "L448",
       "weight": 1.0
     },
     {
@@ -16989,7 +16989,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L447",
+      "source_location": "L452",
       "weight": 1.0
     },
     {
@@ -17001,7 +17001,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L453",
+      "source_location": "L458",
       "weight": 1.0
     },
     {
@@ -17013,7 +17013,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L455",
+      "source_location": "L460",
       "weight": 1.0
     },
     {
@@ -17025,7 +17025,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L456",
+      "source_location": "L461",
       "weight": 1.0
     },
     {
@@ -27453,7 +27453,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L441",
+      "source_location": "L446",
       "weight": 1.0
     },
     {
@@ -27475,7 +27475,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L459",
+      "source_location": "L464",
       "weight": 1.0
     },
     {
@@ -27486,7 +27486,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L469",
+      "source_location": "L474",
       "weight": 1.0
     },
     {
@@ -37423,14 +37423,14 @@
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_create_animation_rationale_442",
+      "source": "blender_scripts_create_animation_rationale_447",
       "target": "blender_scripts_create_animation_create_one",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L442",
+      "source_location": "L447",
       "weight": 1.0
     },
     {
@@ -37445,25 +37445,25 @@
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_create_animation_rationale_460",
+      "source": "blender_scripts_create_animation_rationale_465",
       "target": "blender_scripts_create_animation_create_animation",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L460",
+      "source_location": "L465",
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_create_animation_rationale_470",
+      "source": "blender_scripts_create_animation_rationale_475",
       "target": "blender_scripts_create_animation_create_animation_impl",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L470",
+      "source_location": "L475",
       "weight": 1.0
     },
     {
@@ -39567,5 +39567,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "bc97bd2b78849c24dceec1b7d1510f2a2ab1a0b5"
+  "built_at_commit": "fc42fdbe9b67b3b49516ae09d18dca5126366d7b"
 }

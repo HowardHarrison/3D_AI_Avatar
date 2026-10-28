@@ -419,6 +419,11 @@ def _build_parser() -> argparse.ArgumentParser:
         help="Create every contracts.REQUIRED_ANIMATIONS clip (uses --overwrite).",
     )
     parser.add_argument(
+        "--create-all-optional",
+        action="store_true",
+        help="Create every contracts.OPTIONAL_ANIMATIONS clip (uses --overwrite).",
+    )
+    parser.add_argument(
         "--overwrite",
         action="store_true",
         help="Replace an existing action with the same name.",
@@ -486,8 +491,12 @@ def _create_animation_impl(argv: list[str] | None = None) -> int:
     if args.list:
         return _list_actions(bpy, emit)
 
-    if not args.create and not args.create_all_required:
-        report("ERROR", "Provide --create CLIP_NAME, --create-all-required, or --list.")
+    if not args.create and not args.create_all_required and not args.create_all_optional:
+        report(
+            "ERROR",
+            "Provide --create CLIP_NAME, --create-all-required, "
+            "--create-all-optional, or --list.",
+        )
         emit("RESULT", "ERROR")
         return 1
 
@@ -501,27 +510,46 @@ def _create_animation_impl(argv: list[str] | None = None) -> int:
     report("INFO", f"Armature: {arm.name}")
     report("INFO", f"Shape mesh: {mesh.name if mesh else '(none)'}")
 
-    clips: list[str]
+    clips: list[str] = []
+    overwrite = args.overwrite
     if args.create_all_required:
-        clips = list(contracts.REQUIRED_ANIMATIONS)
+        clips.extend(contracts.REQUIRED_ANIMATIONS)
         overwrite = True
-    else:
+    if args.create_all_optional:
+        clips.extend(contracts.OPTIONAL_ANIMATIONS)
+        overwrite = True
+    if args.create:
         clip_name = args.create
-        assert clip_name is not None
         allowed = _allowed_clip_names(contracts)
         if clip_name not in allowed:
             report("ERROR", f"Unknown clip (not in contracts): {clip_name}")
             report("INFO", "Allowed: " + ", ".join(sorted(allowed)))
             emit("RESULT", "ERROR")
             return 1
-        clips = [clip_name]
-        overwrite = args.overwrite
+        if clip_name not in clips:
+            clips.append(clip_name)
+
+    # Deduplicate while preserving order
+    seen: set[str] = set()
+    unique_clips: list[str] = []
+    for name in clips:
+        if name not in seen:
+            seen.add(name)
+            unique_clips.append(name)
+    clips = unique_clips
 
     if args.no_backup:
         report("WARNING", "Skipping versioned backup (--no-backup).")
     else:
         try:
-            label = "pre_anim_all" if args.create_all_required else f"pre_anim_{clips[0]}"
+            if args.create_all_required and args.create_all_optional:
+                label = "pre_anim_all_contract"
+            elif args.create_all_required:
+                label = "pre_anim_all_required"
+            elif args.create_all_optional:
+                label = "pre_anim_all_optional"
+            else:
+                label = f"pre_anim_{clips[0]}"
             common.save_versioned_blend(label=label)
         except RuntimeError as exc:
             report("ERROR", str(exc))
