@@ -491,26 +491,50 @@ def build_presenter() -> bytes:
         "RightUpperLeg", translation=(0.1, -0.08, 0.0), mesh=thigh_mesh, children=[right_lower_leg]
     )
 
-    left_hand = limb("LeftHand", hand_mesh, (0.0, -0.18, 0.0))
+    # Arm pivots at the TOP of each segment (shoulder / elbow), not mid-box.
+    # Mesh nodes hang below the joint so waves rotate from the shoulder pad.
+    upper_arm_len = 0.26
+    lower_arm_len = 0.24
+    left_hand = limb("LeftHand", hand_mesh, (0.0, -0.12, 0.0))
+    left_lower_mesh = builder.add_node(
+        "LeftLowerArmMesh", translation=(0.0, -lower_arm_len / 2.0, 0.0), mesh=lower_arm_mesh
+    )
     left_lower_arm = builder.add_node(
-        "LeftLowerArm", translation=(0.0, -0.28, 0.0), mesh=lower_arm_mesh, children=[left_hand]
+        "LeftLowerArm",
+        translation=(0.0, -upper_arm_len, 0.0),
+        children=[left_lower_mesh, left_hand],
+    )
+    left_upper_mesh = builder.add_node(
+        "LeftUpperArmMesh", translation=(0.0, -upper_arm_len / 2.0, 0.0), mesh=upper_arm_mesh
     )
     left_upper_arm = builder.add_node(
-        "LeftUpperArm", translation=(0.0, -0.16, 0.0), mesh=upper_arm_mesh, children=[left_lower_arm]
+        "LeftUpperArm",
+        translation=(0.0, 0.0, 0.0),
+        children=[left_upper_mesh, left_lower_arm],
     )
     left_shoulder = builder.add_node(
-        "LeftShoulder", translation=(-0.26, 0.08, 0.0), mesh=shoulder_mesh, children=[left_upper_arm]
+        "LeftShoulder", translation=(-0.26, 0.12, 0.0), mesh=shoulder_mesh, children=[left_upper_arm]
     )
 
-    right_hand = limb("RightHand", hand_mesh, (0.0, -0.18, 0.0))
+    right_hand = limb("RightHand", hand_mesh, (0.0, -0.12, 0.0))
+    right_lower_mesh = builder.add_node(
+        "RightLowerArmMesh", translation=(0.0, -lower_arm_len / 2.0, 0.0), mesh=lower_arm_mesh
+    )
     right_lower_arm = builder.add_node(
-        "RightLowerArm", translation=(0.0, -0.28, 0.0), mesh=lower_arm_mesh, children=[right_hand]
+        "RightLowerArm",
+        translation=(0.0, -upper_arm_len, 0.0),
+        children=[right_lower_mesh, right_hand],
+    )
+    right_upper_mesh = builder.add_node(
+        "RightUpperArmMesh", translation=(0.0, -upper_arm_len / 2.0, 0.0), mesh=upper_arm_mesh
     )
     right_upper_arm = builder.add_node(
-        "RightUpperArm", translation=(0.0, -0.16, 0.0), mesh=upper_arm_mesh, children=[right_lower_arm]
+        "RightUpperArm",
+        translation=(0.0, 0.0, 0.0),
+        children=[right_upper_mesh, right_lower_arm],
     )
     right_shoulder = builder.add_node(
-        "RightShoulder", translation=(0.26, 0.08, 0.0), mesh=shoulder_mesh, children=[right_upper_arm]
+        "RightShoulder", translation=(0.26, 0.12, 0.0), mesh=shoulder_mesh, children=[right_upper_arm]
     )
 
     # Eye bones stay named LeftEye / RightEye (idle look uses them). Sclera + pupil are children.
@@ -720,22 +744,33 @@ def build_presenter() -> bytes:
             ],
         },
     )
+    _wave_l_a = (0.05, -0.2, -3.25)
+    _wave_l_b = (0.05, 0.2, -2.85)
+    # Left arm overhead + wave (chat “left hand”).
     builder.add_multi_rotation_animation(
         "Gesture_PointLeft",
         {
             "LeftUpperArm": [
                 (0.0, rest_arm),
                 (0.2, (0.0, 0.0, -1.0)),
-                (0.4, (0.0, 0.0, -2.05)),
+                (0.4, (0.0, 0.0, -2.0)),
                 (0.55, _up_l),
-                (1.25, _up_l),
-                (1.5, (0.0, 0.0, -1.0)),
-                (1.75, rest_arm),
+                (0.75, _wave_l_a),
+                (0.95, _wave_l_b),
+                (1.15, _wave_l_a),
+                (1.35, _wave_l_b),
+                (1.5, _up_l),
+                (1.85, (0.0, 0.0, -1.0)),
+                (2.1, rest_arm),
             ],
             "LeftLowerArm": [
                 (0.0, identity),
-                (1.75, identity),
+                (0.55, identity),
+                (1.5, identity),
+                (2.1, identity),
             ],
+            "RightUpperArm": [(0.0, rest_arm), (2.1, rest_arm)],
+            "RightLowerArm": [(0.0, identity), (2.1, identity)],
         },
     )
     builder.add_multi_rotation_animation(
@@ -753,6 +788,46 @@ def build_presenter() -> bytes:
                 (0.5, (-0.2, 0.0, 0.0)),
                 (1.2, (-0.2, 0.0, 0.0)),
                 (1.55, identity),
+            ],
+        },
+    )
+    # Both arms overhead (chat “both hands”).
+    builder.add_multi_rotation_animation(
+        "Gesture_BothHands",
+        {
+            "RightUpperArm": [
+                (0.0, rest_arm),
+                (0.2, (0.0, 0.0, 1.0)),
+                (0.4, (0.0, 0.0, 2.0)),
+                (0.55, _up_r),
+                (0.8, _wave_a),
+                (1.05, _wave_b),
+                (1.3, _up_r),
+                (1.65, (0.0, 0.0, 1.0)),
+                (1.95, rest_arm),
+            ],
+            "LeftUpperArm": [
+                (0.0, rest_arm),
+                (0.2, (0.0, 0.0, -1.0)),
+                (0.4, (0.0, 0.0, -2.0)),
+                (0.55, _up_l),
+                (0.8, _wave_l_a),
+                (1.05, _wave_l_b),
+                (1.3, _up_l),
+                (1.65, (0.0, 0.0, -1.0)),
+                (1.95, rest_arm),
+            ],
+            "RightLowerArm": [
+                (0.0, identity),
+                (0.55, identity),
+                (1.3, identity),
+                (1.95, identity),
+            ],
+            "LeftLowerArm": [
+                (0.0, identity),
+                (0.55, identity),
+                (1.3, identity),
+                (1.95, identity),
             ],
         },
     )

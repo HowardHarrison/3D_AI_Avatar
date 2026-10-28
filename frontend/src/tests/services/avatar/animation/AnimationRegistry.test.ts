@@ -16,6 +16,8 @@ describe("AnimationRegistry", () => {
     expect(resolveGestureClip("pointLeft")).toBe("Gesture_PointLeft");
     expect(resolveGestureClip("pointRight")).toBe("Gesture_PointRight");
     expect(resolveGestureClip("handsTogether")).toBe("Gesture_HandsTogether");
+    expect(resolveGestureClip("bothHands")).toBe("Gesture_BothHands");
+    expect(isGestureName("bothHands")).toBe(true);
   });
 
   it("maps semantic expressions to clip names", () => {

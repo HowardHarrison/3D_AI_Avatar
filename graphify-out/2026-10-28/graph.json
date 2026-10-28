@@ -4378,7 +4378,7 @@
       "file_type": "code",
       "norm_label": "hold_pose()",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L613"
+      "source_location": "L637"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_build_presenter_limb",
@@ -4402,7 +4402,7 @@
       "file_type": "code",
       "norm_label": "loop()",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L602"
+      "source_location": "L626"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_build_presenter_morph_clip",
@@ -4414,7 +4414,7 @@
       "file_type": "code",
       "norm_label": "morph_clip()",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L805"
+      "source_location": "L817"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_facial_morph_deltas",
@@ -4582,7 +4582,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L842"
+      "source_location": "L854"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_quat_from_euler",
@@ -11041,7 +11041,7 @@
       "source_location": "L79"
     },
     {
-      "id": "blender_scripts_generate_placeholder_glb_rationale_843",
+      "id": "blender_scripts_generate_placeholder_glb_rationale_855",
       "label": "Write presenter.glb under blender/exports and the web public folder.",
       "_origin": "ast",
       "community": 4,
@@ -11049,7 +11049,7 @@
       "file_type": "rationale",
       "norm_label": "write presenter.glb under blender/exports and the web public folder.",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L843"
+      "source_location": "L855"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_rationale_88",
@@ -17841,7 +17841,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L581",
+      "source_location": "L605",
       "weight": 1.0
     },
     {
@@ -18033,7 +18033,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L846",
+      "source_location": "L858",
       "weight": 1.0
     },
     {
@@ -19917,7 +19917,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L602",
+      "source_location": "L626",
       "weight": 1.0
     },
     {
@@ -19929,7 +19929,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L613",
+      "source_location": "L637",
       "weight": 1.0
     },
     {
@@ -19941,7 +19941,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L805",
+      "source_location": "L817",
       "weight": 1.0
     },
     {
@@ -29143,7 +29143,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L842",
+      "source_location": "L854",
       "weight": 1.0
     },
     {
@@ -39641,14 +39641,14 @@
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_generate_placeholder_glb_rationale_843",
+      "source": "blender_scripts_generate_placeholder_glb_rationale_855",
       "target": "blender_scripts_generate_placeholder_glb_main",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L843",
+      "source_location": "L855",
       "weight": 1.0
     },
     {
@@ -41413,5 +41413,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "c5849d9f123e06ae8d59c7cec7d8b7130192bd42"
+  "built_at_commit": "37ae96a24ca32e1cdabeadaaba8574ec03524fa5"
 }

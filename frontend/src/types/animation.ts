@@ -8,7 +8,9 @@ export type GestureName =
   | "emphasize"
   | "pointLeft"
   | "pointRight"
-  | "handsTogether";
+  | "handsTogether"
+  /** Both arms raised overhead (chat “both hands”). */
+  | "bothHands";
 
 /** Facial expression commands accepted by AvatarController.setExpression. */
 export type ExpressionName =

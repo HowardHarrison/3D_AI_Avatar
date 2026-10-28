@@ -32,19 +32,21 @@ export function applyReplyReaction(
 
 /**
  * Speak the assistant reply (TTS when available; timed mime reaction as fallback).
- * Picks expression/gesture from reply text via {@link mapReplyReaction}.
+ * Picks expression/gesture from reply (+ optional user text) via {@link mapReplyReaction}.
  *
  * @param controller - Semantic avatar API handle.
  * @param reply - Assistant text to speak.
  * @param apiBaseUrl - Backend origin (empty = Vite proxy / same origin).
+ * @param userText - User utterance for left / right / both-hand intent.
  */
 export async function playAssistantReaction(
   controller: AvatarHandle,
   reply: string,
   apiBaseUrl: string = environment.apiBaseUrl,
+  userText = "",
 ): Promise<void> {
   clearTimedFallback(controller);
-  const reaction = mapReplyReaction(reply);
+  const reaction = mapReplyReaction(reply, userText);
 
   try {
     const { audioUrl } = await synthesizeSpeech(reply, apiBaseUrl);

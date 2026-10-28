@@ -67,7 +67,7 @@ export function useChatTurn(controller: AvatarHandle | null): UseChatTurnResult 
         });
         setMessages((prev) => [...prev, { id: nextId(), role: "assistant", text: reply }]);
         if (controller) {
-          await playAssistantReaction(controller, reply, environment.apiBaseUrl);
+          await playAssistantReaction(controller, reply, environment.apiBaseUrl, text);
         }
       } catch (err) {
         const message = err instanceof Error ? err.message : "Chat request failed.";

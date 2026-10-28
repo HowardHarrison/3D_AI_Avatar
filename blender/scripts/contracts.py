@@ -122,4 +122,5 @@ OPTIONAL_ANIMATIONS: tuple[str, ...] = (
     "Head_Tilt_Left",
     "Head_Tilt_Right",
     "Gesture_Nod",
+    "Gesture_BothHands",
 )

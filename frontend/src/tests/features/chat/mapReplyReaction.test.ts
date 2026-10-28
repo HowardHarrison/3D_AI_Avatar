@@ -75,6 +75,15 @@ describe("mapReplyReaction", () => {
     });
   });
 
+  it("uses user text for left / both when the reply only says *waves*", () => {
+    expect(mapReplyReaction("*waves happily* Sure!", "Please raise your left hand")).toMatchObject({
+      gesture: "pointLeft",
+    });
+    expect(mapReplyReaction("*waves* Here!", "Raise both hands in the air")).toMatchObject({
+      gesture: "bothHands",
+    });
+  });
+
   it("uses curious cues for questions", () => {
     expect(mapReplyReaction("Would you like me to try another approach?")).toEqual({
       expression: "curious",

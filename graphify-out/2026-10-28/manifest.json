@@ -60,9 +60,9 @@
     "semantic_hash": "ee03fa3457c0d1070f74797386ca9da7"
   },
   "blender/scripts/generate_placeholder_glb.py": {
-    "mtime": 1793177135.2181244,
-    "seen": 1793177203.818156,
-    "ast_hash": "5c087084f7dc68d6a5499826317d42a8",
+    "mtime": 1793181931.9749026,
+    "seen": 1793181962.0153446,
+    "ast_hash": "d4b90ccec2b7c7ced9a9786f730cd823",
     "semantic_hash": ""
   },
   "blender/scripts/generate_test_audio.py": {
@@ -156,9 +156,9 @@
     "semantic_hash": "c63ac5e35eaa24e715e188cdfa88b415"
   },
   "frontend/src/constants/avatarConfig.ts": {
-    "mtime": 1793177140.4673553,
-    "seen": 1793177203.818156,
-    "ast_hash": "1d3331b74ec14dbba12b5844397af72f",
+    "mtime": 1793181932.6406047,
+    "seen": 1793181962.0153446,
+    "ast_hash": "5877f5e04fdab4ec0dfbb8bbab5b605c",
     "semantic_hash": ""
   },
   "frontend/src/constants/environment.ts": {

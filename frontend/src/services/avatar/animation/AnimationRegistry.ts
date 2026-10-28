@@ -17,6 +17,7 @@ export const animationRegistry = {
     pointLeft: "Gesture_PointLeft",
     pointRight: "Gesture_PointRight",
     handsTogether: "Gesture_HandsTogether",
+    bothHands: "Gesture_BothHands",
   } satisfies Record<GestureName, string>,
   expressions: {
     neutral: "Emotion_Neutral",
