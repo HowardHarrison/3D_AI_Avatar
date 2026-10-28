@@ -453,13 +453,13 @@ def build_presenter() -> bytes:
     morph_offsets = {name: (0.0, 0.0, 0.0) for name in REQUIRED_SHAPE_KEYS}
     assert tuple(morph_offsets.keys()) == REQUIRED_SHAPE_KEYS
 
-    # Big-head / short-limb proportions for a Snapchat-style read in bust framing.
-    hips_mesh = builder.add_box_mesh("HipsMesh", (0.34, 0.14, 0.2), top)
-    spine_mesh = builder.add_box_mesh("SpineMesh", (0.3, 0.16, 0.18), shirt)
-    chest_mesh = builder.add_box_mesh("ChestMesh", (0.4, 0.26, 0.22), top)
-    neck_mesh = builder.add_box_mesh("NeckMesh", (0.1, 0.08, 0.1), skin)
-    head_mesh = builder.add_box_mesh("HeadMesh", (0.34, 0.38, 0.34), skin, morph_offsets)
-    hair_mesh = builder.add_box_mesh("HairMesh", (0.36, 0.12, 0.36), hair)
+    # Big-head / short-limb proportions — one art direction for body + head (masks on Head).
+    hips_mesh = builder.add_box_mesh("HipsMesh", (0.32, 0.14, 0.2), top)
+    spine_mesh = builder.add_box_mesh("SpineMesh", (0.28, 0.15, 0.17), shirt)
+    chest_mesh = builder.add_box_mesh("ChestMesh", (0.38, 0.24, 0.2), top)
+    neck_mesh = builder.add_box_mesh("NeckMesh", (0.09, 0.07, 0.09), skin)
+    head_mesh = builder.add_box_mesh("HeadMesh", (0.36, 0.4, 0.34), skin, morph_offsets)
+    hair_mesh = builder.add_box_mesh("HairMesh", (0.38, 0.13, 0.36), hair)
     # Clear B&W cartoon eyes + simple nose / mouth (feature meshes, not morph-only).
     sclera_mesh = builder.add_box_mesh("EyeWhiteMesh", (0.1, 0.09, 0.045), eye_white)
     pupil_mesh = builder.add_box_mesh("PupilMesh", (0.048, 0.048, 0.04), pupil)

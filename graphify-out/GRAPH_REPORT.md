@@ -1,22 +1,22 @@
 # Graph Report - AI_3D_Avatar  (2026-10-28)
 
 ## Corpus Check
-- 151 files · ~47,893 words
+- 151 files · ~48,387 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1387 nodes · 2199 edges · 117 communities (96 shown, 18 thin omitted)
+- 1388 nodes · 2201 edges · 117 communities (94 shown, 20 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 70 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `207adfcb`
+- Built from commit: `41a14cc8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - PresenterPlanService
-- animation.ts
+- AvatarRuntime.ts
 - AnimationController
 - common.py
 - GltfBuilder
@@ -119,9 +119,9 @@
 - @vitejs/plugin-react
 - Avatar specification
 - masks/README.md
-- AvatarRuntime.ts
+- FaceMaskLayer
 - useChatTurn.ts
-- AvatarScene.tsx
+- Avatar.tsx
 - chat.ts
 - environment.ts
 - source/README.md
@@ -131,7 +131,7 @@
 - AudioController
 
 ## God Nodes (most connected - your core abstractions)
-1. `AvatarRuntime` - 28 edges
+1. `AvatarRuntime` - 29 edges
 2. `LLMProvider` - 24 edges
 3. `LlmConfigurationError` - 23 edges
 4. `ExpressionName` - 23 edges
@@ -157,15 +157,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (117 total, 18 thin omitted)
+## Communities (117 total, 20 thin omitted)
 
 ### Community 0 - "PresenterPlanService"
 Cohesion: 0.22
 Nodes (8): get_presenter_plan_service(), get_presenter_plan_service_with_llm(), Provide a shared PresenterPlanService without an LLM (sample plan)., PresenterPlanService with an injected LLM port (for generate-text routes). Not…, PresenterPlanService, Orchestrates animation plans and plan-related text for avatar clients., Return the injected LLM port or raise if missing., Generate a short spoken script for a future animation plan. Args: topic:…
 
-### Community 1 - "animation.ts"
-Cohesion: 0.12
-Nodes (22): ReplyReaction, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), resolveExpressionClip() (+14 more)
+### Community 1 - "AvatarRuntime.ts"
+Cohesion: 0.15
+Nodes (20): ReplyReaction, animationRegistry, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, isExpressionName(), isGestureName(), isHeadMotionName() (+12 more)
 
 ### Community 2 - "AnimationController"
 Cohesion: 0.17
@@ -255,10 +255,6 @@ Nodes (36): 10.1 Goals, 10.2 Architecture split, 10.3 Paths to change clothes, 1
 Cohesion: 0.12
 Nodes (4): GazeTarget, AvatarController, AvatarRuntimeStatus, VisemeEvent
 
-### Community 25 - "AvatarRuntime"
-Cohesion: 0.18
-Nodes (3): Avatar(), loadGltf(), AvatarRuntime
-
 ### Community 26 - "LLMProvider"
 Cohesion: 0.05
 Nodes (45): Provider ports implemented by infrastructure adapters., LLMProvider, ABC, LLM provider port. Implementations live under infrastructure/ (e.g. LangChain…, Generate a text response from the given prompt., Interface for large language model text generation., LLMResult, Raw text result from an LLM provider. (+37 more)
@@ -301,7 +297,7 @@ Nodes (11): Actual Result, Bug Reporting Format, Environment, Evidence, Expected
 
 ### Community 37 - "Avatar art contract (stylized chatbot)"
 Cohesion: 0.12
-Nodes (16): Animation clips, Avatar art contract (stylized chatbot), Chatbot “talk” (behavior, not a new required clip yet), Face pack (production expressions), Face socket (Option 1), Facial morphs (shape keys), Optional body (legs / eyes), Optional fingers (Mixamo path) (+8 more)
+Nodes (16): Animation clips, Avatar art contract (stylized chatbot), Chatbot “talk” (behavior, not a new required clip yet), Face on Head (cohesive character), Face pack (production expressions), Facial morphs (shape keys), Optional body (legs / eyes), Optional fingers (Mixamo path) (+8 more)
 
 ### Community 38 - "build_mask"
 Cohesion: 0.33
@@ -320,8 +316,8 @@ Cohesion: 0.22
 Nodes (7): After each step, Agent instructions — learn by building, Default: one small step, Do not finish a whole phase unprompted, Durable context (Obsidian), GitFlow-lite, Navigate by graphify nodes (save tokens)
 
 ### Community 42 - "ExpressionName"
-Cohesion: 0.17
-Nodes (9): FaceMaskLayer, FACE_MASK_BASE_PATH, FACE_PACK_CROSSFADE_MS, facePackRegistry, isFacePackExpression(), MorphMesh, BlendShapeMap, FaceMaskSpec (+1 more)
+Cohesion: 0.16
+Nodes (15): ResolvedClip, FACE_MASK_BASE_PATH, FACE_PACK_CROSSFADE_MS, facePackRegistry, isFacePackExpression(), resolveFaceMask(), MorphMesh, BlendShapeMap (+7 more)
 
 ### Community 43 - "PlanValidationError"
 Cohesion: 0.07
@@ -515,17 +511,13 @@ Nodes (5): 1. Prepare the mesh (already done by script), 2. Auto-rig on Mixamo (
 Cohesion: 0.40
 Nodes (5): Asset, Avatar specification, Look vs motion, Placeholder vs authored character, Runtime API
 
-### Community 107 - "AvatarRuntime.ts"
-Cohesion: 0.40
-Nodes (4): animationRegistry, logger, LogLevel, three
-
 ### Community 108 - "useChatTurn.ts"
 Cohesion: 0.31
 Nodes (8): AvatarHandle, ChatPanel(), ChatPanelProps, ChatMessage, ChatRole, nextId(), useChatTurn(), UseChatTurnResult
 
-### Community 109 - "AvatarScene.tsx"
+### Community 109 - "Avatar.tsx"
 Cohesion: 0.11
-Nodes (18): avatarConfig, defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, studioConfig, AvatarCamera() (+10 more)
+Nodes (20): avatarConfig, defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, studioConfig, Avatar() (+12 more)
 
 ### Community 110 - "chat.ts"
 Cohesion: 0.33
@@ -546,12 +538,12 @@ Nodes (9): App(), useAvatar(), PresenterLayout(), PresenterLayoutProps, rootElem
 ## Knowledge Gaps
 - **386 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+381 more)
   These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 780 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `PresenterPage.tsx` to `package.json`, `AvatarRuntime.ts`, `useChatTurn.ts`, `AvatarScene.tsx`, `DebugPanel.tsx`, `useSpeechToText.ts`?**
+- **Why does `react` connect `PresenterPage.tsx` to `package.json`, `useChatTurn.ts`, `Avatar.tsx`, `DebugPanel.tsx`, `useSpeechToText.ts`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
 - **Why does `Stylized Chatbot Avatar — Overall Architecture` connect `Stylized Chatbot Avatar — Overall Architecture` to `avatar-art-contract.md`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
@@ -561,7 +553,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`LlmConfigurationError` has 9 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `ai-3d-avatar-backend`, `singleQuote`, `semi` to the rest of the system?**
   _386 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `animation.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12310606060606061 - nodes in this community are weakly interconnected._
+- **Should `AvatarRuntime.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.14623655913978495 - nodes in this community are weakly interconnected._
 - **Should `common.py` be split into smaller, more focused modules?**
   _Cohesion score 0.06821480406386067 - nodes in this community are weakly interconnected._

@@ -13,11 +13,11 @@ Related: [avatar-spec.md](avatar-spec.md) · [blender-pipeline.md](blender-pipel
 | Style | Stylized cartoon (Snapchat / Bitmoji-like), not photoreal |
 | Why | Simple graphics stay intentional; avoids uncanny valley |
 | Framing | Bust / upper body (`avatarConfig.camera`: closer shot on head/chest) |
-| GLB role | Body: skeleton + skin weights + animation clips. Face: separate stylized mesh + morphs on `Head` |
-| Three.js role | Materials, colors, accessories, outfit/skin presets; parents `face.glb` under `Head` |
-| Stand-in body | `presenter.glb` — Mixamo-rigged (or placeholder) body; clay face morphs are **not** the long-term expression path |
-| Stand-in face | `face.glb` from `generate_placeholder_face_glb.py` — drawn eyes/nose/mouth + contract morph names; root node `AvatarFace` |
-| Mixamo note | Mixamo supplies **body + fingers**. Facial expressions come from the **face socket** GLB, not clay stretching on the body mesh |
+| GLB role | **One** stylized character: skeleton + clips + head; expressions via face-pack masks on `Head` |
+| Three.js role | Materials, outfit presets; `FaceMaskLayer` crossfades masks on the same Head |
+| Stand-in character | `presenter.glb` from `generate_placeholder_glb.py` — cohesive cartoon body+head (not Mixamo giga) |
+| Expressions | `/avatars/face/masks/{id}.webp` on FaceCard; body and face share the same art direction |
+| Mixamo note | Optional later for motion retarget; do **not** pair a photoreal Mixamo torso with a cartoon face card |
 
 ---
 
@@ -73,18 +73,18 @@ A dedicated looping clip (e.g. `Talk_Loop`) is **Planned** — add it to `contra
 
 ---
 
-## Face socket (Option 1)
+## Face on Head (cohesive character)
 
-Body and face are **two GLBs**:
+One stylized GLB; masks bind to `Head`:
 
-| Piece | URL config | Root / attach |
+| Piece | URL config | Attach |
 | --- | --- | --- |
-| Body | `avatarConfig.modelUrl` / `VITE_AVATAR_MODEL_URL` | Armature with required bones |
-| Face | `avatarConfig.faceUrl` / `VITE_AVATAR_FACE_URL` | Node `AvatarFace` → parented to bone `Head` at runtime |
+| Character | `avatarConfig.modelUrl` / `VITE_AVATAR_MODEL_URL` | Full body + head + clips |
+| Masks | `avatarConfig.faceMaskBasePath` | FaceCard on bone `Head` via `bindFacePack()` |
 
-- Generate face: `python blender/scripts/generate_placeholder_face_glb.py` → `blender/exports/face.glb` + `frontend/public/avatars/face.glb`
-- Runtime: `AvatarRuntime.attachFace` → `FacialController.retargetTo` binds the **face socket only** (never Mixamo body morphs)
-- Replace `face.glb` with an authored head that **matches body art direction**; keep root `AvatarFace`
+- Generate character: `python blender/scripts/generate_placeholder_glb.py`
+- Runtime: `AvatarRuntime.bindFacePack()` → `FaceMaskLayer` on `Head` (hides duplicate drawn eyes/nose/mouth)
+- Optional legacy `face.glb` / `attachFace` exists but is **not** the default path
 
 ## Face pack (production expressions)
 
@@ -157,9 +157,9 @@ UI and chat code use only semantic commands (`playGesture`, `setExpression`, `se
 
 | Asset | Status |
 | --- | --- |
-| `presenter.glb` (body) | **Keep** — Mixamo / stand-in body + clips |
-| `face.glb` (face socket) | **Current Step 1** — placeholder stylized head on `Head` |
-| Authored stylized face | **Next** — replace `face.glb`; same morph names + `AvatarFace` root |
-| `presenter.blend` | Authoring source for body / clothing when replacing the stand-in |
+| `presenter.glb` | **Current** — cohesive stylized stand-in (body + head + clips) |
+| Face-pack masks | **Current** — expression crossfade on Head |
+| Authored stylized character | **Next** — replace meshes; keep bones / clips / mask filenames |
+| Mixamo giga body | **Dropped** for look — mismatched with cartoon face |
 
 When replacing either GLB: keep required bone / clip / shape-key names. Change meshes and materials; promote optional fingers when the body asset is ready.

@@ -40,6 +40,19 @@ describe("mapReplyReaction", () => {
     });
   });
 
+  it("waves openHand on greetings and *waves* stage directions", () => {
+    expect(
+      mapReplyReaction("Hi there! *waves hand* It’s great to see you! How’s your day going?"),
+    ).toEqual({
+      expression: "positive",
+      gesture: "openHand",
+      headMotion: "nod",
+    });
+    expect(mapReplyReaction("Hello! Welcome aboard.")).toMatchObject({
+      gesture: "openHand",
+    });
+  });
+
   it("uses curious cues for questions", () => {
     expect(mapReplyReaction("Would you like me to try another approach?")).toEqual({
       expression: "curious",

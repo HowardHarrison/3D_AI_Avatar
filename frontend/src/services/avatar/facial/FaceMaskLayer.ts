@@ -33,14 +33,18 @@ export class FaceMaskLayer {
   private current: ExpressionName = "neutral";
 
   /**
-   * Create / reuse FaceCard planes on the face socket and hide drawn box features.
+   * Create FaceCard planes on the character ``Head`` and hide duplicate drawn features.
+   * Sized for the cohesive stylized head (not a giant Mixamo cover plate).
    */
   bind(faceRoot: Object3D): void {
     this.disposeCard();
-    const socket = faceRoot.getObjectByName("AvatarFace") ?? faceRoot;
+    const socket =
+      faceRoot.getObjectByName("Head") ??
+      faceRoot.getObjectByName("AvatarFace") ??
+      faceRoot;
     this.hideDrawnFeatures(socket);
 
-    const geo = new PlaneGeometry(0.4, 0.46);
+    const geo = new PlaneGeometry(0.3, 0.34);
     this.matA = new MeshBasicMaterial({
       transparent: true,
       opacity: 1,
@@ -60,8 +64,8 @@ export class FaceMaskLayer {
 
     this.cardRoot = new Object3D();
     this.cardRoot.name = "FaceCard";
-    // Front of placeholder head (local +Z), covering clay Mixamo skull.
-    this.cardRoot.position.set(0, 0.02, 0.22);
+    // Front of stylized Head mesh (local +Z); oval mask sits on the peach head.
+    this.cardRoot.position.set(0, 0.01, 0.175);
     this.cardRoot.add(this.layerA, this.layerB);
     socket.add(this.cardRoot);
     this.showingA = true;

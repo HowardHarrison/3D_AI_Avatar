@@ -241,8 +241,20 @@ export class AvatarRuntime implements AvatarController {
   }
 
   /**
-   * Parent a stylized face GLB under the body ``Head`` bone and bind the face driver.
-   * Call once after load. Body clay morphs are never driven.
+   * Bind face-pack masks to the character ``Head`` (same stylized body+head mesh).
+   * Call once after load. Does not attach a separate face GLB.
+   */
+  bindFacePack(): void {
+    if (!this.head) {
+      this.pushWarning('Cannot bind face pack: bone "Head" was not found.');
+      return;
+    }
+    this.facial.retargetTo(this.head);
+  }
+
+  /**
+   * @deprecated Prefer ``bindFacePack`` on a cohesive stylized character.
+   * Kept for optional external face GLBs; do not use with the Mixamo giga body.
    */
   attachFace(faceRoot: Object3D): void {
     if (!this.head) {
@@ -256,10 +268,9 @@ export class AvatarRuntime implements AvatarController {
     const socket =
       faceRoot.getObjectByName("AvatarFace") ??
       (faceRoot.name === "AvatarFace" ? faceRoot : faceRoot);
-    // Cover Mixamo clay skull (meters, Y-up, face +Z). Pale head shell + FaceCard masks.
     socket.position.set(0, 0.06, 0.04);
     socket.rotation.set(0, 0, 0);
-    socket.scale.set(1.12, 1.12, 1.12);
+    socket.scale.set(1, 1, 1);
     this.head.add(socket);
     this.facial.retargetTo(socket);
   }

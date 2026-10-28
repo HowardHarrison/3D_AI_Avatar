@@ -13,9 +13,9 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-# Pale matte skin close to the Mixamo stand-in body (not peach box-head).
-SKIN = (232, 226, 220, 255)
-HAIR = (55, 42, 36, 255)
+# Warm stylized skin matching generate_placeholder_glb Skin (1.0, 0.84, 0.72).
+SKIN = (255, 214, 184, 255)
+HAIR = (107, 66, 41, 255)
 WHITE = (250, 250, 252, 255)
 PUPIL = (20, 18, 22, 255)
 BROW = (40, 32, 28, 255)

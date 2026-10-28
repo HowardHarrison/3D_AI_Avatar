@@ -60,9 +60,9 @@
     "semantic_hash": "ee03fa3457c0d1070f74797386ca9da7"
   },
   "blender/scripts/generate_placeholder_glb.py": {
-    "mtime": 1793171946.7293985,
-    "seen": 1793172111.125075,
-    "ast_hash": "b83944f00c1c599ab5810d654dfffd6f",
+    "mtime": 1793174316.796374,
+    "seen": 1793174344.157814,
+    "ast_hash": "0b5a1421fa450ecf1a3d93d0849b9f8e",
     "semantic_hash": ""
   },
   "blender/scripts/generate_test_audio.py": {
@@ -180,9 +180,9 @@
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/Avatar.tsx": {
-    "mtime": 1793172061.9704127,
-    "seen": 1793172111.125075,
-    "ast_hash": "08e881460e886ef43c596abaecb1967a",
+    "mtime": 1793174284.5115569,
+    "seen": 1793174344.157814,
+    "ast_hash": "14935a9b50007455caa85992f8682f03",
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/AvatarCamera.tsx": {
@@ -258,9 +258,9 @@
     "semantic_hash": "b66181b3374f0210ff240059ce0ee210"
   },
   "frontend/src/services/avatar/AvatarRuntime.ts": {
-    "mtime": 1793173449.3243358,
-    "seen": 1793173505.3461852,
-    "ast_hash": "383d95c8a4f0d38443d19589476d59dd",
+    "mtime": 1793174275.6821346,
+    "seen": 1793174344.157814,
+    "ast_hash": "b8845a708967a57baff42f377eb52578",
     "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/AnimationController.ts": {
@@ -762,9 +762,9 @@
     "semantic_hash": ""
   },
   "docs/avatar-art-contract.md": {
-    "mtime": 1793173472.5801804,
-    "seen": 1793173505.3461852,
-    "ast_hash": "9e4e7a7a42ed1cc619cebcf4d3131211",
+    "mtime": 1793174306.953325,
+    "seen": 1793174344.1583314,
+    "ast_hash": "f7dba684b95f51a7d25c2c9203a78f3d",
     "semantic_hash": ""
   },
   "backend/app/api/routes/chat.py": {
@@ -882,15 +882,15 @@
     "semantic_hash": ""
   },
   "frontend/src/features/chat/mapReplyReaction.ts": {
-    "mtime": 1793162300.790643,
-    "seen": 1793162354.7854285,
-    "ast_hash": "68a985f7ac5eb64b927ca8c647ca8526",
+    "mtime": 1793174578.1897907,
+    "seen": 1793174629.7081714,
+    "ast_hash": "457ecbc737a81a043eae497b42416ae5",
     "semantic_hash": ""
   },
   "frontend/src/tests/features/chat/mapReplyReaction.test.ts": {
-    "mtime": 1793162304.0095305,
-    "seen": 1793162354.7854285,
-    "ast_hash": "b29b440bbb5689ba3ad31245754d0324",
+    "mtime": 1793174582.7726514,
+    "seen": 1793174629.7081714,
+    "ast_hash": "b32fd61d0f23535b191768ce269b0fde",
     "semantic_hash": ""
   },
   "blender/scripts/generate_placeholder_face_glb.py": {
@@ -918,87 +918,87 @@
     "semantic_hash": ""
   },
   "blender/scripts/generate_face_pack_masks.py": {
-    "mtime": 1793173400.71671,
-    "seen": 1793173505.3461852,
-    "ast_hash": "fa6df1338e097be3e5e9f723cc9d6e84",
+    "mtime": 1793174294.1459086,
+    "seen": 1793174344.157814,
+    "ast_hash": "b62d8b1737944ea2def1d2e01856b358",
     "semantic_hash": ""
   },
   "frontend/src/services/avatar/facial/FaceMaskLayer.ts": {
-    "mtime": 1793173429.5916948,
-    "seen": 1793173505.3461852,
-    "ast_hash": "021a0efba5504cd5ad7b0037a0866258",
+    "mtime": 1793174292.432283,
+    "seen": 1793174344.157814,
+    "ast_hash": "f77ab44cec2f21ad74f534e3fc25bb17",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/amused.png": {
-    "mtime": 1793173462.7277248,
-    "seen": 1793173505.3461852,
-    "ast_hash": "b87ee21395c037c1653d40d9aa98d124",
+    "mtime": 1793174322.6883364,
+    "seen": 1793174344.1583314,
+    "ast_hash": "477061a2e26307189c36475144484322",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/amused.webp": {
-    "mtime": 1793173462.8407693,
-    "seen": 1793173505.3461852,
-    "ast_hash": "32df892b85fbda4ac5080dc59ee96266",
+    "mtime": 1793174322.7168784,
+    "seen": 1793174344.1583314,
+    "ast_hash": "744364f69249544a74b172cedbbd7121",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/concerned.png": {
-    "mtime": 1793173462.5785341,
-    "seen": 1793173505.3461852,
-    "ast_hash": "9a29d578cb0a32926a2294d620d6b32d",
+    "mtime": 1793174322.6543925,
+    "seen": 1793174344.1583314,
+    "ast_hash": "f6ab8fa98882f9bdaf50fbfdb9bff8c4",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/concerned.webp": {
-    "mtime": 1793173462.7055674,
-    "seen": 1793173505.3461852,
-    "ast_hash": "d1887e68c5f0b7c0fe0546eec370d720",
+    "mtime": 1793174322.6823387,
+    "seen": 1793174344.1583314,
+    "ast_hash": "7fb9552aa3cef39877be552766d0eaad",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/curious.png": {
-    "mtime": 1793173462.871783,
-    "seen": 1793173505.3461852,
-    "ast_hash": "5afdaa4c70d6c558ac2cadc0d923c092",
+    "mtime": 1793174322.7209036,
+    "seen": 1793174344.1583314,
+    "ast_hash": "3fe69b48c2c4e21c64e48b225128f79f",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/curious.webp": {
-    "mtime": 1793173463.0600567,
-    "seen": 1793173505.3461852,
-    "ast_hash": "23563f8c309564b459e769edd8368322",
+    "mtime": 1793174322.7468874,
+    "seen": 1793174344.1583314,
+    "ast_hash": "bdaa7c0ea5571db65c45e6b82144145b",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/neutral.png": {
-    "mtime": 1793173461.216254,
-    "seen": 1793173505.3461852,
-    "ast_hash": "c16a066606d21203911f60e0945b3406",
+    "mtime": 1793174322.5296504,
+    "seen": 1793174344.1583314,
+    "ast_hash": "7eacf9b320ccb7f5b68357d82b07c3c2",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/neutral.webp": {
-    "mtime": 1793173462.2799084,
-    "seen": 1793173505.3461852,
-    "ast_hash": "7d20d970ccceed3e182e6ed52e4e236b",
+    "mtime": 1793174322.5862272,
+    "seen": 1793174344.1583314,
+    "ast_hash": "294abc788f67d95ee4a12a66b3b32d6f",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/positive.png": {
-    "mtime": 1793173462.378453,
-    "seen": 1793173505.3461852,
-    "ast_hash": "ce902e3b11a0b7c9f3b83cb476efd961",
+    "mtime": 1793174322.6210954,
+    "seen": 1793174344.1583314,
+    "ast_hash": "612ad6d1509ba6e7f49074f0a8d4ee59",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/positive.webp": {
-    "mtime": 1793173462.5535853,
-    "seen": 1793173505.3461852,
-    "ast_hash": "544886fb111e9856e716e497a7baf7f1",
+    "mtime": 1793174322.649198,
+    "seen": 1793174344.1583314,
+    "ast_hash": "c155a92a75a00c15c0aa69f42b8476eb",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/serious.png": {
-    "mtime": 1793173462.2925968,
-    "seen": 1793173505.3461852,
-    "ast_hash": "b562966a4e62ac02a180b65cc788fc1a",
+    "mtime": 1793174322.5905795,
+    "seen": 1793174344.1583314,
+    "ast_hash": "5aac5993d86c142f6e739b197413fe3b",
     "semantic_hash": ""
   },
   "frontend/public/avatars/face/masks/serious.webp": {
-    "mtime": 1793173462.3644516,
-    "seen": 1793173505.3461852,
-    "ast_hash": "0f5a735955ddb59e606c45a5d3503855",
+    "mtime": 1793174322.6160922,
+    "seen": 1793174344.1583314,
+    "ast_hash": "86f87c549e90fc86ad2e9577e1fd2801",
     "semantic_hash": ""
   }
 }

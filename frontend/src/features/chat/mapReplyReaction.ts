@@ -18,6 +18,11 @@ const CONCERN =
 const POSITIVE =
   /\b(great|awesome|glad|happy|thanks|thank you|wonderful|excellent|love|pleasure|good news)\b/i;
 const SHORT_AFFIRM = /^(ok|okay|yes|yep|sure|alright|got it|sounds good)[.!]?$/i;
+/** Explicit wave stage directions or wording in the assistant reply. */
+const WAVE = /\b(wave|waves|waving)\b|\*\s*waves?\b/i;
+/** Hello / greeting — raise open hand (closest clip to a friendly wave). */
+const GREETING =
+  /\b(hi there|hello|hey there|good (morning|afternoon|evening)|nice to (see|meet) you|great to see you)\b/i;
 
 /**
  * Choose a lightweight face + body reaction from reply wording.
@@ -29,6 +34,11 @@ export function mapReplyReaction(reply: string): ReplyReaction {
   const text = reply.trim();
   if (!text) {
     return { expression: "neutral" };
+  }
+
+  // Wave / hello before generic "great" so greetings actually raise a hand.
+  if (WAVE.test(text) || GREETING.test(text)) {
+    return { expression: "positive", gesture: "openHand", headMotion: "nod" };
   }
 
   // Tone keywords beat length heuristics (e.g. short "Sorry.").

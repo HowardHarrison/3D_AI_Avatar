@@ -1,11 +1,11 @@
 /**
- * Feature loader: body + optional face GLB → AvatarRuntime; tick via useFrame.
+ * Feature loader: cohesive stylized GLB → AvatarRuntime + face-pack masks; tick via useFrame.
  * Debug UI must not import this file or AvatarRuntime.
  */
 
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
-import { AnimationClip, Group, Object3D } from "three";
+import { AnimationClip, Group } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { avatarConfig } from "../../../constants/avatarConfig";
 import { environment } from "../../../constants/environment";
@@ -50,7 +50,6 @@ export function Avatar(props: AvatarLoadHandlers): JSX.Element | null {
     }
 
     const bodyUrl = environment.avatarModelUrl || avatarConfig.modelUrl;
-    const faceUrl = environment.avatarFaceUrl || avatarConfig.faceUrl;
     const loader = new GLTFLoader();
     let cancelled = false;
 
@@ -61,18 +60,8 @@ export function Avatar(props: AvatarLoadHandlers): JSX.Element | null {
           return;
         }
         const runtime = new AvatarRuntime(body.scene, body.animations);
-        try {
-          const face = await loadGltf(loader, faceUrl);
-          if (!cancelled) {
-            runtime.attachFace(face.scene as Object3D);
-          }
-        } catch {
-          if (!cancelled) {
-            const message = `Failed to load face "${faceUrl}"; using body morphs only.`;
-            logger.warn(message);
-            onWarning?.(message);
-          }
-        }
+        // Masks on the same Head as the stylized body — no separate giant face.glb.
+        runtime.bindFacePack();
         if (cancelled) {
           runtime.dispose();
           return;
