@@ -22,7 +22,8 @@ REQUIRED_BONES: tuple[str, ...] = (
     "RightHand",
 )
 
-OPTIONAL_BONES: tuple[str, ...] = (
+# Legs / eyes — useful for full-body or gaze; not required for bust framing.
+OPTIONAL_BODY_BONES: tuple[str, ...] = (
     "LeftUpperLeg",
     "LeftLowerLeg",
     "LeftFoot",
@@ -32,6 +33,43 @@ OPTIONAL_BONES: tuple[str, ...] = (
     "LeftEye",
     "RightEye",
 )
+
+# Mixamo-style finger chains (3 bones per digit). Optional until a Mixamo-rigged
+# character is promoted; the box-head stand-in does not include them.
+OPTIONAL_FINGER_BONES: tuple[str, ...] = (
+    "LeftHandThumb1",
+    "LeftHandThumb2",
+    "LeftHandThumb3",
+    "LeftHandIndex1",
+    "LeftHandIndex2",
+    "LeftHandIndex3",
+    "LeftHandMiddle1",
+    "LeftHandMiddle2",
+    "LeftHandMiddle3",
+    "LeftHandRing1",
+    "LeftHandRing2",
+    "LeftHandRing3",
+    "LeftHandPinky1",
+    "LeftHandPinky2",
+    "LeftHandPinky3",
+    "RightHandThumb1",
+    "RightHandThumb2",
+    "RightHandThumb3",
+    "RightHandIndex1",
+    "RightHandIndex2",
+    "RightHandIndex3",
+    "RightHandMiddle1",
+    "RightHandMiddle2",
+    "RightHandMiddle3",
+    "RightHandRing1",
+    "RightHandRing2",
+    "RightHandRing3",
+    "RightHandPinky1",
+    "RightHandPinky2",
+    "RightHandPinky3",
+)
+
+OPTIONAL_BONES: tuple[str, ...] = OPTIONAL_BODY_BONES + OPTIONAL_FINGER_BONES
 
 REQUIRED_SHAPE_KEYS: tuple[str, ...] = (
     "mouth_open",
@@ -47,6 +85,16 @@ REQUIRED_SHAPE_KEYS: tuple[str, ...] = (
     "eye_blink_right",
     "eye_wide",
     "eye_squint",
+)
+
+# Extra stylized face shapes for richer presets. Not required on the stand-in;
+# Mixamo does not supply these — add them in Blender after import.
+OPTIONAL_SHAPE_KEYS: tuple[str, ...] = (
+    "brow_inner_up",
+    "cheek_raise",
+    "mouth_left",
+    "mouth_right",
+    "nose_sneer",
 )
 
 REQUIRED_ANIMATIONS: tuple[str, ...] = (

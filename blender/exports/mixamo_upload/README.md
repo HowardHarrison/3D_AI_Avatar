@@ -48,4 +48,13 @@ npm run avatar:release
 npm run dev
 ```
 
-Facial shape keys are usually still missing after Mixamo — expressions may stay incomplete until you add them later.
+**Fingers:** Mixamo usually includes finger bones. After import, rename with
+`blender/definitions/bone_rename_map.mixamo.json` (maps into
+`OPTIONAL_FINGER_BONES` in `contracts.py`). The stand-in avatar does not have
+fingers; that is expected until you promote a Mixamo-rigged character.
+
+**Face:** Mixamo usually has **no** facial morphs. After rename, add
+`REQUIRED_SHAPE_KEYS` (and later `OPTIONAL_SHAPE_KEYS`: `brow_inner_up`,
+`cheek_raise`, `mouth_left`, `mouth_right`, `nose_sneer`) in Blender — e.g.
+`add_stub_shape_keys.py` then sculpt. Expressions stay incomplete until then.
+

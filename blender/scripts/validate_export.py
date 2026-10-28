@@ -19,7 +19,12 @@ import sys
 from pathlib import Path
 
 import common
-from contracts import OPTIONAL_ANIMATIONS, REQUIRED_ANIMATIONS, REQUIRED_SHAPE_KEYS
+from contracts import (
+    OPTIONAL_ANIMATIONS,
+    OPTIONAL_SHAPE_KEYS,
+    REQUIRED_ANIMATIONS,
+    REQUIRED_SHAPE_KEYS,
+)
 
 GLB_MAGIC = 0x46546C67
 JSON_CHUNK_TYPE = 0x4E4F534A
@@ -159,6 +164,23 @@ def validate_export(glb_path: Path | None = None) -> int:
         else:
             common.report("ERROR", f"Required shape key missing: {name}")
             errors += 1
+
+    optional_face = [n for n in OPTIONAL_SHAPE_KEYS if n in shape_keys]
+    if not optional_face:
+        common.report(
+            "WARNING",
+            "Optional face shape keys not present "
+            f"({', '.join(OPTIONAL_SHAPE_KEYS)}). "
+            "Mixamo does not supply these — add in Blender after import.",
+        )
+        warnings += 1
+    else:
+        for name in OPTIONAL_SHAPE_KEYS:
+            if name in shape_keys:
+                common.report("PASS", f"Optional shape key present: {name}")
+            else:
+                common.report("WARNING", f"Optional shape key missing: {name}")
+                warnings += 1
 
     clip_names = _animation_names(gltf)
     if clip_names:

@@ -15,7 +15,8 @@ Related: [avatar-spec.md](avatar-spec.md) · [blender-pipeline.md](blender-pipel
 | Framing | Bust / upper body (`avatarConfig.camera`: closer shot on head/chest) |
 | GLB role | Skeleton + skin weights + animation clips (+ facial morphs) |
 | Three.js role | Materials, colors, accessories, outfit/skin presets at runtime |
-| Stand-in asset | `presenter.glb` from `generate_placeholder_glb.py` — stylized big-head boxes with drawn eyes (white+pupil), nose, and mouth; replace later with authored cartoon character, same bone/clip names |
+| Stand-in asset | `presenter.glb` from `generate_placeholder_glb.py` — stylized big-head boxes with drawn eyes (white+pupil), nose, and mouth; replace later with Mixamo-rigged stylized character, same bone/clip names |
+| Mixamo note | Mixamo supplies **body + fingers**. It usually supplies **no facial morphs** — add shape keys in Blender after import |
 
 ---
 
@@ -27,9 +28,20 @@ Must exist with these exact names:
 `LeftShoulder`, `LeftUpperArm`, `LeftLowerArm`, `LeftHand`,  
 `RightShoulder`, `RightUpperArm`, `RightLowerArm`, `RightHand`
 
-Optional (legs / eyes): see `OPTIONAL_BONES` in `contracts.py`.
+### Optional body (legs / eyes)
 
-All swappable looks must bind to this bone set (or be retargeted onto it). Do not invent a second humanoid naming scheme per outfit.
+See `OPTIONAL_BODY_BONES` in `contracts.py` (`LeftUpperLeg` … `RightFoot`, `LeftEye`, `RightEye`).
+
+### Optional fingers (Mixamo path)
+
+See `OPTIONAL_FINGER_BONES` in `contracts.py`. Naming is Mixamo-style without the `mixamorig:` prefix, three bones per digit:
+
+`LeftHandThumb1..3`, `LeftHandIndex1..3`, `LeftHandMiddle1..3`, `LeftHandRing1..3`, `LeftHandPinky1..3`  
+(and the same for `RightHand*`)
+
+Rename map: [`blender/definitions/bone_rename_map.mixamo.json`](../blender/definitions/bone_rename_map.mixamo.json).
+
+The box-head stand-in does **not** include fingers; validators emit a single WARNING until a Mixamo-rigged character is promoted. Do not invent a second humanoid naming scheme per outfit — retarget onto this contract.
 
 ---
 
@@ -60,13 +72,21 @@ A dedicated looping clip (e.g. `Talk_Loop`) is **Planned** — add it to `contra
 
 ## Facial morphs (shape keys)
 
-Required exact names:
+### Required exact names
 
 `mouth_open`, `mouth_close`, `mouth_wide`, `mouth_round`, `mouth_smile`, `mouth_frown`,  
 `jaw_open`, `brow_up`, `brow_down`,  
 `eye_blink_left`, `eye_blink_right`, `eye_wide`, `eye_squint`
 
-**Chat minimum in practice:** blinks + `mouth_open` / `jaw_open` + smile/frown for tone. The full list stays required so the placeholder and authored characters stay interchangeable.
+**Chat minimum in practice:** blinks + `mouth_open` / `jaw_open` + smile/frown for tone. The full required list stays so the placeholder and authored characters stay interchangeable.
+
+### Optional (richer stylized expressions)
+
+See `OPTIONAL_SHAPE_KEYS` in `contracts.py`:
+
+`brow_inner_up`, `cheek_raise`, `mouth_left`, `mouth_right`, `nose_sneer`
+
+These are **not** required on the stand-in. After a Mixamo import, add them in Blender (stubs first, then sculpt) before expanding runtime `ExpressionName` presets. Mixamo will not create them for you.
 
 ---
 
@@ -96,7 +116,7 @@ UI and chat code use only semantic commands (`playGesture`, `setExpression`, `se
 | Asset | Status |
 | --- | --- |
 | `presenter.glb` (current) | **Keep** — contract-compliant stand-in for runtime work |
-| Stylized chatbot character | **Next art step (Phase 1)** — same names, cartoon proportions, flat/soft materials |
+| Stylized chatbot character | **Next** — Mixamo-rigged cartoon mesh + Blender face morphs; same required names; optional fingers + optional face keys |
 | `presenter.blend` | Authoring source when replacing the stand-in |
 
-When replacing the GLB: same bone / clip / shape-key names. Change meshes and materials, not the contract.
+When replacing the GLB: keep required bone / clip / shape-key names. Change meshes and materials; promote optional fingers and optional face keys when the new asset is ready.

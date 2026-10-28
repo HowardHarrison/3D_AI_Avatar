@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "description": "Example bone renames toward contracts.REQUIRED_BONES. Copy to bone_rename_map.json and edit for your imported rig (e.g. Mixamo).",
+  "description": "Example bone renames toward contracts.REQUIRED_BONES / OPTIONAL_*. Copy to bone_rename_map.json and edit for your imported rig (e.g. Mixamo). Prefer bone_rename_map.mixamo.json for a full Mixamo map including fingers.",
   "armature": "Armature",
   "bones": {
     "mixamorig:Hips": "Hips",
@@ -15,6 +15,10 @@
     "mixamorig:RightShoulder": "RightShoulder",
     "mixamorig:RightArm": "RightUpperArm",
     "mixamorig:RightForeArm": "RightLowerArm",
-    "mixamorig:RightHand": "RightHand"
+    "mixamorig:RightHand": "RightHand",
+    "mixamorig:LeftHandThumb1": "LeftHandThumb1",
+    "mixamorig:LeftHandIndex1": "LeftHandIndex1",
+    "mixamorig:RightHandThumb1": "RightHandThumb1",
+    "mixamorig:RightHandIndex1": "RightHandIndex1"
   }
 }

@@ -312,7 +312,8 @@ blender --background blender/source/presenter.blend --python blender/scripts/exp
 blender --background --python blender/scripts/import_base_glb.py -- --input blender/exports/giga_chad_rigged.glb
 ```
 
-4. Rename Mixamo bones toward `contracts.py`:
+4. Rename Mixamo bones toward `contracts.py` (body + **fingers** via
+   `OPTIONAL_FINGER_BONES` in the Mixamo rename map):
 
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/apply_rename_map.py -- --map blender/definitions/bone_rename_map.mixamo.json --dry-run
@@ -322,8 +323,10 @@ blender --background blender/source/presenter.blend --python blender/scripts/app
 If dry-run says the armature name is wrong, edit `"armature"` in the JSON (check
 `inspect_scene.py` output).
 
-5. Mixamo usually has **no** facial morphs and only a generic action name.
-   Add stub shape keys + contract clips before release:
+5. Mixamo usually has **no** facial morphs (required or optional) and only a
+   generic action name. Add stub shape keys + contract clips before release.
+   Optional richer keys (`OPTIONAL_SHAPE_KEYS`: brow_inner_up, cheek_raise, …)
+   come later — see [avatar-art-contract.md](avatar-art-contract.md).
 
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/add_stub_shape_keys.py --

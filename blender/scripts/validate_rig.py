@@ -56,10 +56,25 @@ def validate() -> int:
             else:
                 report("ERROR", f"Required bone missing: {bone}")
                 errors += 1
-        for bone in contracts.OPTIONAL_BONES:
+        for bone in contracts.OPTIONAL_BODY_BONES:
             if bone not in bone_names:
                 report("WARNING", f"Optional bone missing: {bone}")
                 warnings += 1
+
+        finger_present = [b for b in contracts.OPTIONAL_FINGER_BONES if b in bone_names]
+        if not finger_present:
+            report(
+                "WARNING",
+                "Optional finger bones not present (expected after Mixamo rename).",
+            )
+            warnings += 1
+        else:
+            for bone in contracts.OPTIONAL_FINGER_BONES:
+                if bone in bone_names:
+                    report("PASS", f"Finger bone present: {bone}")
+                else:
+                    report("WARNING", f"Optional finger bone missing: {bone}")
+                    warnings += 1
 
     meshes = [obj for obj in objects if obj.type == "MESH"]
     if not meshes:
@@ -83,6 +98,23 @@ def validate() -> int:
         else:
             report("ERROR", f"Required shape key missing: {name}")
             errors += 1
+
+    optional_face = [n for n in contracts.OPTIONAL_SHAPE_KEYS if n in shape_keys_found]
+    if not optional_face:
+        report(
+            "WARNING",
+            "Optional face shape keys not present "
+            f"({', '.join(contracts.OPTIONAL_SHAPE_KEYS)}). "
+            "Mixamo does not supply these — add in Blender after import.",
+        )
+        warnings += 1
+    else:
+        for name in contracts.OPTIONAL_SHAPE_KEYS:
+            if name in shape_keys_found:
+                report("PASS", f"Optional shape key present: {name}")
+            else:
+                report("WARNING", f"Optional shape key missing: {name}")
+                warnings += 1
 
     action_names = {action.name for action in bpy.data.actions}
     nla_names: set[str] = set()
