@@ -123,6 +123,10 @@ def add_stub_shape_keys(argv: list[str] | None = None) -> int:
         f"optional={len(contracts.OPTIONAL_SHAPE_KEYS)}",
     )
 
+    for block in mesh_obj.data.shape_keys.key_blocks:
+        if block.name != "Basis":
+            block.value = 0.0
+
     if bpy.data.filepath:
         bpy.ops.wm.save_mainfile()
         report("PASS", f"Saved: {bpy.data.filepath}")

@@ -6,6 +6,10 @@ import type { ExpressionName, GazeTarget, GestureName, HeadMotionName } from "..
  */
 export const avatarConfig = {
   modelUrl: "/avatars/presenter.glb",
+  /** Stylized face GLB parented to the body ``Head`` bone (Option 1 face socket). */
+  faceUrl: "/avatars/face.glb",
+  /** Expression mask textures (face pack). See FacePackRegistry. */
+  faceMaskBasePath: "/avatars/face/masks",
   camera: {
     position: [0, 1.55, 2.2] as [number, number, number],
     target: [0, 1.55, 0] as [number, number, number],

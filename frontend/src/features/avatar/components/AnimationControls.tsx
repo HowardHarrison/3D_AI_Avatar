@@ -22,6 +22,8 @@ const EXPRESSIONS: { id: ExpressionName; label: string }[] = [
   { id: "serious", label: "Serious" },
   { id: "positive", label: "Positive" },
   { id: "concerned", label: "Concerned" },
+  { id: "amused", label: "Amused" },
+  { id: "curious", label: "Curious" },
 ];
 
 const HEADS: { id: HeadMotionName; label: string }[] = [

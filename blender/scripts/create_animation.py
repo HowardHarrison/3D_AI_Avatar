@@ -564,6 +564,14 @@ def _create_animation_impl(argv: list[str] | None = None) -> int:
         emit("RESULT", "ERROR")
         return 1
 
+    # Shape-key clip authoring leaves key_block.value at the last keyframe.
+    # Reset so the rest pose is clean in the .blend (and for later transforms).
+    if mesh is not None and mesh.data.shape_keys is not None:
+        for block in mesh.data.shape_keys.key_blocks:
+            if block.name != "Basis":
+                block.value = 0.0
+        report("PASS", "Zeroed shape-key values after clip create")
+
     if bpy.data.filepath:
         bpy.ops.wm.save_mainfile()
         report("PASS", f"Saved working blend: {bpy.data.filepath}")

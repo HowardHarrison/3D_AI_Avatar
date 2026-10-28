@@ -23,6 +23,10 @@ describe("AnimationRegistry", () => {
     expect(resolveExpressionClip("serious")).toBe("Emotion_Serious");
     expect(resolveExpressionClip("positive")).toBe("Emotion_Positive");
     expect(resolveExpressionClip("concerned")).toBe("Emotion_Concerned");
+    expect(resolveExpressionClip("amused")).toBe("Emotion_Positive");
+    expect(resolveExpressionClip("curious")).toBe("Emotion_Serious");
+    expect(isExpressionName("amused")).toBe(true);
+    expect(isExpressionName("curious")).toBe(true);
   });
 
   it("maps semantic head motions to clip names", () => {

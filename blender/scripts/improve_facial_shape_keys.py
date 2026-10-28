@@ -71,7 +71,9 @@ def _head_vertex_data(bpy, arm, mesh_obj):
     head_local = (bone.head_local + bone.tail_local) * 0.5
     head_world = arm.matrix_world @ head_local
     bone_len = (bone.tail_local - bone.head_local).length
-    radius = max(0.12, bone_len * 2.8)
+    # Keep the region on the skull/face — too large a radius pulls in torso verts
+    # and dilutes morphs (seen on Mixamo busts).
+    radius = max(0.08, bone_len * 1.35)
 
     # Head-aligned basis from armature world rotation
     rot = arm.matrix_world.to_quaternion().to_matrix().to_4x4()
@@ -170,10 +172,22 @@ def _improve_impl(argv: list[str] | None = None) -> int:
 
     ys = [v.y for v in locals_]
     zs = [v.z for v in locals_]
+    xs = [v.x for v in locals_]
     y_min, y_max = min(ys), max(ys)
     z_min, z_max = min(zs), max(zs)
     y_span = max(1e-4, y_max - y_min)
     z_span = max(1e-4, z_max - z_min)
+    # Scale deltas to head size so Mixamo exports stay readable (prior export
+    # had ~0.1mm displacements — invisible on a bust shot).
+    head_size = max(
+        max(xs) - min(xs),
+        y_span,
+        z_span,
+        1e-3,
+    )
+    # Keep stylized but mild — oversized deltas on a clay Mixamo head look shredded.
+    s = head_size * 0.025
+    report("INFO", f"Head extent≈{head_size:.4f}; morph unit scale s={s:.4f}")
 
     bpy.context.view_layer.objects.active = mesh_obj
     _reset_shape_keys(mesh_obj, contracts)
@@ -185,8 +199,6 @@ def _improve_impl(argv: list[str] | None = None) -> int:
         return mesh_obj.data.shape_keys.key_blocks[name]
 
     def for_each_head(predicate, displace_fn):
-        offsets = [mathutils.Vector((0, 0, 0))] * len(mesh_obj.data.vertices)
-        # rebuild as list of zero vectors
         offsets = [mathutils.Vector((0.0, 0.0, 0.0)) for _ in mesh_obj.data.vertices]
         count = 0
         for i, local in zip(indices, locals_):
@@ -194,7 +206,6 @@ def _improve_impl(argv: list[str] | None = None) -> int:
             z_n = (local.z - z_min) / z_span
             x = local.x
             if predicate(x, y_n, z_n):
-                # Convert a small head-local delta into mesh local via normal/up
                 n = mesh_obj.data.vertices[i].normal
                 offsets[i] = displace_fn(x, y_n, z_n, n)
                 count += 1
@@ -203,80 +214,79 @@ def _improve_impl(argv: list[str] | None = None) -> int:
     recipes = {
         "mouth_open": (
             lambda x, y_n, z_n: y_n < 0.45 and abs(x) < 0.08,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -0.012)) + n * 0.004,
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -1.2 * s)) + n * (0.4 * s),
         ),
         "mouth_close": (
             lambda x, y_n, z_n: y_n < 0.4 and abs(x) < 0.07,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, 0.006)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, 0.6 * s)),
         ),
         "mouth_wide": (
             lambda x, y_n, z_n: y_n < 0.5 and abs(x) > 0.02 and abs(x) < 0.1,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.012 if x > 0 else -0.012, 0.0, 0.0)),
+            lambda x, y_n, z_n, n: mathutils.Vector((1.2 * s if x > 0 else -1.2 * s, 0.0, 0.0)),
         ),
         "mouth_round": (
             lambda x, y_n, z_n: y_n < 0.48 and abs(x) < 0.05,
-            lambda x, y_n, z_n, n: n * 0.01 + mathutils.Vector((0.0, 0.0, -0.004)),
+            lambda x, y_n, z_n, n: n * s + mathutils.Vector((0.0, 0.0, -0.4 * s)),
         ),
         "mouth_smile": (
             lambda x, y_n, z_n: y_n < 0.5 and abs(x) > 0.015,
             lambda x, y_n, z_n, n: mathutils.Vector(
-                (0.014 if x > 0 else -0.014, 0.0, 0.008)
+                (1.4 * s if x > 0 else -1.4 * s, 0.0, 0.8 * s)
             ),
         ),
         "mouth_frown": (
             lambda x, y_n, z_n: y_n < 0.5 and abs(x) > 0.015,
             lambda x, y_n, z_n, n: mathutils.Vector(
-                (0.01 if x > 0 else -0.01, 0.0, -0.01)
+                (1.0 * s if x > 0 else -1.0 * s, 0.0, -1.0 * s)
             ),
         ),
         "jaw_open": (
             lambda x, y_n, z_n: y_n < 0.42,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -0.018)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -1.8 * s)),
         ),
         "brow_up": (
             lambda x, y_n, z_n: y_n > 0.62 and y_n < 0.9,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, 0.012)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, 1.2 * s)),
         ),
         "brow_down": (
             lambda x, y_n, z_n: y_n > 0.62 and y_n < 0.9,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -0.01)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -1.0 * s)),
         ),
         "eye_blink_left": (
             lambda x, y_n, z_n: x > 0.01 and 0.48 < y_n < 0.72,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -0.008 if y_n > 0.58 else 0.006)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, (-0.8 if y_n > 0.58 else 0.6) * s)),
         ),
         "eye_blink_right": (
             lambda x, y_n, z_n: x < -0.01 and 0.48 < y_n < 0.72,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -0.008 if y_n > 0.58 else 0.006)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, (-0.8 if y_n > 0.58 else 0.6) * s)),
         ),
         "eye_wide": (
             lambda x, y_n, z_n: abs(x) > 0.01 and 0.5 < y_n < 0.75,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, 0.006 if y_n > 0.6 else -0.004)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, (0.6 if y_n > 0.6 else -0.4) * s)),
         ),
         "eye_squint": (
             lambda x, y_n, z_n: abs(x) > 0.01 and 0.5 < y_n < 0.75,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -0.005)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -0.5 * s)),
         ),
-        # Optional richer stylized keys (contracts.OPTIONAL_SHAPE_KEYS)
         "brow_inner_up": (
             lambda x, y_n, z_n: abs(x) < 0.04 and 0.62 < y_n < 0.88,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, 0.014)),
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, 1.4 * s)),
         ),
         "cheek_raise": (
             lambda x, y_n, z_n: abs(x) > 0.02 and 0.4 < y_n < 0.62,
-            lambda x, y_n, z_n, n: n * 0.008 + mathutils.Vector((0.0, 0.0, 0.006)),
+            lambda x, y_n, z_n, n: n * (0.8 * s) + mathutils.Vector((0.0, 0.0, 0.6 * s)),
         ),
         "mouth_left": (
             lambda x, y_n, z_n: y_n < 0.5 and abs(x) < 0.09,
-            lambda x, y_n, z_n, n: mathutils.Vector((-0.012, 0.0, 0.0)),
+            lambda x, y_n, z_n, n: mathutils.Vector((-1.2 * s, 0.0, 0.0)),
         ),
         "mouth_right": (
             lambda x, y_n, z_n: y_n < 0.5 and abs(x) < 0.09,
-            lambda x, y_n, z_n, n: mathutils.Vector((0.012, 0.0, 0.0)),
+            lambda x, y_n, z_n, n: mathutils.Vector((1.2 * s, 0.0, 0.0)),
         ),
         "nose_sneer": (
             lambda x, y_n, z_n: abs(x) < 0.05 and 0.45 < y_n < 0.7,
-            lambda x, y_n, z_n, n: n * 0.006 + mathutils.Vector((0.0, 0.0, 0.004)),
+            lambda x, y_n, z_n, n: n * (0.6 * s) + mathutils.Vector((0.0, 0.0, 0.4 * s)),
         ),
     }
 
@@ -295,6 +305,15 @@ def _improve_impl(argv: list[str] | None = None) -> int:
                 block.data[i].co += off
                 touched += 1
         report("PASS", f"{name}: deformed {touched} verts (region hits={count})")
+
+    # Never leave keys evaluated in the .blend — stacked values shred the face
+    # and can bake into Basis if transforms are applied later.
+    sk = mesh_obj.data.shape_keys
+    if sk is not None:
+        for block in sk.key_blocks:
+            if block.name != "Basis":
+                block.value = 0.0
+        report("PASS", "Zeroed all shape-key values after write")
 
     if bpy.data.filepath:
         bpy.ops.wm.save_mainfile()

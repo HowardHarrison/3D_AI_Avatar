@@ -41,11 +41,11 @@ export function mapReplyReaction(reply: string): ReplyReaction {
   }
 
   if (text.includes("?")) {
-    return { expression: "serious", gesture: "openHand", headMotion: "tiltRight" };
+    return { expression: "curious", gesture: "openHand", headMotion: "tiltRight" };
   }
 
   if (SHORT_AFFIRM.test(text) || text.length < 24) {
-    return { expression: "positive", headMotion: "nod" };
+    return { expression: "amused", headMotion: "nod" };
   }
 
   if (text.length > 160) {

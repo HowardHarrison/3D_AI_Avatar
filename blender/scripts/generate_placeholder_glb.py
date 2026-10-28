@@ -377,12 +377,16 @@ class GltfBuilder:
         }
         self.animations.append({"name": name, "samplers": [sampler], "channels": [channel]})
 
-    def to_glb(self) -> bytes:
-        """Serialize the current document as a GLB blob."""
+    def to_glb(self, root_node: str = "Armature") -> bytes:
+        """Serialize the current document as a GLB blob.
+
+        Args:
+            root_node: Scene root node name (body uses ``Armature``; face uses ``AvatarFace``).
+        """
         json_doc = {
             "asset": {"version": "2.0", "generator": "AI_3D_Avatar placeholder generator"},
             "scene": 0,
-            "scenes": [{"nodes": [self.node_index["Armature"]]}],
+            "scenes": [{"nodes": [self.node_index[root_node]]}],
             "nodes": self.nodes,
             "meshes": self.meshes,
             "materials": self.materials,

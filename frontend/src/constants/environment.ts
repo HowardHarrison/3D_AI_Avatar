@@ -6,6 +6,8 @@
 export interface AppEnvironment {
   appName: string;
   avatarModelUrl: string;
+  /** Optional override for the Head-socket face GLB. */
+  avatarFaceUrl: string;
   enableDebugPanel: boolean;
   /**
    * Backend origin for chat/API calls.
@@ -23,6 +25,7 @@ export function loadEnvironment(): AppEnvironment {
   return {
     appName: import.meta.env.VITE_APP_NAME ?? "Stylized Chatbot Avatar",
     avatarModelUrl: import.meta.env.VITE_AVATAR_MODEL_URL ?? "/avatars/presenter.glb",
+    avatarFaceUrl: import.meta.env.VITE_AVATAR_FACE_URL ?? "/avatars/face.glb",
     enableDebugPanel: debugRaw !== "false",
     apiBaseUrl: typeof apiBase === "string" ? apiBase.trim() : "",
   };

@@ -21,7 +21,6 @@ import {
   isExpressionName,
   isGestureName,
   isHeadMotionName,
-  resolveExpressionClip,
   resolveGestureClip,
   resolveHeadClip,
 } from "./animation/AnimationRegistry";
@@ -45,7 +44,8 @@ export class AvatarRuntime implements AvatarController {
 
   constructor(root: Object3D, clips: AnimationClip[]) {
     this.animation = new AnimationController(root, clips);
-    this.facial = new FacialController(root, (message) => this.pushWarning(message));
+    // Face-only: do not bind Mixamo body morphs. attachFace → retargetTo binds the face socket.
+    this.facial = new FacialController((message) => this.pushWarning(message));
     this.idle = new IdleController(root, this.animation, this.facial);
     this.audio = new AudioController();
     this.state = new AnimationStateMachine();
@@ -86,11 +86,8 @@ export class AvatarRuntime implements AvatarController {
       this.pushWarning(`Unknown expression: ${name}`);
       return;
     }
+    // Face-pack mask id (+ interim face morphs). Never Emotion_* clips or body clay morphs.
     this.facial.setExpression(name);
-    const clip = resolveExpressionClip(name);
-    if (this.animation.hasClip(clip)) {
-      this.animation.play(clip, { loop: false, exclusive: false, fadeInSeconds: 0.2 });
-    }
   }
 
   setHeadMotion(name: HeadMotionName): void {
@@ -218,6 +215,7 @@ export class AvatarRuntime implements AvatarController {
 
   update(delta: number): void {
     this.animation.update(delta);
+    this.facial.update(delta);
     this.idle.update(delta, this.state.getState() === "GESTURE");
     this.fpsAccum += delta;
     this.fpsFrames += 1;
@@ -242,9 +240,34 @@ export class AvatarRuntime implements AvatarController {
     };
   }
 
+  /**
+   * Parent a stylized face GLB under the body ``Head`` bone and bind the face driver.
+   * Call once after load. Body clay morphs are never driven.
+   */
+  attachFace(faceRoot: Object3D): void {
+    if (!this.head) {
+      this.pushWarning('Cannot attach face: bone "Head" was not found.');
+      return;
+    }
+    const existing = this.head.getObjectByName("AvatarFace");
+    if (existing) {
+      this.head.remove(existing);
+    }
+    const socket =
+      faceRoot.getObjectByName("AvatarFace") ??
+      (faceRoot.name === "AvatarFace" ? faceRoot : faceRoot);
+    // Cover Mixamo clay skull (meters, Y-up, face +Z). Pale head shell + FaceCard masks.
+    socket.position.set(0, 0.06, 0.04);
+    socket.rotation.set(0, 0, 0);
+    socket.scale.set(1.12, 1.12, 1.12);
+    this.head.add(socket);
+    this.facial.retargetTo(socket);
+  }
+
   dispose(): void {
     this.speechGeneration += 1;
     this.unsubscribeFinished();
+    this.facial.dispose();
     this.animation.dispose();
     this.audio.dispose();
   }

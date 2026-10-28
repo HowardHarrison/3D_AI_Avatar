@@ -11,7 +11,14 @@ GestureName = Literal[
     "pointRight",
     "handsTogether",
 ]
-ExpressionName = Literal["neutral", "serious", "positive", "concerned"]
+ExpressionName = Literal[
+    "neutral",
+    "serious",
+    "positive",
+    "concerned",
+    "amused",
+    "curious",
+]
 HeadMotionName = Literal["nod", "turnLeft", "turnRight", "tiltLeft", "tiltRight"]
 GazeTarget = Literal["camera", "left", "right", "down"]
 

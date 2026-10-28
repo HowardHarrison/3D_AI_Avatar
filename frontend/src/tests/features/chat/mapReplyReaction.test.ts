@@ -12,7 +12,7 @@ describe("mapReplyReaction", () => {
 
   it("nods on short affirmations without an arm gesture", () => {
     expect(mapReplyReaction("Okay.")).toEqual({
-      expression: "positive",
+      expression: "amused",
       headMotion: "nod",
     });
   });
@@ -40,9 +40,9 @@ describe("mapReplyReaction", () => {
     });
   });
 
-  it("tilts and opens a hand for questions", () => {
+  it("uses curious cues for questions", () => {
     expect(mapReplyReaction("Would you like me to try another approach?")).toEqual({
-      expression: "serious",
+      expression: "curious",
       gesture: "openHand",
       headMotion: "tiltRight",
     });

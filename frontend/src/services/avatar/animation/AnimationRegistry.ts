@@ -23,6 +23,9 @@ export const animationRegistry = {
     serious: "Emotion_Serious",
     positive: "Emotion_Positive",
     concerned: "Emotion_Concerned",
+    // No dedicated Emotion_* clips yet — reuse nearest clip; morphs carry the look.
+    amused: "Emotion_Positive",
+    curious: "Emotion_Serious",
   } satisfies Record<ExpressionName, string>,
   head: {
     nod: "Head_Nod_Small",

@@ -13,10 +13,11 @@ Related: [avatar-spec.md](avatar-spec.md) · [blender-pipeline.md](blender-pipel
 | Style | Stylized cartoon (Snapchat / Bitmoji-like), not photoreal |
 | Why | Simple graphics stay intentional; avoids uncanny valley |
 | Framing | Bust / upper body (`avatarConfig.camera`: closer shot on head/chest) |
-| GLB role | Skeleton + skin weights + animation clips (+ facial morphs) |
-| Three.js role | Materials, colors, accessories, outfit/skin presets at runtime |
-| Stand-in asset | `presenter.glb` from `generate_placeholder_glb.py` — stylized big-head boxes with drawn eyes (white+pupil), nose, and mouth; replace later with Mixamo-rigged stylized character, same bone/clip names |
-| Mixamo note | Mixamo supplies **body + fingers**. It usually supplies **no facial morphs** — add shape keys in Blender after import |
+| GLB role | Body: skeleton + skin weights + animation clips. Face: separate stylized mesh + morphs on `Head` |
+| Three.js role | Materials, colors, accessories, outfit/skin presets; parents `face.glb` under `Head` |
+| Stand-in body | `presenter.glb` — Mixamo-rigged (or placeholder) body; clay face morphs are **not** the long-term expression path |
+| Stand-in face | `face.glb` from `generate_placeholder_face_glb.py` — drawn eyes/nose/mouth + contract morph names; root node `AvatarFace` |
+| Mixamo note | Mixamo supplies **body + fingers**. Facial expressions come from the **face socket** GLB, not clay stretching on the body mesh |
 
 ---
 
@@ -72,7 +73,46 @@ A dedicated looping clip (e.g. `Talk_Loop`) is **Planned** — add it to `contra
 
 ---
 
+## Face socket (Option 1)
+
+Body and face are **two GLBs**:
+
+| Piece | URL config | Root / attach |
+| --- | --- | --- |
+| Body | `avatarConfig.modelUrl` / `VITE_AVATAR_MODEL_URL` | Armature with required bones |
+| Face | `avatarConfig.faceUrl` / `VITE_AVATAR_FACE_URL` | Node `AvatarFace` → parented to bone `Head` at runtime |
+
+- Generate face: `python blender/scripts/generate_placeholder_face_glb.py` → `blender/exports/face.glb` + `frontend/public/avatars/face.glb`
+- Runtime: `AvatarRuntime.attachFace` → `FacialController.retargetTo` binds the **face socket only** (never Mixamo body morphs)
+- Replace `face.glb` with an authored head that **matches body art direction**; keep root `AvatarFace`
+
+## Face pack (production expressions)
+
+Expressions are **masks** mapped onto the face area and **crossfaded** (~200 ms). Do not stretch Mixamo body vertices for emotion.
+
+| Semantic `ExpressionName` | Mask asset (required) |
+| --- | --- |
+| `neutral` | `/avatars/face/masks/neutral.webp` |
+| `serious` | `/avatars/face/masks/serious.webp` |
+| `positive` | `/avatars/face/masks/positive.webp` |
+| `concerned` | `/avatars/face/masks/concerned.webp` |
+| `amused` | `/avatars/face/masks/amused.webp` |
+| `curious` | `/avatars/face/masks/curious.webp` |
+
+- Source of truth in code: `frontend/src/services/avatar/facial/FacePackRegistry.ts`
+- Asset drop folder: `frontend/public/avatars/face/masks/` (see README there)
+- `setExpression(name)` resolves the mask id; UI never sees URLs or texture indexes
+- **Mouth / speech** is a separate layer later (amplitude → visemes) — not full-face mask swaps per phoneme
+- **Blink** stays its own layer (morph or overlay), not baked into every mask unless intentional
+- Placeholder masks: `python blender/scripts/generate_face_pack_masks.py` → crossfaded on runtime `FaceCard` (`FaceMaskLayer`)
+- Replace placeholder drawings with authored art that matches the body; keep filenames and 200 ms crossfade
+
+`Emotion_*` body clips must not drive the held face (they wipe morphs). Gestures stay on the body skeleton.
+
 ## Facial morphs (shape keys)
+
+**Body:** Mixamo clay morphs are **not** the expression path.  
+**Face GLB:** morph names optional interim / mouth+blink layers. Preferred long-term emotion look = face-pack masks.
 
 ### Required exact names
 
@@ -88,7 +128,7 @@ See `OPTIONAL_SHAPE_KEYS` in `contracts.py`:
 
 `brow_inner_up`, `cheek_raise`, `mouth_left`, `mouth_right`, `nose_sneer`
 
-These are **not** required on the stand-in. After a Mixamo import, add them in Blender (stubs first, then sculpt) before expanding runtime `ExpressionName` presets. Mixamo will not create them for you.
+These are **not** required on the stand-in. After a Mixamo import, add them in Blender (stubs first, then sculpt). Runtime presets `amused` and `curious` (plus enriched `positive` / `concerned`) use these optional keys when present. Mixamo will not create them for you.
 
 ---
 
@@ -117,8 +157,9 @@ UI and chat code use only semantic commands (`playGesture`, `setExpression`, `se
 
 | Asset | Status |
 | --- | --- |
-| `presenter.glb` (current) | **Keep** — contract-compliant stand-in for runtime work |
-| Stylized chatbot character | **Next** — Mixamo-rigged cartoon mesh + Blender face morphs; same required names; optional fingers + optional face keys |
-| `presenter.blend` | Authoring source when replacing the stand-in |
+| `presenter.glb` (body) | **Keep** — Mixamo / stand-in body + clips |
+| `face.glb` (face socket) | **Current Step 1** — placeholder stylized head on `Head` |
+| Authored stylized face | **Next** — replace `face.glb`; same morph names + `AvatarFace` root |
+| `presenter.blend` | Authoring source for body / clothing when replacing the stand-in |
 
-When replacing the GLB: keep required bone / clip / shape-key names. Change meshes and materials; promote optional fingers and optional face keys when the new asset is ready.
+When replacing either GLB: keep required bone / clip / shape-key names. Change meshes and materials; promote optional fingers when the body asset is ready.

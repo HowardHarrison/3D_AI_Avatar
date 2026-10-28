@@ -11,7 +11,15 @@ export type GestureName =
   | "handsTogether";
 
 /** Facial expression commands accepted by AvatarController.setExpression. */
-export type ExpressionName = "neutral" | "serious" | "positive" | "concerned";
+export type ExpressionName =
+  | "neutral"
+  | "serious"
+  | "positive"
+  | "concerned"
+  /** Soft smile + cheeks — short affirmations / light warmth. */
+  | "amused"
+  /** Raised inner brow — questions / wondering. */
+  | "curious";
 
 /** Head motion commands accepted by AvatarController.setHeadMotion. */
 export type HeadMotionName = "nod" | "turnLeft" | "turnRight" | "tiltLeft" | "tiltRight";
