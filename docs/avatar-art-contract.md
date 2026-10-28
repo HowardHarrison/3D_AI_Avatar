@@ -36,12 +36,14 @@ See `OPTIONAL_BODY_BONES` in `contracts.py` (`LeftUpperLeg` … `RightFoot`, `Le
 
 See `OPTIONAL_FINGER_BONES` in `contracts.py`. Naming is Mixamo-style without the `mixamorig:` prefix, three bones per digit:
 
-`LeftHandThumb1..3`, `LeftHandIndex1..3`, `LeftHandMiddle1..3`, `LeftHandRing1..3`, `LeftHandPinky1..3`  
+`LeftHandThumb1..3`, `LeftHandIndex1..4`, `LeftHandMiddle1..3`, `LeftHandRing1..3`, `LeftHandPinky1..3`  
 (and the same for `RightHand*`)
 
 Rename map: [`blender/definitions/bone_rename_map.mixamo.json`](../blender/definitions/bone_rename_map.mixamo.json).
 
-The box-head stand-in does **not** include fingers; validators emit a single WARNING until a Mixamo-rigged character is promoted. Do not invent a second humanoid naming scheme per outfit — retarget onto this contract.
+Some Mixamo downloads only include **index** fingers (plus tip `*Index4`). That is OK while fingers stay optional — validators warn on missing digits. Full hands need a Mixamo character exported with all fingers, or a different rig.
+
+The box-head stand-in does **not** include fingers; validators emit a WARNING until a Mixamo-rigged character is promoted. Do not invent a second humanoid naming scheme per outfit — retarget onto this contract.
 
 ---
 

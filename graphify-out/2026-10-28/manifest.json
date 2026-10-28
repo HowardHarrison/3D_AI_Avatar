@@ -6,16 +6,16 @@
     "semantic_hash": "565b1dfe0c20f815aa0515303b0621fd"
   },
   "blender/definitions/bone_rename_map.example.json": {
-    "mtime": 1791883203.2194414,
-    "seen": 1792378025.475274,
-    "ast_hash": "17d7cf71dba7d11e58b59d7f4270a3f0",
-    "semantic_hash": "17d7cf71dba7d11e58b59d7f4270a3f0"
+    "mtime": 1793156266.1446624,
+    "seen": 1793156314.031444,
+    "ast_hash": "da98a1391b5f6c21e4f470baf73485eb",
+    "semantic_hash": ""
   },
   "blender/definitions/bone_rename_map.mixamo.json": {
-    "mtime": 1791949123.51784,
-    "seen": 1792378025.475274,
-    "ast_hash": "2a562256bc054087516d060fcaa8df84",
-    "semantic_hash": "2a562256bc054087516d060fcaa8df84"
+    "mtime": 1793156262.4571834,
+    "seen": 1793156314.031444,
+    "ast_hash": "df560f3668a43f51bc1be816ad9757a4",
+    "semantic_hash": ""
   },
   "blender/scripts/add_stub_shape_keys.py": {
     "mtime": 1791952054.372674,
@@ -36,10 +36,10 @@
     "semantic_hash": "fdcb446647946eb5930f399fbf41f7f0"
   },
   "blender/scripts/contracts.py": {
-    "mtime": 1791279535.519621,
-    "seen": 1792378025.475274,
-    "ast_hash": "21869049242a3bf04b7ba34932668b61",
-    "semantic_hash": "21869049242a3bf04b7ba34932668b61"
+    "mtime": 1793156242.8474307,
+    "seen": 1793156314.031444,
+    "ast_hash": "27512fa9f7faf029e9f72516f38f9822",
+    "semantic_hash": ""
   },
   "blender/scripts/create_animation.py": {
     "mtime": 1791955835.4914773,
@@ -114,16 +114,16 @@
     "semantic_hash": "c48d208ad77c12aa875e1a092e3fcd36"
   },
   "blender/scripts/validate_export.py": {
-    "mtime": 1791880501.7434661,
-    "seen": 1792378025.475274,
-    "ast_hash": "05dd4e9094d9f9be05914721baa75531",
-    "semantic_hash": "05dd4e9094d9f9be05914721baa75531"
+    "mtime": 1793156251.1434846,
+    "seen": 1793156314.031444,
+    "ast_hash": "36f150030791a8dc00d57d3954073d05",
+    "semantic_hash": ""
   },
   "blender/scripts/validate_rig.py": {
-    "mtime": 1791878935.5832164,
-    "seen": 1792378025.475274,
-    "ast_hash": "18b47e24f31d1eed8024c7aaf0e5f3dd",
-    "semantic_hash": "18b47e24f31d1eed8024c7aaf0e5f3dd"
+    "mtime": 1793156243.4213154,
+    "seen": 1793156314.031444,
+    "ast_hash": "5ad4a488e1cb027ff92b42fe6f62790e",
+    "semantic_hash": ""
   },
   "frontend/.prettierrc.json": {
     "mtime": 1791279731.7249448,
@@ -636,9 +636,9 @@
     "semantic_hash": ""
   },
   "blender/exports/mixamo_upload/README.md": {
-    "mtime": 1791949188.0163248,
-    "seen": 1792381102.7959788,
-    "ast_hash": "14381c982304c1bd9292c579af1c25ab",
+    "mtime": 1793156290.5796025,
+    "seen": 1793156314.032432,
+    "ast_hash": "6da4416b00916d0b43485d7bff4ce7cd",
     "semantic_hash": ""
   },
   "blender/source/README.md": {
@@ -678,9 +678,9 @@
     "semantic_hash": ""
   },
   "docs/blender-pipeline.md": {
-    "mtime": 1791952111.2612598,
-    "seen": 1792381102.7959788,
-    "ast_hash": "579cd76ed8a5e0f2bc53a8d0ca7e6c76",
+    "mtime": 1793156297.4966176,
+    "seen": 1793156314.032432,
+    "ast_hash": "9e0c5b60e1ef733032c55bf0c2de97d6",
     "semantic_hash": ""
   },
   "frontend/index.html": {
@@ -762,9 +762,9 @@
     "semantic_hash": ""
   },
   "docs/avatar-art-contract.md": {
-    "mtime": 1792656392.178797,
-    "seen": 1792656679.5785503,
-    "ast_hash": "8bc2cb535a259f84c4eaedb15c0fbded",
+    "mtime": 1793156283.0835428,
+    "seen": 1793156314.032432,
+    "ast_hash": "d7f9f28d805e10be1a362eb5b0956cf6",
     "semantic_hash": ""
   },
   "backend/app/api/routes/chat.py": {

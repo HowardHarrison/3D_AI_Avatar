@@ -23,7 +23,7 @@ This writes `presenter_mesh.fbx` in this folder.
 
 ## 3. Drop the file back into the repo
 
-Save the download as exactly:
+Save the download as exactly (gitignored):
 
 ```text
 blender/exports/giga_chad_rigged.glb
@@ -34,6 +34,13 @@ or
 ```text
 blender/exports/giga_chad_rigged.fbx
 ```
+
+A copy may also live here as `giga_chad_rigged.fbx` while you work; the **canonical**
+path for Step 3 import is under `blender/exports/` (not only this folder).
+
+**Status (2026-10-28):** `blender/exports/giga_chad_rigged.fbx` is staged from a
+prior Mixamo download. Re-run Mixamo only if you want a different character mesh;
+otherwise proceed to Step 3 (import + rename).
 
 ## 4. Tell the agent (or run yourself)
 
