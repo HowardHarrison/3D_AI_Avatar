@@ -5809,7 +5809,7 @@
       "node_kind": "heading",
       "norm_label": "4. tell the agent (or run yourself)",
       "source_file": "blender/exports/mixamo_upload/README.md",
-      "source_location": "L38"
+      "source_location": "L45"
     },
     {
       "id": "blender_exports_mixamo_upload_readme_mixamo_upload_pack",
@@ -10336,7 +10336,7 @@
       "node_kind": "heading",
       "norm_label": "animation clips",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L48"
+      "source_location": "L50"
     },
     {
       "id": "docs_avatar_art_contract_avatar_art_contract_stylized_chatbot",
@@ -10360,7 +10360,7 @@
       "node_kind": "heading",
       "norm_label": "chatbot \u201ctalk\u201d (behavior, not a new required clip yet)",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L61"
+      "source_location": "L63"
     },
     {
       "id": "docs_avatar_art_contract_facial_morphs_shape_keys",
@@ -10372,7 +10372,7 @@
       "node_kind": "heading",
       "norm_label": "facial morphs (shape keys)",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L73"
+      "source_location": "L75"
     },
     {
       "id": "docs_avatar_art_contract_optional_body_legs_eyes",
@@ -10408,7 +10408,7 @@
       "node_kind": "heading",
       "norm_label": "optional (richer stylized expressions)",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L83"
+      "source_location": "L85"
     },
     {
       "id": "docs_avatar_art_contract_product_look",
@@ -10432,7 +10432,7 @@
       "node_kind": "heading",
       "norm_label": "required (current contract)",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L50"
+      "source_location": "L52"
     },
     {
       "id": "docs_avatar_art_contract_required_exact_names",
@@ -10444,7 +10444,7 @@
       "node_kind": "heading",
       "norm_label": "required exact names",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L75"
+      "source_location": "L77"
     },
     {
       "id": "docs_avatar_art_contract_semantic_api_unchanged_rule",
@@ -10456,7 +10456,7 @@
       "node_kind": "heading",
       "norm_label": "semantic api (unchanged rule)",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L108"
+      "source_location": "L110"
     },
     {
       "id": "docs_avatar_art_contract_skeleton_required_bones",
@@ -10480,7 +10480,7 @@
       "node_kind": "heading",
       "norm_label": "skins and design (three.js)",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L93"
+      "source_location": "L95"
     },
     {
       "id": "docs_avatar_art_contract_stand_in_vs_stylized_character",
@@ -10492,7 +10492,7 @@
       "node_kind": "heading",
       "norm_label": "stand-in vs stylized character",
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L114"
+      "source_location": "L116"
     },
     {
       "id": "backend_app_prompts_chat_turn",
@@ -26991,7 +26991,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/exports/mixamo_upload/README.md",
-      "source_location": "L38",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -30797,7 +30797,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L50",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -30808,7 +30808,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L61",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -30819,7 +30819,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L108",
+      "source_location": "L110",
       "weight": 1.0
     },
     {
@@ -30830,7 +30830,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L114",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -30852,7 +30852,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -30863,7 +30863,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L73",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -30885,7 +30885,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L93",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -30896,7 +30896,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L75",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -30907,7 +30907,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/avatar-art-contract.md",
-      "source_location": "L83",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -39567,5 +39567,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7529ee109363c15c9f26f6bc2324e6b6b4692c3e"
+  "built_at_commit": "ce4187abc6000432fadf74f198b848f086895d8b"
 }

@@ -98,11 +98,13 @@ def _head_vertex_data(bpy, arm, mesh_obj):
 
 
 def _reset_shape_keys(mesh_obj, contracts) -> None:
-    """Clear shape keys and recreate Basis + required empty keys."""
+    """Clear shape keys and recreate Basis + required/optional empty keys."""
     if mesh_obj.data.shape_keys is not None:
         mesh_obj.shape_key_clear()
     mesh_obj.shape_key_add(name="Basis", from_mix=False)
     for name in contracts.REQUIRED_SHAPE_KEYS:
+        mesh_obj.shape_key_add(name=name, from_mix=False)
+    for name in contracts.OPTIONAL_SHAPE_KEYS:
         mesh_obj.shape_key_add(name=name, from_mix=False)
 
 
@@ -254,6 +256,27 @@ def _improve_impl(argv: list[str] | None = None) -> int:
         "eye_squint": (
             lambda x, y_n, z_n: abs(x) > 0.01 and 0.5 < y_n < 0.75,
             lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, -0.005)),
+        ),
+        # Optional richer stylized keys (contracts.OPTIONAL_SHAPE_KEYS)
+        "brow_inner_up": (
+            lambda x, y_n, z_n: abs(x) < 0.04 and 0.62 < y_n < 0.88,
+            lambda x, y_n, z_n, n: mathutils.Vector((0.0, 0.0, 0.014)),
+        ),
+        "cheek_raise": (
+            lambda x, y_n, z_n: abs(x) > 0.02 and 0.4 < y_n < 0.62,
+            lambda x, y_n, z_n, n: n * 0.008 + mathutils.Vector((0.0, 0.0, 0.006)),
+        ),
+        "mouth_left": (
+            lambda x, y_n, z_n: y_n < 0.5 and abs(x) < 0.09,
+            lambda x, y_n, z_n, n: mathutils.Vector((-0.012, 0.0, 0.0)),
+        ),
+        "mouth_right": (
+            lambda x, y_n, z_n: y_n < 0.5 and abs(x) < 0.09,
+            lambda x, y_n, z_n, n: mathutils.Vector((0.012, 0.0, 0.0)),
+        ),
+        "nose_sneer": (
+            lambda x, y_n, z_n: abs(x) < 0.05 and 0.45 < y_n < 0.7,
+            lambda x, y_n, z_n, n: n * 0.006 + mathutils.Vector((0.0, 0.0, 0.004)),
         ),
     }
 

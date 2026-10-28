@@ -101,7 +101,8 @@ def add_stub_shape_keys(argv: list[str] | None = None) -> int:
 
     existing = {kb.name for kb in mesh_obj.data.shape_keys.key_blocks}
     created = 0
-    for key_name in contracts.REQUIRED_SHAPE_KEYS:
+    all_names = list(contracts.REQUIRED_SHAPE_KEYS) + list(contracts.OPTIONAL_SHAPE_KEYS)
+    for key_name in all_names:
         if key_name in existing:
             report("INFO", f"Shape key already present: {key_name}")
             continue
@@ -110,11 +111,17 @@ def add_stub_shape_keys(argv: list[str] | None = None) -> int:
             if i % 11 == 0:
                 vert.co += mathutils.Vector((0.0005, 0.0, 0.0005))
         created += 1
-        report("PASS", f"Created stub shape key: {key_name}")
+        kind = "optional" if key_name in contracts.OPTIONAL_SHAPE_KEYS else "required"
+        report("PASS", f"Created stub shape key ({kind}): {key_name}")
 
     # Ensure glTF extras.targetNames will export: Blender usually writes them
     # from shape key names on export when morphs exist.
-    report("PASS", f"Stub shape keys created={created} total_required={len(contracts.REQUIRED_SHAPE_KEYS)}")
+    report(
+        "PASS",
+        f"Stub shape keys created={created} "
+        f"required={len(contracts.REQUIRED_SHAPE_KEYS)} "
+        f"optional={len(contracts.OPTIONAL_SHAPE_KEYS)}",
+    )
 
     if bpy.data.filepath:
         bpy.ops.wm.save_mainfile()
