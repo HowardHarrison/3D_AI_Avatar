@@ -1,5 +1,6 @@
 /**
  * Development debug panel. Disable with VITE_ENABLE_DEBUG_PANEL=false.
+ * Closable to a right-edge bubble so the avatar can use full width.
  */
 
 import { useEffect, useState } from "react";
@@ -31,6 +32,7 @@ export function DebugPanel(props: DebugPanelProps): JSX.Element {
   const audio = useAudio(controller);
   const [status, setStatus] = useState<AvatarRuntimeStatus>(EMPTY_STATUS);
   const [audioMessage, setAudioMessage] = useState<string | null>(null);
+  const [closed, setClosed] = useState(false);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -45,9 +47,34 @@ export function DebugPanel(props: DebugPanelProps): JSX.Element {
     return () => window.clearInterval(id);
   }, [controller]);
 
+  if (closed) {
+    return (
+      <button
+        type="button"
+        className="debug-bubble"
+        onClick={() => setClosed(false)}
+        aria-label="Open debug panel"
+        title="Open debug panel"
+      >
+        Debug
+      </button>
+    );
+  }
+
   return (
-    <aside className="debug-panel">
-      <h2>Debug</h2>
+    <aside className="debug-panel" aria-label="Debug panel">
+      <div className="debug-panel__title-row">
+        <h2>Debug</h2>
+        <button
+          type="button"
+          className="debug-panel__close"
+          onClick={() => setClosed(true)}
+          aria-label="Close debug panel"
+          title="Close debug panel"
+        >
+          ×
+        </button>
+      </div>
       <AnimationControls controller={controller} />
       <div className="debug-section">
         <h3>Audio</h3>

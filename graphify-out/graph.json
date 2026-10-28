@@ -235,7 +235,7 @@
       "file_type": "code",
       "norm_label": "debugpanelprops",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "frontend_src_features_avatar_types_avatarhandle",
@@ -1798,7 +1798,7 @@
       "file_type": "code",
       "norm_label": "debugpanel()",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "frontend_src_features_avatar_hooks_useaudio_useaudio",
@@ -6988,7 +6988,7 @@
       "file_type": "code",
       "norm_label": "empty_status",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L17"
+      "source_location": "L18"
     },
     {
       "id": "frontend_src_types_events",
@@ -18897,7 +18897,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -20232,7 +20232,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -22265,7 +22265,7 @@
     },
     {
       "source": "frontend_src_features_avatar_components_debugpanel",
-      "target": "frontend_src_features_avatar_components_animationcontrols_animationcontrols",
+      "target": "frontend_src_features_avatar_types_avatarhandle",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22277,19 +22277,19 @@
     },
     {
       "source": "frontend_src_features_avatar_components_debugpanel",
-      "target": "frontend_src_types_events_avatarruntimestatus",
+      "target": "frontend_src_features_avatar_components_animationcontrols_animationcontrols",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L6",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
       "source": "frontend_src_features_avatar_components_debugpanel",
-      "target": "frontend_src_components_statuspanel_statuspanel",
+      "target": "frontend_src_types_events_avatarruntimestatus",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22301,7 +22301,7 @@
     },
     {
       "source": "frontend_src_features_avatar_components_debugpanel",
-      "target": "frontend_src_features_avatar_hooks_useaudio_useaudio",
+      "target": "frontend_src_components_statuspanel_statuspanel",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22313,7 +22313,7 @@
     },
     {
       "source": "frontend_src_features_avatar_components_debugpanel",
-      "target": "frontend_src_features_avatar_types_avatarhandle",
+      "target": "frontend_src_features_avatar_hooks_useaudio_useaudio",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -24947,7 +24947,7 @@
     },
     {
       "source": "frontend_src_features_avatar_components_debugpanel",
-      "target": "frontend_src_features_avatar_components_animationcontrols",
+      "target": "frontend_src_features_avatar_types",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -24955,6 +24955,19 @@
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
       "source_location": "L10",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_features_avatar_components_debugpanel",
+      "target": "frontend_src_features_avatar_components_animationcontrols",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -24966,7 +24979,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -24978,7 +24991,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "type_only": true,
       "weight": 1.0
     },
@@ -24991,7 +25004,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -25003,20 +25016,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_features_avatar_components_debugpanel",
-      "target": "frontend_src_features_avatar_types",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
       "source_location": "L9",
-      "type_only": true,
       "weight": 1.0
     },
     {
@@ -33994,7 +33994,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -34005,7 +34005,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -34016,7 +34016,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/DebugPanel.tsx",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -41413,5 +41413,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a3d65a6c6d095aa9c070de8bf140150510b27b06"
+  "built_at_commit": "14620dd2f23ea622a1fe8993ce4f77c967e52510"
 }

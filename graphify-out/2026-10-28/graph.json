@@ -261,7 +261,7 @@
       "file_type": "code",
       "norm_label": "chatpanelprops",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L11"
+      "source_location": "L12"
     },
     {
       "id": "frontend_src_types_events_avatarruntimestatus",
@@ -3466,7 +3466,7 @@
       "file_type": "code",
       "norm_label": "chatpanel()",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "frontend_src_features_chat_hooks_usechatturn_nextid",
@@ -18909,7 +18909,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -18921,7 +18921,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -20244,7 +20244,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -22385,19 +22385,19 @@
     },
     {
       "source": "frontend_src_features_chat_components_chatpanel",
-      "target": "frontend_src_features_avatar_types_avatarhandle",
+      "target": "frontend_src_features_chat_hooks_usespeechtotext_usespeechtotext",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
       "source": "frontend_src_features_chat_components_chatpanel",
-      "target": "frontend_src_features_chat_hooks_usechatturn_usechatturn",
+      "target": "frontend_src_features_avatar_types_avatarhandle",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22409,7 +22409,7 @@
     },
     {
       "source": "frontend_src_features_chat_components_chatpanel",
-      "target": "frontend_src_features_chat_hooks_usespeechtotext_usespeechtotext",
+      "target": "frontend_src_features_chat_hooks_usechatturn_usechatturn",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -25096,20 +25096,19 @@
     },
     {
       "source": "frontend_src_features_chat_components_chatpanel",
-      "target": "ref_react",
+      "target": "frontend_src_features_chat_hooks_usespeechtotext",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L6",
-      "type_only": true,
+      "source_location": "L10",
       "weight": 1.0
     },
     {
       "source": "frontend_src_features_chat_components_chatpanel",
-      "target": "frontend_src_types_index",
+      "target": "ref_react",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -25122,7 +25121,7 @@
     },
     {
       "source": "frontend_src_features_chat_components_chatpanel",
-      "target": "frontend_src_features_chat_hooks_usechatturn",
+      "target": "frontend_src_types_index",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -25130,11 +25129,12 @@
       "context": "import",
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
       "source_location": "L8",
+      "type_only": true,
       "weight": 1.0
     },
     {
       "source": "frontend_src_features_chat_components_chatpanel",
-      "target": "frontend_src_features_chat_hooks_usespeechtotext",
+      "target": "frontend_src_features_chat_hooks_usechatturn",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -34082,7 +34082,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -34093,7 +34093,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -41413,5 +41413,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "37ae96a24ca32e1cdabeadaaba8574ec03524fa5"
+  "built_at_commit": "a3d65a6c6d095aa9c070de8bf140150510b27b06"
 }

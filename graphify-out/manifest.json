@@ -204,10 +204,10 @@
     "semantic_hash": "3540723c037c3562debaa6590f3e8c14"
   },
   "frontend/src/features/avatar/components/DebugPanel.tsx": {
-    "mtime": 1791284140.4880407,
-    "seen": 1792378025.475274,
-    "ast_hash": "c9f54b563e3bff649286cdbefdc88f0f",
-    "semantic_hash": "c9f54b563e3bff649286cdbefdc88f0f"
+    "mtime": 1793184054.274751,
+    "seen": 1793184079.7324715,
+    "ast_hash": "06b835b88f908c6a5c294ed4d382db81",
+    "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/Studio.tsx": {
     "mtime": 1791283416.9887457,
@@ -798,9 +798,9 @@
     "semantic_hash": ""
   },
   "frontend/src/features/chat/components/ChatPanel.tsx": {
-    "mtime": 1793183713.5036316,
-    "seen": 1793183735.697561,
-    "ast_hash": "38b32819ceaf85d3786c2b8b6b6fc948",
+    "mtime": 1793183887.0796335,
+    "seen": 1793184079.7324715,
+    "ast_hash": "ce53e1a6d7720035a3e4a526d4edc1d5",
     "semantic_hash": ""
   },
   "frontend/src/features/chat/hooks/useChatTurn.ts": {
