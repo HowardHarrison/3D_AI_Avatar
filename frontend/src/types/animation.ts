@@ -6,6 +6,9 @@
 export type GestureName =
   | "openHand"
   | "wave"
+  | "raiseHand"
+  /** Left arm raise-and-hold (no wave flap). */
+  | "raiseHandLeft"
   | "emphasize"
   | "pointLeft"
   | "pointRight"

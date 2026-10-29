@@ -14,6 +14,8 @@ export const animationRegistry = {
   gestures: {
     openHand: "Gesture_OpenHand",
     wave: "Gesture_Wave",
+    raiseHand: "Gesture_RaiseHand",
+    raiseHandLeft: "Gesture_RaiseHandLeft",
     emphasize: "Gesture_Emphasize",
     pointLeft: "Gesture_PointLeft",
     pointRight: "Gesture_PointRight",

@@ -51,11 +51,12 @@ graphify-out/cache/
 backend/graphify-out/
 frontend/graphify-out/
 
-# Python (backend/)
+# Python (backend/, blender/scripts/, etc.)
 .venv/
 venv/
-__pycache__/
+**/__pycache__/
 *.py[cod]
+*.pyc
 .pytest_cache/
 .ruff_cache/
 *.egg-info/

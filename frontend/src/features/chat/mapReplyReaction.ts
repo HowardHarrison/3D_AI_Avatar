@@ -38,11 +38,14 @@ function raiseGesture(intentText: string): GestureName {
   const left = /\bleft\b/i.test(intentText);
   const right = /\bright\b/i.test(intentText);
   const wantsWave = WAVE.test(intentText);
+  if (left && !right && !wantsWave) {
+    return "raiseHandLeft";
+  }
   if (left && !right) {
     return "pointLeft";
   }
   if (right && !left && !wantsWave) {
-    return "emphasize";
+    return "raiseHand";
   }
   if (right && !left) {
     return "wave";

@@ -766,6 +766,45 @@ def build_presenter() -> bytes:
     },
     )
     builder.add_multi_rotation_animation(
+    "Gesture_RaiseHand",
+    {
+        "RightUpperArm": [
+            (0.0, rest_arm),
+            (0.2, (0.0, 0.0, 1.0)),
+            (0.4, (0.0, 0.0, 2.05)),
+            (0.55, _up_r),
+            (1.25, _up_r),
+            (1.5, (0.0, 0.0, 1.0)),
+            (1.75, rest_arm),
+        ],
+        "RightLowerArm": [
+            (0.0, identity),
+            (1.75, identity),
+        ],
+    },
+    )
+    # Left arm raise-and-hold (mirror of RaiseHand; no wave flap).
+    builder.add_multi_rotation_animation(
+        "Gesture_RaiseHandLeft",
+        {
+            "LeftUpperArm": [
+                (0.0, rest_arm),
+                (0.2, (0.0, 0.0, -1.0)),
+                (0.4, (0.0, 0.0, -2.05)),
+                (0.55, _up_l),
+                (1.25, _up_l),
+                (1.5, (0.0, 0.0, -1.0)),
+                (1.75, rest_arm),
+            ],
+            "LeftLowerArm": [
+                (0.0, identity),
+                (1.75, identity),
+            ],
+            "RightUpperArm": [(0.0, rest_arm), (1.75, rest_arm)],
+            "RightLowerArm": [(0.0, identity), (1.75, identity)],
+        },
+    )
+    builder.add_multi_rotation_animation(
         "Gesture_Emphasize",
         {
             "RightUpperArm": [

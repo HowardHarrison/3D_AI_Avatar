@@ -53,29 +53,36 @@ describe("mapReplyReaction", () => {
     });
   });
 
-  it("raises even when the reply also says can't/sorry (left → pointLeft)", () => {
+  it("raises even when the reply also says can't/sorry (left → raiseHandLeft)", () => {
     expect(
       mapReplyReaction("Sure! *raises left hand* I can't stay like this forever though."),
     ).toMatchObject({
       expression: "positive",
-      gesture: "pointLeft",
+      gesture: "raiseHandLeft",
       headMotion: "nod",
     });
   });
 
-  it("uses emphasize when the raise is explicitly right-sided (no wave)", () => {
+  it("uses raiseHand when the raise is explicitly right-sided (no wave)", () => {
     expect(mapReplyReaction("Okay — raising my right hand now!")).toMatchObject({
-      gesture: "emphasize",
+      gesture: "raiseHand",
     });
   });
 
-  it("uses pointLeft when the raise is explicitly left-sided", () => {
+  it("uses raiseHandLeft when the raise is explicitly left-sided (no wave)", () => {
     expect(mapReplyReaction("*raises left hand* Here you go!")).toMatchObject({
+      gesture: "raiseHandLeft",
+    });
+  });
+
+  it("uses pointLeft when left-sided intent also asks to wave", () => {
+    expect(mapReplyReaction("*waves with left hand* Hi!")).toMatchObject({
       gesture: "pointLeft",
     });
   });
 
   it("uses user text for left / both when the reply only says *waves*", () => {
+    // User says raise left (no wave word on user) but reply says *waves* → intent has wave → left wave clip.
     expect(mapReplyReaction("*waves happily* Sure!", "Please raise your left hand")).toMatchObject({
       gesture: "pointLeft",
     });
