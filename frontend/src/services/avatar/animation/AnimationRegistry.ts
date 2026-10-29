@@ -36,6 +36,8 @@ export const animationRegistry = {
     shrug: "Gesture_Shrug",
     leanForward: "Gesture_LeanForward",
     leanBack: "Gesture_LeanBack",
+    turnBodyLeft: "Turn_Body_Left",
+    turnBodyRight: "Turn_Body_Right",
   } satisfies Record<GestureName, string>,
   expressions: {
     neutral: "Emotion_Neutral",

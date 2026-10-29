@@ -96,6 +96,20 @@ export function AnimationControls(props: AnimationControlsProps): JSX.Element {
         <button type="button" disabled={disabled} onClick={() => controller?.stopLocomotion()}>
           Stop Walk
         </button>
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() => controller?.playGesture("turnBodyLeft")}
+        >
+          Turn Body Left
+        </button>
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() => controller?.playGesture("turnBodyRight")}
+        >
+          Turn Body Right
+        </button>
       </div>
       <h3>Gestures</h3>
       <div className="debug-row">

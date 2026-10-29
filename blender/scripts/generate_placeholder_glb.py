@@ -1197,6 +1197,54 @@ def build_presenter() -> bytes:
             ],
         },
     )
+    # Full-body yaw (hips lead; not Head_Turn_* — those are head-only).
+    body_yaw = 0.9
+    builder.add_multi_rotation_animation(
+        "Turn_Body_Left",
+        {
+            "Hips": [
+                (0.0, identity),
+                (0.35, (0.0, body_yaw, 0.0)),
+                (1.0, (0.0, body_yaw, 0.0)),
+                (1.45, identity),
+            ],
+            "Spine": [
+                (0.0, identity),
+                (0.35, (0.0, body_yaw * 0.35, 0.0)),
+                (1.0, (0.0, body_yaw * 0.35, 0.0)),
+                (1.45, identity),
+            ],
+            "Chest": [
+                (0.0, identity),
+                (0.35, (0.0, body_yaw * 0.2, 0.0)),
+                (1.0, (0.0, body_yaw * 0.2, 0.0)),
+                (1.45, identity),
+            ],
+        },
+    )
+    builder.add_multi_rotation_animation(
+        "Turn_Body_Right",
+        {
+            "Hips": [
+                (0.0, identity),
+                (0.35, (0.0, -body_yaw, 0.0)),
+                (1.0, (0.0, -body_yaw, 0.0)),
+                (1.45, identity),
+            ],
+            "Spine": [
+                (0.0, identity),
+                (0.35, (0.0, -body_yaw * 0.35, 0.0)),
+                (1.0, (0.0, -body_yaw * 0.35, 0.0)),
+                (1.45, identity),
+            ],
+            "Chest": [
+                (0.0, identity),
+                (0.35, (0.0, -body_yaw * 0.2, 0.0)),
+                (1.0, (0.0, -body_yaw * 0.2, 0.0)),
+                (1.45, identity),
+            ],
+        },
+    )
 
     zero = [0.0] * len(REQUIRED_SHAPE_KEYS)
     index = {name: i for i, name in enumerate(REQUIRED_SHAPE_KEYS)}

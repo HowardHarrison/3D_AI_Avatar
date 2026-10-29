@@ -20,7 +20,11 @@ export type GestureName =
   /** Torso lean toward camera / listener. */
   | "leanForward"
   /** Torso lean away (give space / recoil). */
-  | "leanBack";
+  | "leanBack"
+  /** Full-body yaw left (hips + spine; distinct from head turnLeft). */
+  | "turnBodyLeft"
+  /** Full-body yaw right. */
+  | "turnBodyRight";
 
 /** Facial expression commands accepted by AvatarController.setExpression. */
 export type ExpressionName =
