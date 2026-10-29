@@ -30,6 +30,10 @@ const GREETING =
   /\b(hi there|hello|hey there|good (morning|afternoon|evening)|nice to (see|meet) you|great to see you)\b/i;
 const BOTH_HANDS =
   /\bboth\s+(hands?|arms?)\b|\b(hands?|arms?)\s+both\b|\b(two|2)\s+(hands|arms)\b/i;
+/** Explicit lean stage directions / wording. */
+const LEAN_FORWARD =
+  /\b(lean(?:s|ing)?\s+forward|leans?\s+in|leaning\s+in)\b|\*\s*leans?\s+(forward|in)\b/i;
+const LEAN_BACK = /\b(lean(?:s|ing)?\s+back)\b|\*\s*leans?\s+back\b/i;
 
 /**
  * Prefer side / both cues from the user message, then the assistant reply.
@@ -90,6 +94,14 @@ export function mapReplyReaction(reply: string, userText = ""): ReplyReaction {
 
   if (SHRUG.test(text)) {
     return { expression: "curious", gesture: "shrug", headMotion: "tiltLeft" };
+  }
+
+  // User or reply can stage a lean; prefer back when both somehow match.
+  if (LEAN_BACK.test(intent)) {
+    return { expression: "serious", gesture: "leanBack" };
+  }
+  if (LEAN_FORWARD.test(intent)) {
+    return { expression: "curious", gesture: "leanForward", headMotion: "nod" };
   }
 
   if (CONCERN.test(text)) {

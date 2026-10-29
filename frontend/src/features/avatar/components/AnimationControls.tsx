@@ -20,6 +20,8 @@ const GESTURES: { id: GestureName; label: string }[] = [
   { id: "bothHands", label: "Both Hands" },
   { id: "handsTogether", label: "Hands Together" },
   { id: "shrug", label: "Shrug" },
+  { id: "leanForward", label: "Lean Forward" },
+  { id: "leanBack", label: "Lean Back" },
 ];
 
 const EXPRESSIONS: { id: ExpressionName; label: string }[] = [

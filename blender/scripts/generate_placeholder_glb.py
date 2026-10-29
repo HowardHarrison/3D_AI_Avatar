@@ -975,6 +975,54 @@ def build_presenter() -> bytes:
             ],
         },
     )
+    # Lean toward camera (same pitch axis as Idle_Breathing, larger amplitude).
+    builder.add_multi_rotation_animation(
+        "Gesture_LeanForward",
+        {
+            "Spine": [
+                (0.0, identity),
+                (0.35, (0.28, 0.0, 0.0)),
+                (1.1, (0.28, 0.0, 0.0)),
+                (1.5, identity),
+            ],
+            "Chest": [
+                (0.0, identity),
+                (0.35, (0.22, 0.0, 0.0)),
+                (1.1, (0.22, 0.0, 0.0)),
+                (1.5, identity),
+            ],
+            "Head": [
+                (0.0, identity),
+                (0.35, (0.12, 0.0, 0.0)),
+                (1.1, (0.12, 0.0, 0.0)),
+                (1.5, identity),
+            ],
+        },
+    )
+    # Lean away / give space.
+    builder.add_multi_rotation_animation(
+        "Gesture_LeanBack",
+        {
+            "Spine": [
+                (0.0, identity),
+                (0.35, (-0.22, 0.0, 0.0)),
+                (1.1, (-0.22, 0.0, 0.0)),
+                (1.5, identity),
+            ],
+            "Chest": [
+                (0.0, identity),
+                (0.35, (-0.18, 0.0, 0.0)),
+                (1.1, (-0.18, 0.0, 0.0)),
+                (1.5, identity),
+            ],
+            "Head": [
+                (0.0, identity),
+                (0.35, (-0.08, 0.0, 0.0)),
+                (1.1, (-0.08, 0.0, 0.0)),
+                (1.5, identity),
+            ],
+        },
+    )
 
     zero = [0.0] * len(REQUIRED_SHAPE_KEYS)
     index = {name: i for i, name in enumerate(REQUIRED_SHAPE_KEYS)}

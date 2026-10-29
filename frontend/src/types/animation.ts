@@ -16,7 +16,11 @@ export type GestureName =
   /** Both arms raised overhead (chat “both hands”). */
   | "bothHands"
   /** Shoulder shrug — uncertainty / “don’t know”. */
-  | "shrug";
+  | "shrug"
+  /** Torso lean toward camera / listener. */
+  | "leanForward"
+  /** Torso lean away (give space / recoil). */
+  | "leanBack";
 
 /** Facial expression commands accepted by AvatarController.setExpression. */
 export type ExpressionName =

@@ -36,6 +36,17 @@ describe("mapReplyReaction", () => {
     });
   });
 
+  it("leans forward / back on explicit lean wording", () => {
+    expect(mapReplyReaction("*leans forward* Go on.")).toMatchObject({
+      gesture: "leanForward",
+      expression: "curious",
+    });
+    expect(mapReplyReaction("Okay — leaning back a bit.")).toMatchObject({
+      gesture: "leanBack",
+      expression: "serious",
+    });
+  });
+
   it("keeps concerned on short apologies (not the short-nod path)", () => {
     expect(mapReplyReaction("Sorry.")).toEqual({
       expression: "concerned",
