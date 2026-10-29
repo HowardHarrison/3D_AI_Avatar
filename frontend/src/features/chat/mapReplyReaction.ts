@@ -45,9 +45,9 @@ function raiseGesture(intentText: string): GestureName {
     return "emphasize";
   }
   if (right && !left) {
-    return "openHand";
+    return "wave";
   }
-  return "openHand";
+  return "wave";
 }
 
 /**

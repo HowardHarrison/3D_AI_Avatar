@@ -45,11 +45,11 @@ describe("mapReplyReaction", () => {
       mapReplyReaction("Hi there! *waves hand* It’s great to see you! How’s your day going?"),
     ).toEqual({
       expression: "positive",
-      gesture: "openHand",
+      gesture: "wave",
       headMotion: "nod",
     });
     expect(mapReplyReaction("Hello! Welcome aboard.")).toMatchObject({
-      gesture: "openHand",
+      gesture: "wave",
     });
   });
 

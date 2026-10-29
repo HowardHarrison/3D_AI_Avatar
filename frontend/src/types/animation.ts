@@ -5,6 +5,7 @@
 /** High-level gesture commands accepted by AvatarController.playGesture. */
 export type GestureName =
   | "openHand"
+  | "wave"
   | "emphasize"
   | "pointLeft"
   | "pointRight"

@@ -22,7 +22,7 @@ describe("parseAnimationPlan", () => {
   it("rejects inverted times and unknown semantics", () => {
     expect(() => parseAnimationPlan({ segments: [{ start: 2, end: 1 }] })).toThrow(/end must be/);
     expect(() =>
-      parseAnimationPlan({ segments: [{ start: 0, end: 1, gesture: "wave" }] }),
+      parseAnimationPlan({ segments: [{ start: 0, end: 1, gesture: "floss" }] }),
     ).toThrow(/invalid gesture/);
   });
 });

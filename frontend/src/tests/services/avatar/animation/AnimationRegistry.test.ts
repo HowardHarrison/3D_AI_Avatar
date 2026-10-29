@@ -18,6 +18,8 @@ describe("AnimationRegistry", () => {
     expect(resolveGestureClip("handsTogether")).toBe("Gesture_HandsTogether");
     expect(resolveGestureClip("bothHands")).toBe("Gesture_BothHands");
     expect(isGestureName("bothHands")).toBe(true);
+    expect(resolveGestureClip("wave")).toBe("Gesture_Wave");
+    expect(isGestureName("wave")).toBe(true);
   });
 
   it("maps semantic expressions to clip names", () => {

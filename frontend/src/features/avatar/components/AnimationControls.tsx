@@ -11,6 +11,7 @@ interface AnimationControlsProps {
 
 const GESTURES: { id: GestureName; label: string }[] = [
   { id: "openHand", label: "Open Hand" },
+  { id: "wave", label: "Wave" },
   { id: "emphasize", label: "Emphasize" },
   { id: "pointLeft", label: "Point Left" },
   { id: "pointRight", label: "Point Right" },

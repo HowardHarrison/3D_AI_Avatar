@@ -740,6 +740,32 @@ def build_presenter() -> bytes:
         },
     )
     builder.add_multi_rotation_animation(
+    "Gesture_Wave",
+    {
+        "RightUpperArm": [
+            (0.0, rest_arm),
+            (0.2, (0.0, 0.0, 1.0)),
+            (0.4, (0.0, 0.0, 2.0)),
+            (0.55, _up_r),
+            (0.75, _wave_a),
+            (0.95, _wave_b),
+            (1.15, _wave_a),
+            (1.35, _wave_b),
+            (1.5, _up_r),
+            (1.85, (0.0, 0.0, 1.0)),
+            (2.1, rest_arm),
+        ],
+        "RightLowerArm": [
+            (0.0, identity),
+            (0.55, identity),
+            (1.5, identity),
+            (2.1, identity),
+        ],
+        "LeftUpperArm": [(0.0, rest_arm), (2.1, rest_arm)],
+        "LeftLowerArm": [(0.0, identity), (2.1, identity)],
+    },
+    )
+    builder.add_multi_rotation_animation(
         "Gesture_Emphasize",
         {
             "RightUpperArm": [
