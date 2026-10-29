@@ -25,6 +25,17 @@ describe("mapReplyReaction", () => {
     });
   });
 
+  it("shrugs on uncertainty / don't-know wording", () => {
+    expect(mapReplyReaction("I don't know the answer to that.")).toEqual({
+      expression: "curious",
+      gesture: "shrug",
+      headMotion: "tiltLeft",
+    });
+    expect(mapReplyReaction("*shrugs* Not sure.")).toMatchObject({
+      gesture: "shrug",
+    });
+  });
+
   it("keeps concerned on short apologies (not the short-nod path)", () => {
     expect(mapReplyReaction("Sorry.")).toEqual({
       expression: "concerned",

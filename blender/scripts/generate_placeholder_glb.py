@@ -939,6 +939,42 @@ def build_presenter() -> bytes:
             ],
         },
     )
+    # Shoulder shrug: lift both shoulder pads + slight arm abduction, hold, release.
+    builder.add_multi_rotation_animation(
+        "Gesture_Shrug",
+        {
+            "LeftShoulder": [
+                (0.0, identity),
+                (0.25, (0.0, 0.0, 0.55)),
+                (0.85, (0.0, 0.0, 0.55)),
+                (1.2, identity),
+            ],
+            "RightShoulder": [
+                (0.0, identity),
+                (0.25, (0.0, 0.0, -0.55)),
+                (0.85, (0.0, 0.0, -0.55)),
+                (1.2, identity),
+            ],
+            "LeftUpperArm": [
+                (0.0, rest_arm),
+                (0.25, (-0.2, 0.15, -0.45)),
+                (0.85, (-0.2, 0.15, -0.45)),
+                (1.2, rest_arm),
+            ],
+            "RightUpperArm": [
+                (0.0, rest_arm),
+                (0.25, (-0.2, -0.15, 0.45)),
+                (0.85, (-0.2, -0.15, 0.45)),
+                (1.2, rest_arm),
+            ],
+            "Head": [
+                (0.0, identity),
+                (0.25, (0.08, 0.0, 0.12)),
+                (0.85, (0.08, 0.0, 0.12)),
+                (1.2, identity),
+            ],
+        },
+    )
 
     zero = [0.0] * len(REQUIRED_SHAPE_KEYS)
     index = {name: i for i, name in enumerate(REQUIRED_SHAPE_KEYS)}

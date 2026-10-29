@@ -14,7 +14,10 @@ export interface ReplyReaction {
 }
 
 const CONCERN =
-  /\b(sorry|unfortunately|can't|cannot|unable|error|problem|issue|worried|afraid|don't know|do not know)\b/i;
+  /\b(sorry|unfortunately|can't|cannot|unable|error|problem|issue|worried|afraid)\b/i;
+/** Uncertainty / “don’t know” → shoulder shrug (before generic concern). */
+const SHRUG =
+  /\b(shrug|shrugs|dunno|don't know|do not know|no idea|who knows|not sure|beats me)\b|\*\s*shrugs?\b/i;
 const POSITIVE =
   /\b(great|awesome|glad|happy|thanks|thank you|wonderful|excellent|love|pleasure|good news)\b/i;
 const SHORT_AFFIRM = /^(ok|okay|yes|yep|sure|alright|got it|sounds good)[.!]?$/i;
@@ -83,6 +86,10 @@ export function mapReplyReaction(reply: string, userText = ""): ReplyReaction {
       gesture: raiseGesture(intent),
       headMotion: "nod",
     };
+  }
+
+  if (SHRUG.test(text)) {
+    return { expression: "curious", gesture: "shrug", headMotion: "tiltLeft" };
   }
 
   if (CONCERN.test(text)) {

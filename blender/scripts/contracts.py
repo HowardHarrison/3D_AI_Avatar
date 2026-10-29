@@ -127,4 +127,5 @@ OPTIONAL_ANIMATIONS: tuple[str, ...] = (
     "Gesture_Wave",
     "Gesture_RaiseHand",
     "Gesture_RaiseHandLeft",
+    "Gesture_Shrug",
 )
