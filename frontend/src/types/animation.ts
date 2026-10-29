@@ -24,7 +24,13 @@ export type ExpressionName =
   | "curious";
 
 /** Head motion commands accepted by AvatarController.setHeadMotion. */
-export type HeadMotionName = "nod" | "turnLeft" | "turnRight" | "tiltLeft" | "tiltRight";
+export type HeadMotionName =
+  | "nod"
+  | "turnLeft"
+  | "turnRight"
+  | "tiltLeft"
+  | "tiltRight"
+  | "shakeHead";
 
 /** Gaze targets for setGaze. Phase 1 supports camera and left/right look. */
 export type GazeTarget = "camera" | "left" | "right" | "down";

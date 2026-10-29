@@ -34,6 +34,7 @@ export const animationRegistry = {
     turnRight: "Head_Turn_Right",
     tiltLeft: "Head_Tilt_Left",
     tiltRight: "Head_Tilt_Right",
+    shakeHead: "Head_Shake",
   } satisfies Record<HeadMotionName, string>,
   blink: "Blink",
 } as const;

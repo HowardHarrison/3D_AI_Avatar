@@ -6,7 +6,7 @@ import type { ExpressionName, GazeTarget, GestureName, HeadMotionName } from "..
  */
 export const avatarConfig = {
   /** Cache-bust when gesture clips change so the browser does not keep an old GLB. */
-  modelUrl: "/avatars/presenter.glb?v=wave-sides4",
+  modelUrl: "/avatars/presenter.glb?v=shake1",
   /** Stylized face GLB parented to the body ``Head`` bone (Option 1 face socket). */
   faceUrl: "/avatars/face.glb",
   /** Expression mask textures (face pack). See FacePackRegistry. */

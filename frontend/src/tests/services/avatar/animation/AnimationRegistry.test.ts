@@ -34,6 +34,8 @@ describe("AnimationRegistry", () => {
   it("maps semantic head motions to clip names", () => {
     expect(resolveHeadClip("nod")).toBe(animationRegistry.head.nod);
     expect(isHeadMotionName("tiltLeft")).toBe(true);
+    expect(resolveHeadClip("shakeHead")).toBe("Head_Shake");
+    expect(isHeadMotionName("shakeHead")).toBe(true);
   });
 
   it("rejects invalid semantic names", () => {

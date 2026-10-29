@@ -678,6 +678,19 @@ def build_presenter() -> bytes:
             (0.95, identity),
         ],
     )
+    # Shake head "no": yaw left-right on Head (Y axis).
+    builder.add_rotation_animation(
+        "Head_Shake",
+        "Head",
+        [
+            (0.0, identity),
+            (0.15, (0.0, 0.45, 0.0)),
+            (0.35, (0.0, -0.45, 0.0)),
+            (0.55, (0.0, 0.4, 0.0)),
+            (0.75, (0.0, -0.4, 0.0)),
+            (1.0, identity),
+        ],
+    )
     hold_pose("Head_Turn_Left", "Head", (0.0, turn_yaw, 0.0))
     hold_pose("Head_Turn_Right", "Head", (0.0, -turn_yaw, 0.0))
     hold_pose("Head_Tilt_Left", "Head", (0.0, 0.0, tilt_roll))

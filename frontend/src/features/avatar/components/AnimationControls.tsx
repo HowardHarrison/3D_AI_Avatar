@@ -33,6 +33,7 @@ const HEADS: { id: HeadMotionName; label: string }[] = [
   { id: "turnRight", label: "Turn Right" },
   { id: "tiltLeft", label: "Tilt Left" },
   { id: "tiltRight", label: "Tilt Right" },
+  { id: "shakeHead", label: "Shake" },
 ];
 
 export function AnimationControls(props: AnimationControlsProps): JSX.Element {
