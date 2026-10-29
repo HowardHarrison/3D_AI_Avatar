@@ -12,6 +12,7 @@ import type {
   GestureName,
   HeadMotionName,
   IdleName,
+  LocomotionName,
 } from "../../types";
 import { logger } from "../../utils/logger";
 import { AudioController } from "./audio/AudioController";
@@ -23,8 +24,10 @@ import {
   isGestureName,
   isHeadMotionName,
   isIdleName,
+  isLocomotionName,
   resolveGestureClip,
   resolveHeadClip,
+  resolveLocomotionClip,
 } from "./animation/AnimationRegistry";
 import { IdleController } from "./animation/IdleController";
 import { FacialController } from "./facial/FacialController";
@@ -37,6 +40,7 @@ export class AvatarRuntime implements AvatarController {
   private readonly state: AnimationStateMachine;
   private readonly warnings: string[] = [];
   private gestureClip: string | null = null;
+  private locomotionClip: string | null = null;
   private fps = 0;
   private fpsAccum = 0;
   private fpsFrames = 0;
@@ -72,6 +76,10 @@ export class AvatarRuntime implements AvatarController {
     if (!this.animation.hasClip(clip)) {
       this.pushWarning(`Animation "${clip}" not found.`);
       return;
+    }
+    if (this.locomotionClip) {
+      this.animation.stop(this.locomotionClip);
+      this.locomotionClip = null;
     }
     this.state.playGesture();
     this.gestureClip = clip;
@@ -130,7 +138,45 @@ export class AvatarRuntime implements AvatarController {
       this.pushWarning(`Unknown idle: ${name}`);
       return;
     }
+    if (this.locomotionClip) {
+      this.stopLocomotion();
+    }
     this.idle.setIdle(name);
+  }
+
+  startLocomotion(name: LocomotionName): void {
+    if (!isLocomotionName(name)) {
+      this.pushWarning(`Unknown locomotion: ${name}`);
+      return;
+    }
+    const clip = resolveLocomotionClip(name);
+    if (!this.animation.hasClip(clip)) {
+      this.pushWarning(`Animation "${clip}" not found.`);
+      return;
+    }
+    if (!this.state.startLocomotion()) {
+      this.pushWarning(`Cannot start locomotion from state ${this.state.getState()}.`);
+      return;
+    }
+    this.gestureClip = null;
+    this.locomotionClip = clip;
+    this.animation.play(clip, {
+      loop: true,
+      exclusive: true,
+      fadeInSeconds: 0.3,
+      fadeOutSeconds: 0.3,
+    });
+  }
+
+  stopLocomotion(): void {
+    if (this.locomotionClip) {
+      this.animation.stop(this.locomotionClip);
+      this.locomotionClip = null;
+    }
+    this.state.stopLocomotion();
+    if (this.state.getState() === "IDLE" || this.state.getState() === "SPEAKING") {
+      this.idle.start();
+    }
   }
 
   startSpeaking(): void {
@@ -146,6 +192,7 @@ export class AvatarRuntime implements AvatarController {
 
   reset(): void {
     this.gestureClip = null;
+    this.locomotionClip = null;
     this.state.reset();
     this.facial.reset();
     this.setGaze("camera");
@@ -226,7 +273,8 @@ export class AvatarRuntime implements AvatarController {
   update(delta: number): void {
     this.animation.update(delta);
     this.facial.update(delta);
-    this.idle.update(delta, this.state.getState() === "GESTURE");
+    const state = this.state.getState();
+    this.idle.update(delta, state === "GESTURE" || state === "LOCOMOTION");
     this.fpsAccum += delta;
     this.fpsFrames += 1;
     if (this.fpsAccum >= 0.5) {

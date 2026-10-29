@@ -6,14 +6,16 @@
 import type { AnimationStateName } from "../../../types/animation";
 
 const ALLOWED: Record<AnimationStateName, AnimationStateName[]> = {
-  IDLE: ["GESTURE", "SPEAKING", "TRANSITION"],
-  GESTURE: ["IDLE", "TRANSITION", "SPEAKING"],
-  SPEAKING: ["IDLE", "GESTURE", "TRANSITION"],
-  TRANSITION: ["IDLE", "GESTURE", "SPEAKING"],
+  IDLE: ["GESTURE", "SPEAKING", "TRANSITION", "LOCOMOTION"],
+  GESTURE: ["IDLE", "TRANSITION", "SPEAKING", "LOCOMOTION"],
+  SPEAKING: ["IDLE", "GESTURE", "TRANSITION", "LOCOMOTION"],
+  TRANSITION: ["IDLE", "GESTURE", "SPEAKING", "LOCOMOTION"],
+  LOCOMOTION: ["IDLE", "GESTURE", "SPEAKING", "TRANSITION", "LOCOMOTION"],
 };
 
 export class AnimationStateMachine {
   private current: AnimationStateName = "IDLE";
+  private speakingHeld = false;
 
   /** Return the current high-level animation state. */
   getState(): AnimationStateName {
@@ -34,9 +36,14 @@ export class AnimationStateMachine {
     return true;
   }
 
-  /** Convenience: start a one-shot gesture from idle or speaking. */
+  /** Convenience: start a one-shot gesture from idle, speaking, or locomotion. */
   playGesture(): boolean {
-    if (this.current === "IDLE" || this.current === "SPEAKING" || this.current === "TRANSITION") {
+    if (
+      this.current === "IDLE" ||
+      this.current === "SPEAKING" ||
+      this.current === "TRANSITION" ||
+      this.current === "LOCOMOTION"
+    ) {
       this.current = "GESTURE";
       return true;
     }
@@ -52,7 +59,28 @@ export class AnimationStateMachine {
     return false;
   }
 
-  private speakingHeld = false;
+  /** Enter looping locomotion (walk, etc.). */
+  startLocomotion(): boolean {
+    if (
+      this.current === "IDLE" ||
+      this.current === "SPEAKING" ||
+      this.current === "LOCOMOTION" ||
+      this.current === "TRANSITION"
+    ) {
+      this.current = "LOCOMOTION";
+      return true;
+    }
+    return false;
+  }
+
+  /** Leave locomotion; prefer SPEAKING if speech is still held. */
+  stopLocomotion(): boolean {
+    if (this.current !== "LOCOMOTION") {
+      return false;
+    }
+    this.current = this.speakingHeld ? "SPEAKING" : "IDLE";
+    return true;
+  }
 
   /** Mark that speech is active so gestures return to SPEAKING instead of IDLE. */
   startSpeaking(): void {
@@ -60,10 +88,10 @@ export class AnimationStateMachine {
     this.current = "SPEAKING";
   }
 
-  /** End speech and return to idle unless a gesture is in progress. */
+  /** End speech and return to idle unless a gesture or locomotion is in progress. */
   stopSpeaking(): void {
     this.speakingHeld = false;
-    if (this.current !== "GESTURE") {
+    if (this.current !== "GESTURE" && this.current !== "LOCOMOTION") {
       this.current = "IDLE";
     }
   }

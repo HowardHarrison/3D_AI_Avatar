@@ -5,10 +5,12 @@ import {
   isGestureName,
   isHeadMotionName,
   isIdleName,
+  isLocomotionName,
   resolveExpressionClip,
   resolveGestureClip,
   resolveHeadClip,
   resolveIdleClip,
+  resolveLocomotionClip,
 } from "../../../../services/avatar/animation/AnimationRegistry";
 
 describe("AnimationRegistry", () => {
@@ -19,6 +21,13 @@ describe("AnimationRegistry", () => {
     expect(resolveIdleClip("adjustPosture")).toBe("Idle_AdjustPosture");
     expect(isIdleName("adjustPosture")).toBe(true);
     expect(isIdleName("dance")).toBe(false);
+  });
+
+  it("maps semantic locomotion to clip names", () => {
+    expect(resolveLocomotionClip("walkForward")).toBe("Walk_Forward");
+    expect(isLocomotionName("walkForward")).toBe(true);
+    expect(isLocomotionName("fly")).toBe(false);
+    expect(() => resolveLocomotionClip("fly")).toThrow(/Unknown locomotion/);
   });
 
   it("maps semantic gestures to clip names", () => {

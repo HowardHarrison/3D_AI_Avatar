@@ -8,6 +8,7 @@ import type {
   GestureName,
   HeadMotionName,
   IdleName,
+  LocomotionName,
 } from "./animation";
 import type { AvatarRuntimeStatus } from "./events";
 
@@ -19,6 +20,10 @@ export interface AvatarController {
   setGaze(target: GazeTarget): void;
   /** Switch the looping idle pose (breathing, standAttention, …). */
   setIdle(name: IdleName): void;
+  /** Start a looping in-place locomotion cycle (e.g. walkForward). */
+  startLocomotion(name: LocomotionName): void;
+  /** Stop locomotion and return to the current idle. */
+  stopLocomotion(): void;
   startSpeaking(): void;
   stopSpeaking(): void;
   reset(): void;

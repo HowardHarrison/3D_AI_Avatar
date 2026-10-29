@@ -8,6 +8,7 @@ import type {
   GestureName,
   HeadMotionName,
   IdleName,
+  LocomotionName,
 } from "../../../types/animation";
 
 export const animationRegistry = {
@@ -18,6 +19,9 @@ export const animationRegistry = {
     standAttention: "Idle_StandAttention",
     adjustPosture: "Idle_AdjustPosture",
   } satisfies Record<IdleName, string>,
+  locomotion: {
+    walkForward: "Walk_Forward",
+  } satisfies Record<LocomotionName, string>,
   gestures: {
     openHand: "Gesture_OpenHand",
     wave: "Gesture_Wave",
@@ -56,6 +60,7 @@ const GESTURE_NAMES = new Set<string>(Object.keys(animationRegistry.gestures));
 const EXPRESSION_NAMES = new Set<string>(Object.keys(animationRegistry.expressions));
 const HEAD_NAMES = new Set<string>(Object.keys(animationRegistry.head));
 const IDLE_NAMES = new Set<string>(Object.keys(animationRegistry.idle));
+const LOCOMOTION_NAMES = new Set<string>(Object.keys(animationRegistry.locomotion));
 
 /**
  * Resolve a semantic idle pose to a GLB clip name.
@@ -66,6 +71,17 @@ export function resolveIdleClip(name: string): string {
     throw new Error(`Unknown idle: ${name}`);
   }
   return animationRegistry.idle[name as IdleName];
+}
+
+/**
+ * Resolve a semantic locomotion cycle to a GLB clip name.
+ * @throws Error when the semantic name is not in the registry.
+ */
+export function resolveLocomotionClip(name: string): string {
+  if (!LOCOMOTION_NAMES.has(name)) {
+    throw new Error(`Unknown locomotion: ${name}`);
+  }
+  return animationRegistry.locomotion[name as LocomotionName];
 }
 
 /**
@@ -115,4 +131,8 @@ export function isHeadMotionName(name: string): name is HeadMotionName {
 
 export function isIdleName(name: string): name is IdleName {
   return IDLE_NAMES.has(name);
+}
+
+export function isLocomotionName(name: string): name is LocomotionName {
+  return LOCOMOTION_NAMES.has(name);
 }

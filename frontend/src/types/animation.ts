@@ -58,6 +58,12 @@ export type IdleName =
   | "adjustPosture";
 
 /**
+ * Looping locomotion selected via AvatarController.startLocomotion.
+ * In-place cycles for bust framing (no root translation yet).
+ */
+export type LocomotionName = "walkForward";
+
+/**
  * Conceptual animation layers. Phase 1 uses these as priorities, not a full
  * production layered mixer.
  */
@@ -71,7 +77,12 @@ export const AnimationLayerPriority = {
 } as const;
 
 /** Discrete runtime states for the animation state machine. */
-export type AnimationStateName = "IDLE" | "SPEAKING" | "GESTURE" | "TRANSITION";
+export type AnimationStateName =
+  | "IDLE"
+  | "SPEAKING"
+  | "GESTURE"
+  | "TRANSITION"
+  | "LOCOMOTION";
 
 /** Options for playing a named clip through AnimationController. */
 export interface PlayAnimationOptions {

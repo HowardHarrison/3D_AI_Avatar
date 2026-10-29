@@ -1,7 +1,7 @@
 # Graph Report - AI_3D_Avatar  (2026-10-29)
 
 ## Corpus Check
-- 151 files · ~50,254 words
+- 151 files · ~50,404 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d098823b`
+- Built from commit: `06457b00`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

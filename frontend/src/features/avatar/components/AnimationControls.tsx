@@ -77,6 +77,19 @@ export function AnimationControls(props: AnimationControlsProps): JSX.Element {
           </button>
         ))}
       </div>
+      <h3>Locomotion</h3>
+      <div className="debug-row">
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() => controller?.startLocomotion("walkForward")}
+        >
+          Walk Forward
+        </button>
+        <button type="button" disabled={disabled} onClick={() => controller?.stopLocomotion()}>
+          Stop Walk
+        </button>
+      </div>
       <h3>Gestures</h3>
       <div className="debug-row">
         {GESTURES.map((item) => (

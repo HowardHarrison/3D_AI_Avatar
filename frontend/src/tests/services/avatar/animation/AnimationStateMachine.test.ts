@@ -25,4 +25,19 @@ describe("AnimationStateMachine", () => {
     expect(machine.gestureFinished()).toBe(true);
     expect(machine.getState()).toBe("SPEAKING");
   });
+
+  it("enters LOCOMOTION from IDLE and returns on stop", () => {
+    const machine = new AnimationStateMachine();
+    expect(machine.startLocomotion()).toBe(true);
+    expect(machine.getState()).toBe("LOCOMOTION");
+    expect(machine.stopLocomotion()).toBe(true);
+    expect(machine.getState()).toBe("IDLE");
+  });
+
+  it("allows a gesture to interrupt locomotion", () => {
+    const machine = new AnimationStateMachine();
+    expect(machine.startLocomotion()).toBe(true);
+    expect(machine.playGesture()).toBe(true);
+    expect(machine.getState()).toBe("GESTURE");
+  });
 });
