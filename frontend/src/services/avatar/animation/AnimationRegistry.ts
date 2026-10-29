@@ -3,14 +3,20 @@
  * Never expose numeric clip indexes to UI or AI layers.
  */
 
-import type { ExpressionName, GestureName, HeadMotionName } from "../../../types/animation";
+import type {
+  ExpressionName,
+  GestureName,
+  HeadMotionName,
+  IdleName,
+} from "../../../types/animation";
 
 export const animationRegistry = {
   idle: {
     neutral: "Idle_Neutral",
     breathing: "Idle_Breathing",
     shiftWeight: "Idle_ShiftWeight",
-  },
+    standAttention: "Idle_StandAttention",
+  } satisfies Record<IdleName, string>,
   gestures: {
     openHand: "Gesture_OpenHand",
     wave: "Gesture_Wave",
@@ -48,6 +54,18 @@ export const animationRegistry = {
 const GESTURE_NAMES = new Set<string>(Object.keys(animationRegistry.gestures));
 const EXPRESSION_NAMES = new Set<string>(Object.keys(animationRegistry.expressions));
 const HEAD_NAMES = new Set<string>(Object.keys(animationRegistry.head));
+const IDLE_NAMES = new Set<string>(Object.keys(animationRegistry.idle));
+
+/**
+ * Resolve a semantic idle pose to a GLB clip name.
+ * @throws Error when the semantic name is not in the registry.
+ */
+export function resolveIdleClip(name: string): string {
+  if (!IDLE_NAMES.has(name)) {
+    throw new Error(`Unknown idle: ${name}`);
+  }
+  return animationRegistry.idle[name as IdleName];
+}
 
 /**
  * Resolve a semantic gesture to a GLB clip name.
@@ -92,4 +110,8 @@ export function isExpressionName(name: string): name is ExpressionName {
 
 export function isHeadMotionName(name: string): name is HeadMotionName {
   return HEAD_NAMES.has(name);
+}
+
+export function isIdleName(name: string): name is IdleName {
+  return IDLE_NAMES.has(name);
 }

@@ -2,12 +2,24 @@
  * Gesture, expression, and head buttons. They only call the semantic avatar API.
  */
 
-import type { ExpressionName, GestureName, HeadMotionName } from "../../../types/animation";
+import type {
+  ExpressionName,
+  GestureName,
+  HeadMotionName,
+  IdleName,
+} from "../../../types/animation";
 import type { AvatarHandle } from "../types";
 
 interface AnimationControlsProps {
   controller: AvatarHandle | null;
 }
+
+const IDLES: { id: IdleName; label: string }[] = [
+  { id: "breathing", label: "Breathing" },
+  { id: "standAttention", label: "Stand Attention" },
+  { id: "neutral", label: "Neutral Idle" },
+  { id: "shiftWeight", label: "Shift Weight" },
+];
 
 const GESTURES: { id: GestureName; label: string }[] = [
   { id: "openHand", label: "Open Hand" },
@@ -48,11 +60,24 @@ export function AnimationControls(props: AnimationControlsProps): JSX.Element {
 
   return (
     <div className="debug-section">
-      <h3>Animation</h3>
+      <h3>Idle</h3>
       <div className="debug-row">
         <button type="button" disabled={disabled} onClick={() => controller?.reset()}>
-          Idle
+          Reset
         </button>
+        {IDLES.map((item) => (
+          <button
+            key={item.id}
+            type="button"
+            disabled={disabled}
+            onClick={() => controller?.setIdle(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+      <h3>Gestures</h3>
+      <div className="debug-row">
         {GESTURES.map((item) => (
           <button
             key={item.id}

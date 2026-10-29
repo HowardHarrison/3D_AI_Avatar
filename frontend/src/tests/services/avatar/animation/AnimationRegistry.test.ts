@@ -4,12 +4,21 @@ import {
   isExpressionName,
   isGestureName,
   isHeadMotionName,
+  isIdleName,
   resolveExpressionClip,
   resolveGestureClip,
   resolveHeadClip,
+  resolveIdleClip,
 } from "../../../../services/avatar/animation/AnimationRegistry";
 
 describe("AnimationRegistry", () => {
+  it("maps semantic idles to clip names", () => {
+    expect(resolveIdleClip("breathing")).toBe("Idle_Breathing");
+    expect(resolveIdleClip("standAttention")).toBe("Idle_StandAttention");
+    expect(isIdleName("standAttention")).toBe(true);
+    expect(isIdleName("dance")).toBe(false);
+  });
+
   it("maps semantic gestures to clip names", () => {
     expect(resolveGestureClip("openHand")).toBe("Gesture_OpenHand");
     expect(resolveGestureClip("emphasize")).toBe("Gesture_Emphasize");
@@ -53,6 +62,7 @@ describe("AnimationRegistry", () => {
     expect(() => resolveGestureClip("unknown")).toThrow(/Unknown gesture/);
     expect(() => resolveExpressionClip("angry")).toThrow(/Unknown expression/);
     expect(() => resolveHeadClip("spin")).toThrow(/Unknown head motion/);
+    expect(() => resolveIdleClip("dance")).toThrow(/Unknown idle/);
     expect(isGestureName("emphasize")).toBe(true);
     expect(isExpressionName("positive")).toBe(true);
     expect(isGestureName("7")).toBe(false);

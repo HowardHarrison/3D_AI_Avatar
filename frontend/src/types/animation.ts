@@ -46,6 +46,12 @@ export type HeadMotionName =
 export type GazeTarget = "camera" | "left" | "right" | "down";
 
 /**
+ * Looping idle poses selected via AvatarController.setIdle.
+ * Distinct from one-shot gestures — these stay until another idle/reset.
+ */
+export type IdleName = "neutral" | "breathing" | "shiftWeight" | "standAttention";
+
+/**
  * Conceptual animation layers. Phase 1 uses these as priorities, not a full
  * production layered mixer.
  */

@@ -2,7 +2,13 @@
  * Public avatar runtime contract. UI must use this API only.
  */
 
-import type { ExpressionName, GazeTarget, GestureName, HeadMotionName } from "./animation";
+import type {
+  ExpressionName,
+  GazeTarget,
+  GestureName,
+  HeadMotionName,
+  IdleName,
+} from "./animation";
 import type { AvatarRuntimeStatus } from "./events";
 
 /** Semantic facade over Three.js mixers, bones, and morph targets. */
@@ -11,6 +17,8 @@ export interface AvatarController {
   setExpression(name: ExpressionName): void;
   setHeadMotion(name: HeadMotionName): void;
   setGaze(target: GazeTarget): void;
+  /** Switch the looping idle pose (breathing, standAttention, …). */
+  setIdle(name: IdleName): void;
   startSpeaking(): void;
   stopSpeaking(): void;
   reset(): void;

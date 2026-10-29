@@ -36,9 +36,9 @@
     "semantic_hash": "fdcb446647946eb5930f399fbf41f7f0"
   },
   "blender/scripts/contracts.py": {
-    "mtime": 1793250080.8119524,
-    "seen": 1793250620.1468227,
-    "ast_hash": "47a7442b0d1681be2b89fb1911f1bfc6",
+    "mtime": 1793260892.2172036,
+    "seen": 1793260949.8957303,
+    "ast_hash": "e6aca09bf0c6dba8ef8f4d2b0547f8ba",
     "semantic_hash": ""
   },
   "blender/scripts/create_animation.py": {
@@ -60,9 +60,9 @@
     "semantic_hash": "ee03fa3457c0d1070f74797386ca9da7"
   },
   "blender/scripts/generate_placeholder_glb.py": {
-    "mtime": 1793250171.842996,
-    "seen": 1793250620.1468227,
-    "ast_hash": "162e79dc6c4d5f0b6a45432e1e2843fc",
+    "mtime": 1793260908.356005,
+    "seen": 1793260949.8957303,
+    "ast_hash": "83932fbb49b4e759e0a814a19bca5166",
     "semantic_hash": ""
   },
   "blender/scripts/generate_test_audio.py": {
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/AnimationControls.tsx": {
-    "mtime": 1793250403.380432,
-    "seen": 1793250620.1468227,
-    "ast_hash": "359027fc031cde579b9f4bf167f1f301",
+    "mtime": 1793260893.50096,
+    "seen": 1793260949.8957303,
+    "ast_hash": "9b78c60d0f50f68c11b346fae9cec0ff",
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/Avatar.tsx": {
@@ -270,9 +270,9 @@
     "semantic_hash": "031ac28a959455d2ae9e0c60787f36c3"
   },
   "frontend/src/services/avatar/animation/AnimationRegistry.ts": {
-    "mtime": 1793250001.7010539,
-    "seen": 1793250620.1468227,
-    "ast_hash": "fc40ef06ce50df06c558d21069e2c523",
+    "mtime": 1793260891.374718,
+    "seen": 1793260949.8957303,
+    "ast_hash": "43b6ed6b7852cd11e4ca2c6db48fe09e",
     "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/AnimationStateMachine.ts": {
@@ -330,9 +330,9 @@
     "semantic_hash": "d8ffc3e63450de4d77936cd40280e595"
   },
   "frontend/src/tests/services/avatar/animation/AnimationRegistry.test.ts": {
-    "mtime": 1793250522.4101856,
-    "seen": 1793250620.1468227,
-    "ast_hash": "a88004643ee922ca563453b2d71d6ecb",
+    "mtime": 1793260913.321951,
+    "seen": 1793260949.8957303,
+    "ast_hash": "95e326450f3bb51d882e36f0cdbf535a",
     "semantic_hash": ""
   },
   "frontend/src/tests/services/avatar/animation/AnimationStateMachine.test.ts": {
@@ -342,10 +342,10 @@
     "semantic_hash": "06aea980faac386112d69026e0c34c58"
   },
   "frontend/src/tests/services/avatar/animation/parseAnimationPlan.test.ts": {
-    "mtime": 1791283423.7554245,
-    "seen": 1792378025.475274,
-    "ast_hash": "c0a6ea8e412093b852e40d76fd6eba6f",
-    "semantic_hash": "c0a6ea8e412093b852e40d76fd6eba6f"
+    "mtime": 1793257443.0048015,
+    "seen": 1793260949.8957303,
+    "ast_hash": "765f73d858b5565d4c3f1af5698679d6",
+    "semantic_hash": ""
   },
   "frontend/src/tests/services/avatar/validateAvatarConfig.test.ts": {
     "mtime": 1791283421.6218371,
@@ -354,9 +354,9 @@
     "semantic_hash": "d0a9a1858ba2b73df3a09179a69acbd7"
   },
   "frontend/src/types/animation.ts": {
-    "mtime": 1793249947.7796812,
-    "seen": 1793250620.1468227,
-    "ast_hash": "9f36d88815197a441ef8bc588db73962",
+    "mtime": 1793260891.0207558,
+    "seen": 1793260949.8957303,
+    "ast_hash": "3487ad1d9b207b6a8a850cd77ec29aeb",
     "semantic_hash": ""
   },
   "frontend/src/types/avatar.ts": {
@@ -882,15 +882,15 @@
     "semantic_hash": ""
   },
   "frontend/src/features/chat/mapReplyReaction.ts": {
-    "mtime": 1793182594.2695413,
-    "seen": 1793182666.9313233,
-    "ast_hash": "ce7a11a582e192f066c5231335f85113",
+    "mtime": 1793260899.8949351,
+    "seen": 1793260949.8957303,
+    "ast_hash": "8f901eef4a67aad850c25fd0b1401c34",
     "semantic_hash": ""
   },
   "frontend/src/tests/features/chat/mapReplyReaction.test.ts": {
-    "mtime": 1793182626.076527,
-    "seen": 1793182666.9313233,
-    "ast_hash": "80446cfbda8646b3285b38ac7afdca8c",
+    "mtime": 1793260918.5613966,
+    "seen": 1793260949.8957303,
+    "ast_hash": "99e91e87734921674a0fde1fe0c1a1d0",
     "semantic_hash": ""
   },
   "blender/scripts/generate_placeholder_face_glb.py": {

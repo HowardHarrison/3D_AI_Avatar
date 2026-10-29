@@ -666,6 +666,25 @@ def build_presenter() -> bytes:
             "Hips": [(0.0, identity), (1.2, (0.0, 0.0, 0.06)), (2.4, identity)],
         },
     )
+    # Upright “on duty” idle: quieter breath than Idle_Breathing, arms held at rest.
+    builder.add_multi_rotation_animation(
+        "Idle_StandAttention",
+        {
+            "Spine": [
+                (0.0, identity),
+                (2.0, (0.008, 0.0, 0.0)),
+                (4.0, identity),
+            ],
+            "Chest": [
+                (0.0, identity),
+                (2.0, (0.015, 0.0, 0.0)),
+                (4.0, identity),
+            ],
+            "LeftUpperArm": [(0.0, rest_arm), (4.0, rest_arm)],
+            "RightUpperArm": [(0.0, rest_arm), (4.0, rest_arm)],
+            "Head": [(0.0, identity), (4.0, identity)],
+        },
+    )
     # Clear double-nod (not a tiny single bob).
     builder.add_rotation_animation(
         "Head_Nod_Small",

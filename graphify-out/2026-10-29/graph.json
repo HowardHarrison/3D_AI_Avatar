@@ -40,7 +40,7 @@
       "file_type": "code",
       "norm_label": "animationplan",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L75"
+      "source_location": "L85"
     },
     {
       "id": "frontend_src_types_animation_animationsegment",
@@ -53,7 +53,7 @@
       "file_type": "code",
       "norm_label": "animationsegment",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L65"
+      "source_location": "L75"
     },
     {
       "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer",
@@ -79,7 +79,7 @@
       "file_type": "code",
       "norm_label": "expressionname",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L16"
+      "source_location": "L26"
     },
     {
       "id": "frontend_src_constants_avatarconfig_semanticexpression",
@@ -378,7 +378,7 @@
       "file_type": "code",
       "norm_label": "animationstatename",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L52"
+      "source_location": "L62"
     },
     {
       "id": "frontend_src_vite_env_d_importmeta",
@@ -443,7 +443,7 @@
       "file_type": "code",
       "norm_label": "gazetarget",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L36"
+      "source_location": "L46"
     },
     {
       "id": "frontend_src_types_animation_gesturename",
@@ -469,7 +469,7 @@
       "file_type": "code",
       "norm_label": "headmotionname",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L27"
+      "source_location": "L37"
     },
     {
       "id": "frontend_src_types_animation_playanimationoptions",
@@ -482,7 +482,7 @@
       "file_type": "code",
       "norm_label": "playanimationoptions",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L55"
+      "source_location": "L65"
     },
     {
       "id": "frontend_src_types_avatar_avatarcontroller",
@@ -1270,7 +1270,7 @@
       "file_type": "code",
       "norm_label": "isexpressionname()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L83"
+      "source_location": "L89"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_isgesturename",
@@ -1282,7 +1282,7 @@
       "file_type": "code",
       "norm_label": "isgesturename()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L79"
+      "source_location": "L85"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_isheadmotionname",
@@ -1294,7 +1294,7 @@
       "file_type": "code",
       "norm_label": "isheadmotionname()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L87"
+      "source_location": "L93"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_resolveexpressionclip",
@@ -1306,7 +1306,7 @@
       "file_type": "code",
       "norm_label": "resolveexpressionclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L61"
+      "source_location": "L67"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_resolvegestureclip",
@@ -1318,7 +1318,7 @@
       "file_type": "code",
       "norm_label": "resolvegestureclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L50"
+      "source_location": "L56"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_resolveheadclip",
@@ -1330,7 +1330,7 @@
       "file_type": "code",
       "norm_label": "resolveheadclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L72"
+      "source_location": "L78"
     },
     {
       "id": "frontend_src_services_avatar_animation_parseanimationplan_animationplanerror_constructor",
@@ -1786,7 +1786,7 @@
       "file_type": "code",
       "norm_label": "animationcontrols()",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L39"
+      "source_location": "L45"
     },
     {
       "id": "frontend_src_features_avatar_components_debugpanel_debugpanel",
@@ -3514,7 +3514,7 @@
       "file_type": "code",
       "norm_label": "mapreplyreaction()",
       "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L60"
+      "source_location": "L70"
     },
     {
       "id": "frontend_src_features_chat_mapreplyreaction_raisegesture",
@@ -3526,7 +3526,7 @@
       "file_type": "code",
       "norm_label": "raisegesture()",
       "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L34"
+      "source_location": "L41"
     },
     {
       "id": "frontend_src_features_chat_playassistantreaction_applyreplyreaction",
@@ -4414,7 +4414,7 @@
       "file_type": "code",
       "norm_label": "morph_clip()",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L869"
+      "source_location": "L1030"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_facial_morph_deltas",
@@ -4582,7 +4582,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L906"
+      "source_location": "L1067"
     },
     {
       "id": "blender_scripts_generate_placeholder_glb_quat_from_euler",
@@ -5835,7 +5835,7 @@
       "file_type": "code",
       "norm_label": "expression_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L43"
+      "source_location": "L49"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_gesture_names",
@@ -5846,7 +5846,7 @@
       "file_type": "code",
       "norm_label": "gesture_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L42"
+      "source_location": "L48"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_head_names",
@@ -5857,7 +5857,7 @@
       "file_type": "code",
       "norm_label": "head_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L44"
+      "source_location": "L50"
     },
     {
       "id": "frontend_src_services_avatar_animation_parseanimationplan",
@@ -6944,7 +6944,7 @@
       "file_type": "code",
       "norm_label": "expressions",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L21"
+      "source_location": "L27"
     },
     {
       "id": "frontend_src_features_avatar_components_animationcontrols_gestures",
@@ -6966,7 +6966,7 @@
       "file_type": "code",
       "norm_label": "heads",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L30"
+      "source_location": "L36"
     },
     {
       "id": "frontend_src_features_avatar_components_debugpanel",
@@ -8322,7 +8322,7 @@
       "file_type": "code",
       "norm_label": "animationlayerpriority",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L42"
+      "source_location": "L52"
     },
     {
       "id": "frontend_src_types_avatar",
@@ -10854,6 +10854,17 @@
       "source_location": "L100"
     },
     {
+      "id": "blender_scripts_generate_placeholder_glb_rationale_1068",
+      "label": "Write presenter.glb under blender/exports and the web public folder.",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "GltfBuilder",
+      "file_type": "rationale",
+      "norm_label": "write presenter.glb under blender/exports and the web public folder.",
+      "source_file": "blender/scripts/generate_placeholder_glb.py",
+      "source_location": "L1068"
+    },
+    {
       "id": "blender_scripts_generate_placeholder_glb_rationale_164",
       "label": "Accumulate binary payloads and glTF JSON for a single GLB file.",
       "_origin": "ast",
@@ -11050,17 +11061,6 @@
       "norm_label": "convert xyz euler radians to a gltf quaternion (x, y, z, w).",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
       "source_location": "L88"
-    },
-    {
-      "id": "blender_scripts_generate_placeholder_glb_rationale_907",
-      "label": "Write presenter.glb under blender/exports and the web public folder.",
-      "_origin": "ast",
-      "community": 4,
-      "community_name": "GltfBuilder",
-      "file_type": "rationale",
-      "norm_label": "write presenter.glb under blender/exports and the web public folder.",
-      "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L907"
     },
     {
       "id": "github_pull_request_template",
@@ -18033,7 +18033,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L910",
+      "source_location": "L1071",
       "weight": 1.0
     },
     {
@@ -19017,7 +19017,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L80",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -19898,6 +19898,18 @@
     },
     {
       "source": "blender_scripts_generate_placeholder_glb_build_presenter",
+      "target": "blender_scripts_generate_placeholder_glb_build_presenter_morph_clip",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "blender/scripts/generate_placeholder_glb.py",
+      "source_location": "L1030",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_generate_placeholder_glb_build_presenter",
       "target": "blender_scripts_generate_placeholder_glb_build_presenter_limb",
       "relation": "contains",
       "_origin": "ast",
@@ -19930,18 +19942,6 @@
       "context": "call",
       "source_file": "blender/scripts/generate_placeholder_glb.py",
       "source_location": "L637",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_generate_placeholder_glb_build_presenter",
-      "target": "blender_scripts_generate_placeholder_glb_build_presenter_morph_clip",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L869",
       "weight": 1.0
     },
     {
@@ -29060,6 +29060,17 @@
     },
     {
       "source": "blender_scripts_generate_placeholder_glb",
+      "target": "blender_scripts_generate_placeholder_glb_main",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/generate_placeholder_glb.py",
+      "source_location": "L1067",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_generate_placeholder_glb",
       "target": "blender_scripts_generate_placeholder_glb_gltfbuilder",
       "relation": "contains",
       "_origin": "ast",
@@ -29144,17 +29155,6 @@
       "confidence_score": 1.0,
       "source_file": "blender/scripts/generate_placeholder_glb.py",
       "source_location": "L87",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_generate_placeholder_glb",
-      "target": "blender_scripts_generate_placeholder_glb_main",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L906",
       "weight": 1.0
     },
     {
@@ -33884,7 +33884,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L21",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -33895,7 +33895,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L30",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -33906,7 +33906,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L39",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -34192,7 +34192,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L34",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -34203,7 +34203,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L60",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -34434,7 +34434,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L42",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -34445,7 +34445,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L43",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -34456,7 +34456,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L44",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -34467,7 +34467,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L50",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -34478,7 +34478,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L61",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -34489,18 +34489,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L72",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_services_avatar_animation_animationregistry",
-      "target": "frontend_src_services_avatar_animation_animationregistry_isgesturename",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L79",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -34516,13 +34505,24 @@
     },
     {
       "source": "frontend_src_services_avatar_animation_animationregistry",
+      "target": "frontend_src_services_avatar_animation_animationregistry_isgesturename",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
+      "source_location": "L85",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_animation_animationregistry",
       "target": "frontend_src_services_avatar_animation_animationregistry_isexpressionname",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L83",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -34533,7 +34533,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L87",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -34830,7 +34830,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L16",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -34841,7 +34841,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L27",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -34852,7 +34852,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L36",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -34863,29 +34863,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L42",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_types_animation",
-      "target": "frontend_src_types_animation_animationstatename",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/types/animation.ts",
       "source_location": "L52",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_types_animation",
-      "target": "frontend_src_types_animation_playanimationoptions",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -34901,7 +34879,18 @@
     },
     {
       "source": "frontend_src_types_animation",
-      "target": "frontend_src_types_animation_animationsegment",
+      "target": "frontend_src_types_animation_animationstatename",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_types_animation",
+      "target": "frontend_src_types_animation_playanimationoptions",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -34912,13 +34901,24 @@
     },
     {
       "source": "frontend_src_types_animation",
-      "target": "frontend_src_types_animation_animationplan",
+      "target": "frontend_src_types_animation_animationsegment",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
       "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_types_animation",
+      "target": "frontend_src_types_animation_animationplan",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -39454,6 +39454,17 @@
       "weight": 1.0
     },
     {
+      "source": "blender_scripts_generate_placeholder_glb_rationale_1068",
+      "target": "blender_scripts_generate_placeholder_glb_main",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/generate_placeholder_glb.py",
+      "source_location": "L1068",
+      "weight": 1.0
+    },
+    {
       "source": "blender_scripts_generate_placeholder_glb_rationale_164",
       "target": "blender_scripts_generate_placeholder_glb_gltfbuilder",
       "relation": "rationale_for",
@@ -39649,17 +39660,6 @@
       "confidence_score": 1.0,
       "source_file": "blender/scripts/generate_placeholder_glb.py",
       "source_location": "L88",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_generate_placeholder_glb_rationale_907",
-      "target": "blender_scripts_generate_placeholder_glb_main",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/generate_placeholder_glb.py",
-      "source_location": "L907",
       "weight": 1.0
     },
     {
@@ -41413,5 +41413,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "49e94b415af9ae2bf99e037ba968485dc47be561"
+  "built_at_commit": "47f29a984e9eb3119d8598a68a429dbb96695d15"
 }

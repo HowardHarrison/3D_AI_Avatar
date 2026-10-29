@@ -1,10 +1,11 @@
 /**
- * Subtle idle life: breathing clip, jittered blinks, eye wander, occasional head motion.
+ * Subtle idle life: selectable looping pose, jittered blinks, eye wander, occasional head motion.
  * Updates run on the render loop, not through React state.
  */
 
 import { Object3D } from "three";
-import { animationRegistry } from "./AnimationRegistry";
+import type { IdleName } from "../../../types/animation";
+import { animationRegistry, resolveIdleClip } from "./AnimationRegistry";
 import type { AnimationController } from "./AnimationController";
 import type { FacialController } from "../facial/FacialController";
 
@@ -22,6 +23,7 @@ export class IdleController {
   private targetEyeX = 0;
   private targetEyeY = 0;
   private headTimer = randomBetween(6, 12);
+  private currentIdle: IdleName = "breathing";
   private readonly leftEye: Object3D | null;
   private readonly rightEye: Object3D | null;
 
@@ -34,8 +36,30 @@ export class IdleController {
     this.rightEye = root.getObjectByName("RightEye") ?? null;
   }
 
-  /** Begin looping idle/breathing clips. */
+  /**
+   * Remember and play a looping idle pose.
+   * @param name - Semantic idle from the registry.
+   */
+  setIdle(name: IdleName): void {
+    this.currentIdle = name;
+    this.start();
+  }
+
+  /** Current semantic idle (for status / debug). */
+  getIdle(): IdleName {
+    return this.currentIdle;
+  }
+
+  /** Begin looping the selected idle clip (fallback: breathing → neutral). */
   start(): void {
+    const preferred = resolveIdleClip(this.currentIdle);
+    if (this.animation.hasClip(preferred)) {
+      this.animation.play(preferred, {
+        loop: true,
+        fadeInSeconds: 0.4,
+      });
+      return;
+    }
     if (this.animation.hasClip(animationRegistry.idle.breathing)) {
       this.animation.play(animationRegistry.idle.breathing, {
         loop: true,
@@ -123,6 +147,10 @@ export class IdleController {
       return;
     }
     this.headTimer = randomBetween(8, 16);
+    // Stand-at-attention keeps the head still; other idles may nod occasionally.
+    if (this.currentIdle === "standAttention") {
+      return;
+    }
     const clip = animationRegistry.head.nod;
     if (this.animation.hasClip(clip)) {
       this.animation.play(clip, {

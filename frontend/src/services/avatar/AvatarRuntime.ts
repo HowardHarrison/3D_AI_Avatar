@@ -11,6 +11,7 @@ import type {
   GazeTarget,
   GestureName,
   HeadMotionName,
+  IdleName,
 } from "../../types";
 import { logger } from "../../utils/logger";
 import { AudioController } from "./audio/AudioController";
@@ -21,6 +22,7 @@ import {
   isExpressionName,
   isGestureName,
   isHeadMotionName,
+  isIdleName,
   resolveGestureClip,
   resolveHeadClip,
 } from "./animation/AnimationRegistry";
@@ -121,6 +123,14 @@ export class AvatarRuntime implements AvatarController {
     const yaw = target === "left" ? 0.7 : target === "right" ? -0.7 : 0;
     const pitch = target === "down" ? 0.25 : 0;
     this.head.rotation.set(pitch, yaw, 0);
+  }
+
+  setIdle(name: IdleName): void {
+    if (!isIdleName(name)) {
+      this.pushWarning(`Unknown idle: ${name}`);
+      return;
+    }
+    this.idle.setIdle(name);
   }
 
   startSpeaking(): void {
