@@ -16,6 +16,8 @@ describe("AnimationRegistry", () => {
     expect(resolveIdleClip("breathing")).toBe("Idle_Breathing");
     expect(resolveIdleClip("standAttention")).toBe("Idle_StandAttention");
     expect(isIdleName("standAttention")).toBe(true);
+    expect(resolveIdleClip("adjustPosture")).toBe("Idle_AdjustPosture");
+    expect(isIdleName("adjustPosture")).toBe(true);
     expect(isIdleName("dance")).toBe(false);
   });
 

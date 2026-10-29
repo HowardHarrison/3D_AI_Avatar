@@ -117,6 +117,7 @@ REQUIRED_ANIMATIONS: tuple[str, ...] = (
 OPTIONAL_ANIMATIONS: tuple[str, ...] = (
     "Idle_ShiftWeight",
     "Idle_StandAttention",
+    "Idle_AdjustPosture",
     "Head_Nod_Small",
     "Head_Turn_Left",
     "Head_Turn_Right",

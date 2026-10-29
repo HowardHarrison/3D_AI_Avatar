@@ -685,6 +685,53 @@ def build_presenter() -> bytes:
             "Head": [(0.0, identity), (4.0, identity)],
         },
     )
+    # Settle / fidget idle: weight shift + shoulder settle + soft spine (richer than ShiftWeight).
+    builder.add_multi_rotation_animation(
+        "Idle_AdjustPosture",
+        {
+            "Hips": [
+                (0.0, identity),
+                (0.8, (0.0, 0.0, 0.08)),
+                (1.8, (0.0, 0.0, -0.06)),
+                (2.8, (0.0, 0.0, 0.04)),
+                (3.6, identity),
+            ],
+            "Spine": [
+                (0.0, identity),
+                (0.9, (0.03, 0.0, 0.02)),
+                (2.0, (0.02, 0.0, -0.02)),
+                (3.6, identity),
+            ],
+            "Chest": [
+                (0.0, identity),
+                (1.0, (0.025, 0.0, 0.0)),
+                (2.2, (0.01, 0.0, 0.0)),
+                (3.6, identity),
+            ],
+            "LeftShoulder": [
+                (0.0, identity),
+                (1.0, (0.0, 0.0, 0.12)),
+                (2.2, (0.0, 0.0, 0.04)),
+                (3.6, identity),
+            ],
+            "RightShoulder": [
+                (0.0, identity),
+                (1.0, (0.0, 0.0, -0.1)),
+                (2.2, (0.0, 0.0, -0.03)),
+                (3.6, identity),
+            ],
+            "LeftUpperArm": [
+                (0.0, rest_arm),
+                (1.2, (-0.14, 0.05, -0.08)),
+                (3.6, rest_arm),
+            ],
+            "RightUpperArm": [
+                (0.0, rest_arm),
+                (1.2, (-0.14, -0.05, 0.08)),
+                (3.6, rest_arm),
+            ],
+        },
+    )
     # Clear double-nod (not a tiny single bob).
     builder.add_rotation_animation(
         "Head_Nod_Small",

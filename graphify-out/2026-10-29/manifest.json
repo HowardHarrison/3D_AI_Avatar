@@ -36,9 +36,9 @@
     "semantic_hash": "fdcb446647946eb5930f399fbf41f7f0"
   },
   "blender/scripts/contracts.py": {
-    "mtime": 1793260892.2172036,
-    "seen": 1793260949.8957303,
-    "ast_hash": "e6aca09bf0c6dba8ef8f4d2b0547f8ba",
+    "mtime": 1793261147.5756803,
+    "seen": 1793261197.4661784,
+    "ast_hash": "32a0e91aa2e39f1807b6946669887e43",
     "semantic_hash": ""
   },
   "blender/scripts/create_animation.py": {
@@ -60,9 +60,9 @@
     "semantic_hash": "ee03fa3457c0d1070f74797386ca9da7"
   },
   "blender/scripts/generate_placeholder_glb.py": {
-    "mtime": 1793260908.356005,
-    "seen": 1793260949.8957303,
-    "ast_hash": "83932fbb49b4e759e0a814a19bca5166",
+    "mtime": 1793261152.8940113,
+    "seen": 1793261197.4661784,
+    "ast_hash": "3118dd00b9ed1533bd74827fea59c056",
     "semantic_hash": ""
   },
   "blender/scripts/generate_test_audio.py": {
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/AnimationControls.tsx": {
-    "mtime": 1793260893.50096,
-    "seen": 1793260949.8957303,
-    "ast_hash": "9b78c60d0f50f68c11b346fae9cec0ff",
+    "mtime": 1793261146.7092981,
+    "seen": 1793261197.4661784,
+    "ast_hash": "4373df427c9dc9e6705ef185575a0173",
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/Avatar.tsx": {
@@ -258,9 +258,9 @@
     "semantic_hash": "b66181b3374f0210ff240059ce0ee210"
   },
   "frontend/src/services/avatar/AvatarRuntime.ts": {
-    "mtime": 1793174275.6821346,
-    "seen": 1793174344.157814,
-    "ast_hash": "b8845a708967a57baff42f377eb52578",
+    "mtime": 1793261138.6982446,
+    "seen": 1793261197.4661784,
+    "ast_hash": "6f0f66eb9f94d44a9c68e55eb2a251d2",
     "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/AnimationController.ts": {
@@ -270,9 +270,9 @@
     "semantic_hash": "031ac28a959455d2ae9e0c60787f36c3"
   },
   "frontend/src/services/avatar/animation/AnimationRegistry.ts": {
-    "mtime": 1793260891.374718,
-    "seen": 1793260949.8957303,
-    "ast_hash": "43b6ed6b7852cd11e4ca2c6db48fe09e",
+    "mtime": 1793261133.442108,
+    "seen": 1793261197.4661784,
+    "ast_hash": "119a77c19f7e6d6723ba427626c5956d",
     "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/AnimationStateMachine.ts": {
@@ -282,10 +282,10 @@
     "semantic_hash": "c58750c481e2f22a05c24f8caf601a98"
   },
   "frontend/src/services/avatar/animation/IdleController.ts": {
-    "mtime": 1791279819.794902,
-    "seen": 1792378025.475274,
-    "ast_hash": "7b6667dd75250b25fd5e5dd2e0574bf7",
-    "semantic_hash": "7b6667dd75250b25fd5e5dd2e0574bf7"
+    "mtime": 1793261126.158698,
+    "seen": 1793261197.4661784,
+    "ast_hash": "616e164b1bf7092a5b0bafa70542407e",
+    "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/animationTypes.ts": {
     "mtime": 1791284151.796331,
@@ -330,9 +330,9 @@
     "semantic_hash": "d8ffc3e63450de4d77936cd40280e595"
   },
   "frontend/src/tests/services/avatar/animation/AnimationRegistry.test.ts": {
-    "mtime": 1793260913.321951,
-    "seen": 1793260949.8957303,
-    "ast_hash": "95e326450f3bb51d882e36f0cdbf535a",
+    "mtime": 1793261164.2636003,
+    "seen": 1793261197.4661784,
+    "ast_hash": "f7a98300ba30d8e0501bfb0eba314bce",
     "semantic_hash": ""
   },
   "frontend/src/tests/services/avatar/animation/AnimationStateMachine.test.ts": {
@@ -354,15 +354,15 @@
     "semantic_hash": "d0a9a1858ba2b73df3a09179a69acbd7"
   },
   "frontend/src/types/animation.ts": {
-    "mtime": 1793260891.0207558,
-    "seen": 1793260949.8957303,
-    "ast_hash": "3487ad1d9b207b6a8a850cd77ec29aeb",
+    "mtime": 1793261090.7123213,
+    "seen": 1793261197.4661784,
+    "ast_hash": "efe0f3c9b490d868396dbb6a703bd87b",
     "semantic_hash": ""
   },
   "frontend/src/types/avatar.ts": {
-    "mtime": 1792728480.9560277,
-    "seen": 1792728512.3148603,
-    "ast_hash": "2b0f9b9e22d832202bab2dfe73cdb424",
+    "mtime": 1793261094.6327753,
+    "seen": 1793261197.4661784,
+    "ast_hash": "b91787094c64a7031137974ae356620b",
     "semantic_hash": ""
   },
   "frontend/src/types/events.ts": {

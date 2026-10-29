@@ -16,6 +16,7 @@ export const animationRegistry = {
     breathing: "Idle_Breathing",
     shiftWeight: "Idle_ShiftWeight",
     standAttention: "Idle_StandAttention",
+    adjustPosture: "Idle_AdjustPosture",
   } satisfies Record<IdleName, string>,
   gestures: {
     openHand: "Gesture_OpenHand",
