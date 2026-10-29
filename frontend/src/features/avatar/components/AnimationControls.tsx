@@ -86,6 +86,13 @@ export function AnimationControls(props: AnimationControlsProps): JSX.Element {
         >
           Walk Forward
         </button>
+        <button
+          type="button"
+          disabled={disabled}
+          onClick={() => controller?.startLocomotion("walkBackward")}
+        >
+          Walk Backward
+        </button>
         <button type="button" disabled={disabled} onClick={() => controller?.stopLocomotion()}>
           Stop Walk
         </button>

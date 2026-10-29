@@ -21,6 +21,7 @@ export const animationRegistry = {
   } satisfies Record<IdleName, string>,
   locomotion: {
     walkForward: "Walk_Forward",
+    walkBackward: "Walk_Backward",
   } satisfies Record<LocomotionName, string>,
   gestures: {
     openHand: "Gesture_OpenHand",

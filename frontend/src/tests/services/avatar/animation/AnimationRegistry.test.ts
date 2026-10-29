@@ -26,6 +26,8 @@ describe("AnimationRegistry", () => {
   it("maps semantic locomotion to clip names", () => {
     expect(resolveLocomotionClip("walkForward")).toBe("Walk_Forward");
     expect(isLocomotionName("walkForward")).toBe(true);
+    expect(resolveLocomotionClip("walkBackward")).toBe("Walk_Backward");
+    expect(isLocomotionName("walkBackward")).toBe(true);
     expect(isLocomotionName("fly")).toBe(false);
     expect(() => resolveLocomotionClip("fly")).toThrow(/Unknown locomotion/);
   });

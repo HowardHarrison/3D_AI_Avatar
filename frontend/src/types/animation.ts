@@ -61,7 +61,7 @@ export type IdleName =
  * Looping locomotion selected via AvatarController.startLocomotion.
  * In-place cycles for bust framing (no root translation yet).
  */
-export type LocomotionName = "walkForward";
+export type LocomotionName = "walkForward" | "walkBackward";
 
 /**
  * Conceptual animation layers. Phase 1 uses these as priorities, not a full

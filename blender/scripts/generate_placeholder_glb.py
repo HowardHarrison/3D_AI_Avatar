@@ -786,6 +786,60 @@ def build_presenter() -> bytes:
             ],
         },
     )
+    # In-place walk-back cycle: reversed leg/arm phase + slight lean back.
+    builder.add_multi_rotation_animation(
+        "Walk_Backward",
+        {
+            "Hips": [
+                (0.0, identity),
+                (0.35, (-0.03, 0.0, -0.05)),
+                (0.7, (-0.03, 0.0, 0.05)),
+                (1.05, identity),
+            ],
+            "Spine": [
+                (0.0, identity),
+                (0.35, (-0.08, 0.0, 0.0)),
+                (0.7, (-0.08, 0.0, 0.0)),
+                (1.05, identity),
+            ],
+            "LeftUpperLeg": [
+                (0.0, identity),
+                (0.35, (-0.4, 0.0, 0.0)),
+                (0.7, (0.55, 0.0, 0.0)),
+                (1.05, identity),
+            ],
+            "RightUpperLeg": [
+                (0.0, identity),
+                (0.35, (0.55, 0.0, 0.0)),
+                (0.7, (-0.4, 0.0, 0.0)),
+                (1.05, identity),
+            ],
+            "LeftLowerLeg": [
+                (0.0, identity),
+                (0.35, (0.12, 0.0, 0.0)),
+                (0.7, (0.5, 0.0, 0.0)),
+                (1.05, identity),
+            ],
+            "RightLowerLeg": [
+                (0.0, identity),
+                (0.35, (0.5, 0.0, 0.0)),
+                (0.7, (0.12, 0.0, 0.0)),
+                (1.05, identity),
+            ],
+            "LeftUpperArm": [
+                (0.0, rest_arm),
+                (0.35, (0.05, -0.05, 0.2)),
+                (0.7, (-0.4, 0.1, -0.2)),
+                (1.05, rest_arm),
+            ],
+            "RightUpperArm": [
+                (0.0, rest_arm),
+                (0.35, (-0.4, -0.1, 0.2)),
+                (0.7, (0.05, 0.05, 0.2)),
+                (1.05, rest_arm),
+            ],
+        },
+    )
     # Clear double-nod (not a tiny single bob).
     builder.add_rotation_animation(
         "Head_Nod_Small",

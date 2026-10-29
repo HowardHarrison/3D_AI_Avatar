@@ -36,9 +36,9 @@
     "semantic_hash": "fdcb446647946eb5930f399fbf41f7f0"
   },
   "blender/scripts/contracts.py": {
-    "mtime": 1793263583.46633,
-    "seen": 1793263658.3454282,
-    "ast_hash": "4914af9058a589203f928ee01ea4e519",
+    "mtime": 1793264509.7339988,
+    "seen": 1793264542.6499119,
+    "ast_hash": "22a054064ff9ba818cff0dd0e596bc4b",
     "semantic_hash": ""
   },
   "blender/scripts/create_animation.py": {
@@ -60,9 +60,9 @@
     "semantic_hash": "ee03fa3457c0d1070f74797386ca9da7"
   },
   "blender/scripts/generate_placeholder_glb.py": {
-    "mtime": 1793263597.0350232,
-    "seen": 1793263658.3464441,
-    "ast_hash": "23794a538e6db3e30f26b284e411d3da",
+    "mtime": 1793264508.9089723,
+    "seen": 1793264542.6499119,
+    "ast_hash": "0950b6dc15e6fffed008fde02ab996b1",
     "semantic_hash": ""
   },
   "blender/scripts/generate_test_audio.py": {
@@ -174,9 +174,9 @@
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/AnimationControls.tsx": {
-    "mtime": 1793263584.0685337,
-    "seen": 1793263658.3464441,
-    "ast_hash": "4ad400423ea22ac6730f0d945be6dc2a",
+    "mtime": 1793264513.666005,
+    "seen": 1793264542.6499119,
+    "ast_hash": "0a9af7d7008c0b38cd7d244e32c6351d",
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/Avatar.tsx": {
@@ -258,9 +258,9 @@
     "semantic_hash": "b66181b3374f0210ff240059ce0ee210"
   },
   "frontend/src/services/avatar/AvatarRuntime.ts": {
-    "mtime": 1793261138.6982446,
-    "seen": 1793261197.4661784,
-    "ast_hash": "6f0f66eb9f94d44a9c68e55eb2a251d2",
+    "mtime": 1793264493.7586243,
+    "seen": 1793264542.6499119,
+    "ast_hash": "1f210cceeb19164dfffdb9853133c457",
     "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/AnimationController.ts": {
@@ -270,16 +270,16 @@
     "semantic_hash": "031ac28a959455d2ae9e0c60787f36c3"
   },
   "frontend/src/services/avatar/animation/AnimationRegistry.ts": {
-    "mtime": 1793263580.4162972,
-    "seen": 1793263658.3464441,
-    "ast_hash": "26c86fd6812472214eb514655ad1e6d3",
+    "mtime": 1793264471.9228647,
+    "seen": 1793264542.6499119,
+    "ast_hash": "ba23989c72551d15925e12446bf8135e",
     "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/AnimationStateMachine.ts": {
-    "mtime": 1791284150.0514617,
-    "seen": 1792378025.475274,
-    "ast_hash": "c58750c481e2f22a05c24f8caf601a98",
-    "semantic_hash": "c58750c481e2f22a05c24f8caf601a98"
+    "mtime": 1793264461.4930007,
+    "seen": 1793264542.6499119,
+    "ast_hash": "53bdb85cccfec71496534d82c53728d5",
+    "semantic_hash": ""
   },
   "frontend/src/services/avatar/animation/IdleController.ts": {
     "mtime": 1793261126.158698,
@@ -330,16 +330,16 @@
     "semantic_hash": "d8ffc3e63450de4d77936cd40280e595"
   },
   "frontend/src/tests/services/avatar/animation/AnimationRegistry.test.ts": {
-    "mtime": 1793263599.9166563,
-    "seen": 1793263658.3464441,
-    "ast_hash": "8116fe1169c467e19aa6efaf438fad51",
+    "mtime": 1793264519.0405025,
+    "seen": 1793264542.6499119,
+    "ast_hash": "d12527df57bb09aec2fbc7164052cd14",
     "semantic_hash": ""
   },
   "frontend/src/tests/services/avatar/animation/AnimationStateMachine.test.ts": {
-    "mtime": 1791283423.0068157,
-    "seen": 1792378025.475274,
-    "ast_hash": "06aea980faac386112d69026e0c34c58",
-    "semantic_hash": "06aea980faac386112d69026e0c34c58"
+    "mtime": 1793264523.6335263,
+    "seen": 1793264542.6499119,
+    "ast_hash": "485db00a2443928e22551cf6f3ed3f66",
+    "semantic_hash": ""
   },
   "frontend/src/tests/services/avatar/animation/parseAnimationPlan.test.ts": {
     "mtime": 1793257443.0048015,
@@ -354,15 +354,15 @@
     "semantic_hash": "d0a9a1858ba2b73df3a09179a69acbd7"
   },
   "frontend/src/types/animation.ts": {
-    "mtime": 1793263578.3708384,
-    "seen": 1793263658.3464441,
-    "ast_hash": "ef0c8fef77cffaeaf2bd0d219b4bbfbc",
+    "mtime": 1793264447.3366215,
+    "seen": 1793264542.6499119,
+    "ast_hash": "1879d8af0062222fcfdafff95dc6938c",
     "semantic_hash": ""
   },
   "frontend/src/types/avatar.ts": {
-    "mtime": 1793261094.6327753,
-    "seen": 1793261197.4661784,
-    "ast_hash": "b91787094c64a7031137974ae356620b",
+    "mtime": 1793264451.9964497,
+    "seen": 1793264542.6499119,
+    "ast_hash": "c28a3a62da9dc5f5134ba51a718bcb6c",
     "semantic_hash": ""
   },
   "frontend/src/types/events.ts": {
