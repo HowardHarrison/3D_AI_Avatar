@@ -1,5 +1,6 @@
 /**
- * Text + mic chat UI. Continuous mic until Stop; then send the full transcript.
+ * Text + mic chat UI. Continuous mic until Stop; transcript lands in the draft
+ * for review/edit. Send only when the user presses Send.
  * Close collapses to a corner bubble; click the bubble to expand again.
  */
 
@@ -15,7 +16,7 @@ interface ChatPanelProps {
 
 export function ChatPanel(props: ChatPanelProps): JSX.Element {
   const { controller } = props;
-  const { messages, draft, setDraft, busy, error, send, sendText } = useChatTurn(controller);
+  const { messages, draft, setDraft, busy, error, send } = useChatTurn(controller);
   const [minimized, setMinimized] = useState(false);
 
   const onTranscript = useCallback(
@@ -33,14 +34,19 @@ export function ChatPanel(props: ChatPanelProps): JSX.Element {
     stop: stopMic,
   } = useSpeechToText({ onTranscript });
 
+  const finishListeningToDraft = (): void => {
+    const spoken = stopMic();
+    if (spoken) {
+      setDraft(spoken);
+    }
+  };
+
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
+    // Never auto-send from the mic — Stop / Enter-while-listening only fills the draft.
     if (listening) {
-      const spoken = stopMic();
-      if (spoken) {
-        void sendText(spoken);
-        return;
-      }
+      finishListeningToDraft();
+      return;
     }
     void send();
   };
@@ -50,10 +56,7 @@ export function ChatPanel(props: ChatPanelProps): JSX.Element {
       return;
     }
     if (listening) {
-      const spoken = stopMic();
-      if (spoken) {
-        void sendText(spoken);
-      }
+      finishListeningToDraft();
       return;
     }
     startMic();
@@ -95,7 +98,7 @@ export function ChatPanel(props: ChatPanelProps): JSX.Element {
           </button>
         </div>
         <p className="chat-panel__hint">
-          Type, or click Mic and speak as long as you want — Stop sends the full message.
+          Type, or Mic to dictate — Stop fills the box so you can edit, then press Send.
         </p>
       </header>
 
@@ -120,7 +123,9 @@ export function ChatPanel(props: ChatPanelProps): JSX.Element {
 
         {combinedError ? <p className="status-error chat-panel__error">{combinedError}</p> : null}
         {listening ? (
-          <p className="chat-panel__listening">Listening… click Stop when you finish speaking.</p>
+          <p className="chat-panel__listening">
+            Listening… click Stop when finished, then edit and Send.
+          </p>
         ) : null}
 
         <form className="chat-panel__form" onSubmit={onSubmit}>
@@ -152,7 +157,7 @@ export function ChatPanel(props: ChatPanelProps): JSX.Element {
               !micSupported
                 ? "Speech recognition needs Chrome or Edge"
                 : listening
-                  ? "Stop and send"
+                  ? "Stop listening (edit before Send)"
                   : "Start listening"
             }
           >

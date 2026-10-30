@@ -798,9 +798,9 @@
     "semantic_hash": ""
   },
   "frontend/src/features/chat/components/ChatPanel.tsx": {
-    "mtime": 1793183887.0796335,
-    "seen": 1793184079.7324715,
-    "ast_hash": "ce53e1a6d7720035a3e4a526d4edc1d5",
+    "mtime": 1793332878.9880338,
+    "seen": 1793332920.8316224,
+    "ast_hash": "1336029331ae346f292f8fd0292a0f43",
     "semantic_hash": ""
   },
   "frontend/src/features/chat/hooks/useChatTurn.ts": {
