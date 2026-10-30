@@ -1,16 +1,16 @@
 # Graph Report - AI_3D_Avatar  (2026-10-30)
 
 ## Corpus Check
-- 151 files · ~51,311 words
+- 151 files · ~51,380 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1408 nodes · 2254 edges · 121 communities (97 shown, 21 thin omitted)
+- 1408 nodes · 2252 edges · 121 communities (97 shown, 21 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 70 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `30b4b99b`
+- Built from commit: `5eb16233`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -524,8 +524,8 @@ Cohesion: 0.11
 Nodes (11): FaceMaskLayer, FACE_MASK_BASE_PATH, FACE_PACK_CROSSFADE_MS, facePackRegistry, isFacePackExpression(), resolveFaceMask(), FacialController, MorphMesh (+3 more)
 
 ### Community 108 - "PresenterPage.tsx"
-Cohesion: 0.17
-Nodes (11): App(), AppEnvironment, environment, useAvatar(), PresenterLayout(), PresenterLayoutProps, rootElement, PresenterPage() (+3 more)
+Cohesion: 0.23
+Nodes (9): App(), useAvatar(), PresenterLayout(), PresenterLayoutProps, rootElement, PresenterPage(), supportsWebGL(), AppRoutes() (+1 more)
 
 ### Community 109 - "Avatar.tsx"
 Cohesion: 0.12
@@ -540,8 +540,8 @@ Cohesion: 0.14
 Nodes (19): get_chat_service(), ChatService with an injected LLM port (for chat turn routes). Not cached: thin…, post_chat_turn(), post, Interactive chatbot turn routes. Thin layer — orchestration stays in services., Run one chat turn: user ``message`` (+ optional ``history``) → ``reply``.…, ChatValidationError, LlmConfigurationError (+11 more)
 
 ### Community 115 - "useChatTurn.ts"
-Cohesion: 0.19
-Nodes (11): ChatApiRole, ChatHistoryItem, ChatTurnResponse, postChatTurn(), PostChatTurnOptions, ChatMessage, ChatRole, nextId() (+3 more)
+Cohesion: 0.14
+Nodes (13): ChatApiRole, ChatHistoryItem, ChatTurnResponse, postChatTurn(), PostChatTurnOptions, AppEnvironment, environment, ChatMessage (+5 more)
 
 ### Community 116 - "DebugPanel.tsx"
 Cohesion: 0.13
@@ -563,7 +563,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Why does `three` connect `AvatarRuntime.ts` to `ExpressionName`, `Avatar.tsx`, `package.json`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **Why does `react` connect `PresenterPage.tsx` to `package.json`, `Avatar.tsx`, `useChatTurn.ts`, `DebugPanel.tsx`, `useSpeechToText.ts`?**
+- **Why does `ExpressionName` connect `ExpressionName` to `AvatarRuntime.ts`, `AvatarRuntime`, `Avatar.tsx`, `DebugPanel.tsx`, `animation.ts`, `playAssistantReaction.ts`, `parseAnimationPlan.ts`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Are the 9 inferred relationships involving `LlmConfigurationError` (e.g. with `get_llm_provider()` and `post_chat_turn()`) actually correct?**
   _`LlmConfigurationError` has 9 INFERRED edges - model-reasoned connections that need verification._

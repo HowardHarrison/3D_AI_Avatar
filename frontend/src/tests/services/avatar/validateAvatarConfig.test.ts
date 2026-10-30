@@ -9,7 +9,7 @@ describe("validateAvatarConfig", () => {
       camera: avatarConfig.camera,
       performance: avatarConfig.performance,
     });
-    expect(result.modelUrl).toBe("/avatars/presenter.glb");
+    expect(result.modelUrl).toBe(avatarConfig.modelUrl);
     expect(result.performance.pixelRatioMax).toBe(1.5);
   });
 

@@ -173,19 +173,6 @@
       "source_location": "L30"
     },
     {
-      "id": "frontend_src_constants_environment_appenvironment",
-      "label": "AppEnvironment",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "appenvironment",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L6"
-    },
-    {
       "id": "frontend_src_layouts_presenterlayout_presenterlayoutprops",
       "label": "PresenterLayoutProps",
       "_callable": true,
@@ -209,7 +196,7 @@
       "file_type": "code",
       "norm_label": "semanticexpression",
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L29"
+      "source_location": "L39"
     },
     {
       "id": "frontend_src_constants_avatarconfig_semanticgesture",
@@ -222,7 +209,7 @@
       "file_type": "code",
       "norm_label": "semanticgesture",
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L28"
+      "source_location": "L38"
     },
     {
       "id": "frontend_src_constants_avatarconfig_semanticheadmotion",
@@ -235,7 +222,7 @@
       "file_type": "code",
       "norm_label": "semanticheadmotion",
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L30"
+      "source_location": "L40"
     },
     {
       "id": "frontend_src_features_avatar_components_avatarscene_avatarsceneprops",
@@ -431,6 +418,19 @@
       "norm_label": "postchatturnoptions",
       "source_file": "frontend/src/api/chat.ts",
       "source_location": "L18"
+    },
+    {
+      "id": "frontend_src_constants_environment_appenvironment",
+      "label": "AppEnvironment",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "useChatTurn.ts",
+      "file_type": "code",
+      "norm_label": "appenvironment",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L6"
     },
     {
       "id": "frontend_src_features_chat_hooks_usechatturn_chatmessage",
@@ -1863,18 +1863,6 @@
       "source_location": "L7"
     },
     {
-      "id": "frontend_src_constants_environment_loadenvironment",
-      "label": "loadEnvironment()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "loadenvironment()",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L22"
-    },
-    {
       "id": "frontend_src_features_avatar_hooks_useavatar_useavatar",
       "label": "useAvatar()",
       "_callable": true,
@@ -1968,7 +1956,7 @@
       "file_type": "code",
       "norm_label": "avatarcamera()",
       "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
-      "source_location": "L10"
+      "source_location": "L9"
     },
     {
       "id": "frontend_src_features_avatar_components_avatarlighting_avatarlighting",
@@ -2413,6 +2401,18 @@
       "norm_label": "postchatturn()",
       "source_file": "frontend/src/api/chat.ts",
       "source_location": "L32"
+    },
+    {
+      "id": "frontend_src_constants_environment_loadenvironment",
+      "label": "loadEnvironment()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "useChatTurn.ts",
+      "file_type": "code",
+      "norm_label": "loadenvironment()",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L22"
     },
     {
       "id": "frontend_src_features_chat_hooks_usechatturn_nextid",
@@ -6830,28 +6830,6 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_constants_environment",
-      "label": "environment.ts",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "environment.ts",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_constants_environment_environment",
-      "label": "environment",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "environment",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L34"
-    },
-    {
       "id": "frontend_src_features_avatar_hooks_useavatar",
       "label": "useAvatar.ts",
       "_origin": "ast",
@@ -6959,7 +6937,7 @@
       "file_type": "code",
       "norm_label": "defaultexpression",
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L25"
+      "source_location": "L35"
     },
     {
       "id": "frontend_src_constants_avatarconfig_defaultgaze",
@@ -6970,7 +6948,7 @@
       "file_type": "code",
       "norm_label": "defaultgaze",
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L26"
+      "source_location": "L36"
     },
     {
       "id": "frontend_src_constants_studioconfig",
@@ -7546,6 +7524,28 @@
       "norm_label": "chat.ts",
       "source_file": "frontend/src/api/chat.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_constants_environment",
+      "label": "environment.ts",
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "useChatTurn.ts",
+      "file_type": "code",
+      "norm_label": "environment.ts",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_constants_environment_environment",
+      "label": "environment",
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "useChatTurn.ts",
+      "file_type": "code",
+      "norm_label": "environment",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L34"
     },
     {
       "id": "frontend_src_features_chat_hooks_usechatturn",
@@ -22523,7 +22523,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -25335,32 +25335,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
-      "source_location": "L5",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_features_avatar_components_avatarcamera",
-      "target": "ref_react",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
       "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_features_avatar_components_avatarcamera",
-      "target": "ref_three",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
-      "source_location": "L7",
-      "type_only": true,
       "weight": 1.0
     },
     {
@@ -25372,7 +25347,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
-      "source_location": "L8",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -34375,7 +34350,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L25",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -34386,7 +34361,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L26",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -34397,7 +34372,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L28",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -34408,7 +34383,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L29",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -34419,7 +34394,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L30",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -34573,7 +34548,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -42234,5 +42209,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "30b4b99b4adbe43bdf6cbb91f6d8c0144e6002a7"
+  "built_at_commit": "5eb16233fc222dfa8072c95360680a8dba1634e4"
 }

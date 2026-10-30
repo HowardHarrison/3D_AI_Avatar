@@ -156,9 +156,9 @@
     "semantic_hash": "c63ac5e35eaa24e715e188cdfa88b415"
   },
   "frontend/src/constants/avatarConfig.ts": {
-    "mtime": 1793250358.931345,
-    "seen": 1793250620.1468227,
-    "ast_hash": "3fb5fc238cbce7c6d2a5b09d300e4408",
+    "mtime": 1793333769.6879318,
+    "seen": 1793333789.795675,
+    "ast_hash": "fde6ece7d019b1063757492f6af78cce",
     "semantic_hash": ""
   },
   "frontend/src/constants/environment.ts": {
@@ -186,9 +186,9 @@
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/AvatarCamera.tsx": {
-    "mtime": 1792656392.2024221,
-    "seen": 1792656679.5785503,
-    "ast_hash": "699969c65d77cb9de383d9ca5cebe09f",
+    "mtime": 1793333772.0854247,
+    "seen": 1793333789.795675,
+    "ast_hash": "4119c51664336392c238ebad01541651",
     "semantic_hash": ""
   },
   "frontend/src/features/avatar/components/AvatarLighting.tsx": {
@@ -246,9 +246,9 @@
     "semantic_hash": "f9816c06a3c5f534f3984acddcfb5c7b"
   },
   "frontend/src/pages/PresenterPage.tsx": {
-    "mtime": 1792724911.0311303,
-    "seen": 1792724980.9213588,
-    "ast_hash": "e52b532e6eb66bc2afeb5862fd3e82ea",
+    "mtime": 1793333773.5500922,
+    "seen": 1793333789.795675,
+    "ast_hash": "392dd6687087cb2f133df8358ed1c4f7",
     "semantic_hash": ""
   },
   "frontend/src/routes/index.tsx": {

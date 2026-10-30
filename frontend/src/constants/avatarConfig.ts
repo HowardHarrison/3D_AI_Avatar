@@ -2,7 +2,7 @@ import type { ExpressionName, GazeTarget, GestureName, HeadMotionName } from "..
 
 /**
  * Central avatar configuration. Do not scatter camera or asset URLs in components.
- * Camera is bust / upper-body framing for the stylized chatbot look.
+ * Default framing shows more of the body; drag to orbit horizontally, scroll to zoom.
  */
 export const avatarConfig = {
   /** Cache-bust when gesture clips change so the browser does not keep an old GLB. */
@@ -12,9 +12,19 @@ export const avatarConfig = {
   /** Expression mask textures (face pack). See FacePackRegistry. */
   faceMaskBasePath: "/avatars/face/masks",
   camera: {
-    position: [0, 1.55, 2.2] as [number, number, number],
-    target: [0, 1.55, 0] as [number, number, number],
-    fov: 34,
+    /** Pulled back + mid-body aim so legs are visible; orbit still works around target. */
+    position: [0, 1.15, 3.0] as [number, number, number],
+    target: [0, 1.0, 0] as [number, number, number],
+    fov: 36,
+    /** Horizontal-first orbit (azimuth free; polar clamped near level). */
+    orbit: {
+      minDistance: 1.4,
+      maxDistance: 6,
+      /** ~π/2 − 0.45 — allow looking down enough to see feet. */
+      minPolarAngle: 1.12,
+      /** ~π/2 + 0.25 — slight look-up only. */
+      maxPolarAngle: 1.82,
+    },
   },
   performance: {
     pixelRatioMax: 1.5,

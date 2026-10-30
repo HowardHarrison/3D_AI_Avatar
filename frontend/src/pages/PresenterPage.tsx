@@ -51,6 +51,9 @@ export function PresenterPage(): JSX.Element {
     <PresenterLayout>
       <div className="scene-wrap">
         <AvatarScene className="scene" onReady={onReady} onError={onError} />
+        <p className="scene-orbit-hint" aria-hidden="true">
+          Drag to orbit · Scroll to zoom
+        </p>
         <ChatPanel controller={controller} />
         {loadError && !environment.enableDebugPanel ? (
           <p className="status-error overlay-error">{loadError}</p>
