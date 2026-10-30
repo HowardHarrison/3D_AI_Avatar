@@ -15,6 +15,12 @@ export const FACE_PACK_CROSSFADE_MS = 200;
 /** Directory under ``frontend/public`` for expression mask textures. */
 export const FACE_MASK_BASE_PATH = "/avatars/face/masks";
 
+/**
+ * Speech mouth overlay (transparent except open lips).
+ * Driven by amplitude → ``setBlendShape("mouth_open")``, not expression swaps.
+ */
+export const MOUTH_OPEN_MASK_URL = `${FACE_MASK_BASE_PATH}/mouth_open.webp`;
+
 function mask(id: ExpressionName): FaceMaskSpec {
   return {
     id,

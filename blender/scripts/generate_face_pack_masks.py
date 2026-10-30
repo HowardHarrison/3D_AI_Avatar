@@ -121,22 +121,35 @@ def build_mask(name: str) -> Image.Image:
     return img
 
 
+def build_mouth_open_overlay() -> Image.Image:
+    """Transparent speech layer: open mouth only (opacity-driven at runtime)."""
+    img = Image.new("RGBA", (SIZE, SIZE), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+    # Slightly larger than expression mouths so it covers closed lip lines.
+    _mouth(draw, open_amt=1.0)
+    return img
+
+
+def _save(out: Path, name: str, img: Image.Image) -> None:
+    png = out / f"{name}.png"
+    img.save(png, format="PNG")
+    print(f"PASS: Wrote {png}")
+    webp = out / f"{name}.webp"
+    try:
+        img.save(webp, format="WEBP", quality=90)
+        print(f"PASS: Wrote {webp}")
+    except Exception as exc:  # noqa: BLE001
+        print(f"WARN: WebP skip for {name}: {exc}")
+
+
 def main() -> int:
     root = Path(__file__).resolve().parents[2]
     out = root / "frontend" / "public" / "avatars" / "face" / "masks"
     out.mkdir(parents=True, exist_ok=True)
     names = ("neutral", "serious", "positive", "concerned", "amused", "curious")
     for name in names:
-        img = build_mask(name)
-        png = out / f"{name}.png"
-        img.save(png, format="PNG")
-        print(f"PASS: Wrote {png}")
-        webp = out / f"{name}.webp"
-        try:
-            img.save(webp, format="WEBP", quality=90)
-            print(f"PASS: Wrote {webp}")
-        except Exception as exc:  # noqa: BLE001
-            print(f"WARN: WebP skip for {name}: {exc}")
+        _save(out, name, build_mask(name))
+    _save(out, "mouth_open", build_mouth_open_overlay())
     print("RESULT: OK")
     return 0
 

@@ -32,6 +32,10 @@ export interface AvatarController {
    * @param url - Audio file URL relative to the web app origin.
    */
   loadAudio(url: string): Promise<void>;
+  /**
+   * Unlock Web Audio during a user gesture so TTS play after await is not silent.
+   */
+  unlockAudio(): void;
   /** Start playback of the currently loaded clip. */
   playAudio(): void;
   /** Pause playback without resetting current time. */

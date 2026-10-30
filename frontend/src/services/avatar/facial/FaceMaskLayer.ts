@@ -15,7 +15,7 @@ import {
 } from "three";
 import type { ExpressionName } from "../../../types/animation";
 import { logger } from "../../../utils/logger";
-import { facePackRegistry } from "./FacePackRegistry";
+import { facePackRegistry, MOUTH_OPEN_MASK_URL } from "./FacePackRegistry";
 import type { FaceMaskSpec } from "./facialTypes";
 
 export class FaceMaskLayer {
@@ -26,6 +26,9 @@ export class FaceMaskLayer {
   private layerB: Mesh | null = null;
   private matA: MeshBasicMaterial | null = null;
   private matB: MeshBasicMaterial | null = null;
+  private mouthMesh: Mesh | null = null;
+  private mouthMat: MeshBasicMaterial | null = null;
+  private mouthTex: Texture | null = null;
   private showingA = true;
   private fadeElapsed = 0;
   private fadeDuration = 0.2;
@@ -62,11 +65,23 @@ export class FaceMaskLayer {
     this.layerA.name = "FaceCardA";
     this.layerB.name = "FaceCardB";
 
+    this.mouthMat = new MeshBasicMaterial({
+      transparent: true,
+      opacity: 0,
+      depthWrite: false,
+      side: DoubleSide,
+    });
+    this.mouthMesh = new Mesh(geo.clone(), this.mouthMat);
+    this.mouthMesh.name = "FaceCardMouth";
+    // Slightly in front of expression layers so speech covers closed lips.
+    this.mouthMesh.position.z = 0.002;
+    this.mouthMesh.renderOrder = 2;
+
     this.cardRoot = new Object3D();
     this.cardRoot.name = "FaceCard";
     // Front of stylized Head mesh (local +Z); oval mask sits on the peach head.
     this.cardRoot.position.set(0, 0.01, 0.175);
-    this.cardRoot.add(this.layerA, this.layerB);
+    this.cardRoot.add(this.layerA, this.layerB, this.mouthMesh);
     socket.add(this.cardRoot);
     this.showingA = true;
     this.fading = false;
@@ -75,8 +90,22 @@ export class FaceMaskLayer {
   /** Preload all face-pack textures. Safe to call once after bind. */
   async preload(): Promise<void> {
     const entries = Object.values(facePackRegistry);
-    await Promise.all(entries.map((spec) => this.loadOne(spec)));
+    await Promise.all([
+      ...entries.map((spec) => this.loadOne(spec)),
+      this.loadMouthOpen(),
+    ]);
     this.applyImmediate("neutral");
+  }
+
+  /**
+   * Drive speech mouth overlay opacity (0 = closed, 1 = fully open).
+   * Used when face-pack masks carry emotion and morphs are absent.
+   */
+  setMouthOpen(value: number): void {
+    if (!this.mouthMat) {
+      return;
+    }
+    this.mouthMat.opacity = Math.min(1, Math.max(0, value));
   }
 
   /**
@@ -167,6 +196,28 @@ export class FaceMaskLayer {
     }
   }
 
+  private async loadMouthOpen(): Promise<void> {
+    const apply = (texture: Texture): void => {
+      texture.colorSpace = SRGBColorSpace;
+      this.mouthTex?.dispose();
+      this.mouthTex = texture;
+      if (this.mouthMat) {
+        this.mouthMat.map = texture;
+        this.mouthMat.needsUpdate = true;
+      }
+    };
+    try {
+      apply(await this.loader.loadAsync(MOUTH_OPEN_MASK_URL));
+    } catch {
+      const pngUrl = MOUTH_OPEN_MASK_URL.replace(/\.webp$/i, ".png");
+      try {
+        apply(await this.loader.loadAsync(pngUrl));
+      } catch {
+        logger.warn(`Mouth open mask failed to load: ${MOUTH_OPEN_MASK_URL}`);
+      }
+    }
+  }
+
   private hideDrawnFeatures(socket: Object3D): void {
     for (const name of ["LeftEye", "RightEye", "Nose", "Mouth"]) {
       const obj = socket.getObjectByName(name);
@@ -182,12 +233,18 @@ export class FaceMaskLayer {
     }
     this.matA?.dispose();
     this.matB?.dispose();
+    this.mouthMat?.dispose();
+    this.mouthTex?.dispose();
     this.layerA?.geometry.dispose();
     this.layerB?.geometry.dispose();
+    this.mouthMesh?.geometry.dispose();
     this.cardRoot = null;
     this.layerA = null;
     this.layerB = null;
+    this.mouthMesh = null;
     this.matA = null;
     this.matB = null;
+    this.mouthMat = null;
+    this.mouthTex = null;
   }
 }

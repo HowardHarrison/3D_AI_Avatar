@@ -19,5 +19,11 @@ Generate placeholders:
 python blender/scripts/generate_face_pack_masks.py
 ```
 
-Runtime: `FacePackRegistry.ts` + `FaceMaskLayer` (200 ms crossfade on FaceCard).  
+Speech overlay (not an expression):
+
+| Channel | File |
+| --- | --- |
+| `mouth_open` | `mouth_open.webp` (PNG fallback OK) |
+
+Runtime: `FacePackRegistry.ts` + `FaceMaskLayer` (200 ms expression crossfade; mouth opacity from lip sync).  
 Replace these drawings with authored art that matches the body; keep filenames.

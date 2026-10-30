@@ -31,12 +31,14 @@ import {
 } from "./animation/AnimationRegistry";
 import { IdleController } from "./animation/IdleController";
 import { FacialController } from "./facial/FacialController";
+import { LipSyncController } from "./audio/LipSyncController";
 
 export class AvatarRuntime implements AvatarController {
   private readonly animation: AnimationController;
   private readonly facial: FacialController;
   private readonly idle: IdleController;
   private readonly audio: AudioController;
+  private readonly lipSync: LipSyncController;
   private readonly state: AnimationStateMachine;
   private readonly warnings: string[] = [];
   private gestureClip: string | null = null;
@@ -54,6 +56,7 @@ export class AvatarRuntime implements AvatarController {
     this.facial = new FacialController((message) => this.pushWarning(message));
     this.idle = new IdleController(root, this.animation, this.facial);
     this.audio = new AudioController();
+    this.lipSync = new LipSyncController(this.audio, this.facial);
     this.state = new AnimationStateMachine();
     this.head = root.getObjectByName("Head") ?? null;
     this.unsubscribeFinished = this.animation.onFinished((clipName) => {
@@ -191,6 +194,7 @@ export class AvatarRuntime implements AvatarController {
   }
 
   reset(): void {
+    this.lipSync.stop();
     this.gestureClip = null;
     this.locomotionClip = null;
     this.state.reset();
@@ -208,6 +212,11 @@ export class AvatarRuntime implements AvatarController {
     await this.audio.load(url);
   }
 
+  /** Unlock Web Audio during a user gesture (Send) before async TTS. */
+  unlockAudio(): void {
+    this.audio.unlock();
+  }
+
   /** Start playback of the currently loaded clip. */
   playAudio(): void {
     this.audio.play();
@@ -220,6 +229,7 @@ export class AvatarRuntime implements AvatarController {
 
   /** Stop playback and rewind to the start of the clip. */
   stopAudio(): void {
+    this.lipSync.stop();
     this.audio.stop();
   }
 
@@ -237,7 +247,7 @@ export class AvatarRuntime implements AvatarController {
     // Expression / gesture are chosen by the chat layer (mapReplyReaction), not here.
     this.startSpeaking();
     this.setGaze("camera");
-    this.facial.setBlendShape("mouth_open", 0.4);
+    this.lipSync.start();
 
     await new Promise<void>((resolve) => {
       let settled = false;
@@ -252,7 +262,7 @@ export class AvatarRuntime implements AvatarController {
           resolve();
           return;
         }
-        this.facial.setBlendShape("mouth_open", 0);
+        this.lipSync.stop();
         this.stopSpeaking();
         this.setExpression("neutral");
         resolve();
@@ -273,6 +283,7 @@ export class AvatarRuntime implements AvatarController {
   update(delta: number): void {
     this.animation.update(delta);
     this.facial.update(delta);
+    this.lipSync.update(delta);
     const state = this.state.getState();
     this.idle.update(delta, state === "GESTURE" || state === "LOCOMOTION");
     this.fpsAccum += delta;
@@ -334,6 +345,7 @@ export class AvatarRuntime implements AvatarController {
   }
 
   dispose(): void {
+    this.lipSync.stop();
     this.speechGeneration += 1;
     this.unsubscribeFinished();
     this.facial.dispose();

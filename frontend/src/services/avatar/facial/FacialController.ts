@@ -2,7 +2,7 @@
  * Face expression driver. Semantic names only — no mask URLs or morph indexes in UI.
  *
  * Production path: face-pack masks crossfaded on FaceCard (FaceMaskLayer).
- * Morph presets remain available for mouth/blink layers on the face socket only.
+ * Speech mouth uses a separate overlay (``mouth_open``); morphs optional if present.
  */
 
 import { Mesh, Object3D } from "three";
@@ -91,13 +91,17 @@ export class FacialController {
   }
 
   /**
-   * Set a single morph target by stable shape-key name (mouth / blink layers).
+   * Set a single mouth/blink channel by stable name.
+   * ``mouth_open`` drives the face-pack mouth overlay (and morphs if present).
    */
   setBlendShape(name: string, value: number): void {
+    const clamped = Math.min(1, Math.max(0, value));
+    if (name === "mouth_open") {
+      this.masks.setMouthOpen(clamped);
+    }
     if (this.morphMeshes.length === 0) {
       return;
     }
-    const clamped = Math.min(1, Math.max(0, value));
     let found = false;
     for (const entry of this.morphMeshes) {
       const index = entry.dictionary[name];
@@ -107,13 +111,14 @@ export class FacialController {
       entry.mesh.morphTargetInfluences[index] = clamped;
       found = true;
     }
-    if (!found) {
+    if (!found && name !== "mouth_open") {
       this.warn(`Facial shape key "${name}" not found.`);
     }
   }
 
   reset(): void {
     this.resetInfluences();
+    this.masks.setMouthOpen(0);
     this.current = "neutral";
     this.activeMask = resolveFaceMask("neutral");
     if (this.faceBound) {

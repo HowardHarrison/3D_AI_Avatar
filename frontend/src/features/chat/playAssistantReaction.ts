@@ -47,6 +47,8 @@ export async function playAssistantReaction(
 ): Promise<void> {
   clearTimedFallback(controller);
   const reaction = mapReplyReaction(reply, userText);
+  // User just clicked Send — unlock AudioContext before the TTS network wait.
+  controller.unlockAudio();
 
   try {
     const { audioUrl } = await synthesizeSpeech(reply, apiBaseUrl);
