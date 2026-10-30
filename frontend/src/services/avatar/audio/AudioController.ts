@@ -180,7 +180,7 @@ export class AudioController implements AudioControllerApi {
     this.mediaSource = this.audioContext.createMediaElementSource(this.element);
     this.analyser = this.audioContext.createAnalyser();
     this.analyser.fftSize = 256;
-    this.analyser.smoothingTimeConstant = 0.6;
+    this.analyser.smoothingTimeConstant = 0.85;
     this.mediaSource.connect(this.analyser);
     this.analyser.connect(this.audioContext.destination);
     this.analyserData = new Float32Array(new ArrayBuffer(this.analyser.fftSize * 4));

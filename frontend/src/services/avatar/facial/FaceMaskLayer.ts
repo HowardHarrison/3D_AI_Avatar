@@ -48,34 +48,40 @@ export class FaceMaskLayer {
     this.hideDrawnFeatures(socket);
 
     const geo = new PlaneGeometry(0.3, 0.34);
+    // depthTest off: coplanar transparent cards z-fight / flicker when the head nods.
     this.matA = new MeshBasicMaterial({
       transparent: true,
       opacity: 1,
       depthWrite: false,
+      depthTest: false,
       side: DoubleSide,
     });
     this.matB = new MeshBasicMaterial({
       transparent: true,
       opacity: 0,
       depthWrite: false,
+      depthTest: false,
       side: DoubleSide,
     });
     this.layerA = new Mesh(geo, this.matA);
     this.layerB = new Mesh(geo.clone(), this.matB);
     this.layerA.name = "FaceCardA";
     this.layerB.name = "FaceCardB";
+    this.layerA.renderOrder = 10;
+    this.layerB.renderOrder = 11;
 
     this.mouthMat = new MeshBasicMaterial({
       transparent: true,
       opacity: 0,
       depthWrite: false,
+      depthTest: false,
       side: DoubleSide,
     });
     this.mouthMesh = new Mesh(geo.clone(), this.mouthMat);
     this.mouthMesh.name = "FaceCardMouth";
-    // Slightly in front of expression layers so speech covers closed lips.
-    this.mouthMesh.position.z = 0.002;
-    this.mouthMesh.renderOrder = 2;
+    // In front of expression layers so speech covers closed lips.
+    this.mouthMesh.position.z = 0.008;
+    this.mouthMesh.renderOrder = 12;
 
     this.cardRoot = new Object3D();
     this.cardRoot.name = "FaceCard";
