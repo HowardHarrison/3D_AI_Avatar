@@ -1,29 +1,29 @@
-# Graph Report - AI_3D_Avatar  (2026-10-30)
+# Graph Report - AI_3D_Avatar  (2026-11-03)
 
 ## Corpus Check
-- 152 files · ~52,182 words
+- 153 files · ~53,913 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1424 nodes · 2289 edges · 121 communities (99 shown, 19 thin omitted)
+- 1459 nodes · 2340 edges · 122 communities (99 shown, 20 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 73 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b4bcb36f`
+- Built from commit: `d0a954a3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - plans.py
-- AvatarRuntime.ts
+- AnimationRegistry.ts
 - AvatarRuntime
 - common.py
 - GltfBuilder
 - create_animation.py
 - package.json
 - modify_character.py
-- TtsValidationError
+- prepare_fbx_for_mixamo
 - import_base_glb
 - modify_materials.py
 - scripts
@@ -39,17 +39,17 @@
 - .prettierrc.json
 - vite-env.d.ts
 - Stylized Chatbot Avatar — Overall Architecture
-- animation.ts
+- OpenAICompatibleLLMProvider
 - useSpeechToText.ts
-- test_chat_turn.py
+- animation.ts
 - playAssistantReaction.ts
 - Expected Output Format
 - schemas.py
-- LLMProvider
+- test_generate_plan.py
 - IdleController
 - Output Expectations
 - Commands available now
-- test_generate_plan.py
+- test_chat_turn.py
 - Architecture
 - Bug Reporting Format
 - Avatar art contract (stylized chatbot)
@@ -63,8 +63,8 @@
 - frontend-developer-agent.md
 - Documentation Standards
 - devDependencies
-- TtsConfigurationError
-- dependencies.py
+- main.py
+- LLMProvider
 - QA Engineer Agent
 - Output Formats
 - solution-architect-agent.md
@@ -100,7 +100,7 @@
 - Business Requirement Analysis
 - Current System Understanding
 - Observability
-- OpenAICompatibleLLMProvider
+- LLMResult
 - Core Responsibilities
 - UI Testing
 - api/__init__.py
@@ -123,25 +123,26 @@
 - PresenterPage.tsx
 - Avatar.tsx
 - AnimationStateMachine
-- FacialController.ts
+- AvatarRuntime.ts
 - source/README.md
-- tts.py
-- chat.py
+- test_tts_synthesize.py
+- LlmConfigurationError
 - useChatTurn.ts
 - DebugPanel.tsx
-- LLMResult
-- main.py
+- create_app
+- dependencies.py
 - ExpressionName
+- .__init__
 - AudioController
 
 ## God Nodes (most connected - your core abstractions)
-1. `AvatarRuntime` - 33 edges
+1. `AvatarRuntime` - 34 edges
 2. `LLMProvider` - 24 edges
 3. `LlmConfigurationError` - 23 edges
 4. `ExpressionName` - 23 edges
-5. `FacialController` - 22 edges
-6. `AudioController` - 21 edges
-7. `AvatarController` - 20 edges
+5. `AudioController` - 22 edges
+6. `FacialController` - 22 edges
+7. `AvatarController` - 21 edges
 8. `PlanValidationError` - 19 edges
 9. `LLMResult` - 19 edges
 10. `create_app()` - 19 edges
@@ -149,27 +150,27 @@
 ## Surprising Connections (you probably didn't know these)
 - `get_llm_provider()` --uses--> `LlmConfigurationError`  [INFERRED]
   backend/app/api/dependencies.py → backend/app/core/exceptions.py
+- `get_tts_provider()` --uses--> `TtsConfigurationError`  [INFERRED]
+  backend/app/api/dependencies.py → backend/app/core/exceptions.py
 - `post_chat_turn()` --uses--> `ChatTurnRequest`  [INFERRED]
   backend/app/api/routes/chat.py → backend/app/api/schemas.py
 - `post_chat_turn()` --uses--> `ChatTurnResponse`  [INFERRED]
   backend/app/api/routes/chat.py → backend/app/api/schemas.py
-- `post_chat_turn()` --uses--> `LlmConfigurationError`  [INFERRED]
-  backend/app/api/routes/chat.py → backend/app/core/exceptions.py
 - `post_chat_turn()` --uses--> `LlmProviderError`  [INFERRED]
   backend/app/api/routes/chat.py → backend/app/core/exceptions.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (121 total, 19 thin omitted)
+## Communities (122 total, 20 thin omitted)
 
 ### Community 0 - "plans.py"
-Cohesion: 0.14
-Nodes (21): generate_plan(), generate_plan_text(), get_sample_plan(), get, post, Animation plan routes. Thin layer — orchestration stays in services., Map domain plan to API schema with camelCase aliases., Return a hardcoded sample plan for frontend/mobile integration tests. (+13 more)
+Cohesion: 0.10
+Nodes (27): get_presenter_plan_service(), get_presenter_plan_service_with_llm(), Provide a shared PresenterPlanService without an LLM (sample plan)., PresenterPlanService with an injected LLM port (for generate-text routes). Not…, generate_plan(), generate_plan_text(), get_sample_plan(), get (+19 more)
 
-### Community 1 - "AvatarRuntime.ts"
-Cohesion: 0.18
-Nodes (18): animationRegistry, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, IDLE_NAMES, isExpressionName(), isGestureName(), isHeadMotionName() (+10 more)
+### Community 1 - "AnimationRegistry.ts"
+Cohesion: 0.15
+Nodes (17): EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, IDLE_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), isLocomotionName() (+9 more)
 
 ### Community 3 - "common.py"
 Cohesion: 0.07
@@ -191,9 +192,9 @@ Nodes (16): name, private, type, version, eslint, @eslint/js, eslint-plugin-reac
 Cohesion: 0.09
 Nodes (33): _apply_transforms(), _build_parser(), _count_ops(), _fmt_vec(), _list_objects(), _load_common(), modify_character(), _parse_bone_rename() (+25 more)
 
-### Community 8 - "TtsValidationError"
-Cohesion: 0.18
-Nodes (9): get_synthesized_audio(), get, Serve a previously synthesized MP3 from the local TTS cache., Raised when a TTS request fails validation., TtsValidationError, Path, Create the service. Args: tts: TTS port. Required for ``synthesize``; optional…, Resolve a safe path for a cached MP3 id. Args: file_id: Filename like… (+1 more)
+### Community 8 - "prepare_fbx_for_mixamo"
+Cohesion: 0.10
+Nodes (30): _clear_scene(), _delete_non_meshes(), _harden_topology(), _join_meshes(), _load_common(), _mesh_world_height(), _normalize_human_scale(), _place_origin_at_feet() (+22 more)
 
 ### Community 9 - "import_base_glb"
 Cohesion: 0.23
@@ -251,21 +252,21 @@ Nodes (4): printWidth, semi, singleQuote, trailingComma
 Cohesion: 0.06
 Nodes (36): 10.1 Goals, 10.2 Architecture split, 10.3 Paths to change clothes, 10.4 Constraints, 10. Avatar Clothing, 11. Blender Automation Strategy, 12. Animation and Appearance Strategy, 13. Phase Map (+28 more)
 
-### Community 24 - "animation.ts"
-Cohesion: 0.10
-Nodes (11): ReplyReaction, AnimationPlanError, GAZE, parseAnimationPlan(), AnimationLayerPriority, AnimationPlan, AnimationSegment, GazeTarget (+3 more)
+### Community 24 - "OpenAICompatibleLLMProvider"
+Cohesion: 0.19
+Nodes (11): OpenAI-compatible HTTP adapters (official OpenAI API and compatible gateways)., OpenAICompatibleLLMProvider, Chat Completions client for OpenAI and OpenAI-compatible base URLs., Create a provider bound to one model endpoint. Args: api_key: Provider secret…, Unit tests for OpenAI-compatible LLMProvider (no live network)., generate() maps Chat Completions content into LLMResult.text., Blank API key fails before any HTTP call., SDK APIError is wrapped as LlmProviderError. (+3 more)
 
 ### Community 25 - "useSpeechToText.ts"
 Cohesion: 0.21
 Nodes (9): useSpeechToText(), UseSpeechToTextOptions, UseSpeechToTextResult, BrowserSpeechRecognition, BrowserSpeechRecognitionErrorEvent, BrowserSpeechRecognitionEvent, getSpeechRecognitionConstructor(), speechErrorMessage() (+1 more)
 
-### Community 26 - "test_chat_turn.py"
-Cohesion: 0.17
-Nodes (11): API tests for POST /api/v1/chat/turns (mocked LLM)., Install fake LLM before each test., Clear FastAPI overrides after each test., Route injects LLM via DI and returns assistant reply., History is included in the LLM prompt., Pydantic rejects blank message before the service runs., setup_function(), teardown_function() (+3 more)
+### Community 26 - "animation.ts"
+Cohesion: 0.09
+Nodes (11): ReplyReaction, AnimationLayerPriority, AnimationPlan, AnimationSegment, GazeTarget, GestureName, HeadMotionName, LocomotionName (+3 more)
 
 ### Community 27 - "playAssistantReaction.ts"
-Cohesion: 0.23
-Nodes (12): readErrorDetail(), resolveAudioUrl(), synthesizeSpeech(), SynthesizeSpeechResult, mapReplyReaction(), raiseGesture(), applyReplyReaction(), clearTimedFallback() (+4 more)
+Cohesion: 0.15
+Nodes (17): ChatApiRole, ChatHistoryItem, ChatTurnResponse, postChatTurn(), PostChatTurnOptions, readErrorDetail(), resolveAudioUrl(), synthesizeSpeech() (+9 more)
 
 ### Community 28 - "Expected Output Format"
 Cohesion: 0.13
@@ -273,15 +274,15 @@ Nodes (15): Assumptions, Business Context, Component Diagram Description, Curren
 
 ### Community 29 - "schemas.py"
 Cohesion: 0.13
-Nodes (20): health_check(), get, Return API liveness status., AnimationSegmentSchema, ChatHistoryMessage, ChatTurnRequest, ChatTurnResponse, GeneratePlanRequest (+12 more)
+Nodes (20): health_check(), get, Return API liveness status., ChatHistoryMessage, ChatTurnRequest, ChatTurnResponse, GeneratePlanRequest, GeneratePlanTextRequest (+12 more)
 
-### Community 30 - "LLMProvider"
-Cohesion: 0.21
-Nodes (8): Provider ports implemented by infrastructure adapters., LLMProvider, ABC, LLM provider port. Implementations live under infrastructure/ (e.g. LangChain…, Interface for large language model text generation., Core domain models for presenter plans (semantic only — no bones/clips)., OpenAI-compatible ``LLMProvider`` adapter (reads API key / model / base URL)., Create the service. Args: llm: Required LLM port used to generate the assistant…
+### Community 30 - "test_generate_plan.py"
+Cohesion: 0.17
+Nodes (11): get_llm_provider(), Build the configured OpenAI-compatible ``LLMProvider``. Reads ``LLM_API_KEY``,…, _InvalidPlanLLM, API tests for POST /api/v1/plans/generate (mocked LLM)., Returns JSON with an illegal gesture name., Clear FastAPI overrides after each test., Route returns validated camelCase AnimationPlan JSON., Invalid LLM semantics surface as 400 PlanValidationError. (+3 more)
 
 ### Community 31 - "IdleController"
-Cohesion: 0.21
-Nodes (5): ResolvedClip, IdleController, randomBetween(), IdleName, PlayAnimationOptions
+Cohesion: 0.19
+Nodes (6): resolveIdleClip(), ResolvedClip, IdleController, randomBetween(), IdleName, PlayAnimationOptions
 
 ### Community 32 - "Output Expectations"
 Cohesion: 0.17
@@ -291,9 +292,9 @@ Nodes (12): Accessibility Considerations, API Integration Strategy, Architecture
 Cohesion: 0.10
 Nodes (21): Agent decision rule, Blender asset pipeline, Check Blender CLI, Commands available now, Create stub animations (Step 7), Example: change suit color, Export → validate → promote, Inspect scene (always run before modifying) (+13 more)
 
-### Community 34 - "test_generate_plan.py"
-Cohesion: 0.16
-Nodes (11): _FakePlanLLM, _InvalidPlanLLM, API tests for POST /api/v1/plans/generate (mocked LLM)., Returns fixed AnimationPlan JSON., Returns JSON with an illegal gesture name., Clear FastAPI overrides after each test., Route returns validated camelCase AnimationPlan JSON., Invalid LLM semantics surface as 400 PlanValidationError. (+3 more)
+### Community 34 - "test_chat_turn.py"
+Cohesion: 0.14
+Nodes (13): _FakeLLM, API tests for POST /api/v1/chat/turns (mocked LLM)., In-memory LLM port that echoes whether history was in the prompt., Install fake LLM before each test., Clear FastAPI overrides after each test., Route injects LLM via DI and returns assistant reply., History is included in the LLM prompt., Pydantic rejects blank message before the service runs. (+5 more)
 
 ### Community 35 - "Architecture"
 Cohesion: 0.67
@@ -328,8 +329,8 @@ Cohesion: 0.17
 Nodes (11): _FakeLLM, API tests for POST /api/v1/plans/generate-text (mocked LLM)., In-memory LLM port for route tests., Install fake LLM before each test., Clear FastAPI overrides after each test., Route injects LLM via DI and returns generated text., Pydantic rejects blank topic before the service runs., setup_function() (+3 more)
 
 ### Community 43 - "PlanValidationError"
-Cohesion: 0.06
-Nodes (47): AnimationSegment, Any, get_presenter_plan_service(), Provide a shared PresenterPlanService without an LLM (sample plan)., PlanValidationError, Raised when an animation plan fails semantic validation., AnimationPlan, AnimationSegment (+39 more)
+Cohesion: 0.07
+Nodes (40): AnimationSegment, Any, PlanValidationError, Raised when an animation plan fails semantic validation., AnimationPlan, AnimationSegment, One timed slice of a presenter performance plan., Sequence of semantic animation segments for web/mobile clients. (+32 more)
 
 ### Community 44 - "apply_rename_map.py"
 Cohesion: 0.32
@@ -347,13 +348,13 @@ Nodes (8): Architecture Overview, Component Design, Data Flow, Deployment Archit
 Cohesion: 0.13
 Nodes (15): devDependencies, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, jsdom, prettier, @types/react (+7 more)
 
-### Community 48 - "TtsConfigurationError"
-Cohesion: 0.07
-Nodes (37): get_tts_cache_dir(), get_tts_provider(), Local directory for synthesized MP3 files (gitignored)., Build the configured OpenAI-compatible ``TtsProvider``. Uses ``TTS_API_KEY``…, Raised when TTS settings are missing or invalid for a provider call., TtsConfigurationError, ABC, TTS provider port. Implementations live under infrastructure/. (+29 more)
+### Community 48 - "main.py"
+Cohesion: 0.09
+Nodes (30): get_synthesized_audio(), get, post, TTS routes. Thin layer — orchestration stays in services., Synthesize speech for ``text`` and return a playable audio URL. Audio bytes are…, Serve a previously synthesized MP3 from the local TTS cache., synthesize_speech(), AppError (+22 more)
 
-### Community 49 - "dependencies.py"
-Cohesion: 0.16
-Nodes (12): get_llm_provider(), get_presenter_plan_service_with_llm(), FastAPI dependency injection wiring., Build the configured OpenAI-compatible ``LLMProvider``. Reads ``LLM_API_KEY``,…, PresenterPlanService with an injected LLM port (for generate-text routes). Not…, get_settings(), Application configuration loaded from environment variables., Parse CORS origins into a list for middleware. (+4 more)
+### Community 49 - "LLMProvider"
+Cohesion: 0.17
+Nodes (9): Provider ports implemented by infrastructure adapters., LLMProvider, ABC, LLM provider port. Implementations live under infrastructure/ (e.g. LangChain…, Interface for large language model text generation., Core domain models for presenter plans (semantic only — no bones/clips)., OpenAI-compatible ``LLMProvider`` adapter (reads API key / model / base URL)., Create the service. Args: llm: Required LLM port used to generate the assistant… (+1 more)
 
 ### Community 50 - "QA Engineer Agent"
 Cohesion: 0.29
@@ -491,9 +492,9 @@ Nodes (4): Current System Understanding, Existing Architecture, Existing Constra
 Cohesion: 0.50
 Nodes (4): Logging, Monitoring, Observability, Tracing
 
-### Community 85 - "OpenAICompatibleLLMProvider"
-Cohesion: 0.19
-Nodes (11): OpenAI-compatible HTTP adapters (official OpenAI API and compatible gateways)., OpenAICompatibleLLMProvider, Chat Completions client for OpenAI and OpenAI-compatible base URLs., Create a provider bound to one model endpoint. Args: api_key: Provider secret…, Unit tests for OpenAI-compatible LLMProvider (no live network)., generate() maps Chat Completions content into LLMResult.text., Blank API key fails before any HTTP call., SDK APIError is wrapped as LlmProviderError. (+3 more)
+### Community 85 - "LLMResult"
+Cohesion: 0.25
+Nodes (6): Generate a text response from the given prompt., LLMResult, Raw text result from an LLM provider., Generate text from a single user prompt via Chat Completions. Args: prompt:…, _FakePlanLLM, Returns fixed AnimationPlan JSON.
 
 ### Community 86 - "Core Responsibilities"
 Cohesion: 0.67
@@ -509,75 +510,75 @@ Nodes (6): dependencies, react, react-dom, @react-three/drei, @react-three/fiber
 
 ### Community 103 - "Mixamo upload pack"
 Cohesion: 0.33
-Nodes (5): 1. Prepare the mesh (already done by script), 2. Auto-rig on Mixamo (you do this in the browser), 3. Drop the file back into the repo, 4. Tell the agent (or run yourself), Mixamo upload pack
+Nodes (5): 1. Prepare the mesh, 2. Auto-rig on Mixamo (you do this in the browser), 3. Drop the file back into the repo, 4. Tell the agent (or run yourself), Mixamo upload pack
 
 ### Community 105 - "Avatar specification"
 Cohesion: 0.40
 Nodes (5): Asset, Avatar specification, Look vs motion, Placeholder vs authored character, Runtime API
 
 ### Community 107 - "FacialController"
-Cohesion: 0.15
-Nodes (3): LipSyncController, resolveFaceMask(), FacialController
+Cohesion: 0.13
+Nodes (4): LipSyncController, softGate(), resolveFaceMask(), FacialController
 
 ### Community 108 - "PresenterPage.tsx"
 Cohesion: 0.23
 Nodes (9): App(), useAvatar(), PresenterLayout(), PresenterLayoutProps, rootElement, PresenterPage(), supportsWebGL(), AppRoutes() (+1 more)
 
 ### Community 109 - "Avatar.tsx"
-Cohesion: 0.11
+Cohesion: 0.10
 Nodes (20): avatarConfig, defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, studioConfig, Avatar() (+12 more)
 
 ### Community 110 - "AnimationStateMachine"
 Cohesion: 0.19
 Nodes (3): ALLOWED, AnimationStateMachine, AnimationStateName
 
-### Community 111 - "FacialController.ts"
-Cohesion: 0.19
-Nodes (11): FACE_MASK_BASE_PATH, FACE_PACK_CROSSFADE_MS, facePackRegistry, isFacePackExpression(), MOUTH_OPEN_MASK_URL, MorphMesh, BlendShapeMap, FaceMaskSpec (+3 more)
+### Community 111 - "AvatarRuntime.ts"
+Cohesion: 0.35
+Nodes (5): animationRegistry, MorphMesh, logger, LogLevel, three
 
-### Community 113 - "tts.py"
-Cohesion: 0.16
-Nodes (15): get_tts_audio_service(), get_tts_service(), Path, TtsService with injected TTS port (for synthesize)., TtsService without a provider — serve cached audio files only., post, TTS routes. Thin layer — orchestration stays in services., Synthesize speech for ``text`` and return a playable audio URL. Audio bytes are… (+7 more)
+### Community 113 - "test_tts_synthesize.py"
+Cohesion: 0.11
+Nodes (17): Synthesize speech and return a playable URL plus duration., Synthesized speech metadata and optional audio URL or bytes path., TtsResult, _FakeTts, Path, API tests for POST /api/v1/tts/synthesize and GET audio (mocked TTS)., Writes a tiny fake MP3 marker file into the cache., Install fake TTS and a test cache dir before each test. (+9 more)
 
-### Community 114 - "chat.py"
+### Community 114 - "LlmConfigurationError"
 Cohesion: 0.14
-Nodes (17): get_chat_service(), ChatService with an injected LLM port (for chat turn routes). Not cached: thin…, post_chat_turn(), post, Interactive chatbot turn routes. Thin layer — orchestration stays in services., Run one chat turn: user ``message`` (+ optional ``history``) → ``reply``.…, ChatValidationError, Raised when a chat turn request fails validation. (+9 more)
+Nodes (19): get_chat_service(), ChatService with an injected LLM port (for chat turn routes). Not cached: thin…, post_chat_turn(), post, Interactive chatbot turn routes. Thin layer — orchestration stays in services., Run one chat turn: user ``message`` (+ optional ``history``) → ``reply``.…, ChatValidationError, LlmConfigurationError (+11 more)
 
 ### Community 115 - "useChatTurn.ts"
-Cohesion: 0.14
-Nodes (14): ChatApiRole, ChatHistoryItem, ChatTurnResponse, postChatTurn(), PostChatTurnOptions, AppEnvironment, environment, ChatPanel() (+6 more)
+Cohesion: 0.21
+Nodes (9): AppEnvironment, environment, ChatPanel(), ChatPanelProps, ChatMessage, ChatRole, nextId(), useChatTurn() (+1 more)
 
 ### Community 116 - "DebugPanel.tsx"
-Cohesion: 0.13
-Nodes (15): StatusPanel(), StatusPanelProps, AnimationControls(), AnimationControlsProps, EXPRESSIONS, GESTURES, HEADS, IDLES (+7 more)
+Cohesion: 0.18
+Nodes (13): StatusPanel(), StatusPanelProps, AnimationControls(), AnimationControlsProps, EXPRESSIONS, GESTURES, HEADS, IDLES (+5 more)
 
-### Community 117 - "LLMResult"
-Cohesion: 0.25
-Nodes (6): Generate a text response from the given prompt., LLMResult, Raw text result from an LLM provider., Generate text from a single user prompt via Chat Completions. Args: prompt:…, _FakeLLM, In-memory LLM port that echoes whether history was in the prompt.
+### Community 118 - "dependencies.py"
+Cohesion: 0.10
+Nodes (24): get_tts_audio_service(), get_tts_cache_dir(), get_tts_provider(), get_tts_service(), Path, FastAPI dependency injection wiring., TtsService with injected TTS port (for synthesize)., TtsService without a provider — serve cached audio files only. (+16 more)
 
-### Community 118 - "main.py"
-Cohesion: 0.14
-Nodes (6): Application-wide logging setup., Configure root logging to stdout., setup_logging(), create_app(), FastAPI application entrypoint., Build and configure the ASGI application.
+### Community 119 - "ExpressionName"
+Cohesion: 0.15
+Nodes (9): FaceMaskLayer, FACE_MASK_BASE_PATH, FACE_PACK_CROSSFADE_MS, facePackRegistry, isFacePackExpression(), MOUTH_OPEN_MASK_URL, BlendShapeMap, FaceMaskSpec (+1 more)
 
 ## Knowledge Gaps
 - **389 isolated node(s):** `ai-3d-avatar-backend`, `singleQuote`, `semi`, `trailingComma`, `printWidth` (+384 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 789 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **19 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 807 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `AudioController` connect `AudioController` to `AvatarRuntime.ts`, `AvatarRuntime`, `FacialController`?**
+- **Why does `three` connect `AvatarRuntime.ts` to `Avatar.tsx`, `package.json`, `ExpressionName`?**
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `AnimationController` connect `AnimationController` to `AvatarRuntime.ts`, `AvatarRuntime`, `FacialController`, `FacialController.ts`, `IdleController`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **Why does `react` connect `PresenterPage.tsx` to `package.json`, `Avatar.tsx`, `useChatTurn.ts`, `DebugPanel.tsx`, `useSpeechToText.ts`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `PlanValidationError` connect `PlanValidationError` to `plans.py`, `main.py`, `create_app`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Are the 9 inferred relationships involving `LlmConfigurationError` (e.g. with `get_llm_provider()` and `post_chat_turn()`) actually correct?**
   _`LlmConfigurationError` has 9 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `ai-3d-avatar-backend`, `singleQuote`, `semi` to the rest of the system?**
   _389 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `plans.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.1422924901185771 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10344827586206896 - nodes in this community are weakly interconnected._
 - **Should `common.py` be split into smaller, more focused modules?**
   _Cohesion score 0.06821480406386067 - nodes in this community are weakly interconnected._
