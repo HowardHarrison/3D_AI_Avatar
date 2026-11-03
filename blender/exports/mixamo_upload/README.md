@@ -1,14 +1,24 @@
 # Mixamo upload pack
 
-## 1. Prepare the mesh (already done by script)
+## 1. Prepare the mesh
 
-From the repository root:
+**From an external T-pose FBX** (e.g. Hunyuan / AI mesh at repo root):
+
+```bash
+blender --background --python blender/scripts/prepare_fbx_for_mixamo.py -- --input ai_boy_tpose.fbx
+```
+
+This cleans the mesh (strip leftover rigging, join, merge verts, normals, feet origin),
+decimates dense AI meshes to ~80k faces for Mixamo, and writes e.g.
+`ai_boy_tpose_mesh.fbx` in this folder.
+
+**From the existing `presenter.blend`:**
 
 ```bash
 blender --background blender/source/presenter.blend --python blender/scripts/export_mesh_for_mixamo.py --
 ```
 
-This writes `presenter_mesh.fbx` in this folder.
+That writes `presenter_mesh.fbx` in this folder.
 
 ## 2. Auto-rig on Mixamo (you do this in the browser)
 
