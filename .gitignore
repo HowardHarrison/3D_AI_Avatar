@@ -43,8 +43,14 @@ blender/exports/mixamo_upload/*
 !blender/exports/mixamo_upload/README.md
 blender/exports/giga_chad_rigged.glb
 blender/exports/giga_chad_rigged.fbx
-# Large AI-generated source meshes (keep out of git)
+# Large AI-generated / Mixamo local meshes (keep out of git)
 /ai_boy_tpose.fbx
+/ai_boy_tpose_mesh.fbx
+/ai_boy_tpose_texture.fbx
+blender/exports/ai_boy_rigged_textured.glb
+blender/exports/ai_boy_rigged_textured.fbx
+blender/exports/ai_boy_rigged_textured.blend
+blender/exports/textures/
 
 # graphify — rebuildable local cache (AST hashes, query stamps)
 graphify-out/cache/

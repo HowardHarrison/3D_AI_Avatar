@@ -636,9 +636,9 @@
     "semantic_hash": ""
   },
   "blender/exports/mixamo_upload/README.md": {
-    "mtime": 1793695528.1892226,
-    "seen": 1793695556.2544672,
-    "ast_hash": "56d5f2536c0b3398d3a7450737031dfa",
+    "mtime": 1793768854.975496,
+    "seen": 1793768893.6462102,
+    "ast_hash": "5c45b50bcd60ef65d4a6b79105d18f76",
     "semantic_hash": ""
   },
   "blender/source/README.md": {
@@ -1023,6 +1023,18 @@
     "mtime": 1793695823.2191486,
     "seen": 1793695880.56677,
     "ast_hash": "2f88dbdf4324b428c2e21a5d7ff80f6c",
+    "semantic_hash": ""
+  },
+  "blender/scripts/bake_textures_onto_rigged.py": {
+    "mtime": 1793766553.111403,
+    "seen": 1793766690.0960684,
+    "ast_hash": "23301e7c7bb47543d8df3171953396f8",
+    "semantic_hash": ""
+  },
+  "blender/scripts/transfer_rig_to_textured.py": {
+    "mtime": 1793777469.3346808,
+    "seen": 1793777588.9278238,
+    "ast_hash": "c319ceeff00820d1c8d2fe95b83133a7",
     "semantic_hash": ""
   }
 }

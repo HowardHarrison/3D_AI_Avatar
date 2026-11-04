@@ -31,26 +31,38 @@ That writes `presenter_mesh.fbx` in this folder.
    - Skin: **With Skin**
    - Pose: **T-pose** is fine for the base; animations can be added later in our pipeline
 
-## 3. Drop the file back into the repo
+## 3. Drop the Mixamo download + restore textures (Option A)
 
-Save the download as exactly (gitignored):
+Save the Mixamo download (With Skin) somewhere reachable, e.g. repo root:
+
+```text
+ai_boy_tpose_mesh.fbx          # Mixamo rigged (gray)
+ai_boy_tpose_texture.fbx       # original high-res with PBR maps
+```
+
+**Preferred (exact textures):** transfer the Mixamo rig onto the original
+textured mesh (keeps Hunyuan UVs/maps — do not bake onto Mixamo UVs):
+
+```bash
+blender --background --python blender/scripts/transfer_rig_to_textured.py -- ^
+  --rigged ai_boy_tpose_mesh.fbx --textured ai_boy_tpose_texture.fbx
+```
+
+Output: `blender/exports/ai_boy_rigged_textured.glb`
+
+(Alternative / older: `bake_textures_onto_rigged.py` rebakes onto Mixamo UVs and
+often scrambles face/clothes colors — avoid unless you need that path.)
+
+Then copy/rename for the import step:
 
 ```text
 blender/exports/giga_chad_rigged.glb
 ```
 
-or
+(or `.fbx` if you skip baking and import the gray Mixamo file directly)
 
-```text
-blender/exports/giga_chad_rigged.fbx
-```
-
-A copy may also live here as `giga_chad_rigged.fbx` while you work; the **canonical**
-path for Step 3 import is under `blender/exports/` (not only this folder).
-
-**Status (2026-10-28):** `blender/exports/giga_chad_rigged.fbx` is staged from a
-prior Mixamo download. Re-run Mixamo only if you want a different character mesh;
-otherwise proceed to Step 3 (import + rename).
+**Status (2026-11-04):** Bake path is available via `bake_textures_onto_rigged.py`.
+Use the textured GLB for import when you want color in the web app.
 
 ## 4. Tell the agent (or run yourself)
 
