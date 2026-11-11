@@ -201,7 +201,8 @@ export class AvatarRuntime implements AvatarController {
     this.facial.reset();
     this.setGaze("camera");
     this.animation.stopAll();
-    this.idle.start();
+    // Default resting stance (arms down, clear of the body) — not bind T-pose.
+    this.idle.setIdle("atEase");
   }
 
   /**

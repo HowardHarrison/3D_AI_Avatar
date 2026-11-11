@@ -18,6 +18,7 @@ export const animationRegistry = {
     shiftWeight: "Idle_ShiftWeight",
     standAttention: "Idle_StandAttention",
     adjustPosture: "Idle_AdjustPosture",
+    atEase: "Idle_AtEase",
   } satisfies Record<IdleName, string>,
   locomotion: {
     walkForward: "Walk_Forward",

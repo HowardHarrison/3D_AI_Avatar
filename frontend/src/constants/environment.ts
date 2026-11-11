@@ -8,6 +8,11 @@ export interface AppEnvironment {
   avatarModelUrl: string;
   /** Optional override for the Head-socket face GLB. */
   avatarFaceUrl: string;
+  /**
+   * When true, bind face-pack FaceCard masks on ``Head``.
+   * False for painted-face GLBs. Set ``VITE_AVATAR_USE_FACE_PACK=true`` for the stand-in.
+   */
+  avatarUseFacePack: boolean;
   enableDebugPanel: boolean;
   /**
    * Backend origin for chat/API calls.
@@ -21,11 +26,14 @@ export interface AppEnvironment {
  */
 export function loadEnvironment(): AppEnvironment {
   const debugRaw = import.meta.env.VITE_ENABLE_DEBUG_PANEL;
+  const facePackRaw = import.meta.env.VITE_AVATAR_USE_FACE_PACK;
   const apiBase = import.meta.env.VITE_API_BASE_URL;
   return {
     appName: import.meta.env.VITE_APP_NAME ?? "Stylized Chatbot Avatar",
-    avatarModelUrl: import.meta.env.VITE_AVATAR_MODEL_URL ?? "/avatars/presenter.glb",
+    avatarModelUrl: import.meta.env.VITE_AVATAR_MODEL_URL ?? "/avatars/ai_boy.glb",
     avatarFaceUrl: import.meta.env.VITE_AVATAR_FACE_URL ?? "/avatars/face.glb",
+    // Default off (painted-face characters). Opt in with VITE_AVATAR_USE_FACE_PACK=true.
+    avatarUseFacePack: facePackRaw === "true",
     enableDebugPanel: debugRaw !== "false",
     apiBaseUrl: typeof apiBase === "string" ? apiBase.trim() : "",
   };

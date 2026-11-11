@@ -59,7 +59,9 @@ export type IdleName =
   | "shiftWeight"
   | "standAttention"
   /** Subtle settle: hips + shoulders + spine (richer than shiftWeight alone). */
-  | "adjustPosture";
+  | "adjustPosture"
+  /** Arms down from T-pose with soft breath — default resting stance. */
+  | "atEase";
 
 /**
  * Looping locomotion selected via AvatarController.startLocomotion.

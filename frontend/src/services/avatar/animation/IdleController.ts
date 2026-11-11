@@ -23,7 +23,7 @@ export class IdleController {
   private targetEyeX = 0;
   private targetEyeY = 0;
   private headTimer = randomBetween(6, 12);
-  private currentIdle: IdleName = "breathing";
+  private currentIdle: IdleName = "atEase";
   private readonly leftEye: Object3D | null;
   private readonly rightEye: Object3D | null;
 
@@ -50,11 +50,18 @@ export class IdleController {
     return this.currentIdle;
   }
 
-  /** Begin looping the selected idle clip (fallback: breathing → neutral). */
+  /** Begin looping the selected idle clip (fallback: atEase → breathing → neutral). */
   start(): void {
     const preferred = resolveIdleClip(this.currentIdle);
     if (this.animation.hasClip(preferred)) {
       this.animation.play(preferred, {
+        loop: true,
+        fadeInSeconds: 0.4,
+      });
+      return;
+    }
+    if (this.animation.hasClip(animationRegistry.idle.atEase)) {
+      this.animation.play(animationRegistry.idle.atEase, {
         loop: true,
         fadeInSeconds: 0.4,
       });

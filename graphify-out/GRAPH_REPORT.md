@@ -1,22 +1,22 @@
-# Graph Report - AI_3D_Avatar  (2026-11-04)
+# Graph Report - AI_3D_Avatar  (2026-11-05)
 
 ## Corpus Check
-- 155 files · ~57,649 words
+- 155 files · ~58,723 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1539 nodes · 2470 edges · 118 communities (96 shown, 19 thin omitted)
+- 1538 nodes · 2468 edges · 119 communities (97 shown, 19 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 73 edges (avg confidence: 0.93)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4a47a843`
+- Built from commit: `4711486f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - test_tts_synthesize.py
-- AvatarRuntime.ts
+- AnimationRegistry.ts
 - AvatarRuntime
 - common.py
 - GltfBuilder
@@ -42,11 +42,11 @@
 - bake_textures_onto_rigged.py
 - useSpeechToText.ts
 - AvatarController
-- LipSyncController
+- FacialController
 - Expected Output Format
 - plans.py
-- AvatarScene.tsx
-- AnimationController
+- Avatar.tsx
+- animation.ts
 - Output Expectations
 - Commands available now
 - LLMProvider
@@ -100,7 +100,7 @@
 - Business Requirement Analysis
 - Current System Understanding
 - Observability
-- Avatar.tsx
+- AudioControllerApi
 - Core Responsibilities
 - UI Testing
 - api/__init__.py
@@ -109,7 +109,7 @@
 - infrastructure/__init__.py
 - langchain/__init__.py
 - app/__init__.py
-- animation.ts
+- AvatarRuntime.ts
 - services/__init__.py
 - utils/__init__.py
 - definitions/README.md
@@ -121,14 +121,15 @@
 - masks/README.md
 - ExpressionName
 - PresenterPage.tsx
+- AnimationController
 - AnimationStateMachine
+- GestureName
 - source/README.md
 - dependencies.py
 - LlmConfigurationError
 - playAssistantReaction.ts
 - DebugPanel.tsx
 - main.py
-- FaceMaskLayer
 - AudioController
 
 ## God Nodes (most connected - your core abstractions)
@@ -158,15 +159,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (118 total, 19 thin omitted)
+## Communities (119 total, 19 thin omitted)
 
 ### Community 0 - "test_tts_synthesize.py"
 Cohesion: 0.12
 Nodes (14): _FakeTts, Path, API tests for POST /api/v1/tts/synthesize and GET audio (mocked TTS)., Writes a tiny fake MP3 marker file into the cache., Install fake TTS and a test cache dir before each test., Clear overrides and test cache files., Route returns audioUrl and estimated duration., Pydantic rejects blank text. (+6 more)
 
-### Community 1 - "AvatarRuntime.ts"
+### Community 1 - "AnimationRegistry.ts"
+Cohesion: 0.14
+Nodes (18): EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, IDLE_NAMES, isExpressionName(), isGestureName(), isHeadMotionName(), isLocomotionName() (+10 more)
+
+### Community 2 - "AvatarRuntime"
 Cohesion: 0.13
-Nodes (24): ReplyReaction, animationRegistry, EXPRESSION_NAMES, GESTURE_NAMES, HEAD_NAMES, IDLE_NAMES, isExpressionName(), isGestureName() (+16 more)
+Nodes (4): Avatar(), loadGltf(), isIdleName(), AvatarRuntime
 
 ### Community 3 - "common.py"
 Cohesion: 0.07
@@ -178,7 +183,7 @@ Nodes (37): Shared naming contracts for Blender validation, GLB export, and the 
 
 ### Community 5 - "create_animation.py"
 Cohesion: 0.07
-Nodes (43): _action_fcurve_count(), _allowed_clip_names(), _assign_nla_slot(), _bone_exists(), _build_bone_clip(), key_loc(), key_rot(), need() (+35 more)
+Nodes (42): _action_fcurve_count(), _allowed_clip_names(), _assign_nla_slot(), _bone_exists(), _build_bone_clip(), key_rot(), need(), _build_parser() (+34 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.13
@@ -256,9 +261,9 @@ Nodes (44): _align_source_to_target(), _apply_armature_object_scale(), _bake(), 
 Cohesion: 0.21
 Nodes (9): useSpeechToText(), UseSpeechToTextOptions, UseSpeechToTextResult, BrowserSpeechRecognition, BrowserSpeechRecognitionErrorEvent, BrowserSpeechRecognitionEvent, getSpeechRecognitionConstructor(), speechErrorMessage() (+1 more)
 
-### Community 26 - "AvatarController"
-Cohesion: 0.11
-Nodes (5): GazeTarget, LocomotionName, AvatarController, AvatarRuntimeStatus, VisemeEvent
+### Community 27 - "FacialController"
+Cohesion: 0.14
+Nodes (4): LipSyncController, softGate(), resolveFaceMask(), FacialController
 
 ### Community 28 - "Expected Output Format"
 Cohesion: 0.13
@@ -268,13 +273,13 @@ Nodes (15): Assumptions, Business Context, Component Diagram Description, Curren
 Cohesion: 0.08
 Nodes (41): get_presenter_plan_service_with_llm(), PresenterPlanService with an injected LLM port (for generate-text routes). Not…, health_check(), get, Return API liveness status., generate_plan(), generate_plan_text(), get_sample_plan() (+33 more)
 
-### Community 30 - "AvatarScene.tsx"
-Cohesion: 0.21
-Nodes (10): avatarConfig, studioConfig, AvatarCamera(), AvatarLighting(), AvatarScene(), AvatarSceneProps, Studio(), AvatarLoadHandlers (+2 more)
+### Community 30 - "Avatar.tsx"
+Cohesion: 0.12
+Nodes (18): avatarConfig, defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, studioConfig, AvatarCamera() (+10 more)
 
-### Community 31 - "AnimationController"
-Cohesion: 0.14
-Nodes (4): AnimationController, IdleController, randomBetween(), IdleName
+### Community 31 - "animation.ts"
+Cohesion: 0.15
+Nodes (9): resolveIdleClip(), ResolvedClip, IdleController, randomBetween(), AnimationLayerPriority, AnimationPlan, AnimationSegment, IdleName (+1 more)
 
 ### Community 32 - "Output Expectations"
 Cohesion: 0.17
@@ -345,8 +350,8 @@ Cohesion: 0.09
 Nodes (34): _align_to_reference(), _apply_all_transforms(), _bind_automatic_weights(), _clear_scene(), _decimate_preserve_uv(), _force_dielectric(), _hip_world(), _import_fbx() (+26 more)
 
 ### Community 49 - "useChatTurn.ts"
-Cohesion: 0.17
-Nodes (12): ChatApiRole, ChatHistoryItem, ChatTurnResponse, postChatTurn(), PostChatTurnOptions, ChatPanel(), ChatPanelProps, ChatMessage (+4 more)
+Cohesion: 0.23
+Nodes (8): AppEnvironment, environment, ChatPanel(), ChatMessage, ChatRole, nextId(), useChatTurn(), UseChatTurnResult
 
 ### Community 50 - "QA Engineer Agent"
 Cohesion: 0.29
@@ -484,10 +489,6 @@ Nodes (4): Current System Understanding, Existing Architecture, Existing Constra
 Cohesion: 0.50
 Nodes (4): Logging, Monitoring, Observability, Tracing
 
-### Community 85 - "Avatar.tsx"
-Cohesion: 0.16
-Nodes (10): defaultExpression, defaultGaze, SemanticExpression, SemanticGesture, SemanticHeadMotion, Avatar(), loadGltf(), AvatarConfigError (+2 more)
-
 ### Community 86 - "Core Responsibilities"
 Cohesion: 0.67
 Nodes (3): 1. Requirement Analysis, 2. Test Planning, Core Responsibilities
@@ -496,9 +497,9 @@ Nodes (3): 1. Requirement Analysis, 2. Test Planning, Core Responsibilities
 Cohesion: 0.67
 Nodes (3): Functional Quality, UI Testing, Visual Quality
 
-### Community 94 - "animation.ts"
-Cohesion: 0.29
-Nodes (6): ResolvedClip, AnimationLayerPriority, AnimationPlan, AnimationSegment, PlayAnimationOptions, three
+### Community 94 - "AvatarRuntime.ts"
+Cohesion: 0.35
+Nodes (5): animationRegistry, MorphMesh, logger, LogLevel, three
 
 ### Community 102 - "dependencies"
 Cohesion: 0.33
@@ -513,16 +514,20 @@ Cohesion: 0.40
 Nodes (5): Asset, Avatar specification, Look vs motion, Placeholder vs authored character, Runtime API
 
 ### Community 107 - "ExpressionName"
-Cohesion: 0.12
-Nodes (13): FACE_MASK_BASE_PATH, FACE_PACK_CROSSFADE_MS, facePackRegistry, isFacePackExpression(), MOUTH_OPEN_MASK_URL, resolveFaceMask(), FacialController, MorphMesh (+5 more)
+Cohesion: 0.15
+Nodes (9): FaceMaskLayer, FACE_MASK_BASE_PATH, FACE_PACK_CROSSFADE_MS, facePackRegistry, isFacePackExpression(), MOUTH_OPEN_MASK_URL, BlendShapeMap, FaceMaskSpec (+1 more)
 
 ### Community 108 - "PresenterPage.tsx"
-Cohesion: 0.17
-Nodes (11): App(), AppEnvironment, environment, useAvatar(), PresenterLayout(), PresenterLayoutProps, rootElement, PresenterPage() (+3 more)
+Cohesion: 0.23
+Nodes (9): App(), useAvatar(), PresenterLayout(), PresenterLayoutProps, rootElement, PresenterPage(), supportsWebGL(), AppRoutes() (+1 more)
 
 ### Community 110 - "AnimationStateMachine"
 Cohesion: 0.19
 Nodes (3): ALLOWED, AnimationStateMachine, AnimationStateName
+
+### Community 111 - "GestureName"
+Cohesion: 0.33
+Nodes (5): mapReplyReaction(), raiseGesture(), ReplyReaction, GestureName, HeadMotionName
 
 ### Community 113 - "dependencies.py"
 Cohesion: 0.07
@@ -533,12 +538,12 @@ Cohesion: 0.11
 Nodes (21): get_chat_service(), ChatService with an injected LLM port (for chat turn routes). Not cached: thin…, post_chat_turn(), post, Interactive chatbot turn routes. Thin layer — orchestration stays in services., Run one chat turn: user ``message`` (+ optional ``history``) → ``reply``.…, ChatValidationError, LlmConfigurationError (+13 more)
 
 ### Community 115 - "playAssistantReaction.ts"
-Cohesion: 0.27
-Nodes (11): readErrorDetail(), resolveAudioUrl(), synthesizeSpeech(), SynthesizeSpeechResult, mapReplyReaction(), raiseGesture(), applyReplyReaction(), clearTimedFallback() (+3 more)
+Cohesion: 0.16
+Nodes (15): ChatApiRole, ChatHistoryItem, ChatTurnResponse, postChatTurn(), PostChatTurnOptions, readErrorDetail(), resolveAudioUrl(), synthesizeSpeech() (+7 more)
 
 ### Community 116 - "DebugPanel.tsx"
-Cohesion: 0.18
-Nodes (13): StatusPanel(), StatusPanelProps, AnimationControls(), AnimationControlsProps, EXPRESSIONS, GESTURES, HEADS, IDLES (+5 more)
+Cohesion: 0.14
+Nodes (16): StatusPanel(), StatusPanelProps, AnimationControls(), AnimationControlsProps, EXPRESSIONS, GESTURES, HEADS, IDLES (+8 more)
 
 ### Community 117 - "main.py"
 Cohesion: 0.10
@@ -552,17 +557,17 @@ Nodes (13): Application-wide logging setup., Configure root logging to stdout., 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
+- **Why does `three` connect `AvatarRuntime.ts` to `ExpressionName`, `package.json`, `Avatar.tsx`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Why does `PlanValidationError` connect `PlanValidationError` to `dependencies.py`, `main.py`, `plans.py`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **Why does `three` connect `animation.ts` to `AvatarRuntime.ts`, `ExpressionName`, `Avatar.tsx`, `package.json`?**
+- **Why does `FacialController` connect `FacialController` to `AvatarRuntime`, `ExpressionName`, `AnimationController`, `AvatarRuntime.ts`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **Why does `react` connect `PresenterPage.tsx` to `package.json`, `useChatTurn.ts`, `DebugPanel.tsx`, `Avatar.tsx`, `useSpeechToText.ts`?**
-  _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Are the 9 inferred relationships involving `LlmConfigurationError` (e.g. with `get_llm_provider()` and `post_chat_turn()`) actually correct?**
   _`LlmConfigurationError` has 9 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `ai-3d-avatar-backend`, `singleQuote`, `semi` to the rest of the system?**
   _389 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `test_tts_synthesize.py` be split into smaller, more focused modules?**
   _Cohesion score 0.125 - nodes in this community are weakly interconnected._
-- **Should `AvatarRuntime.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12941176470588237 - nodes in this community are weakly interconnected._
+- **Should `AnimationRegistry.ts` be split into smaller, more focused modules?**
+  _Cohesion score 0.14153846153846153 - nodes in this community are weakly interconnected._

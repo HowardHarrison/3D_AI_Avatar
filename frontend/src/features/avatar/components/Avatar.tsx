@@ -60,8 +60,12 @@ export function Avatar(props: AvatarLoadHandlers): JSX.Element | null {
           return;
         }
         const runtime = new AvatarRuntime(body.scene, body.animations);
-        // Masks on the same Head as the stylized body — no separate giant face.glb.
-        runtime.bindFacePack();
+        // FaceCard masks only for blank stylized heads; painted GLBs leave this off.
+        const useFacePack =
+          environment.avatarUseFacePack || avatarConfig.useFacePack;
+        if (useFacePack) {
+          runtime.bindFacePack();
+        }
         if (cancelled) {
           runtime.dispose();
           return;

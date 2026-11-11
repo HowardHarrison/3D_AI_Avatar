@@ -118,6 +118,7 @@ OPTIONAL_ANIMATIONS: tuple[str, ...] = (
     "Idle_ShiftWeight",
     "Idle_StandAttention",
     "Idle_AdjustPosture",
+    "Idle_AtEase",
     "Walk_Forward",
     "Walk_Backward",
     "Head_Nod_Small",

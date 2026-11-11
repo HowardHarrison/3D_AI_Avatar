@@ -5,12 +5,18 @@ import type { ExpressionName, GazeTarget, GestureName, HeadMotionName } from "..
  * Default framing shows more of the body; drag to orbit horizontally, scroll to zoom.
  */
 export const avatarConfig = {
-  /** Cache-bust when gesture clips change so the browser does not keep an old GLB. */
-  modelUrl: "/avatars/presenter.glb?v=shake1",
+  /** Cache-bust when the body GLB changes so the browser does not keep an old file. */
+  modelUrl: "/avatars/ai_boy.glb?v=10",
   /** Stylized face GLB parented to the body ``Head`` bone (Option 1 face socket). */
   faceUrl: "/avatars/face.glb",
   /** Expression mask textures (face pack). See FacePackRegistry. */
   faceMaskBasePath: "/avatars/face/masks",
+  /**
+   * When true, attach FaceCard masks on ``Head`` (blank stylized stand-in).
+   * Painted-face characters (e.g. AI Boy) must leave this false.
+   * Override per character with ``VITE_AVATAR_USE_FACE_PACK`` — no code change.
+   */
+  useFacePack: false,
   camera: {
     /** Pulled back + mid-body aim so legs are visible; orbit still works around target. */
     position: [0, 1.15, 3.0] as [number, number, number],

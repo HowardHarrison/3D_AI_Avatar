@@ -15,6 +15,7 @@ interface AnimationControlsProps {
 }
 
 const IDLES: { id: IdleName; label: string }[] = [
+  { id: "atEase", label: "At Ease" },
   { id: "breathing", label: "Breathing" },
   { id: "standAttention", label: "Stand Attention" },
   { id: "adjustPosture", label: "Adjust Posture" },

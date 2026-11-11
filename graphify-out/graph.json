@@ -17,82 +17,43 @@
       "source_location": "L14"
     },
     {
-      "id": "frontend_src_features_chat_mapreplyreaction_replyreaction",
-      "label": "ReplyReaction",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "replyreaction",
-      "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L9"
-    },
-    {
       "id": "frontend_src_services_avatar_animation_parseanimationplan_animationplanerror",
       "label": "AnimationPlanError",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "animationplanerror",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
       "source_location": "L18"
     },
     {
-      "id": "frontend_src_types_animation_gesturename",
-      "label": "GestureName",
+      "id": "frontend_src_types_animation_locomotionname",
+      "label": "LocomotionName",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
-      "norm_label": "gesturename",
+      "norm_label": "locomotionname",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L6"
+      "source_location": "L70"
     },
     {
-      "id": "frontend_src_types_animation_headmotionname",
-      "label": "HeadMotionName",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "headmotionname",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L41"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller",
-      "label": "FacialController",
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer",
+      "label": "FaceMaskLayer",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 107,
       "community_name": "ExpressionName",
       "file_type": "code",
-      "norm_label": "facialcontroller",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_morphmesh",
-      "label": "MorphMesh",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "morphmesh",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L15"
+      "norm_label": "facemasklayer",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L21"
     },
     {
       "id": "frontend_src_services_avatar_facial_facialtypes_blendshapemap",
@@ -134,32 +95,6 @@
       "source_location": "L30"
     },
     {
-      "id": "frontend_src_utils_logger_loglevel",
-      "label": "LogLevel",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "loglevel",
-      "source_file": "frontend/src/utils/logger.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "frontend_src_constants_environment_appenvironment",
-      "label": "AppEnvironment",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "appenvironment",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L6"
-    },
-    {
       "id": "frontend_src_layouts_presenterlayout_presenterlayoutprops",
       "label": "PresenterLayoutProps",
       "_callable": true,
@@ -171,6 +106,19 @@
       "norm_label": "presenterlayoutprops",
       "source_file": "frontend/src/layouts/PresenterLayout.tsx",
       "source_location": "L7"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller",
+      "label": "AnimationController",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": "animationcontroller",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L17"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationstatemachine_animationstatemachine",
@@ -196,7 +144,46 @@
       "file_type": "code",
       "norm_label": "animationstatename",
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L84"
+      "source_location": "L86"
+    },
+    {
+      "id": "frontend_src_features_chat_mapreplyreaction_replyreaction",
+      "label": "ReplyReaction",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": "replyreaction",
+      "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "frontend_src_types_animation_gesturename",
+      "label": "GestureName",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": "gesturename",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "frontend_src_types_animation_headmotionname",
+      "label": "HeadMotionName",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": "headmotionname",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L41"
     },
     {
       "id": "backend_app_core_exceptions_apperror",
@@ -342,6 +329,58 @@
       "source_location": "L21"
     },
     {
+      "id": "frontend_src_api_chat_chatapirole",
+      "label": "ChatApiRole",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "code",
+      "norm_label": "chatapirole",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "frontend_src_api_chat_chathistoryitem",
+      "label": "ChatHistoryItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "code",
+      "norm_label": "chathistoryitem",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "frontend_src_api_chat_chatturnresponse",
+      "label": "ChatTurnResponse",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "code",
+      "norm_label": "chatturnresponse",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "frontend_src_api_chat_postchatturnoptions",
+      "label": "PostChatTurnOptions",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "code",
+      "norm_label": "postchatturnoptions",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L18"
+    },
+    {
       "id": "frontend_src_api_tts_synthesizespeechresult",
       "label": "SynthesizeSpeechResult",
       "_callable": true,
@@ -407,6 +446,45 @@
       "source_location": "L4"
     },
     {
+      "id": "frontend_src_features_chat_components_chatpanel_chatpanelprops",
+      "label": "ChatPanelProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 116,
+      "community_name": "DebugPanel.tsx",
+      "file_type": "code",
+      "norm_label": "chatpanelprops",
+      "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
+      "source_location": "L13"
+    },
+    {
+      "id": "frontend_src_types_events_avatarruntimestatus",
+      "label": "AvatarRuntimeStatus",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 116,
+      "community_name": "DebugPanel.tsx",
+      "file_type": "code",
+      "norm_label": "avatarruntimestatus",
+      "source_file": "frontend/src/types/events.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "frontend_src_types_events_visemeevent",
+      "label": "VisemeEvent",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 116,
+      "community_name": "DebugPanel.tsx",
+      "file_type": "code",
+      "norm_label": "visemeevent",
+      "source_file": "frontend/src/types/events.ts",
+      "source_location": "L6"
+    },
+    {
       "id": "backend_app_core_settings_settings",
       "label": "Settings",
       "_callable": true,
@@ -420,19 +498,6 @@
       "source_location": "L8"
     },
     {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer",
-      "label": "FaceMaskLayer",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": "facemasklayer",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L21"
-    },
-    {
       "id": "frontend_src_services_avatar_audio_audiocontroller_audiocontroller",
       "label": "AudioController",
       "_callable": true,
@@ -444,19 +509,6 @@
       "norm_label": "audiocontroller",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
       "source_location": "L8"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi",
-      "label": "AudioControllerApi",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": "audiocontrollerapi",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L4"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime",
@@ -589,19 +641,6 @@
       "source_location": "L50"
     },
     {
-      "id": "frontend_src_types_animation_locomotionname",
-      "label": "LocomotionName",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": "locomotionname",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L68"
-    },
-    {
       "id": "frontend_src_types_avatar_avatarcontroller",
       "label": "AvatarController",
       "_callable": true,
@@ -615,43 +654,30 @@
       "source_location": "L16"
     },
     {
-      "id": "frontend_src_types_events_avatarruntimestatus",
-      "label": "AvatarRuntimeStatus",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": "avatarruntimestatus",
-      "source_file": "frontend/src/types/events.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "frontend_src_types_events_visemeevent",
-      "label": "VisemeEvent",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": "visemeevent",
-      "source_file": "frontend/src/types/events.ts",
-      "source_location": "L6"
-    },
-    {
       "id": "frontend_src_services_avatar_audio_lipsynccontroller_lipsynccontroller",
       "label": "LipSyncController",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": "lipsynccontroller",
       "source_file": "frontend/src/services/avatar/audio/LipSyncController.ts",
       "source_location": "L8"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller",
+      "label": "FacialController",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": "facialcontroller",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L20"
     },
     {
       "id": "backend_app_api_schemas_animationplanschema",
@@ -810,13 +836,52 @@
       "source_location": "L20"
     },
     {
+      "id": "frontend_src_constants_avatarconfig_semanticexpression",
+      "label": "SemanticExpression",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "semanticexpression",
+      "source_file": "frontend/src/constants/avatarConfig.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "frontend_src_constants_avatarconfig_semanticgesture",
+      "label": "SemanticGesture",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "semanticgesture",
+      "source_file": "frontend/src/constants/avatarConfig.ts",
+      "source_location": "L44"
+    },
+    {
+      "id": "frontend_src_constants_avatarconfig_semanticheadmotion",
+      "label": "SemanticHeadMotion",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "semanticheadmotion",
+      "source_file": "frontend/src/constants/avatarConfig.ts",
+      "source_location": "L46"
+    },
+    {
       "id": "frontend_src_features_avatar_components_avatarscene_avatarsceneprops",
       "label": "AvatarSceneProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarsceneprops",
       "source_file": "frontend/src/features/avatar/components/AvatarScene.tsx",
@@ -829,24 +894,50 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarloadhandlers",
       "source_file": "frontend/src/features/avatar/types.ts",
       "source_location": "L7"
     },
     {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller",
-      "label": "AnimationController",
+      "id": "frontend_src_services_avatar_validateavatarconfig_avatarconfigerror",
+      "label": "AvatarConfigError",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "avatarconfigerror",
+      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "frontend_src_services_avatar_validateavatarconfig_avatarconfiginput",
+      "label": "AvatarConfigInput",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "avatarconfiginput",
+      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationtypes_resolvedclip",
+      "label": "ResolvedClip",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
-      "norm_label": "animationcontroller",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L17"
+      "norm_label": "resolvedclip",
+      "source_file": "frontend/src/services/avatar/animation/animationTypes.ts",
+      "source_location": "L6"
     },
     {
       "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller",
@@ -855,11 +946,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "idlecontroller",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
       "source_location": "L16"
+    },
+    {
+      "id": "frontend_src_types_animation_animationplan",
+      "label": "AnimationPlan",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animationplan",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L114"
+    },
+    {
+      "id": "frontend_src_types_animation_animationsegment",
+      "label": "AnimationSegment",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animationsegment",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L104"
     },
     {
       "id": "frontend_src_types_animation_idlename",
@@ -868,11 +985,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "idlename",
       "source_file": "frontend/src/types/animation.ts",
       "source_location": "L56"
+    },
+    {
+      "id": "frontend_src_types_animation_playanimationoptions",
+      "label": "PlayAnimationOptions",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "playanimationoptions",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L94"
     },
     {
       "id": "backend_app_domain_interfaces_llm_provider_llmprovider",
@@ -1031,69 +1161,17 @@
       "source_location": "L14"
     },
     {
-      "id": "frontend_src_api_chat_chatapirole",
-      "label": "ChatApiRole",
+      "id": "frontend_src_constants_environment_appenvironment",
+      "label": "AppEnvironment",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 49,
       "community_name": "useChatTurn.ts",
       "file_type": "code",
-      "norm_label": "chatapirole",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "frontend_src_api_chat_chathistoryitem",
-      "label": "ChatHistoryItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chathistoryitem",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "frontend_src_api_chat_chatturnresponse",
-      "label": "ChatTurnResponse",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chatturnresponse",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L14"
-    },
-    {
-      "id": "frontend_src_api_chat_postchatturnoptions",
-      "label": "PostChatTurnOptions",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "postchatturnoptions",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "frontend_src_features_chat_components_chatpanel_chatpanelprops",
-      "label": "ChatPanelProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chatpanelprops",
-      "source_file": "frontend/src/features/chat/components/ChatPanel.tsx",
-      "source_location": "L13"
+      "norm_label": "appenvironment",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L6"
     },
     {
       "id": "frontend_src_features_chat_hooks_usechatturn_chatmessage",
@@ -1135,121 +1213,43 @@
       "source_location": "L19"
     },
     {
-      "id": "frontend_src_constants_avatarconfig_semanticexpression",
-      "label": "SemanticExpression",
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi",
+      "label": "AudioControllerApi",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "Avatar.tsx",
+      "community_name": "AudioControllerApi",
       "file_type": "code",
-      "norm_label": "semanticexpression",
-      "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L39"
+      "norm_label": "audiocontrollerapi",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L4"
     },
     {
-      "id": "frontend_src_constants_avatarconfig_semanticgesture",
-      "label": "SemanticGesture",
+      "id": "frontend_src_services_avatar_facial_facialcontroller_morphmesh",
+      "label": "MorphMesh",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
+      "community": 94,
+      "community_name": "AvatarRuntime.ts",
       "file_type": "code",
-      "norm_label": "semanticgesture",
-      "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L38"
+      "norm_label": "morphmesh",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L15"
     },
     {
-      "id": "frontend_src_constants_avatarconfig_semanticheadmotion",
-      "label": "SemanticHeadMotion",
+      "id": "frontend_src_utils_logger_loglevel",
+      "label": "LogLevel",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
+      "community": 94,
+      "community_name": "AvatarRuntime.ts",
       "file_type": "code",
-      "norm_label": "semanticheadmotion",
-      "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "frontend_src_services_avatar_validateavatarconfig_avatarconfigerror",
-      "label": "AvatarConfigError",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "avatarconfigerror",
-      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "frontend_src_services_avatar_validateavatarconfig_avatarconfiginput",
-      "label": "AvatarConfigInput",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "avatarconfiginput",
-      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
+      "norm_label": "loglevel",
+      "source_file": "frontend/src/utils/logger.ts",
       "source_location": "L5"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationtypes_resolvedclip",
-      "label": "ResolvedClip",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "resolvedclip",
-      "source_file": "frontend/src/services/avatar/animation/animationTypes.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "frontend_src_types_animation_animationplan",
-      "label": "AnimationPlan",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "animationplan",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L112"
-    },
-    {
-      "id": "frontend_src_types_animation_animationsegment",
-      "label": "AnimationSegment",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "animationsegment",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L102"
-    },
-    {
-      "id": "frontend_src_types_animation_playanimationoptions",
-      "label": "PlayAnimationOptions",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 94,
-      "community_name": "animation.ts",
-      "file_type": "code",
-      "norm_label": "playanimationoptions",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L92"
     },
     {
       "id": "backend_tests_test_tts_synthesize_faketts_init",
@@ -1341,11 +1341,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "isexpressionname()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L127"
+      "source_location": "L128"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_isgesturename",
@@ -1353,11 +1353,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "isgesturename()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L123"
+      "source_location": "L124"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_isheadmotionname",
@@ -1365,23 +1365,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "isheadmotionname()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L131"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationregistry_isidlename",
-      "label": "isIdleName()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "isidlename()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L135"
+      "source_location": "L132"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_islocomotionname",
@@ -1389,11 +1377,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "islocomotionname()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L139"
+      "source_location": "L140"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_resolveexpressionclip",
@@ -1401,11 +1389,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "resolveexpressionclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L105"
+      "source_location": "L106"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_resolvegestureclip",
@@ -1413,11 +1401,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "resolvegestureclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L94"
+      "source_location": "L95"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_resolveheadclip",
@@ -1425,23 +1413,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "resolveheadclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L116"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationregistry_resolveidleclip",
-      "label": "resolveIdleClip()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "resolveidleclip()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L72"
+      "source_location": "L117"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_resolvelocomotionclip",
@@ -1449,11 +1425,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "resolvelocomotionclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L83"
+      "source_location": "L84"
     },
     {
       "id": "frontend_src_services_avatar_animation_parseanimationplan_animationplanerror_constructor",
@@ -1461,7 +1437,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -1473,7 +1449,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "parseanimationplan()",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -1485,7 +1461,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "parsesegment()",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -1497,7 +1473,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": ".playgesture()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
@@ -1509,23 +1485,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": ".setheadmotion()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
       "source_location": "L106"
     },
     {
-      "id": "frontend_src_types_avatar_avatarcontroller_setheadmotion",
-      "label": ".setHeadMotion()",
+      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_startlocomotion",
+      "label": ".startLocomotion()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
-      "norm_label": ".setheadmotion()",
+      "norm_label": ".startlocomotion()",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L150"
+    },
+    {
+      "id": "frontend_src_types_avatar_avatarcontroller_startlocomotion",
+      "label": ".startLocomotion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "AnimationRegistry.ts",
+      "file_type": "code",
+      "norm_label": ".startlocomotion()",
       "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L19"
+      "source_location": "L24"
     },
     {
       "id": "blender_scripts_modify_materials_build_parser",
@@ -1636,6 +1624,150 @@
       "source_location": "L93"
     },
     {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_applyimmediate",
+      "label": ".applyImmediate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".applyimmediate()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L173"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_bind",
+      "label": ".bind()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".bind()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_dispose",
+      "label": ".dispose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".dispose()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L165"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_disposecard",
+      "label": ".disposeCard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".disposecard()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L236"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_getcurrent",
+      "label": ".getCurrent()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".getcurrent()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L161"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_hidedrawnfeatures",
+      "label": ".hideDrawnFeatures()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".hidedrawnfeatures()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L227"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_loadmouthopen",
+      "label": ".loadMouthOpen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".loadmouthopen()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L205"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_loadone",
+      "label": ".loadOne()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".loadone()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L187"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_preload",
+      "label": ".preload()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".preload()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L97"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_setexpression",
+      "label": ".setExpression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".setexpression()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L120"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_setmouthopen",
+      "label": ".setMouthOpen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".setmouthopen()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L110"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_update",
+      "label": ".update()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 107,
+      "community_name": "ExpressionName",
+      "file_type": "code",
+      "norm_label": ".update()",
+      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
+      "source_location": "L143"
+    },
+    {
       "id": "frontend_src_services_avatar_facial_facepackregistry_isfacepackexpression",
       "label": "isFacePackExpression()",
       "_callable": true,
@@ -1660,162 +1792,6 @@
       "source_location": "L24"
     },
     {
-      "id": "frontend_src_services_avatar_facial_facepackregistry_resolvefacemask",
-      "label": "resolveFaceMask()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "resolvefacemask()",
-      "source_file": "frontend/src/services/avatar/facial/FacePackRegistry.ts",
-      "source_location": "L49"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_collectmorphmeshes",
-      "label": ".collectMorphMeshes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".collectmorphmeshes()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L52"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L32"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_dispose",
-      "label": ".dispose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".dispose()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L129"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_getactivemask",
-      "label": ".getActiveMask()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".getactivemask()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L73"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_getexpression",
-      "label": ".getExpression()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".getexpression()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L68"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_reset",
-      "label": ".reset()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".reset()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L119"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_resetinfluences",
-      "label": ".resetInfluences()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".resetinfluences()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L134"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_retargetto",
-      "label": ".retargetTo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".retargetto()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L38"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_setexpression",
-      "label": ".setExpression()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".setexpression()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L80"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_update",
-      "label": ".update()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".update()",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L89"
-    },
-    {
-      "id": "frontend_src_types_avatar_avatarcontroller_setexpression",
-      "label": ".setExpression()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": ".setexpression()",
-      "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "frontend_src_utils_logger_write",
-      "label": "write()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "write()",
-      "source_file": "frontend/src/utils/logger.ts",
-      "source_location": "L7"
-    },
-    {
       "id": "frontend_src_app_app",
       "label": "App()",
       "_callable": true,
@@ -1826,18 +1802,6 @@
       "norm_label": "app()",
       "source_file": "frontend/src/App.tsx",
       "source_location": "L7"
-    },
-    {
-      "id": "frontend_src_constants_environment_loadenvironment",
-      "label": "loadEnvironment()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "loadenvironment()",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L22"
     },
     {
       "id": "frontend_src_features_avatar_hooks_useavatar_useavatar",
@@ -1898,6 +1862,114 @@
       "norm_label": "approutes()",
       "source_file": "frontend/src/routes/index.tsx",
       "source_location": "L7"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_dispose",
+      "label": ".dispose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".dispose()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L122"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_getactiveanimation",
+      "label": ".getActiveAnimation()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".getactiveanimation()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_listclips",
+      "label": ".listClips()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".listclips()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_onfinished",
+      "label": ".onFinished()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".onfinished()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L43"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_stop",
+      "label": ".stop()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".stop()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L100"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_stopall",
+      "label": ".stopAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".stopall()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L111"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_update",
+      "label": ".update()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".update()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
+      "source_location": "L116"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 109,
+      "community_name": "AnimationController",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
+      "source_location": "L30"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationstatemachine_animationstatemachine_gesturefinished",
@@ -2006,6 +2078,54 @@
       "norm_label": ".transitionto()",
       "source_file": "frontend/src/services/avatar/animation/AnimationStateMachine.ts",
       "source_location": "L28"
+    },
+    {
+      "id": "frontend_src_features_chat_mapreplyreaction_mapreplyreaction",
+      "label": "mapReplyReaction()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": "mapreplyreaction()",
+      "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
+      "source_location": "L70"
+    },
+    {
+      "id": "frontend_src_features_chat_mapreplyreaction_raisegesture",
+      "label": "raiseGesture()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": "raisegesture()",
+      "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
+      "source_location": "L41"
+    },
+    {
+      "id": "frontend_src_types_avatar_avatarcontroller_playgesture",
+      "label": ".playGesture()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": ".playgesture()",
+      "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "frontend_src_types_avatar_avatarcontroller_setheadmotion",
+      "label": ".setHeadMotion()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": ".setheadmotion()",
+      "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L19"
     },
     {
       "id": "backend_app_api_dependencies_get_tts_audio_service",
@@ -2236,6 +2356,18 @@
       "source_location": "L33"
     },
     {
+      "id": "frontend_src_api_chat_postchatturn",
+      "label": "postChatTurn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "code",
+      "norm_label": "postchatturn()",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L32"
+    },
+    {
       "id": "frontend_src_api_httperror_readerrordetail",
       "label": "readErrorDetail()",
       "_callable": true,
@@ -2270,30 +2402,6 @@
       "norm_label": "synthesizespeech()",
       "source_file": "frontend/src/api/tts.ts",
       "source_location": "L18"
-    },
-    {
-      "id": "frontend_src_features_chat_mapreplyreaction_mapreplyreaction",
-      "label": "mapReplyReaction()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 115,
-      "community_name": "playAssistantReaction.ts",
-      "file_type": "code",
-      "norm_label": "mapreplyreaction()",
-      "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L70"
-    },
-    {
-      "id": "frontend_src_features_chat_mapreplyreaction_raisegesture",
-      "label": "raiseGesture()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 115,
-      "community_name": "playAssistantReaction.ts",
-      "file_type": "code",
-      "norm_label": "raisegesture()",
-      "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L41"
     },
     {
       "id": "frontend_src_features_chat_playassistantreaction_applyreplyreaction",
@@ -2365,7 +2473,7 @@
       "file_type": "code",
       "norm_label": "animationcontrols()",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L58"
+      "source_location": "L59"
     },
     {
       "id": "frontend_src_features_avatar_components_debugpanel_debugpanel",
@@ -2522,150 +2630,6 @@
       "norm_label": "tts_validation_handler()",
       "source_file": "backend/app/main.py",
       "source_location": "L68"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_applyimmediate",
-      "label": ".applyImmediate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".applyimmediate()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L173"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_bind",
-      "label": ".bind()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".bind()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L42"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_dispose",
-      "label": ".dispose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".dispose()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L165"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_disposecard",
-      "label": ".disposeCard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".disposecard()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L236"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_getcurrent",
-      "label": ".getCurrent()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".getcurrent()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L161"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_hidedrawnfeatures",
-      "label": ".hideDrawnFeatures()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".hidedrawnfeatures()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L227"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_loadmouthopen",
-      "label": ".loadMouthOpen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".loadmouthopen()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L205"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_loadone",
-      "label": ".loadOne()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".loadone()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L187"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_preload",
-      "label": ".preload()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".preload()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L97"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_setexpression",
-      "label": ".setExpression()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".setexpression()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L120"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_setmouthopen",
-      "label": ".setMouthOpen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".setmouthopen()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L110"
-    },
-    {
-      "id": "frontend_src_services_avatar_facial_facemasklayer_facemasklayer_update",
-      "label": ".update()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 119,
-      "community_name": "FaceMaskLayer",
-      "file_type": "code",
-      "norm_label": ".update()",
-      "source_file": "frontend/src/services/avatar/facial/FaceMaskLayer.ts",
-      "source_location": "L143"
     },
     {
       "id": "blender_scripts_improve_facial_shape_keys_apply_deltas",
@@ -2968,114 +2932,6 @@
       "source_location": "L29"
     },
     {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_dispose",
-      "label": ".dispose()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".dispose()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_getamplitude",
-      "label": ".getAmplitude()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".getamplitude()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_getcurrenttime",
-      "label": ".getCurrentTime()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".getcurrenttime()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_getduration",
-      "label": ".getDuration()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".getduration()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L10"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_load",
-      "label": ".load()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".load()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_onended",
-      "label": ".onEnded()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".onended()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L12"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_pause",
-      "label": ".pause()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".pause()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_play",
-      "label": ".play()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".play()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_stop",
-      "label": ".stop()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": ".stop()",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "blender_scripts_scaffold_presenter_blend_add_bone",
       "label": "_add_bone()",
       "_callable": true,
@@ -3328,6 +3184,42 @@
       "source_location": "L20"
     },
     {
+      "id": "frontend_src_features_avatar_components_avatar_avatar",
+      "label": "Avatar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AvatarRuntime",
+      "file_type": "code",
+      "norm_label": "avatar()",
+      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
+      "source_location": "L33"
+    },
+    {
+      "id": "frontend_src_features_avatar_components_avatar_loadgltf",
+      "label": "loadGltf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AvatarRuntime",
+      "file_type": "code",
+      "norm_label": "loadgltf()",
+      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
+      "source_location": "L17"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationregistry_isidlename",
+      "label": "isIdleName()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AvatarRuntime",
+      "file_type": "code",
+      "norm_label": "isidlename()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
+      "source_location": "L136"
+    },
+    {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_assertarmature",
       "label": ".assertArmature()",
       "_callable": true,
@@ -3374,6 +3266,30 @@
       "norm_label": ".constructor()",
       "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
       "source_location": "L53"
+    },
+    {
+      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_dispose",
+      "label": ".dispose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AvatarRuntime",
+      "file_type": "code",
+      "norm_label": ".dispose()",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L347"
+    },
+    {
+      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_getstatus",
+      "label": ".getStatus()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "AvatarRuntime",
+      "file_type": "code",
+      "norm_label": ".getstatus()",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L298"
     },
     {
       "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_loadaudio",
@@ -3904,18 +3820,6 @@
       "source_location": "L50"
     },
     {
-      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_startlocomotion",
-      "label": ".startLocomotion()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": ".startlocomotion()",
-      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L150"
-    },
-    {
       "id": "frontend_src_types_avatar_avatarcontroller_getstatus",
       "label": ".getStatus()",
       "_callable": true,
@@ -3964,18 +3868,6 @@
       "source_location": "L40"
     },
     {
-      "id": "frontend_src_types_avatar_avatarcontroller_playgesture",
-      "label": ".playGesture()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": ".playgesture()",
-      "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L17"
-    },
-    {
       "id": "frontend_src_types_avatar_avatarcontroller_reset",
       "label": ".reset()",
       "_callable": true,
@@ -3986,6 +3878,18 @@
       "norm_label": ".reset()",
       "source_file": "frontend/src/types/avatar.ts",
       "source_location": "L29"
+    },
+    {
+      "id": "frontend_src_types_avatar_avatarcontroller_setexpression",
+      "label": ".setExpression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 26,
+      "community_name": "AvatarController",
+      "file_type": "code",
+      "norm_label": ".setexpression()",
+      "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L18"
     },
     {
       "id": "frontend_src_types_avatar_avatarcontroller_setgaze",
@@ -4010,18 +3914,6 @@
       "norm_label": ".speakfromurl()",
       "source_file": "frontend/src/types/avatar.ts",
       "source_location": "L49"
-    },
-    {
-      "id": "frontend_src_types_avatar_avatarcontroller_startlocomotion",
-      "label": ".startLocomotion()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": ".startlocomotion()",
-      "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L24"
     },
     {
       "id": "frontend_src_types_avatar_avatarcontroller_startspeaking",
@@ -4089,7 +3981,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": ".getamplitude()",
       "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
@@ -4101,7 +3993,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "frontend/src/services/avatar/audio/LipSyncController.ts",
@@ -4113,7 +4005,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": ".start()",
       "source_file": "frontend/src/services/avatar/audio/LipSyncController.ts",
@@ -4125,7 +4017,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": ".stop()",
       "source_file": "frontend/src/services/avatar/audio/LipSyncController.ts",
@@ -4137,7 +4029,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": ".update()",
       "source_file": "frontend/src/services/avatar/audio/LipSyncController.ts",
@@ -4149,11 +4041,119 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": "softgate()",
       "source_file": "frontend/src/services/avatar/audio/LipSyncController.ts",
       "source_location": "L64"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facepackregistry_resolvefacemask",
+      "label": "resolveFaceMask()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": "resolvefacemask()",
+      "source_file": "frontend/src/services/avatar/facial/FacePackRegistry.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_collectmorphmeshes",
+      "label": ".collectMorphMeshes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".collectmorphmeshes()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_dispose",
+      "label": ".dispose()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".dispose()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L129"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_getactivemask",
+      "label": ".getActiveMask()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".getactivemask()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L73"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_getexpression",
+      "label": ".getExpression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".getexpression()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L68"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_reset",
+      "label": ".reset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".reset()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L119"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_resetinfluences",
+      "label": ".resetInfluences()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".resetinfluences()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L134"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_retargetto",
+      "label": ".retargetTo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".retargetto()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L38"
     },
     {
       "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_setblendshape",
@@ -4161,11 +4161,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": ".setblendshape()",
       "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
       "source_location": "L97"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_setexpression",
+      "label": ".setExpression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".setexpression()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L80"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_update",
+      "label": ".update()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 27,
+      "community_name": "FacialController",
+      "file_type": "code",
+      "norm_label": ".update()",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L89"
     },
     {
       "id": "frontend_src_services_avatar_facial_facialcontroller_facialcontroller_warn",
@@ -4173,7 +4197,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 27,
-      "community_name": "LipSyncController",
+      "community_name": "FacialController",
       "file_type": "code",
       "norm_label": ".warn()",
       "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
@@ -4521,7 +4545,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarcamera()",
       "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
@@ -4533,7 +4557,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarlighting()",
       "source_file": "frontend/src/features/avatar/components/AvatarLighting.tsx",
@@ -4545,7 +4569,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarscene()",
       "source_file": "frontend/src/features/avatar/components/AvatarScene.tsx",
@@ -4557,47 +4581,35 @@
       "_callable": true,
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "studio()",
       "source_file": "frontend/src/features/avatar/components/Studio.tsx",
       "source_location": "L7"
     },
     {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_constructor",
+      "id": "frontend_src_services_avatar_validateavatarconfig_avatarconfigerror_constructor",
       "label": ".constructor()",
       "_callable": true,
       "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationController",
+      "community": 30,
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": ".constructor()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L29"
+      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
+      "source_location": "L18"
     },
     {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_dispose",
-      "label": ".dispose()",
+      "id": "frontend_src_services_avatar_validateavatarconfig_validateavatarconfig",
+      "label": "validateAvatarConfig()",
       "_callable": true,
       "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationController",
+      "community": 30,
+      "community_name": "Avatar.tsx",
       "file_type": "code",
-      "norm_label": ".dispose()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L122"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_getactiveanimation",
-      "label": ".getActiveAnimation()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationController",
-      "file_type": "code",
-      "norm_label": ".getactiveanimation()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L58"
+      "norm_label": "validateavatarconfig()",
+      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
+      "source_location": "L28"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_hasclip",
@@ -4605,35 +4617,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".hasclip()",
       "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
       "source_location": "L49"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_listclips",
-      "label": ".listClips()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationController",
-      "file_type": "code",
-      "norm_label": ".listclips()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L54"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_onfinished",
-      "label": ".onFinished()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationController",
-      "file_type": "code",
-      "norm_label": ".onfinished()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L43"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_play",
@@ -4641,47 +4629,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".play()",
       "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
       "source_location": "L66"
     },
     {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_stop",
-      "label": ".stop()",
+      "id": "frontend_src_services_avatar_animation_animationregistry_resolveidleclip",
+      "label": "resolveIdleClip()",
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
-      "norm_label": ".stop()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L100"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_stopall",
-      "label": ".stopAll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationController",
-      "file_type": "code",
-      "norm_label": ".stopall()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L111"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_animationcontroller_animationcontroller_update",
-      "label": ".update()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationController",
-      "file_type": "code",
-      "norm_label": ".update()",
-      "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
-      "source_location": "L116"
+      "norm_label": "resolveidleclip()",
+      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
+      "source_location": "L73"
     },
     {
       "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_applyblink",
@@ -4689,23 +4653,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".applyblink()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L120"
-    },
-    {
-      "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "AnimationController",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L30"
+      "source_location": "L127"
     },
     {
       "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_getidle",
@@ -4713,7 +4665,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".getidle()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
@@ -4725,7 +4677,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".setidle()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
@@ -4737,7 +4689,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".start()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
@@ -4749,11 +4701,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".update()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L80"
+      "source_location": "L87"
     },
     {
       "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_updateblink",
@@ -4761,11 +4713,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".updateblink()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L88"
+      "source_location": "L95"
     },
     {
       "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_updateeyes",
@@ -4773,11 +4725,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".updateeyes()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L125"
+      "source_location": "L132"
     },
     {
       "id": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_updatehead",
@@ -4785,11 +4737,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".updatehead()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L144"
+      "source_location": "L151"
     },
     {
       "id": "frontend_src_services_avatar_animation_idlecontroller_randombetween",
@@ -4797,7 +4749,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": "randombetween()",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
@@ -4809,7 +4761,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 31,
-      "community_name": "AnimationController",
+      "community_name": "animation.ts",
       "file_type": "code",
       "norm_label": ".setidle()",
       "source_file": "frontend/src/types/avatar.ts",
@@ -5932,16 +5884,16 @@
       "source_location": "L99"
     },
     {
-      "id": "frontend_src_api_chat_postchatturn",
-      "label": "postChatTurn()",
+      "id": "frontend_src_constants_environment_loadenvironment",
+      "label": "loadEnvironment()",
       "_callable": true,
       "_origin": "ast",
       "community": 49,
       "community_name": "useChatTurn.ts",
       "file_type": "code",
-      "norm_label": "postchatturn()",
-      "source_file": "frontend/src/api/chat.ts",
-      "source_location": "L32"
+      "norm_label": "loadenvironment()",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L27"
     },
     {
       "id": "frontend_src_features_chat_components_chatpanel_chatpanel",
@@ -6040,18 +5992,6 @@
       "source_location": "L174"
     },
     {
-      "id": "blender_scripts_create_animation_build_bone_clip_key_loc",
-      "label": "key_loc()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "create_animation.py",
-      "file_type": "code",
-      "norm_label": "key_loc()",
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L193"
-    },
-    {
       "id": "blender_scripts_create_animation_build_bone_clip_key_rot",
       "label": "key_rot()",
       "_callable": true,
@@ -6061,7 +6001,7 @@
       "file_type": "code",
       "norm_label": "key_rot()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L188"
+      "source_location": "L196"
     },
     {
       "id": "blender_scripts_create_animation_build_bone_clip_need",
@@ -6073,7 +6013,7 @@
       "file_type": "code",
       "norm_label": "need()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L183"
+      "source_location": "L191"
     },
     {
       "id": "blender_scripts_create_animation_build_parser",
@@ -6085,7 +6025,7 @@
       "file_type": "code",
       "norm_label": "_build_parser()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L404"
+      "source_location": "L604"
     },
     {
       "id": "blender_scripts_create_animation_build_shape_clip",
@@ -6097,7 +6037,7 @@
       "file_type": "code",
       "norm_label": "_build_shape_clip()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L332"
+      "source_location": "L532"
     },
     {
       "id": "blender_scripts_create_animation_build_shape_clip_key_shape",
@@ -6109,7 +6049,7 @@
       "file_type": "code",
       "norm_label": "key_shape()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L341"
+      "source_location": "L541"
     },
     {
       "id": "blender_scripts_create_animation_clear_action_users",
@@ -6133,7 +6073,7 @@
       "file_type": "code",
       "norm_label": "create_animation()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L464"
+      "source_location": "L664"
     },
     {
       "id": "blender_scripts_create_animation_create_animation_impl",
@@ -6145,7 +6085,7 @@
       "file_type": "code",
       "norm_label": "_create_animation_impl()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L474"
+      "source_location": "L674"
     },
     {
       "id": "blender_scripts_create_animation_create_one",
@@ -6157,7 +6097,7 @@
       "file_type": "code",
       "norm_label": "_create_one()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L446"
+      "source_location": "L646"
     },
     {
       "id": "blender_scripts_create_animation_ensure_action",
@@ -6205,7 +6145,7 @@
       "file_type": "code",
       "norm_label": "_list_actions()",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L380"
+      "source_location": "L580"
     },
     {
       "id": "blender_scripts_create_animation_load_common",
@@ -6628,76 +6568,112 @@
       "source_location": "L83"
     },
     {
-      "id": "frontend_src_features_avatar_components_avatar_avatar",
-      "label": "Avatar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "avatar()",
-      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
-      "source_location": "L33"
-    },
-    {
-      "id": "frontend_src_features_avatar_components_avatar_loadgltf",
-      "label": "loadGltf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "loadgltf()",
-      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
-      "source_location": "L17"
-    },
-    {
-      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_dispose",
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_dispose",
       "label": ".dispose()",
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "Avatar.tsx",
+      "community_name": "AudioControllerApi",
       "file_type": "code",
       "norm_label": ".dispose()",
-      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L347"
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L13"
     },
     {
-      "id": "frontend_src_services_avatar_avatarruntime_avatarruntime_getstatus",
-      "label": ".getStatus()",
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_getamplitude",
+      "label": ".getAmplitude()",
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "Avatar.tsx",
+      "community_name": "AudioControllerApi",
       "file_type": "code",
-      "norm_label": ".getstatus()",
-      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L298"
-    },
-    {
-      "id": "frontend_src_services_avatar_validateavatarconfig_avatarconfigerror_constructor",
-      "label": ".constructor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": ".constructor()",
-      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
+      "norm_label": ".getamplitude()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
       "source_location": "L18"
     },
     {
-      "id": "frontend_src_services_avatar_validateavatarconfig_validateavatarconfig",
-      "label": "validateAvatarConfig()",
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_getcurrenttime",
+      "label": ".getCurrentTime()",
       "_callable": true,
       "_origin": "ast",
       "community": 85,
-      "community_name": "Avatar.tsx",
+      "community_name": "AudioControllerApi",
       "file_type": "code",
-      "norm_label": "validateavatarconfig()",
-      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
-      "source_location": "L28"
+      "norm_label": ".getcurrenttime()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_getduration",
+      "label": ".getDuration()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "AudioControllerApi",
+      "file_type": "code",
+      "norm_label": ".getduration()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_load",
+      "label": ".load()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "AudioControllerApi",
+      "file_type": "code",
+      "norm_label": ".load()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_onended",
+      "label": ".onEnded()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "AudioControllerApi",
+      "file_type": "code",
+      "norm_label": ".onended()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_pause",
+      "label": ".pause()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "AudioControllerApi",
+      "file_type": "code",
+      "norm_label": ".pause()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_play",
+      "label": ".play()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "AudioControllerApi",
+      "file_type": "code",
+      "norm_label": ".play()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "frontend_src_services_avatar_audio_audiotypes_audiocontrollerapi_stop",
+      "label": ".stop()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 85,
+      "community_name": "AudioControllerApi",
+      "file_type": "code",
+      "norm_label": ".stop()",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
+      "source_location": "L8"
     },
     {
       "id": "blender_scripts_import_base_glb_backup_existing_blend",
@@ -6758,6 +6734,18 @@
       "norm_label": "_script_argv()",
       "source_file": "blender/scripts/import_base_glb.py",
       "source_location": "L37"
+    },
+    {
+      "id": "frontend_src_utils_logger_write",
+      "label": "write()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "AvatarRuntime.ts",
+      "file_type": "code",
+      "norm_label": "write()",
+      "source_file": "frontend/src/utils/logger.ts",
+      "source_location": "L7"
     },
     {
       "id": "backend_tests_test_tts_synthesize",
@@ -6859,99 +6847,77 @@
       "source_location": "L70"
     },
     {
-      "id": "frontend_src_features_chat_mapreplyreaction",
-      "label": "mapReplyReaction.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "mapreplyreaction.ts",
-      "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "frontend_src_services_avatar_animation_animationregistry",
       "label": "AnimationRegistry.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "animationregistry.ts",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_services_avatar_animation_animationregistry_animationregistry",
-      "label": "animationRegistry",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "animationregistry",
-      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L14"
-    },
-    {
       "id": "frontend_src_services_avatar_animation_animationregistry_expression_names",
       "label": "EXPRESSION_NAMES",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "expression_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L63"
+      "source_location": "L64"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_gesture_names",
       "label": "GESTURE_NAMES",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "gesture_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L62"
+      "source_location": "L63"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_head_names",
       "label": "HEAD_NAMES",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "head_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L64"
+      "source_location": "L65"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_idle_names",
       "label": "IDLE_NAMES",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "idle_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L65"
+      "source_location": "L66"
     },
     {
       "id": "frontend_src_services_avatar_animation_animationregistry_locomotion_names",
       "label": "LOCOMOTION_NAMES",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "locomotion_names",
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L66"
+      "source_location": "L67"
     },
     {
       "id": "frontend_src_services_avatar_animation_parseanimationplan",
       "label": "parseAnimationPlan.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "parseanimationplan.ts",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
@@ -6962,66 +6928,22 @@
       "label": "GAZE",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "gaze",
       "source_file": "frontend/src/services/avatar/animation/parseAnimationPlan.ts",
       "source_location": "L16"
     },
     {
-      "id": "frontend_src_services_avatar_avatarruntime",
-      "label": "AvatarRuntime.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "avatarruntime.ts",
-      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_tests_features_chat_mapreplyreaction_test",
-      "label": "mapReplyReaction.test.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "mapreplyreaction.test.ts",
-      "source_file": "frontend/src/tests/features/chat/mapReplyReaction.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "frontend_src_tests_services_avatar_animation_animationregistry_test",
       "label": "AnimationRegistry.test.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "AvatarRuntime.ts",
+      "community_name": "AnimationRegistry.ts",
       "file_type": "code",
       "norm_label": "animationregistry.test.ts",
       "source_file": "frontend/src/tests/services/avatar/animation/AnimationRegistry.test.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_tests_services_avatar_animation_parseanimationplan_test",
-      "label": "parseAnimationPlan.test.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "code",
-      "norm_label": "parseanimationplan.test.ts",
-      "source_file": "frontend/src/tests/services/avatar/animation/parseAnimationPlan.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "ref_vitest",
-      "label": "vitest",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "AvatarRuntime.ts",
-      "file_type": "concept",
-      "norm_label": "vitest",
-      "source_file": "frontend/package.json",
-      "source_location": "L47"
     },
     {
       "id": "blender_scripts_modify_materials",
@@ -7448,28 +7370,6 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_services_avatar_audio_audiocontroller",
-      "label": "AudioController.ts",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "audiocontroller.ts",
-      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_lipsynccontroller",
-      "label": "LipSyncController.ts",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "lipsynccontroller.ts",
-      "source_file": "frontend/src/services/avatar/audio/LipSyncController.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "frontend_src_services_avatar_facial_facemasklayer",
       "label": "FaceMaskLayer.ts",
       "_origin": "ast",
@@ -7536,17 +7436,6 @@
       "source_location": "L22"
     },
     {
-      "id": "frontend_src_services_avatar_facial_facialcontroller",
-      "label": "FacialController.ts",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "facialcontroller.ts",
-      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "frontend_src_services_avatar_facial_facialtypes",
       "label": "facialTypes.ts",
       "_origin": "ast",
@@ -7569,28 +7458,6 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_utils_logger",
-      "label": "logger.ts",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "logger.ts",
-      "source_file": "frontend/src/utils/logger.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_utils_logger_logger",
-      "label": "logger",
-      "_origin": "ast",
-      "community": 107,
-      "community_name": "ExpressionName",
-      "file_type": "code",
-      "norm_label": "logger",
-      "source_file": "frontend/src/utils/logger.ts",
-      "source_location": "L24"
-    },
-    {
       "id": "frontend_src_app",
       "label": "App.tsx",
       "_origin": "ast",
@@ -7600,28 +7467,6 @@
       "norm_label": "app.tsx",
       "source_file": "frontend/src/App.tsx",
       "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_constants_environment",
-      "label": "environment.ts",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "environment.ts",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_constants_environment_environment",
-      "label": "environment",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "PresenterPage.tsx",
-      "file_type": "code",
-      "norm_label": "environment",
-      "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L34"
     },
     {
       "id": "frontend_src_features_avatar_hooks_useavatar",
@@ -7940,6 +7785,28 @@
       "file_type": "code",
       "norm_label": "animationstatemachine.test.ts",
       "source_file": "frontend/src/tests/services/avatar/animation/AnimationStateMachine.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_features_chat_mapreplyreaction",
+      "label": "mapReplyReaction.ts",
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": "mapreplyreaction.ts",
+      "source_file": "frontend/src/features/chat/mapReplyReaction.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_tests_features_chat_mapreplyreaction_test",
+      "label": "mapReplyReaction.test.ts",
+      "_origin": "ast",
+      "community": 111,
+      "community_name": "GestureName",
+      "file_type": "code",
+      "norm_label": "mapreplyreaction.test.ts",
+      "source_file": "frontend/src/tests/features/chat/mapReplyReaction.test.ts",
       "source_location": "L1"
     },
     {
@@ -8628,6 +8495,17 @@
       "source_location": "L72"
     },
     {
+      "id": "frontend_src_api_chat",
+      "label": "chat.ts",
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "code",
+      "norm_label": "chat.ts",
+      "source_file": "frontend/src/api/chat.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "frontend_src_api_httperror",
       "label": "httpError.ts",
       "_origin": "ast",
@@ -8672,6 +8550,17 @@
       "source_location": "L11"
     },
     {
+      "id": "frontend_src_tests_api_chat_test",
+      "label": "chat.test.ts",
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "code",
+      "norm_label": "chat.test.ts",
+      "source_file": "frontend/src/tests/api/chat.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "frontend_src_tests_api_tts_test",
       "label": "tts.test.ts",
       "_origin": "ast",
@@ -8681,6 +8570,28 @@
       "norm_label": "tts.test.ts",
       "source_file": "frontend/src/tests/api/tts.test.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_tests_services_avatar_animation_parseanimationplan_test",
+      "label": "parseAnimationPlan.test.ts",
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "code",
+      "norm_label": "parseanimationplan.test.ts",
+      "source_file": "frontend/src/tests/services/avatar/animation/parseAnimationPlan.test.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_vitest",
+      "label": "vitest",
+      "_origin": "ast",
+      "community": 115,
+      "community_name": "playAssistantReaction.ts",
+      "file_type": "concept",
+      "norm_label": "vitest",
+      "source_file": "frontend/package.json",
+      "source_location": "L47"
     },
     {
       "id": "frontend_src_components_statuspanel",
@@ -8713,7 +8624,7 @@
       "file_type": "code",
       "norm_label": "expressions",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L40"
+      "source_location": "L41"
     },
     {
       "id": "frontend_src_features_avatar_components_animationcontrols_gestures",
@@ -8724,7 +8635,7 @@
       "file_type": "code",
       "norm_label": "gestures",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "frontend_src_features_avatar_components_animationcontrols_heads",
@@ -8735,7 +8646,7 @@
       "file_type": "code",
       "norm_label": "heads",
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L49"
+      "source_location": "L50"
     },
     {
       "id": "frontend_src_features_avatar_components_animationcontrols_idles",
@@ -8790,6 +8701,39 @@
       "file_type": "code",
       "norm_label": "types.ts",
       "source_file": "frontend/src/features/avatar/types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_avatar",
+      "label": "avatar.ts",
+      "_origin": "ast",
+      "community": 116,
+      "community_name": "DebugPanel.tsx",
+      "file_type": "code",
+      "norm_label": "avatar.ts",
+      "source_file": "frontend/src/types/avatar.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_events",
+      "label": "events.ts",
+      "_origin": "ast",
+      "community": 116,
+      "community_name": "DebugPanel.tsx",
+      "file_type": "code",
+      "norm_label": "events.ts",
+      "source_file": "frontend/src/types/events.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_index",
+      "label": "index.ts",
+      "_origin": "ast",
+      "community": 116,
+      "community_name": "DebugPanel.tsx",
+      "file_type": "code",
+      "norm_label": "index.ts",
+      "source_file": "frontend/src/types/index.ts",
       "source_location": "L1"
     },
     {
@@ -9055,17 +8999,6 @@
       "norm_label": "return head vertex indices and per-vertex local coords in head space. uses...",
       "source_file": "blender/scripts/improve_facial_shape_keys.py",
       "source_location": "L61"
-    },
-    {
-      "id": "frontend_src_services_avatar_audio_audiotypes",
-      "label": "audioTypes.ts",
-      "_origin": "ast",
-      "community": 121,
-      "community_name": "AudioController",
-      "file_type": "code",
-      "norm_label": "audiotypes.ts",
-      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
-      "source_location": "L1"
     },
     {
       "id": "frontend_tsconfig",
@@ -10479,39 +10412,6 @@
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_types_avatar",
-      "label": "avatar.ts",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": "avatar.ts",
-      "source_file": "frontend/src/types/avatar.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_types_events",
-      "label": "events.ts",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": "events.ts",
-      "source_file": "frontend/src/types/events.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_types_index",
-      "label": "index.ts",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "AvatarController",
-      "file_type": "code",
-      "norm_label": "index.ts",
-      "source_file": "frontend/src/types/index.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "cursor_agents_solution_architect_agent_assumptions",
       "label": "Assumptions",
       "_origin": "ast",
@@ -11319,22 +11219,55 @@
       "source_location": "L96"
     },
     {
+      "id": "frontend_src_constants_avatarconfig",
+      "label": "avatarConfig.ts",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "avatarconfig.ts",
+      "source_file": "frontend/src/constants/avatarConfig.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "frontend_src_constants_avatarconfig_avatarconfig",
       "label": "avatarConfig",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarconfig",
       "source_file": "frontend/src/constants/avatarConfig.ts",
       "source_location": "L7"
     },
     {
+      "id": "frontend_src_constants_avatarconfig_defaultexpression",
+      "label": "defaultExpression",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "defaultexpression",
+      "source_file": "frontend/src/constants/avatarConfig.ts",
+      "source_location": "L41"
+    },
+    {
+      "id": "frontend_src_constants_avatarconfig_defaultgaze",
+      "label": "defaultGaze",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "defaultgaze",
+      "source_file": "frontend/src/constants/avatarConfig.ts",
+      "source_location": "L42"
+    },
+    {
       "id": "frontend_src_constants_studioconfig",
       "label": "studioConfig.ts",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "studioconfig.ts",
       "source_file": "frontend/src/constants/studioConfig.ts",
@@ -11345,18 +11278,29 @@
       "label": "studioConfig",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "studioconfig",
       "source_file": "frontend/src/constants/studioConfig.ts",
       "source_location": "L4"
     },
     {
+      "id": "frontend_src_features_avatar_components_avatar",
+      "label": "Avatar.tsx",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "avatar.tsx",
+      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "frontend_src_features_avatar_components_avatarcamera",
       "label": "AvatarCamera.tsx",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarcamera.tsx",
       "source_file": "frontend/src/features/avatar/components/AvatarCamera.tsx",
@@ -11367,7 +11311,7 @@
       "label": "AvatarLighting.tsx",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarlighting.tsx",
       "source_file": "frontend/src/features/avatar/components/AvatarLighting.tsx",
@@ -11378,7 +11322,7 @@
       "label": "AvatarScene.tsx",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "avatarscene.tsx",
       "source_file": "frontend/src/features/avatar/components/AvatarScene.tsx",
@@ -11389,10 +11333,32 @@
       "label": "Studio.tsx",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "code",
       "norm_label": "studio.tsx",
       "source_file": "frontend/src/features/avatar/components/Studio.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_services_avatar_validateavatarconfig",
+      "label": "validateAvatarConfig.ts",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "validateavatarconfig.ts",
+      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_tests_services_avatar_validateavatarconfig_test",
+      "label": "validateAvatarConfig.test.ts",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "Avatar.tsx",
+      "file_type": "code",
+      "norm_label": "validateavatarconfig.test.ts",
+      "source_file": "frontend/src/tests/services/avatar/validateAvatarConfig.test.ts",
       "source_location": "L1"
     },
     {
@@ -11400,7 +11366,7 @@
       "label": "@react-three/drei",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "concept",
       "norm_label": "@react-three/drei",
       "source_file": "frontend/package.json",
@@ -11411,11 +11377,44 @@
       "label": "@react-three/fiber",
       "_origin": "ast",
       "community": 30,
-      "community_name": "AvatarScene.tsx",
+      "community_name": "Avatar.tsx",
       "file_type": "concept",
       "norm_label": "@react-three/fiber",
       "source_file": "frontend/package.json",
       "source_location": "L28"
+    },
+    {
+      "id": "frontend_src_services_avatar_animation_animationtypes",
+      "label": "animationTypes.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animationtypes.ts",
+      "source_file": "frontend/src/services/avatar/animation/animationTypes.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_animation",
+      "label": "animation.ts",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animation.ts",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_animation_animationlayerpriority",
+      "label": "AnimationLayerPriority",
+      "_origin": "ast",
+      "community": 31,
+      "community_name": "animation.ts",
+      "file_type": "code",
+      "norm_label": "animationlayerpriority",
+      "source_file": "frontend/src/types/animation.ts",
+      "source_location": "L76"
     },
     {
       "id": "cursor_agents_frontend_developer_agent_accessibility_considerations",
@@ -14323,15 +14322,26 @@
       "source_location": "L89"
     },
     {
-      "id": "frontend_src_api_chat",
-      "label": "chat.ts",
+      "id": "frontend_src_constants_environment",
+      "label": "environment.ts",
       "_origin": "ast",
       "community": 49,
       "community_name": "useChatTurn.ts",
       "file_type": "code",
-      "norm_label": "chat.ts",
-      "source_file": "frontend/src/api/chat.ts",
+      "norm_label": "environment.ts",
+      "source_file": "frontend/src/constants/environment.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_constants_environment_environment",
+      "label": "environment",
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "useChatTurn.ts",
+      "file_type": "code",
+      "norm_label": "environment",
+      "source_file": "frontend/src/constants/environment.ts",
+      "source_location": "L42"
     },
     {
       "id": "frontend_src_features_chat_components_chatpanel",
@@ -14353,17 +14363,6 @@
       "file_type": "code",
       "norm_label": "usechatturn.ts",
       "source_file": "frontend/src/features/chat/hooks/useChatTurn.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_tests_api_chat_test",
-      "label": "chat.test.ts",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "useChatTurn.ts",
-      "file_type": "code",
-      "norm_label": "chat.test.ts",
-      "source_file": "frontend/src/tests/api/chat.test.ts",
       "source_location": "L1"
     },
     {
@@ -14456,25 +14455,14 @@
     },
     {
       "id": "blender_scripts_create_animation_rationale_175",
-      "label": "Populate a pose-bone stub clip and assign it to the armature.",
+      "label": "Populate a pose-bone stub clip for a Mixamo-style T-pose rest. Identity euler\u2026",
       "_origin": "ast",
       "community": 5,
       "community_name": "create_animation.py",
       "file_type": "rationale",
-      "norm_label": "populate a pose-bone stub clip and assign it to the armature.",
+      "norm_label": "populate a pose-bone stub clip for a mixamo-style t-pose rest. identity euler...",
       "source_file": "blender/scripts/create_animation.py",
       "source_location": "L175"
-    },
-    {
-      "id": "blender_scripts_create_animation_rationale_333",
-      "label": "Populate a shape-key stub clip on the mesh Key data-block.",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "create_animation.py",
-      "file_type": "rationale",
-      "norm_label": "populate a shape-key stub clip on the mesh key data-block.",
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L333"
     },
     {
       "id": "blender_scripts_create_animation_rationale_35",
@@ -14488,39 +14476,6 @@
       "source_location": "L35"
     },
     {
-      "id": "blender_scripts_create_animation_rationale_381",
-      "label": "Print actions and NLA strip names.",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "create_animation.py",
-      "file_type": "rationale",
-      "norm_label": "print actions and nla strip names.",
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L381"
-    },
-    {
-      "id": "blender_scripts_create_animation_rationale_405",
-      "label": "Create CLI parser for animation creation.",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "create_animation.py",
-      "file_type": "rationale",
-      "norm_label": "create cli parser for animation creation.",
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L405"
-    },
-    {
-      "id": "blender_scripts_create_animation_rationale_447",
-      "label": "Create a single stub clip by name.",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "create_animation.py",
-      "file_type": "rationale",
-      "norm_label": "create a single stub clip by name.",
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L447"
-    },
-    {
       "id": "blender_scripts_create_animation_rationale_46",
       "label": "Return arguments after ``--`` when launched via ``blender --python``.",
       "_origin": "ast",
@@ -14532,26 +14487,15 @@
       "source_location": "L46"
     },
     {
-      "id": "blender_scripts_create_animation_rationale_465",
-      "label": "List or create stub animation clip(s); return process exit code.",
+      "id": "blender_scripts_create_animation_rationale_533",
+      "label": "Populate a shape-key stub clip on the mesh Key data-block.",
       "_origin": "ast",
       "community": 5,
       "community_name": "create_animation.py",
       "file_type": "rationale",
-      "norm_label": "list or create stub animation clip(s); return process exit code.",
+      "norm_label": "populate a shape-key stub clip on the mesh key data-block.",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L465"
-    },
-    {
-      "id": "blender_scripts_create_animation_rationale_475",
-      "label": "Implementation of create_animation with typed failures as return codes.",
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "create_animation.py",
-      "file_type": "rationale",
-      "norm_label": "implementation of create_animation with typed failures as return codes.",
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L475"
+      "source_location": "L533"
     },
     {
       "id": "blender_scripts_create_animation_rationale_54",
@@ -14565,6 +14509,17 @@
       "source_location": "L54"
     },
     {
+      "id": "blender_scripts_create_animation_rationale_581",
+      "label": "Print actions and NLA strip names.",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "create_animation.py",
+      "file_type": "rationale",
+      "norm_label": "print actions and nla strip names.",
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L581"
+    },
+    {
       "id": "blender_scripts_create_animation_rationale_59",
       "label": "Return the first armature object or None.",
       "_origin": "ast",
@@ -14576,6 +14531,39 @@
       "source_location": "L59"
     },
     {
+      "id": "blender_scripts_create_animation_rationale_605",
+      "label": "Create CLI parser for animation creation.",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "create_animation.py",
+      "file_type": "rationale",
+      "norm_label": "create cli parser for animation creation.",
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L605"
+    },
+    {
+      "id": "blender_scripts_create_animation_rationale_647",
+      "label": "Create a single stub clip by name.",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "create_animation.py",
+      "file_type": "rationale",
+      "norm_label": "create a single stub clip by name.",
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L647"
+    },
+    {
+      "id": "blender_scripts_create_animation_rationale_665",
+      "label": "List or create stub animation clip(s); return process exit code.",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "create_animation.py",
+      "file_type": "rationale",
+      "norm_label": "list or create stub animation clip(s); return process exit code.",
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L665"
+    },
+    {
       "id": "blender_scripts_create_animation_rationale_67",
       "label": "Return the first mesh that has non-Basis shape keys, if any.",
       "_origin": "ast",
@@ -14585,6 +14573,17 @@
       "norm_label": "return the first mesh that has non-basis shape keys, if any.",
       "source_file": "blender/scripts/create_animation.py",
       "source_location": "L67"
+    },
+    {
+      "id": "blender_scripts_create_animation_rationale_675",
+      "label": "Implementation of create_animation with typed failures as return codes.",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "create_animation.py",
+      "file_type": "rationale",
+      "norm_label": "implementation of create_animation with typed failures as return codes.",
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L675"
     },
     {
       "id": "blender_scripts_create_animation_rationale_78",
@@ -17431,69 +17430,14 @@
       "source_location": "L357"
     },
     {
-      "id": "frontend_src_constants_avatarconfig",
-      "label": "avatarConfig.ts",
+      "id": "frontend_src_services_avatar_audio_audiotypes",
+      "label": "audioTypes.ts",
       "_origin": "ast",
       "community": 85,
-      "community_name": "Avatar.tsx",
+      "community_name": "AudioControllerApi",
       "file_type": "code",
-      "norm_label": "avatarconfig.ts",
-      "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_constants_avatarconfig_defaultexpression",
-      "label": "defaultExpression",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "defaultexpression",
-      "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L35"
-    },
-    {
-      "id": "frontend_src_constants_avatarconfig_defaultgaze",
-      "label": "defaultGaze",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "defaultgaze",
-      "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L36"
-    },
-    {
-      "id": "frontend_src_features_avatar_components_avatar",
-      "label": "Avatar.tsx",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "avatar.tsx",
-      "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_services_avatar_validateavatarconfig",
-      "label": "validateAvatarConfig.ts",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "validateavatarconfig.ts",
-      "source_file": "frontend/src/services/avatar/validateAvatarConfig.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "frontend_src_tests_services_avatar_validateavatarconfig_test",
-      "label": "validateAvatarConfig.test.ts",
-      "_origin": "ast",
-      "community": 85,
-      "community_name": "Avatar.tsx",
-      "file_type": "code",
-      "norm_label": "validateavatarconfig.test.ts",
-      "source_file": "frontend/src/tests/services/avatar/validateAvatarConfig.test.ts",
+      "norm_label": "audiotypes.ts",
+      "source_file": "frontend/src/services/avatar/audio/audioTypes.ts",
       "source_location": "L1"
     },
     {
@@ -17793,62 +17737,106 @@
       "label": "AnimationController.ts",
       "_origin": "ast",
       "community": 94,
-      "community_name": "animation.ts",
+      "community_name": "AvatarRuntime.ts",
       "file_type": "code",
       "norm_label": "animationcontroller.ts",
       "source_file": "frontend/src/services/avatar/animation/AnimationController.ts",
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_services_avatar_animation_animationtypes",
-      "label": "animationTypes.ts",
+      "id": "frontend_src_services_avatar_animation_animationregistry_animationregistry",
+      "label": "animationRegistry",
       "_origin": "ast",
       "community": 94,
-      "community_name": "animation.ts",
+      "community_name": "AvatarRuntime.ts",
       "file_type": "code",
-      "norm_label": "animationtypes.ts",
-      "source_file": "frontend/src/services/avatar/animation/animationTypes.ts",
-      "source_location": "L1"
+      "norm_label": "animationregistry",
+      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
+      "source_location": "L14"
     },
     {
       "id": "frontend_src_services_avatar_animation_idlecontroller",
       "label": "IdleController.ts",
       "_origin": "ast",
       "community": 94,
-      "community_name": "animation.ts",
+      "community_name": "AvatarRuntime.ts",
       "file_type": "code",
       "norm_label": "idlecontroller.ts",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_types_animation",
-      "label": "animation.ts",
+      "id": "frontend_src_services_avatar_audio_audiocontroller",
+      "label": "AudioController.ts",
       "_origin": "ast",
       "community": 94,
-      "community_name": "animation.ts",
+      "community_name": "AvatarRuntime.ts",
       "file_type": "code",
-      "norm_label": "animation.ts",
-      "source_file": "frontend/src/types/animation.ts",
+      "norm_label": "audiocontroller.ts",
+      "source_file": "frontend/src/services/avatar/audio/AudioController.ts",
       "source_location": "L1"
     },
     {
-      "id": "frontend_src_types_animation_animationlayerpriority",
-      "label": "AnimationLayerPriority",
+      "id": "frontend_src_services_avatar_audio_lipsynccontroller",
+      "label": "LipSyncController.ts",
       "_origin": "ast",
       "community": 94,
-      "community_name": "animation.ts",
+      "community_name": "AvatarRuntime.ts",
       "file_type": "code",
-      "norm_label": "animationlayerpriority",
-      "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L74"
+      "norm_label": "lipsynccontroller.ts",
+      "source_file": "frontend/src/services/avatar/audio/LipSyncController.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_services_avatar_avatarruntime",
+      "label": "AvatarRuntime.ts",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "AvatarRuntime.ts",
+      "file_type": "code",
+      "norm_label": "avatarruntime.ts",
+      "source_file": "frontend/src/services/avatar/AvatarRuntime.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_services_avatar_facial_facialcontroller",
+      "label": "FacialController.ts",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "AvatarRuntime.ts",
+      "file_type": "code",
+      "norm_label": "facialcontroller.ts",
+      "source_file": "frontend/src/services/avatar/facial/FacialController.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_utils_logger",
+      "label": "logger.ts",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "AvatarRuntime.ts",
+      "file_type": "code",
+      "norm_label": "logger.ts",
+      "source_file": "frontend/src/utils/logger.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_utils_logger_logger",
+      "label": "logger",
+      "_origin": "ast",
+      "community": 94,
+      "community_name": "AvatarRuntime.ts",
+      "file_type": "code",
+      "norm_label": "logger",
+      "source_file": "frontend/src/utils/logger.ts",
+      "source_location": "L24"
     },
     {
       "id": "ref_three",
       "label": "three",
       "_origin": "ast",
       "community": 94,
-      "community_name": "animation.ts",
+      "community_name": "AvatarRuntime.ts",
       "file_type": "concept",
       "norm_label": "three",
       "source_file": "frontend/package.json",
@@ -19493,7 +19481,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L205",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -19505,19 +19493,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L329",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation_build_bone_clip_key_loc",
-      "target": "blender_scripts_create_animation_pose_bone",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L194",
+      "source_location": "L529",
       "weight": 1.0
     },
     {
@@ -19529,7 +19505,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L189",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -19541,7 +19517,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L184",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -19553,7 +19529,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L467",
+      "source_location": "L667",
       "weight": 1.0
     },
     {
@@ -19565,7 +19541,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L476",
+      "source_location": "L676",
       "weight": 1.0
     },
     {
@@ -19577,7 +19553,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L482",
+      "source_location": "L682",
       "weight": 1.0
     },
     {
@@ -19589,7 +19565,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L484",
+      "source_location": "L684",
       "weight": 1.0
     },
     {
@@ -19601,7 +19577,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L492",
+      "source_location": "L692",
       "weight": 1.0
     },
     {
@@ -19613,7 +19589,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L503",
+      "source_location": "L703",
       "weight": 1.0
     },
     {
@@ -19625,7 +19601,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L509",
+      "source_location": "L709",
       "weight": 1.0
     },
     {
@@ -19637,7 +19613,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L523",
+      "source_location": "L723",
       "weight": 1.0
     },
     {
@@ -19649,7 +19625,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L561",
+      "source_location": "L767",
       "weight": 1.0
     },
     {
@@ -19661,7 +19637,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L448",
+      "source_location": "L648",
       "weight": 1.0
     },
     {
@@ -19673,7 +19649,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L452",
+      "source_location": "L652",
       "weight": 1.0
     },
     {
@@ -19685,7 +19661,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L458",
+      "source_location": "L658",
       "weight": 1.0
     },
     {
@@ -19697,7 +19673,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L460",
+      "source_location": "L660",
       "weight": 1.0
     },
     {
@@ -19709,7 +19685,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L461",
+      "source_location": "L661",
       "weight": 1.0
     },
     {
@@ -19733,7 +19709,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L387",
+      "source_location": "L587",
       "weight": 1.0
     },
     {
@@ -19745,7 +19721,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L390",
+      "source_location": "L590",
       "weight": 1.0
     },
     {
@@ -21809,7 +21785,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L81",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -21821,7 +21797,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L82",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -21833,19 +21809,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L84",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_updateblink",
-      "target": "frontend_src_services_avatar_animation_idlecontroller_randombetween",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L116",
+      "source_location": "L91",
       "weight": 1.0
     },
     {
@@ -21857,7 +21821,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L98",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_animation_idlecontroller_idlecontroller_updateblink",
+      "target": "frontend_src_services_avatar_animation_idlecontroller_randombetween",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -21869,7 +21845,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L128",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -21881,7 +21857,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L149",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -22589,7 +22565,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L183",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -22601,19 +22577,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L188",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation_build_bone_clip",
-      "target": "blender_scripts_create_animation_build_bone_clip_key_loc",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L193",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -22625,7 +22589,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L341",
+      "source_location": "L541",
       "weight": 1.0
     },
     {
@@ -30082,7 +30046,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L404",
+      "source_location": "L604",
       "weight": 1.0
     },
     {
@@ -32185,17 +32149,6 @@
     },
     {
       "source": "blender_scripts_create_animation",
-      "target": "blender_scripts_create_animation_build_shape_clip",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L332",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation",
       "target": "blender_scripts_create_animation_load_common",
       "relation": "contains",
       "_origin": "ast",
@@ -32203,39 +32156,6 @@
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
       "source_location": "L34",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation",
-      "target": "blender_scripts_create_animation_list_actions",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L380",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation",
-      "target": "blender_scripts_create_animation_build_parser",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L404",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation",
-      "target": "blender_scripts_create_animation_create_one",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L446",
       "weight": 1.0
     },
     {
@@ -32251,28 +32171,6 @@
     },
     {
       "source": "blender_scripts_create_animation",
-      "target": "blender_scripts_create_animation_create_animation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L464",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation",
-      "target": "blender_scripts_create_animation_create_animation_impl",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L474",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation",
       "target": "blender_scripts_create_animation_allowed_clip_names",
       "relation": "contains",
       "_origin": "ast",
@@ -32280,6 +32178,17 @@
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
       "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation",
+      "target": "blender_scripts_create_animation_build_shape_clip",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L532",
       "weight": 1.0
     },
     {
@@ -32295,6 +32204,39 @@
     },
     {
       "source": "blender_scripts_create_animation",
+      "target": "blender_scripts_create_animation_list_actions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L580",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation",
+      "target": "blender_scripts_create_animation_build_parser",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L604",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation",
+      "target": "blender_scripts_create_animation_create_one",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L646",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation",
       "target": "blender_scripts_create_animation_find_shape_mesh",
       "relation": "contains",
       "_origin": "ast",
@@ -32302,6 +32244,28 @@
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
       "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation",
+      "target": "blender_scripts_create_animation_create_animation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L664",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation",
+      "target": "blender_scripts_create_animation_create_animation_impl",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L674",
       "weight": 1.0
     },
     {
@@ -37548,7 +37512,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L35",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -37559,7 +37523,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L36",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -37570,7 +37534,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L38",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -37581,7 +37545,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L39",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -37592,7 +37556,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/avatarConfig.ts",
-      "source_location": "L40",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -37614,7 +37578,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L22",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -37625,7 +37589,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/constants/environment.ts",
-      "source_location": "L34",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -37680,7 +37644,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -37691,7 +37655,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -37702,7 +37666,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -37713,7 +37677,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/features/avatar/components/AnimationControls.tsx",
-      "source_location": "L58",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -38230,7 +38194,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L105",
+      "source_location": "L106",
       "weight": 1.0
     },
     {
@@ -38241,7 +38205,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L116",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -38252,7 +38216,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L123",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -38263,7 +38227,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L127",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -38274,7 +38238,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L131",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -38285,18 +38249,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L135",
-      "weight": 1.0
-    },
-    {
-      "source": "frontend_src_services_avatar_animation_animationregistry",
-      "target": "frontend_src_services_avatar_animation_animationregistry_islocomotionname",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L139",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -38312,18 +38265,18 @@
     },
     {
       "source": "frontend_src_services_avatar_animation_animationregistry",
-      "target": "frontend_src_services_avatar_animation_animationregistry_gesture_names",
+      "target": "frontend_src_services_avatar_animation_animationregistry_islocomotionname",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L62",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
       "source": "frontend_src_services_avatar_animation_animationregistry",
-      "target": "frontend_src_services_avatar_animation_animationregistry_expression_names",
+      "target": "frontend_src_services_avatar_animation_animationregistry_gesture_names",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -38334,7 +38287,7 @@
     },
     {
       "source": "frontend_src_services_avatar_animation_animationregistry",
-      "target": "frontend_src_services_avatar_animation_animationregistry_head_names",
+      "target": "frontend_src_services_avatar_animation_animationregistry_expression_names",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -38345,7 +38298,7 @@
     },
     {
       "source": "frontend_src_services_avatar_animation_animationregistry",
-      "target": "frontend_src_services_avatar_animation_animationregistry_idle_names",
+      "target": "frontend_src_services_avatar_animation_animationregistry_head_names",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -38356,7 +38309,7 @@
     },
     {
       "source": "frontend_src_services_avatar_animation_animationregistry",
-      "target": "frontend_src_services_avatar_animation_animationregistry_locomotion_names",
+      "target": "frontend_src_services_avatar_animation_animationregistry_idle_names",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -38367,13 +38320,24 @@
     },
     {
       "source": "frontend_src_services_avatar_animation_animationregistry",
+      "target": "frontend_src_services_avatar_animation_animationregistry_locomotion_names",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_services_avatar_animation_animationregistry",
       "target": "frontend_src_services_avatar_animation_animationregistry_resolveidleclip",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -38384,7 +38348,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L83",
+      "source_location": "L84",
       "weight": 1.0
     },
     {
@@ -38395,7 +38359,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/AnimationRegistry.ts",
-      "source_location": "L94",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -38725,7 +38689,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L102",
+      "source_location": "L104",
       "weight": 1.0
     },
     {
@@ -38736,7 +38700,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L112",
+      "source_location": "L114",
       "weight": 1.0
     },
     {
@@ -38802,7 +38766,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L68",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -38813,7 +38777,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L74",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -38824,7 +38788,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L84",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -38835,7 +38799,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/types/animation.ts",
-      "source_location": "L92",
+      "source_location": "L94",
       "weight": 1.0
     },
     {
@@ -40199,7 +40163,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L120",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -40210,7 +40174,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L125",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -40221,7 +40185,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L144",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -40276,7 +40240,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L80",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -40287,7 +40251,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L88",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -43547,17 +43511,6 @@
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_create_animation_rationale_333",
-      "target": "blender_scripts_create_animation_build_shape_clip",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L333",
-      "weight": 1.0
-    },
-    {
       "source": "blender_scripts_create_animation_rationale_35",
       "target": "blender_scripts_create_animation_load_common",
       "relation": "rationale_for",
@@ -43566,39 +43519,6 @@
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
       "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation_rationale_381",
-      "target": "blender_scripts_create_animation_list_actions",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L381",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation_rationale_405",
-      "target": "blender_scripts_create_animation_build_parser",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L405",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation_rationale_447",
-      "target": "blender_scripts_create_animation_create_one",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L447",
       "weight": 1.0
     },
     {
@@ -43613,25 +43533,14 @@
       "weight": 1.0
     },
     {
-      "source": "blender_scripts_create_animation_rationale_465",
-      "target": "blender_scripts_create_animation_create_animation",
+      "source": "blender_scripts_create_animation_rationale_533",
+      "target": "blender_scripts_create_animation_build_shape_clip",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L465",
-      "weight": 1.0
-    },
-    {
-      "source": "blender_scripts_create_animation_rationale_475",
-      "target": "blender_scripts_create_animation_create_animation_impl",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "blender/scripts/create_animation.py",
-      "source_location": "L475",
+      "source_location": "L533",
       "weight": 1.0
     },
     {
@@ -43646,6 +43555,17 @@
       "weight": 1.0
     },
     {
+      "source": "blender_scripts_create_animation_rationale_581",
+      "target": "blender_scripts_create_animation_list_actions",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L581",
+      "weight": 1.0
+    },
+    {
       "source": "blender_scripts_create_animation_rationale_59",
       "target": "blender_scripts_create_animation_find_armature",
       "relation": "rationale_for",
@@ -43657,6 +43577,39 @@
       "weight": 1.0
     },
     {
+      "source": "blender_scripts_create_animation_rationale_605",
+      "target": "blender_scripts_create_animation_build_parser",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L605",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation_rationale_647",
+      "target": "blender_scripts_create_animation_create_one",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L647",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation_rationale_665",
+      "target": "blender_scripts_create_animation_create_animation",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L665",
+      "weight": 1.0
+    },
+    {
       "source": "blender_scripts_create_animation_rationale_67",
       "target": "blender_scripts_create_animation_find_shape_mesh",
       "relation": "rationale_for",
@@ -43665,6 +43618,17 @@
       "confidence_score": 1.0,
       "source_file": "blender/scripts/create_animation.py",
       "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "blender_scripts_create_animation_rationale_675",
+      "target": "blender_scripts_create_animation_create_animation_impl",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "blender/scripts/create_animation.py",
+      "source_location": "L675",
       "weight": 1.0
     },
     {
@@ -45392,7 +45356,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
-      "source_location": "L64",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -45404,7 +45368,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
-      "source_location": "L66",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -45416,7 +45380,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "frontend/src/features/avatar/components/Avatar.tsx",
-      "source_location": "L72",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -45428,7 +45392,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L121",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -45464,7 +45428,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L155",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -45476,7 +45440,7 @@
       "confidence_score": 0.8,
       "context": "call",
       "source_file": "frontend/src/services/avatar/animation/IdleController.ts",
-      "source_location": "L156",
+      "source_location": "L163",
       "weight": 1.0
     },
     {
@@ -46213,5 +46177,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4a47a8437b47bcd36af4ec3a5800f5af10931a18"
+  "built_at_commit": "4711486f1846812779f3f02f475d52e7c7543e09"
 }
