@@ -1,18 +1,19 @@
 # Stylized Chatbot Avatar — Overall Architecture
 
-This document is the **project architecture** for an interactive **stylized** 3D chatbot avatar (Snapchat / Bitmoji-like look). It describes system boundaries, data flows, and how the existing semantic runtime extends to chat (text/voice), customized looks, and optional timed instruction plans.
+This document is the **project architecture** for an interactive **stylized** 3D chatbot avatar (Snapchat / Bitmoji-like look). It describes system boundaries, data flows, and how the semantic runtime extends to chat (text/voice), customized looks, and optional timed instruction plans.
+
+**Status as of 2026-11-11:** Chat (text) + TTS + browser STT are shipped. Default runtime body is `ai_boy.glb`. `AnimationPlanPlayer`, wardrobe/appearance presets, and cloud/backend STT remain **Planned**. Implementation stays incremental (learn-by-building). Items marked **Planned** are approved architecture, not unfinished guesses.
 
 **Product pivot (Phase 0):** primary UX is **conversation** (text first, then voice). The earlier “news presenter + AnimationPlan” path remains a valid **optional scripted mode**, not the main product story.
 
-Implementation is incremental (learn-by-building). Not every capability below is fully coded yet; items marked **Planned** are approved architecture, not unfinished guesses.
-
 Related docs:
 
-- [docs/architecture.md](docs/architecture.md) — layer summary
-- [docs/avatar-art-contract.md](docs/avatar-art-contract.md) — stylized look + bone/clip/morph contract
-- [docs/blender-pipeline.md](docs/blender-pipeline.md) — Blender → GLB automation
-- [docs/avatar-spec.md](docs/avatar-spec.md) — asset and semantic API notes
-- [AGENTS.md](AGENTS.md) — one-step implementation rule for coding agents
+- [docs/architecture.md](architecture.md) — layer summary
+- [docs/overall_architecture_burmese.md](overall_architecture_burmese.md) — Burmese translation of this document
+- [docs/avatar-art-contract.md](avatar-art-contract.md) — stylized look + bone/clip/morph contract
+- [docs/blender-pipeline.md](blender-pipeline.md) — Blender → GLB automation
+- [docs/avatar-spec.md](avatar-spec.md) — asset and semantic API notes
+- [AGENTS.md](../AGENTS.md) — one-step implementation rule for coding agents
 
 ---
 
@@ -21,22 +22,22 @@ Related docs:
 Build a browser-based **interactive chatbot avatar** that:
 
 1. Loads a **stylized** humanoid from a validated **GLB** (skeleton + motion; looks swapable in Three.js)
-2. Plays **semantic** behaviors (idle, talk reaction, gestures, expressions, head, gaze, audio)
+2. Plays **semantic** behaviors (idle, talk reaction, gestures, expressions, head, gaze, locomotion, audio)
 3. Converses with the user via **text** first, then **voice in/out** (STT / TTS) without exposing bones/clips to the UI
 4. Optionally accepts a timed **AnimationPlan** for scripted performances (legacy presenter path)
-5. Supports **visual customization** (materials / accessories) through clear asset + runtime boundaries
+5. Supports **visual customization** (materials / accessories / face packs) through clear asset + runtime boundaries
 6. Stays maintainable for a developer + AI coding agent (Blender Python for structure, TypeScript/JSON for behavior)
 
 ---
 
 ## 2. Core Principles
 
-1. **Edit sources, not compiled GLBs** — JSON, TypeScript, and Blender Python are primary; `presenter.glb` is an export.
+1. **Edit sources, not compiled GLBs** — JSON, TypeScript, and Blender Python are primary; runtime GLBs (`ai_boy.glb`, optional `presenter.glb` / `face.glb`) are exports.
 2. **Blender authors assets; the browser runs them** — no Blender in the request path.
 3. **Semantic commands only** — `playGesture("emphasize")`, `setExpression("serious")`, never bone indexes or clip array positions.
-4. **Separate look from behavior** — mesh/materials/morphs vs gestures/idle/plans.
+4. **Separate look from behavior** — mesh/materials/morphs/face packs vs gestures/idle/locomotion/plans.
 5. **Inspect → backup → modify → validate → export temp → promote** for asset changes.
-6. **Backend sends plans, not renderer details** — emotion/gesture/head/gaze (+ later outfit/face presets), never Mixamo bone paths or Three.js objects.
+6. **Backend sends intents, not renderer details** — chat replies, TTS audio URLs, emotion/gesture/head/gaze (+ later outfit/face presets), never Mixamo bone paths or Three.js objects.
 7. **Grow in phases** — local runtime first; chat → TTS → STT → skins (see roadmap below).
 8. **Stylized over photoreal** — cartoon proportions and soft/flat materials; see [avatar-art-contract.md](avatar-art-contract.md).
 
@@ -53,20 +54,21 @@ flowchart LR
   end
 
   subgraph Assets["Asset boundary"]
-    GLB["presenter.glb stand-in → stylized GLB"]
+    GLB["ai_boy.glb + optional face.glb / face pack"]
   end
 
   subgraph Runtime["Browser"]
     UI[Chat UI + debug panel]
+    STT_B[Browser STT - Web Speech]
     RT[AvatarRuntime]
     R3F[React Three Fiber / Three.js]
   end
 
-  subgraph Backend["Backend"]
+  subgraph Backend["Backend FastAPI"]
     API[API / Orchestrator]
     LLM[LLM chat turns]
     TTS[TTS / media]
-    STT[STT - Planned]
+    STT_C[Cloud STT - Planned]
   end
 
   DEV --> BL
@@ -75,11 +77,12 @@ flowchart LR
   DEF --> RT
   GLB --> RT
   UI --> RT
+  STT_B --> UI
   RT --> R3F
   UI <-->|chat turns| API
   LLM --> API
   TTS --> API
-  STT -.-> API
+  STT_C -.-> API
   API -.->|optional AnimationPlan| UI
 ```
 
@@ -87,13 +90,14 @@ flowchart LR
 
 | Phase | Focus | Status |
 | --- | --- | --- |
-| 0 | Product goal + art/naming contract; keep stand-in GLB | Done |
-| 1 | Stylized avatar art + bust framing | Done |
+| 0 | Product goal + art/naming contract | Done |
+| 1 | Stylized avatar art + framing; runtime GLB (`ai_boy.glb`) | Done |
 | 2 | Text chat loop → avatar talk/idle | Done |
-| 3 | TTS → `AudioController` + mouth morphs | Done |
-| 4 | Voice in (STT) | **In progress** (4.1 browser mic) |
-| 5 | Three.js skins / material presets | Planned |
-| 6 | Polish (streaming, barge-in, richer gestures) | Planned |
+| 3 | TTS → `AudioController` + lip sync / mouth | Done |
+| 4 | Voice in — browser STT (Web Speech mic) | Done |
+| 4b | Cloud / backend STT | Planned |
+| 5 | Three.js skins / material presets (`AppearanceController`) | Planned |
+| 6 | Polish (streaming, barge-in, richer gestures, plan player UX) | Planned |
 
 ---
 
@@ -103,6 +107,7 @@ flowchart LR
 flowchart TB
   subgraph Web["Web application layer"]
     REACT[React + Vite]
+    CHAT[Chat panel + STT/TTS hooks]
     DEBUG[Debug panel]
     PLAN_UI[Plan consumer - Planned]
   end
@@ -110,20 +115,30 @@ flowchart TB
   subgraph RuntimeLayer["Avatar runtime layer"]
     CTRL[AvatarController API]
     ANIM[AnimationController]
-    FACE[FacialController]
+    FACE[FacialController / FacePack]
     IDLE[IdleController]
     AUD[AudioController]
+    LIP[LipSyncController]
     PLAYER[AnimationPlanPlayer - Planned]
     OUTFIT[AppearanceController - Planned]
   end
 
   subgraph AssetLayer["Asset authoring layer"]
     BPY[Blender automation]
-    SRC["presenter.blend"]
+    SRC["presenter.blend / ai_boy_rigged_textured.blend"]
     EXP["exports/tmp → validate → promote"]
   end
 
+  subgraph ApiLayer["Backend FastAPI"]
+    CHAT_API[Chat turns + LLM]
+    TTS_API[TTS synthesize]
+    PLAN_API[Plan sample / generate]
+  end
+
   REACT --> CTRL
+  CHAT --> CTRL
+  CHAT --> CHAT_API
+  CHAT --> TTS_API
   DEBUG --> CTRL
   PLAN_UI --> PLAYER
   PLAYER --> CTRL
@@ -131,6 +146,7 @@ flowchart TB
   CTRL --> FACE
   CTRL --> IDLE
   CTRL --> AUD
+  CTRL --> LIP
   CTRL --> OUTFIT
   BPY --> SRC
   SRC --> EXP
@@ -139,35 +155,44 @@ flowchart TB
 
 | Layer | Responsibility |
 | --- | --- |
-| Web | Pages, debug UI, config, later fetch/WebSocket for plans |
-| Avatar runtime | Semantic API → mixers, morphs, bones, audio, appearance |
-| Definitions | Gesture/expression names, materials/outfit presets, schemas |
-| Blender authoring | Rig, mesh, real facial morphs, clothing meshes/textures, export |
-| Backend (planned) | Produce `AnimationPlan` (+ optional appearance intents) |
+| Web | Pages, chat UI, debug UI, config, STT mic hook; later plan fetch UI |
+| Avatar runtime | Semantic API → mixers, morphs/face packs, bones, idle, locomotion, audio, lip sync |
+| Definitions | Gesture/expression/idle/locomotion names, material/outfit presets, schemas |
+| Blender authoring | Rig, mesh, facial morphs or face assets, clothing, export |
+| Backend (shipped core) | Chat turns (LLM), TTS, sample/generate `AnimationPlan` helpers |
+| Backend (planned) | Cloud STT; richer plan orchestration consumed by a plan player |
 
 ---
 
 ## 5. Repository Layout (actual)
 
-The npm app lives in **`frontend/`** (not an `apps/` monorepo).
+The npm app lives in **`frontend/`** (not an `apps/` monorepo). The API lives in **`backend/`**.
 
 ```text
 AI_3D_Avatar/
-├── frontend/                          # Vite + React + R3F
-│   ├── public/avatars/presenter.glb   # Runtime GLB (promoted)
+├── frontend/                              # Vite + React + R3F
+│   ├── public/avatars/
+│   │   ├── ai_boy.glb                     # Default runtime body (avatarConfig.modelUrl)
+│   │   ├── presenter.glb                  # Contract stand-in / alternate
+│   │   ├── face.glb                       # Optional face socket asset
+│   │   └── face/masks/                    # Optional expression face-pack textures
 │   ├── public/audio/
 │   └── src/
-│       ├── features/avatar/           # R3F scene + debug UI
-│       ├── services/avatar/           # AvatarRuntime, controllers
-│       ├── types/                     # AvatarController, AnimationPlan
+│       ├── features/avatar/               # R3F scene + debug UI
+│       ├── features/chat/                 # Chat panel, STT, TTS reaction helpers
+│       ├── services/avatar/               # AvatarRuntime, controllers
+│       ├── types/                         # AvatarController, AnimationPlan
 │       └── constants/
+├── backend/                               # FastAPI clean architecture
+│   └── app/                               # chat, tts, plans, health routes
 ├── blender/
-│   ├── source/presenter.blend         # Authoring source
-│   ├── scripts/                       # inspect, validate, export, modify, …
-│   ├── definitions/                   # bone rename maps, etc.
-│   └── exports/                       # tmp + candidate GLB, Mixamo uploads
+│   ├── source/presenter.blend             # Learning / contract authoring source
+│   ├── scripts/                           # inspect, validate, export, modify, …
+│   ├── definitions/                       # bone rename maps, etc.
+│   └── exports/                           # tmp + candidates (e.g. ai_boy_rigged_textured.*)
 ├── docs/
-├── MVP_Phase_1.md                     # This architecture document
+│   ├── Overall_Architecture.md            # This document (English)
+│   └── overall_architecture_burmese.md    # Burmese translation
 ├── AGENTS.md
 └── README.md
 ```
@@ -192,10 +217,28 @@ sequenceDiagram
   Agent->>Val: validate_export.py
   Val-->>Agent: PASS / ERROR
   Agent->>Pub: promote_export.py
-  Note over Pub: Browser loads presenter.glb
+  Note over Pub: Browser loads ai_boy.glb (or configured URL)
 ```
 
-### 6.2 Backend instruction array → avatar performance (target)
+### 6.2 Chat turn → speak (shipped)
+
+```mermaid
+sequenceDiagram
+  participant User as User
+  participant UI as ChatPanel
+  participant API as Backend
+  participant RT as AvatarController
+
+  User->>UI: text or browser STT transcript
+  UI->>API: POST /api/v1/chat/turns
+  API-->>UI: reply text
+  UI->>API: POST /api/v1/tts/synthesize
+  API-->>UI: audioUrl
+  UI->>RT: speakFromUrl + semantic reaction
+  RT-->>UI: getStatus() for debug
+```
+
+### 6.3 Backend instruction array → avatar performance (target)
 
 ```mermaid
 sequenceDiagram
@@ -215,19 +258,21 @@ sequenceDiagram
   RT-->>Web: getStatus() for debug
 ```
 
-**Status today:** `AnimationPlan` types and `parseAnimationPlan` exist. **AnimationPlanPlayer** and backend transport are **Planned**.
+**Status today:** `AnimationPlan` types and `parseAnimationPlan` exist (frontend + backend). Backend can serve sample/generate plan helpers. **AnimationPlanPlayer** and a first-class frontend “play plan” consumer are **Planned**.
 
-### 6.3 Appearance change (face / clothes)
+### 6.4 Appearance change (face / clothes)
 
 ```mermaid
 flowchart TD
   REQ[Change face or clothes]
   REQ --> DEC{Where is the change?}
   DEC -->|Color / preset already in GLB| RT[Runtime AppearanceController]
+  DEC -->|Face pack masks / face socket| FP[FacialController + FacePackRegistry]
   DEC -->|New morphs, textures, meshes| BL[Blender Python pipeline]
   RT --> UI[Immediate UI update]
+  FP --> UI
   BL --> VAL[Validate + export + promote]
-  VAL --> GLB[New presenter.glb]
+  VAL --> GLB[New runtime GLB]
   GLB --> UI
 ```
 
@@ -235,21 +280,24 @@ flowchart TD
 
 ## 7. Semantic Runtime API
 
-UI, debug panel, plan player, and future backend adapters must use only this surface (names may grow; indexes never appear):
+UI, debug panel, chat adapters, plan player, and future backend adapters must use only this surface (names may grow; indexes never appear):
 
-| Command | Purpose |
-| --- | --- |
-| `playGesture(name)` | One-shot body gesture |
-| `setExpression(name)` | Facial morph preset |
-| `setHeadMotion(name)` | Nod / turn / tilt |
-| `setGaze(target)` | Look target |
-| `startSpeaking()` / `stopSpeaking()` | Speech state hooks |
-| `loadAudio` / `playAudio` / `pauseAudio` / `stopAudio` | Local audio (Phase 1) |
-| `reset()` | Return to idle baseline |
-| `playPlan(plan)` | **Planned** — run timed segment array |
-| `setOutfit(id)` / `setFacePreset(id)` | **Planned** — appearance presets |
+| Command | Purpose | Status |
+| --- | --- | --- |
+| `playGesture(name)` | One-shot body gesture | Done |
+| `setExpression(name)` | Facial morph / face-pack preset | Done |
+| `setHeadMotion(name)` | Nod / turn / tilt / shake | Done |
+| `setGaze(target)` | Look target | Done |
+| `setIdle(name)` | Looping idle pose | Done |
+| `startLocomotion(name)` / `stopLocomotion()` | In-place walk cycles | Done |
+| `startSpeaking()` / `stopSpeaking()` | Speech state hooks | Done |
+| `loadAudio` / `playAudio` / `pauseAudio` / `stopAudio` | Local audio | Done |
+| `unlockAudio()` / `speakFromUrl(url)` | TTS-friendly playback | Done |
+| `reset()` | Return to idle baseline | Done |
+| `playPlan(plan)` | Run timed segment array | **Planned** |
+| `setOutfit(id)` / `setFacePreset(id)` | Appearance presets | **Planned** |
 
-Current gesture / expression / head / gaze name sets live in `frontend/src/types/animation.ts` and `AnimationRegistry.ts`.
+Current gesture / expression / idle / locomotion / head / gaze name sets live in `frontend/src/types/animation.ts` and `AnimationRegistry.ts`.
 
 ---
 
@@ -310,11 +358,12 @@ Optional later fields (same semantic style):
 | Stage | Deliverable |
 | --- | --- |
 | Done | `AnimationPlan` / `AnimationSegment` types |
-| Done | `parseAnimationPlan` + unit tests |
+| Done | `parseAnimationPlan` + unit tests (frontend + backend) |
+| Done | Backend plan helpers (`/plans/sample`, generate routes) |
+| Done | Chat + TTS HTTP used by the chat UI (primary product path) |
 | Planned | `AnimationPlanPlayer` + `playPlan` on controller |
-| Planned | Debug “load sample plan” button |
-| Planned | HTTP or WebSocket client to a backend |
-| Later | LLM generates plans; TTS clock aligns segments |
+| Planned | Debug “load sample plan” button / frontend plan consumer |
+| Later | LLM-timed plans aligned to TTS clock; streaming / barge-in |
 
 ---
 
@@ -322,8 +371,8 @@ Optional later fields (same semantic style):
 
 ### 9.1 Goals
 
-- Swap or refine the presenter’s face without rewriting the runtime
-- Drive expressions through stable morph target names (`mouth_smile`, `brow_up`, …)
+- Swap or refine the character face without rewriting the runtime
+- Drive expressions through stable morph target names **or** face-pack masks
 - Optionally select a **face preset** from UI/backend when multiple faces exist
 
 ### 9.2 Architecture split
@@ -332,18 +381,20 @@ Optional later fields (same semantic style):
 | --- | --- |
 | Face mesh, textures, real blendshapes | Blender (authoring) |
 | Morph name contract | `blender/scripts/contracts.py` + docs |
-| Applying expression weights | `FacialController` |
-| Choosing preset “Presenter A/B” | **Planned** `AppearanceController` / definitions JSON |
+| Expression weights / face-pack masks | `FacialController`, `FacePackRegistry`, `FaceMaskLayer` |
+| Optional separate face mesh on `Head` | `avatarConfig.faceUrl` + runtime attach |
+| Choosing preset “Face A/B” | **Planned** `AppearanceController` / definitions JSON |
 
 ### 9.3 Paths to a custom face
 
 1. **Author morphs on current character** — sculpt real shape keys in Blender; keep contract names; export → promote.
-2. **Replace character** — import rigged GLB/FBX (e.g. Mixamo / Ready Player Me), rename bones, add morphs, release.
-3. **Runtime face preset (Planned)** — multiple head meshes or morph/texture sets in one GLB (or swapped GLB URL), selected by `setFacePreset("id")`.
+2. **Replace character** — import rigged GLB/FBX (e.g. Mixamo), rename bones, add morphs/textures, release (AI Boy path).
+3. **Face socket + face pack (shipped option)** — separate `face.glb` and/or mask textures; `useFacePack` toggles mask expressions for blank stylized heads (painted characters leave it off).
+4. **Runtime face preset (Planned)** — multiple head meshes or morph/texture sets selected by `setFacePreset("id")`.
 
 ### 9.4 Constraints
 
-- Mixamo bodies often lack production facial morphs; stubs exist only for contract/testing.
+- Mixamo bodies often lack production facial morphs; stubs / face pack cover contract and UX.
 - Photo-to-face pipelines stay **outside** the runtime (external tool → import pipeline).
 - Do not scatter morph target indexes in React components.
 
@@ -353,7 +404,7 @@ Optional later fields (same semantic style):
 
 ### 10.1 Goals
 
-- Change suit/outfit appearance without breaking the rig or semantic API
+- Change outfit appearance without breaking the rig or semantic API
 - Prefer **runtime overrides** for color/presets when the GLB already exposes materials
 - Use Blender when clothes need new meshes, UVs, or texture sets
 
@@ -389,7 +440,7 @@ inspect_scene → modify_* / create_animation / apply_rename_map
   → export_glb (tmp) → validate_export → promote_export
 ```
 
-Key scripts live under `blender/scripts/` (MVP docs that say `automation/` mean this folder). See [docs/blender-pipeline.md](docs/blender-pipeline.md).
+Key scripts live under `blender/scripts/` (MVP docs that say `automation/` mean this folder). See [docs/blender-pipeline.md](blender-pipeline.md).
 
 npm helpers from `frontend/`: `avatar:inspect`, `avatar:validate-rig`, `avatar:export`, `avatar:validate-export`, `avatar:promote`, `avatar:release`, `avatar:scaffold`, `avatar:export-mixamo`, `avatar:import-rigged`.
 
@@ -401,6 +452,8 @@ npm helpers from `frontend/`: `avatar:inspect`, `avatar:validate-rig`, `avatar:e
 flowchart LR
   subgraph Semantic["Semantic layer"]
     G[Gestures]
+    I[Idle]
+    L[Locomotion]
     E[Expressions]
     H[Head / Gaze]
     O[Outfit / Face preset]
@@ -409,11 +462,13 @@ flowchart LR
 
   subgraph Execution["Runtime execution"]
     CLIPS[GLB animation clips]
-    MORPHS[Morph targets]
+    MORPHS[Morph targets / face masks]
     MATS[Materials / meshes]
   end
 
   G --> CLIPS
+  I --> CLIPS
+  L --> CLIPS
   H --> CLIPS
   E --> MORPHS
   O --> MATS
@@ -423,23 +478,25 @@ flowchart LR
   P --> O
 ```
 
-- **Clips** — idle, gestures, head motions (Blender or stub generators).
-- **Morphs** — facial expressions (and later visemes).
+- **Clips** — idle, gestures, head motions, locomotion (Blender or stub generators).
+- **Morphs / face packs** — facial expressions (and mouth amplitude / lip sync during TTS).
 - **Materials/meshes** — clothes and face look.
-- **Plans** — timed orchestration from backend/LLM.
+- **Plans** — timed orchestration from backend/LLM (optional path).
 
 ---
 
 ## 13. Phase Map
 
-| Phase | Focus | Backend? |
-| --- | --- | --- |
-| **Phase 1 (current foundation)** | GLB load, semantic API, idle, gestures, expressions, head, local audio, debug panel, Blender pipeline | No |
-| **Phase 1b (next architecture slices)** | `AnimationPlanPlayer`, sample plans, appearance presets (outfit/face) | Mock or local JSON |
-| **Phase 2** | FastAPI (or similar), plan transport, TTS clock | Yes |
-| **Phase 3+** | LLM planning, lip-sync, subtitles, multilingual, embedding | Yes |
+| Track | Focus | Backend? | Status |
+| --- | --- | --- | --- |
+| **Foundation** | GLB load, semantic API, idle/gesture/expression/head, local audio, debug panel, Blender pipeline | No | Done |
+| **Conversation** | Chat UI, FastAPI chat turns + LLM, TTS playback, browser STT, reply reactions, lip sync | Yes | Done |
+| **Motion expansion** | Richer gestures, idle variants, locomotion | No | Done (core set) |
+| **Character / face** | AI Boy body GLB; optional face socket + face pack | No | Done (baseline); polish ongoing |
+| **Next architecture slices** | `AnimationPlanPlayer`, sample-plan UI, appearance presets, cloud STT | Partial / Planned | Next |
+| **Later polish** | Streaming, barge-in, subtitles, multilingual | Yes | Planned |
 
-Phase 1 must not implement full LLM/TTS/video stacks, but **must keep APIs ready** for plans and appearance.
+Conversation must keep driving the avatar with semantic fields only. Scripted `AnimationPlan` remains optional.
 
 ---
 
@@ -447,16 +504,16 @@ Phase 1 must not implement full LLM/TTS/video stacks, but **must keep APIs ready
 
 - Per-frame work stays in `AvatarRuntime.update` / `useFrame` — not React `setState` every frame.
 - Debug panel samples status a few times per second and only calls `AvatarController`.
-- Only the avatar feature constructs `AvatarRuntime` (see `features/avatar`).
+- Only the avatar feature constructs `AvatarRuntime` (see `features/avatar`). Chat uses the same controller via hooks/helpers.
 - Missing clips/morphs/materials produce warnings and safe no-ops where possible.
 
 ---
 
 ## 15. Testing and Validation
 
-- **Unit:** definition validation, `parseAnimationPlan`, registries, state machine.
+- **Unit:** definition validation, `parseAnimationPlan`, registries, state machine, face pack registry.
 - **Blender:** `inspect_scene`, `validate_rig`, `validate_export` (PASS/WARNING/ERROR lines).
-- **Manual:** presenter loads, gestures, expressions, head, audio, plan playback (when built), outfit/face presets (when built).
+- **Manual:** avatar loads, gestures, expressions, idle/locomotion, chat + TTS + mic STT, plan playback (when built), outfit/face presets (when built).
 - **Rule:** failed export validation must not promote over a working runtime GLB.
 
 ---
@@ -465,30 +522,32 @@ Phase 1 must not implement full LLM/TTS/video stacks, but **must keep APIs ready
 
 - Do not put all avatar logic in one React component.
 - Do not use clip indexes or raw morph indexes in UI/backend payloads.
-- Do not overwrite `presenter.blend` or runtime GLB without backup/validation.
+- Do not overwrite authoring `.blend` files or runtime GLBs without backup/validation.
 - Do not launch Blender for ordinary browser interactions.
 - Prefer runtime material/outfit presets for clothes color; use Blender for structural clothing/face work.
-- Backend plans are semantic only.
+- Backend plans and chat reactions are semantic only.
 
 ---
 
 ## 17. Definition of Done (architecture milestones)
 
-### Foundation (Phase 1)
+### Foundation + conversation (shipped)
 
-- [x] Local Vite app loads `presenter.glb`
+- [x] Local Vite app loads runtime GLB (`ai_boy.glb` default)
 - [x] Semantic runtime API + debug panel
 - [x] Blender inspect → validate → export → promote pipeline
 - [x] `AnimationPlan` types + `parseAnimationPlan`
-- [ ] Documented overall architecture (this file)
+- [x] FastAPI chat turns + TTS used by chat UI
+- [x] Browser STT mic on chat panel
+- [x] Documented overall architecture (this file + Burmese)
 
 ### Planned next
 
 - [ ] `AnimationPlanPlayer` + `playPlan`
 - [ ] Debug/mock plan from JSON file or paste
 - [ ] Appearance API: outfit and/or face preset
-- [ ] Asset guidance: split materials for clothes; real facial morphs or multi-face presets
-- [ ] Backend endpoint or WebSocket delivering `AnimationPlan`
+- [ ] Cloud / backend STT (optional; browser STT already works)
+- [ ] Asset guidance polish: split materials for clothes; richer face presets
 
 ---
 
@@ -500,9 +559,9 @@ Phase 1 must not implement full LLM/TTS/video stacks, but **must keep APIs ready
 | **Blender Python** | Inspect, safe modify, validate, export |
 | **GLB** | Runtime distribution format |
 | **JSON / TS definitions** | Names, presets, schemas |
-| **AvatarRuntime** | Semantic → clips/morphs/materials |
-| **React** | UI, lifecycle, plan fetch UI |
-| **Backend (future)** | Orchestration, LLM plans, TTS timing |
-| **LLM (future)** | High-level presenter plans in semantic JSON |
+| **AvatarRuntime** | Semantic → clips/morphs/face packs/materials/audio |
+| **React** | UI, chat lifecycle, STT mic, plan fetch UI (when built) |
+| **Backend** | Chat orchestration, LLM, TTS; optional plan helpers |
+| **LLM** | Chat replies; later optional high-level semantic plans |
 
-The objective is not to rebuild DCC tools in the browser. The objective is a **clear boundary**: author looks in Blender, drive behavior with semantic plans, and keep the backend ignorant of bones and shaders.
+The objective is not to rebuild DCC tools in the browser. The objective is a **clear boundary**: author looks in Blender, drive behavior with semantic commands (and optional plans), and keep the backend ignorant of bones and shaders.
