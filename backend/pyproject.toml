@@ -1,7 +1,7 @@
 [project]
 name = "ai-3d-avatar-backend"
 version = "0.1.0"
-description = "FastAPI backend for Avatar News Presenter (semantic AnimationPlan orchestration)"
+description = "FastAPI backend for 3D AI Avatar (semantic AnimationPlan orchestration)"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [

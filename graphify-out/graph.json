@@ -18191,12 +18191,12 @@
     },
     {
       "id": "backend_app_init_rationale_1",
-      "label": "Avatar News Presenter backend application package.",
+      "label": "3D AI Avatar backend application package.",
       "_origin": "ast",
       "community": 93,
       "community_name": "app/__init__.py",
       "file_type": "rationale",
-      "norm_label": "avatar news presenter backend application package.",
+      "norm_label": "3d ai avatar backend application package.",
       "source_file": "backend/app/__init__.py",
       "source_location": "L1"
     },
@@ -47162,5 +47162,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "44037a13c17506854f5ab4d2952557f8893ac22c"
+  "built_at_commit": "ee3e927a806766f2e3ae524ed0aeff4b4ce961a3"
 }

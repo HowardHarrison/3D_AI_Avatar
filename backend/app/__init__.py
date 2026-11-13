@@ -1,1 +1,1 @@
-"""Avatar News Presenter backend application package."""
+"""3D AI Avatar backend application package."""

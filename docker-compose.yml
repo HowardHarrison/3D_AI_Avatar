@@ -8,7 +8,7 @@ services:
     ports:
       - "5173:5173"
     environment:
-      - VITE_APP_NAME=Avatar News Presenter
+      - VITE_APP_NAME=3D AI Avatar
       - VITE_AVATAR_MODEL_URL=/avatars/presenter.glb
       - VITE_ENABLE_DEBUG_PANEL=true
 
